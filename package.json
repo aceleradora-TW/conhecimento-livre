@@ -1,0 +1,24 @@
+{
+  "name": "conhecimento-livre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test":"mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aceleradora-TW/conhecimento-livre.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aceleradora-TW/conhecimento-livre/issues"
+  },
+  "homepage": "https://github.com/aceleradora-TW/conhecimento-livre#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.15.5",
+    "mocha": "^3.5.3"
+  }
+}
