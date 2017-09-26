@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"mocha"
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
     "chai": "^4.1.2",
     "express": "^4.15.5",
     "mocha": "^3.5.3"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "nyc": "^11.2.1"
   }
 }
