@@ -21,6 +21,9 @@
             "ClassDeclaration": true
         }
     }],
-    "semi": 0
+    "semi": 0,
+    "prefer-arrow-callback": 0,
+    "func-names": 0,
+    "no-console": 0
   }
 }
