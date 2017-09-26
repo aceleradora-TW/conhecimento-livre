@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha"
+    "coverage": "nyc mocha",
+    "test": "mocha"
+
   },
   "repository": {
     "type": "git",
