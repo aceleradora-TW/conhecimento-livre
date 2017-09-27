@@ -7,5 +7,5 @@ node_js:
 deploy:
   provider: heroku
   api_key:
-    secure: HEROKU_KEY
+    secure: $HEROKU_KEY
   app: conhecimento-livre
