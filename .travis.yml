@@ -3,8 +3,8 @@ language: node_js
 node_js:
   - "6"
 
-  deploy:
-    provider: heroku
-    api_key:
-      secure: $HEROKU_KEY
-      app: conhecimento-livre-staging
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_KEY
+  app: conhecimento-livre-staging
