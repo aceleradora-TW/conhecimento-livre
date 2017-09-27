@@ -1,13 +1,13 @@
 const cool = require('cool-ascii-faces')
 const express = require('express')
-const sendString = require('./send_string')
 
 const app = express()
+const path = require('path');
 
 app.set('port', (process.env.PORT || 3000))
 
 app.get('/', (req, res) => {
-  res.send(sendString.imprimeString())
+  res.sendFile(path.join(`${__dirname}/index.html`));
 })
 
 app.get('/cool', (request, response) => {
