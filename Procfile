@@ -1,1 +1,1 @@
-web: node pag_inicial.js
+web: node app.js
