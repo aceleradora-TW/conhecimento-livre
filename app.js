@@ -11,16 +11,16 @@ app.get('/', (req, res) => {
 })
 
 app.get('/video1', (req, res) => {
-  res.sendfile(path.join(`${__dirname}/video1.html`))
+  res.sendFile(path.join(`${__dirname}/video1.html`))
 })
 app.get('/video2', (req, res) => {
-  res.sendfile(path.join(`${__dirname}/video2.html`))
+  res.sendFile(path.join(`${__dirname}/video2.html`))
 })
 app.get('/video3', (req, res) => {
-  res.sendfile(path.join(`${__dirname}/video3.html`))
+  res.sendFile(path.join(`${__dirname}/video3.html`))
 })
 app.get('/video4', (req, res) => {
-  res.sendfile(path.join(`${__dirname}/video4.html`))
+  res.sendFile(path.join(`${__dirname}/video4.html`))
 })
 
 app.get('/cool', (request, response) => {
