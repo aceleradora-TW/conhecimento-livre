@@ -1,5 +1,6 @@
 const expect = require('chai').expect
 const CourseMapper = require('../src/mappers/course_mapper')
+<<<<<<< 3131cb72e789a8b4a657d3588fdaebeb84e4ab49
 const Course = require('../src/model/course')
 
 
@@ -15,11 +16,22 @@ describe('CourseMapper', function() {
           },
           insert: function(data) {
             return Object.assign({}, data, { _id: 1234 })
+=======
+
+describe('CourseMapper', function() {
+  it('return courses', function() {
+    let db = {
+      collection: function(collectionName) {
+        return {
+          find: function() {
+            return [{}, {}, {}]
+>>>>>>> <fe, leco> implementa esqueleto do CourseMapper
           }
         }
       }
     }
 
+<<<<<<< 3131cb72e789a8b4a657d3588fdaebeb84e4ab49
     courseMapper = new CourseMapper(db)
   })
 
@@ -38,5 +50,12 @@ describe('CourseMapper', function() {
     expect(course.duration).to.equal(data.duration)
     expect(course.description).to.equal(data.description)
     expect(course.author).to.equal(data.author)
+=======
+    let courseMapper = new CourseMapper(db)
+
+    const courses = courseMapper.findAll()
+
+    expect(courses.length).to.equal(3)
+>>>>>>> <fe, leco> implementa esqueleto do CourseMapper
   })
 })
