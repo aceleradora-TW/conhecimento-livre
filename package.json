@@ -7,7 +7,8 @@
     "coverage": "nyc mocha",
     "test": "mocha",
     "lint": "eslint *.js",
-    "check": "retire -p -n"
+    "check": "retire -p -n",
+    "watch": "mocha --watch"
   },
   "repository": {
     "type": "git",
