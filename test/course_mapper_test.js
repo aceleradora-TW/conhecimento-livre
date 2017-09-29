@@ -1,4 +1,5 @@
 const expect = require('chai').expect
+<<<<<<< 815e22e8b8b6c7b94cd209736de53b409ce68808
 <<<<<<< a98d0a6665781a6936471a169b6fccbf53f8438c
 const CourseMapper = require('../src/mappers/course_mapper')
 <<<<<<< 9b8a1d0f92994b19f8e31336ac084001126797bf
@@ -29,6 +30,10 @@ describe.only('DbMapper', function() {
 =======
 
 <<<<<<< 6da3ef7e4622dc2e24fcc4fa598d595724806865
+=======
+const CourseMapper = require('../src/mappers/course_mapper')
+
+>>>>>>> <fe, leco> implementa esqueleto do CourseMapper
 describe('CourseMapper', function() {
   it('return courses', function() {
     let db = {
@@ -36,6 +41,7 @@ describe('CourseMapper', function() {
         return {
           find: function() {
             return [{}, {}, {}]
+<<<<<<< 815e22e8b8b6c7b94cd209736de53b409ce68808
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
           }
 =======
@@ -92,10 +98,14 @@ describe('CourseMapper', function() {
 >>>>>>> <Fernanda, Andrei, Mauricio> adiciona user crud
           }
 >>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
+=======
+          }
+>>>>>>> <fe, leco> implementa esqueleto do CourseMapper
         }
       }
     }
 
+<<<<<<< 815e22e8b8b6c7b94cd209736de53b409ce68808
 <<<<<<< a98d0a6665781a6936471a169b6fccbf53f8438c
 <<<<<<< 85f2d9be87771b70f877bf62272867ceb04e6240
 <<<<<<< 9b8a1d0f92994b19f8e31336ac084001126797bf
@@ -184,5 +194,12 @@ describe('CourseMapper', function() {
     dbMapper.createUser(users,user.name)
 
     expect(users[3]).to.equal(user.name)
+=======
+    let courseMapper = new CourseMapper(db)
+
+    const courses = courseMapper.findAll()
+
+    expect(courses.length).to.equal(3)
+>>>>>>> <fe, leco> implementa esqueleto do CourseMapper
   })
 })
