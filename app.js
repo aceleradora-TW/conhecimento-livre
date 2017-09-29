@@ -1,7 +1,6 @@
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
-<<<<<<< 6cdbc1ead124e58f89b9019eae06c6d387d3633d
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const sassMiddleware = require('node-sass-middleware')
@@ -24,16 +23,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
-=======
-const Course = require('./models/course')
-const bodyParser = require('body-parser')
 
-const app = express()
-const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
-
-app.use(bodyParser.json())
-
->>>>>>> cria rota para post de curso
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 mongoose.connect(app.get('MONGO_URL'))
 
@@ -41,11 +31,8 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 mongoose.connect(app.get('MONGO_URL'))
-<<<<<<< 3f42b0de5718fae232b83dc8f5ad5dcf341aa91e
 
 const db = mongoose.connection
-=======
->>>>>>> adiciona schema/model de cursos
 
 app.set('port', (process.env.PORT || 3000))
 
