@@ -71,14 +71,14 @@ yarn start
 ## Acessar a pagina
 Para acessar a página acesse a URL:
 
-```
+
 https://conhecimento-livre.herokuapp.com/
-```
+
 Para acessar em staging:
 
-```
+
 https://conhecimento-livre-staging.herokuapp.com/
-```
+
 
 Para acessar localmente na URL:
 ```
