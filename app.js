@@ -15,17 +15,23 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/index.html`));
 })
 
-app.get('/video1', (req, res) => {
+app.get('/cursos/curso1/video1', (req, res) => {
   res.sendFile(path.join(`${__dirname}/video1.html`))
 })
-app.get('/video2', (req, res) => {
+app.get('/cursos/curso1/video2', (req, res) => {
   res.sendFile(path.join(`${__dirname}/video2.html`))
 })
-app.get('/video3', (req, res) => {
+app.get('/cursos/curso1/video3', (req, res) => {
   res.sendFile(path.join(`${__dirname}/video3.html`))
 })
-app.get('/video4', (req, res) => {
+app.get('/cursos/curso1/video4', (req, res) => {
   res.sendFile(path.join(`${__dirname}/video4.html`))
+})
+app.get('/preview1', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/preview1.html`))
+})
+app.get('/cursos/curso1', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/curso1.html`))
 })
 
 app.get('/cool', (request, response) => {
