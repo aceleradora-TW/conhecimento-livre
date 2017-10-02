@@ -27,14 +27,10 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.10",
     "mocha": "^3.5.3",
-<<<<<<< 30bfbd0bf742001feb0ea945f446dcf812dfd044
     "mongoose": "^4.11.14",
     "nightwatch": "^0.9.16",
     "node-sass-middleware": "^0.11.0",
     "scss": "^0.2.4"
-=======
-    "mongoose": "^4.11.14"
->>>>>>> <@claudiastrm, @hsangalli> - adiciona mongoose
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",

@@ -13,11 +13,11 @@ const sassMiddleware = require('node-sass-middleware')
 const app = express()
 
 app.use(sassMiddleware({
-    src: path.join(__dirname, 'sass'),
-    dest: path.join(__dirname, 'public/css'),
-    force: true,
-    outputStyle: 'compressed',
-    prefix:  '/css'
+  src: path.join(__dirname, 'sass'),
+  dest: path.join(__dirname, 'public/css'),
+  force: true,
+  outputStyle: 'compressed',
+  prefix:  '/css'
 }));
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
