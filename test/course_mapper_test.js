@@ -3,6 +3,7 @@ const CourseMapper = require('../src/mappers/course_mapper')
 <<<<<<< 3131cb72e789a8b4a657d3588fdaebeb84e4ab49
 const Course = require('../src/model/course')
 
+<<<<<<< 40461b4c65191428c46337651e3d7377b77118f3
 
 describe('CourseMapper', function() {
   let db, courseMapper
@@ -30,6 +31,9 @@ describe('CourseMapper', function() {
           }
 =======
 describe.only('CourseMapper', function() {
+=======
+describe('CourseMapper', function() {
+>>>>>>> <Fernanda, Jessica, Mauricio> insere Id no curso
 
   let db = {
     collection: function(collectionName) {
@@ -78,13 +82,20 @@ describe.only('CourseMapper', function() {
 
     let courseMapper = new CourseMapper(db)
 
-    const data = courseMapper.insertData('Node',3.5,'Node course','Waldeco')
+    const data = courseMapper.insertData(0.1,'Node',3.5,'Node course','Waldeco')
 
+    expect(data.courseId).to.equal('0.1')
     expect(data.courseName).to.equal('Node')
     expect(data.courseDuration).to.equal('3.5')
     expect(data.courseDescription).to.equal('Node course')
     expect(data.courseAuthor).to.equal('Waldeco')
-
-
   })
+  // it('return courses content', function() {
+  //
+  // let courseMapper = new CourseMapper(db)
+  //
+  // const content = courseMapper.insertContent()
+  //
+  // expect()
+  // })
 })
