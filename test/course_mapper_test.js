@@ -6,7 +6,7 @@ const User = require ('../src/model/user')
 
 describe.only('DbMapper', function() {
   let db, courseMapper
-
+  
   beforeEach(function() {
     db = {
       collection: function(collectionName) {
