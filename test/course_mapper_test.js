@@ -11,6 +11,7 @@ const Course = require('../src/model/course')
 const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
+<<<<<<< 5c96f0fc0861ebbd1a903b7d485b08fe404d99e4
 <<<<<<< 40461b4c65191428c46337651e3d7377b77118f3
 
 describe.only('DbMapper', function() {
@@ -59,11 +60,17 @@ describe('CourseMapper', function() {
 <<<<<<< 85f2d9be87771b70f877bf62272867ceb04e6240
   const db = {
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
+=======
+describe.only('CourseMapper', function() {
+
+  let db = {
+>>>>>>> <Fernanda,Jessica,Maurcio> insere dados do curso
     collection: function(collectionName) {
       return {
         find: function() {
           return [{}, {}, {}]
         },
+<<<<<<< 5c96f0fc0861ebbd1a903b7d485b08fe404d99e4
 <<<<<<< 9b8a1d0f92994b19f8e31336ac084001126797bf
         insert: function(nome) {
           return nome
@@ -101,9 +108,16 @@ describe('CourseMapper', function() {
 =======
           }
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
+=======
+        insert: function(nome) {
+          return nome
+>>>>>>> <Fernanda,Jessica,Maurcio> insere dados do curso
         }
       }
     }
+  }
+
+  it('return courses', function() {
 
 <<<<<<< 815e22e8b8b6c7b94cd209736de53b409ce68808
 <<<<<<< a98d0a6665781a6936471a169b6fccbf53f8438c
@@ -198,8 +212,21 @@ describe('CourseMapper', function() {
     let courseMapper = new CourseMapper(db)
 
     const courses = courseMapper.findAll()
-
     expect(courses.length).to.equal(3)
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
+  })
+
+  it('return data couse', function() {
+
+    let courseMapper = new CourseMapper(db)
+
+    const data = courseMapper.insertData('Node',3.5,'Node course','Waldeco')
+
+    expect(data.courseName).to.equal('Node')
+    expect(data.courseDuration).to.equal('3.5')
+    expect(data.courseDescription).to.equal('Node course')
+    expect(data.courseAuthor).to.equal('Waldeco')
+
+
   })
 })
