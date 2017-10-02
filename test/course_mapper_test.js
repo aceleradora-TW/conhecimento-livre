@@ -4,7 +4,6 @@ const Course = require('../src/model/course')
 const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
-
 describe.only('DbMapper', function() {
   let db, courseMapper
 
