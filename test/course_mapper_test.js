@@ -11,6 +11,7 @@ const Course = require('../src/model/course')
 const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
+<<<<<<< 4005d519548157a358107ea5bbfee74718e97474
 <<<<<<< 5c96f0fc0861ebbd1a903b7d485b08fe404d99e4
 <<<<<<< 40461b4c65191428c46337651e3d7377b77118f3
 
@@ -62,6 +63,9 @@ describe('CourseMapper', function() {
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
 =======
 describe.only('CourseMapper', function() {
+=======
+describe('CourseMapper', function() {
+>>>>>>> <Fernanda, Jessica, Mauricio> insere Id no curso
 
   let db = {
 >>>>>>> <Fernanda,Jessica,Maurcio> insere dados do curso
@@ -220,13 +224,20 @@ describe.only('CourseMapper', function() {
 
     let courseMapper = new CourseMapper(db)
 
-    const data = courseMapper.insertData('Node',3.5,'Node course','Waldeco')
+    const data = courseMapper.insertData(0.1,'Node',3.5,'Node course','Waldeco')
 
+    expect(data.courseId).to.equal('0.1')
     expect(data.courseName).to.equal('Node')
     expect(data.courseDuration).to.equal('3.5')
     expect(data.courseDescription).to.equal('Node course')
     expect(data.courseAuthor).to.equal('Waldeco')
-
-
   })
+  // it('return courses content', function() {
+  //
+  // let courseMapper = new CourseMapper(db)
+  //
+  // const content = courseMapper.insertContent()
+  //
+  // expect()
+  // })
 })
