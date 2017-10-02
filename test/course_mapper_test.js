@@ -18,6 +18,7 @@ describe('CourseMapper', function() {
             return Object.assign({}, data, { _id: 1234 })
 =======
 
+<<<<<<< 6da3ef7e4622dc2e24fcc4fa598d595724806865
 describe('CourseMapper', function() {
   it('return courses', function() {
     let db = {
@@ -27,9 +28,24 @@ describe('CourseMapper', function() {
             return [{}, {}, {}]
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
           }
+=======
+describe.only('CourseMapper', function() {
+
+  let db = {
+    collection: function(collectionName) {
+      return {
+        find: function() {
+          return [{}, {}, {}]
+        },
+        insert: function(nome) {
+          return nome
+>>>>>>> <Fernanda,Jessica,Maurcio> insere dados do curso
         }
       }
     }
+  }
+
+  it('return courses', function() {
 
 <<<<<<< 3131cb72e789a8b4a657d3588fdaebeb84e4ab49
     courseMapper = new CourseMapper(db)
@@ -54,8 +70,21 @@ describe('CourseMapper', function() {
     let courseMapper = new CourseMapper(db)
 
     const courses = courseMapper.findAll()
-
     expect(courses.length).to.equal(3)
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
+  })
+
+  it('return data couse', function() {
+
+    let courseMapper = new CourseMapper(db)
+
+    const data = courseMapper.insertData('Node',3.5,'Node course','Waldeco')
+
+    expect(data.courseName).to.equal('Node')
+    expect(data.courseDuration).to.equal('3.5')
+    expect(data.courseDescription).to.equal('Node course')
+    expect(data.courseAuthor).to.equal('Waldeco')
+
+
   })
 })
