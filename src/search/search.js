@@ -1,13 +1,10 @@
 class Search {
+  constructor(filterTest) {
+    this.filterTest = filterTest
+  }
 
   filter(dataset, filterInput) {
-    const array = []
-    for (let i = 0; i < dataset.length; i++) {
-      if (dataset[i].includes(filterInput))
-        array.push(dataset[i])
-    }
-
-    return array
+    return dataset.filter(this.filterTest(filterInput))
   }
 }
 
