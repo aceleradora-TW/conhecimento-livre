@@ -19,13 +19,15 @@ describe('CourseMapper', function() {
         }
       }
     }
+  }
+
+  it('return courses', function() {
 
     courseMapper = new CourseMapper(db)
   })
 
   it('returns courses', function() {
     const courses = courseMapper.findAll()
-
     expect(courses.length).to.equal(3)
 //    expect(courses[0]).to.be.an.instanceof(Course)
   })
@@ -38,5 +40,19 @@ describe('CourseMapper', function() {
     expect(course.duration).to.equal(data.duration)
     expect(course.description).to.equal(data.description)
     expect(course.author).to.equal(data.author)
+  })
+
+  it('return data couse', function() {
+
+    let courseMapper = new CourseMapper(db)
+
+    const data = courseMapper.insertData('Node',3.5,'Node course','Waldeco')
+
+    expect(data.courseName).to.equal('Node')
+    expect(data.courseDuration).to.equal('3.5')
+    expect(data.courseDescription).to.equal('Node course')
+    expect(data.courseAuthor).to.equal('Waldeco')
+
+
   })
 })
