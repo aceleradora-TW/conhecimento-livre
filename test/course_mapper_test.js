@@ -50,6 +50,7 @@ describe.only('DbMapper', function() {
     const content = new Content('#1', 'Video Node 01', 5.0, 'API Testavel', 'www.meuvideo.com', 'video')
     const dataUpdate = dbMapper.update(content,data)
 
+
     expect(dataUpdate._id).to.equal(data._id)
     expect(content.order).to.equal(dataUpdate.content[0].order)
     expect(content.className).to.equal(dataUpdate.content[0].className)
