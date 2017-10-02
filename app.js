@@ -8,7 +8,9 @@ const Search = require('./src/search/search')
 const Course = require('./models/course')
 const Content = require('./models/content')
 
+
 const app = express()
+const Schema = mongoose.Schema
 
 app.use(sassMiddleware({
   src: path.join(`${__dirname}/view/sass`),
@@ -29,11 +31,14 @@ app.set('view engine', 'handlebars')
 
 mongoose.connect(app.get('MONGO_URL'))
 
+const db = mongoose.connection
+
 app.set('port', (process.env.PORT || 3000))
 
 app.use(express.static(path.join(`${__dirname}/public`)))
 
 app.get('/', (req, res) => {
+
   Content.find({}, (err, allContents) => {
     res.render('index', { allContents })
   })
@@ -83,6 +88,28 @@ app.post('/course', (req, res) => {
       console.log(error)
     } else {
       res.send('Salvo com sucesso!')
+    }
+  })
+})
+
+app.get('/testa-mongoose', (req, res) => {
+  const livroSchema = new Schema({
+    titulo: String,
+    autores: [String],
+    anoDePublicacao: Number,
+    recomendadoPelaCritica: Boolean,
+  })
+  const Livro = mongoose.model('Livro', livroSchema)
+  const novoLivro = new Livro()
+  novoLivro.titulo = 'O manifesto do partido comunista'
+  novoLivro.autores = ['Karl Marx', 'Friedrich Engels']
+  novoLivro.anoDePublicacao = 1848
+  novoLivro.recomendadoPelaCritica = false
+  novoLivro.save((err) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send('Trabalhadores do mundo, uni-vos!')
     }
   })
 })
