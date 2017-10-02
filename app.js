@@ -1,18 +1,21 @@
 const cool = require('cool-ascii-faces')
 const express = require('express')
-const path = require('path');
-const MongoClient = require('mongodb').MongoClient
-const assert = require('assert')
+const path = require('path')
+const mongoose = require('mongoose')
 
 const app = express()
+const Schema = mongoose.Schema
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 
+mongoose.connect(app.get('MONGO_URL'))
+const db = mongoose.connection
+
 app.set('port', (process.env.PORT || 3000))
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/index.html`));
+  res.sendFile(path.join(`${__dirname}/index.html`))
 })
 
 app.get('/video1', (req, res) => {
@@ -32,19 +35,28 @@ app.get('/cool', (request, response) => {
   response.send(cool())
 })
 
-app.listen(app.get('port'), () => {
-  console.log(`Node app is running on port ${app.get('port')}`)
+app.get('/testa-mongoose', (req, res) => {
+  const livroSchema = new Schema({
+    titulo: String,
+    autores: [String],
+    anoDePublicacao: Number,
+    recomendadoPelaCritica: Boolean,
+  })
+  const Livro = mongoose.model('Livro', livroSchema)
+  const novoLivro = new Livro()
+  novoLivro.titulo = 'O manifesto do partido comunista'
+  novoLivro.autores = ['Karl Marx', 'Friedrich Engels']
+  novoLivro.anoDePublicacao = 1848
+  novoLivro.recomendadoPelaCritica = false
+  novoLivro.save((err) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send('Trabalhadores do mundo, uni-vos!')
+    }
+  })
 })
 
-MongoClient.connect(app.get('MONGO_URL'), (err, db) => {
-  assert.equal(null, err)
-  console.log('Connected correctly to server.')
-  const pessoa = { nome: 'leco' }
-  app.get('/insert', (request, response) => {
-    db.collection('nomes').insertOne(pessoa, function (erro, result) {
-      console.log(result)
-    })
-    response.send(pessoa)
-    db.close()
-  })
+app.listen(app.get('port'), () => {
+  console.log(`Node app is running on port ${app.get('port')}`)
 })
