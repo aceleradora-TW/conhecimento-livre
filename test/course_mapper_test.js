@@ -46,13 +46,20 @@ describe('CourseMapper', function() {
 
     let courseMapper = new CourseMapper(db)
 
-    const data = courseMapper.insertData('Node',3.5,'Node course','Waldeco')
+    const data = courseMapper.insertData(0.1,'Node',3.5,'Node course','Waldeco')
 
+    expect(data.courseId).to.equal('0.1')
     expect(data.courseName).to.equal('Node')
     expect(data.courseDuration).to.equal('3.5')
     expect(data.courseDescription).to.equal('Node course')
     expect(data.courseAuthor).to.equal('Waldeco')
-
-
   })
+  // it('return courses content', function() {
+  //
+  // let courseMapper = new CourseMapper(db)
+  //
+  // const content = courseMapper.insertContent()
+  //
+  // expect()
+  // })
 })
