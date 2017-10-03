@@ -30,8 +30,11 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 mongoose.connect(app.get('MONGO_URL'))
+<<<<<<< 3f42b0de5718fae232b83dc8f5ad5dcf341aa91e
 
 const db = mongoose.connection
+=======
+>>>>>>> adiciona schema/model de cursos
 
 app.set('port', (process.env.PORT || 3000))
 
@@ -93,23 +96,24 @@ app.post('/course', (req, res) => {
 })
 
 app.get('/testa-mongoose', (req, res) => {
-  const livroSchema = new Schema({
-    titulo: String,
-    autores: [String],
-    anoDePublicacao: Number,
-    recomendadoPelaCritica: Boolean,
+  const courseSchema = new Schema({
+    title: String,
+    author: String,
+    content: [],
+    publication: Date,
   })
-  const Livro = mongoose.model('Livro', livroSchema)
-  const novoLivro = new Livro()
-  novoLivro.titulo = 'O manifesto do partido comunista'
-  novoLivro.autores = ['Karl Marx', 'Friedrich Engels']
-  novoLivro.anoDePublicacao = 1848
-  novoLivro.recomendadoPelaCritica = false
-  novoLivro.save((err) => {
+  const Course = mongoose.model('Course', courseSchema)
+  const newCourse = new Course({
+    title: 'Node.js API testável',
+    author: 'Waldemar',
+    content: [],
+    publication: Date.now(),
+  })
+  newCourse.save((err) => {
     if (err) {
       console.log(err)
     } else {
-      res.send('Trabalhadores do mundo, uni-vos!')
+      res.send('Curso publicado!')
     }
   })
 })
