@@ -6,7 +6,7 @@ const User = require ('../src/model/user')
 
 describe.only('DbMapper', function() {
   let db, courseMapper
-  
+
   beforeEach(function() {
     db = {
       collection: function(collectionName) {
@@ -34,7 +34,6 @@ describe.only('DbMapper', function() {
   })
 
   it('returns courses', function() {
-
     const courses = dbMapper.findAllCourses()
 
     expect(courses.length).to.equal(3)
