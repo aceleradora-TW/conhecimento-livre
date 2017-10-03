@@ -41,14 +41,4 @@ describe('CourseMapper', function() {
     expect(course.description).to.equal(data.description)
     expect(course.author).to.equal(data.author)
   })
-
-  it('returns course\'s data', function() {
-    const course = new Course(0.1,'Node',3.5,'Node course','Waldeco')
-    const data = courseMapper.insert(course.toJSON())
-
-    expect(course.name).to.equal(data.name)
-    expect(course.duration).to.equal(data.duration)
-    expect(course.description).to.equal(data.description)
-    expect(course.author).to.equal(data.author)
-  })
 })
