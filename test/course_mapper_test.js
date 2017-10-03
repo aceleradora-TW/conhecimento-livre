@@ -5,7 +5,6 @@ const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
 describe.only('DbMapper', function() {
-
   let db, courseMapper
 
   beforeEach(function() {
@@ -36,11 +35,13 @@ describe.only('DbMapper', function() {
   it('returns courses', function() {
     const courses = dbMapper.findAllCourses()
     expect(courses.length).to.equal(3)
+//    expect(courses[0]).to.be.an.instanceof(Course)
   })
 
   it('returns course\'s data', function() {
     const course = new Course('Node',3.5,'Node course','Waldeco')
     const data = dbMapper.insert(course)
+
 
     expect(course.name).to.equal(data.name)
     expect(course.duration).to.equal(data.duration)
