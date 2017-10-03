@@ -46,6 +46,7 @@ class CourseMapper {
     return this.db.collection('Courses').find()
   }
 
+<<<<<<< 1b44527c477053e1b834e73b348a4ba7e60ef691
 <<<<<<< 4005d519548157a358107ea5bbfee74718e97474
   insertData(courseName, courseDuration, courseDescription, courseAuthor) {
     return this.db.collection('Courses').insert({ courseName: `${courseName}`, courseDuration: `${courseDuration}`, courseDescription: `${courseDescription}`, courseAuthor: `${courseAuthor}` })
@@ -54,6 +55,10 @@ class CourseMapper {
   insertData(courseId, courseName, courseDuration, courseDescription, courseAuthor) {
     return this.db.collection('Courses').insert({ courseId: `${courseId}`, courseName: `${courseName}`, courseDuration: `${courseDuration}`, courseDescription: `${courseDescription}`, courseAuthor: `${courseAuthor}` })
 >>>>>>> <Fernanda, Jessica, Mauricio> insere Id no curso
+=======
+  insert(courses) {
+    return this.db.collection('Courses').insert(courses)
+>>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
   }
 }
 
