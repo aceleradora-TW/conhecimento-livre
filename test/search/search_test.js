@@ -10,7 +10,7 @@ describe('Search', function() {
     const dataset = [obj1, obj2]
     const filterInput = 'men'
 
-    const filteredData = searchByRole.filter(dataset, filterInput, roleFilter)
+    const filteredData = searchByRole.filter(dataset, filterInput)
 
     expect(filteredData[0].name).to.equal('Alvaro')
   })
