@@ -1,10 +1,10 @@
 class Search {
-  constructor(filterTest) {
-    this.filterTest = filterTest
+  constructor(anyFilter) {
+    this.anyFilter = anyFilter
   }
 
   filter(dataset, filterInput) {
-    return dataset.filter(this.filterTest(filterInput))
+    return dataset.filter(this.anyFilter(filterInput))
   }
 }
 
