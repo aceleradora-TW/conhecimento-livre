@@ -41,6 +41,7 @@ describe('CourseMapper', function() {
 const Course = require('../src/model/course')
 
 describe('CourseMapper', function() {
+<<<<<<< 85f2d9be87771b70f877bf62272867ceb04e6240
   const db = {
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
     collection: function(collectionName) {
@@ -56,11 +57,25 @@ describe('CourseMapper', function() {
         insert: function(data) {
           return data
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
+=======
+  let db, courseMapper
+
+  beforeEach(function() {
+    db = {
+      collection: function(collectionName) {
+        return {
+          find: function() {
+            return [{}, {}, {}]
+          },
+          insert: function(data) {
+            return data
+          }
+>>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
         }
       }
     }
-  }
 
+<<<<<<< 85f2d9be87771b70f877bf62272867ceb04e6240
 <<<<<<< 9b8a1d0f92994b19f8e31336ac084001126797bf
   it('return courses', function() {
 
@@ -88,6 +103,10 @@ describe('CourseMapper', function() {
 =======
   let courseMapper = new CourseMapper(db)
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
+=======
+    courseMapper = new CourseMapper(db)
+  })
+>>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
 
   it('returns courses', function() {
     const courses = courseMapper.findAll()
@@ -95,8 +114,8 @@ describe('CourseMapper', function() {
     expect(courses.length).to.equal(3)
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
   })
-
-  it('returns data course', function() {
+  
+  it('returns course\'s data', function() {
     const course = new Course(0.1,'Node',3.5,'Node course','Waldeco')
     const data = courseMapper.insert(course.toJSON())
 
