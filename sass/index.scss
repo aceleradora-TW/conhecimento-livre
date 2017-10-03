@@ -10,14 +10,7 @@
 }
 .content{
   @include size(100vh, 100vw);
-<<<<<<< d33dc9d92d38b1b61161c500ee98a6a761a9b7c3
-<<<<<<< 35b422b425cfb59afe2e5da3fbaa2a2e14771b87
   background: $border-color-default;
-=======
->>>>>>> <Jessica, Luiz, Henrique> Cria parte superior pag inicial
-=======
-  background: $border-color-default;
->>>>>>> <Mauricio, Jessica> implementa carrossel
 }
 
 .superior{
@@ -26,23 +19,14 @@
   align-items: flex-start;
   @include size(50%, 100%);
   // background-color:pink;
-<<<<<<< d33dc9d92d38b1b61161c500ee98a6a761a9b7c3
-<<<<<<< 35b422b425cfb59afe2e5da3fbaa2a2e14771b87
 }
 
 .banner{
   background-image: url('../images/banner3.jpg');
-=======
-}
-
-.banner{
-  background-image: url('../public/images/banner3.jpg');
->>>>>>> <Mauricio, Jessica> implementa carrossel
   @include size(100%, 100%);
 }
 
 .course{
-<<<<<<< d33dc9d92d38b1b61161c500ee98a6a761a9b7c3
   @include size(100%, 100%);
   background-image: url('../images/facebook-ad-nodejs-high.jpg.png');
 }
@@ -137,48 +121,4 @@ align-items: flex-end;
       list-style: none;
     }
   }
-=======
-  background-image: url('../images/banner.png');
-=======
-  background-image: url('../public/images/pt.jpg.png');
-  @include size(100%, 100%);
->>>>>>> <Mauricio, Jessica> implementa carrossel
 }
-
-.container{
-    @include size(50%, 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logo{
-  @include size(70%, 65%);
-  background: $color-default;
-}
-.inferior{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include size(50%, 100%);
-}
-.carrossel{
-<<<<<<< d33dc9d92d38b1b61161c500ee98a6a761a9b7c3
->>>>>>> <Jessica, Luiz, Henrique> Cria parte superior pag inicial
-}
-=======
-    @include size(50%, 100%);
-    border-color: $border-color-default;
-    border-left-style: dashed;
-    display: flex;
-    justify-content: center;
-    ul {
-      display: inherit;
-      @include size(100%, 90%);
-      overflow: scroll;
-     li{
-        @include size(image-height("../public/images/pt.jpg.png"), image-width("../public/images/pt.jpg.png"));
-        list-style: none;
-      }
-    }
-  }
->>>>>>> <Mauricio, Jessica> implementa carrossel

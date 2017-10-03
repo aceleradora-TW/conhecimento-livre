@@ -12,6 +12,8 @@ const sassMiddleware = require('node-sass-middleware')
 
 const app = express()
 
+const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
+
 app.use(sassMiddleware({
   src: path.join(__dirname, 'sass'),
   dest: path.join(__dirname, 'public/css'),
@@ -25,7 +27,6 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 mongoose.connect(app.get('MONGO_URL'))
 
@@ -89,6 +90,10 @@ app.post('/course', (req, res) => {
       res.send('Salvo com sucesso!')
     }
   })
+})
+
+app.listen(app.get('port'), () => {
+  console.log(`Node app is running on port ${app.get('port')}`)
 })
 
 app.get('/content', (req, res) => {
