@@ -28,6 +28,7 @@ describe('CourseMapper', function() {
 
   it('returns courses', function() {
     const courses = courseMapper.findAll()
+
     expect(courses.length).to.equal(3)
 //    expect(courses[0]).to.be.an.instanceof(Course)
   })
@@ -42,24 +43,13 @@ describe('CourseMapper', function() {
     expect(course.author).to.equal(data.author)
   })
 
-  it('return data couse', function() {
+  it('returns data course', function() {
+    const course = new Course(0.1,'Node',3.5,'Node course','Waldeco')
+    const data = courseMapper.insert(course.toJSON())
 
-    let courseMapper = new CourseMapper(db)
-
-    const data = courseMapper.insertData(0.1,'Node',3.5,'Node course','Waldeco')
-
-    expect(data.courseId).to.equal('0.1')
-    expect(data.courseName).to.equal('Node')
-    expect(data.courseDuration).to.equal('3.5')
-    expect(data.courseDescription).to.equal('Node course')
-    expect(data.courseAuthor).to.equal('Waldeco')
+    expect(course.name).to.equal(data.name)
+    expect(course.duration).to.equal(data.duration)
+    expect(course.description).to.equal(data.description)
+    expect(course.author).to.equal(data.author)
   })
-  // it('return courses content', function() {
-  //
-  // let courseMapper = new CourseMapper(db)
-  //
-  // const content = courseMapper.insertContent()
-  //
-  // expect()
-  // })
 })
