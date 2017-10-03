@@ -2,6 +2,7 @@ class CourseMapper {
   constructor(db) { this.db = db }
 
   findAll() {
+<<<<<<< 57e574e58f547984fc44cf9777b99dee16945db4
 <<<<<<< 6da3ef7e4622dc2e24fcc4fa598d595724806865
 <<<<<<< 3131cb72e789a8b4a657d3588fdaebeb84e4ab49
     return this.db.collection('Courses').find() // [Course, Course, Course, ...]
@@ -14,6 +15,9 @@ class CourseMapper {
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
 =======
     return this.db.collection('Courses').find()
+=======
+    return this.db.collection('Courses').find() // [Course, Course, Course, ...]
+>>>>>>> <Mauricio, Jessica, Fernanda> refatora teste
   }
 
 <<<<<<< 9b8a1d0f92994b19f8e31336ac084001126797bf
@@ -27,8 +31,12 @@ class CourseMapper {
 >>>>>>> <Fernanda, Jessica, Mauricio> insere Id no curso
 =======
   insert(courses) {
+<<<<<<< 57e574e58f547984fc44cf9777b99dee16945db4
     return this.db.collection('Courses').insert(courses)
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
+=======
+    return this.db.collection('Courses').insert(courses.toJSON())
+>>>>>>> <Mauricio, Jessica, Fernanda> refatora teste
   }
 }
 
