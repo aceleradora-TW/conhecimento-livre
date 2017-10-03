@@ -69,6 +69,7 @@ describe('CourseMapper', function() {
 describe.only('CourseMapper', function() {
 =======
 describe('CourseMapper', function() {
+<<<<<<< 7032ee35b36c2b71ac35935b48d03c685497d68a
 <<<<<<< 1b44527c477053e1b834e73b348a4ba7e60ef691
 >>>>>>> <Fernanda, Jessica, Mauricio> insere Id no curso
 
@@ -93,6 +94,8 @@ describe('CourseMapper', function() {
           return data
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
 =======
+=======
+>>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
   let db, courseMapper
 
   beforeEach(function() {
@@ -100,6 +103,7 @@ describe('CourseMapper', function() {
       collection: function(collectionName) {
         return {
           find: function() {
+<<<<<<< 7032ee35b36c2b71ac35935b48d03c685497d68a
             return [{ _id: 1, name: 'video1' }, {}, {}]
           },
           insert: function(data) {
@@ -129,11 +133,18 @@ describe('CourseMapper', function() {
         insert: function(data) {
           return data
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
+=======
+            return [{}, {}, {}]
+          },
+          insert: function(data) {
+            return data
+          }
+>>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
         }
       }
     }
-  }
 
+<<<<<<< 7032ee35b36c2b71ac35935b48d03c685497d68a
 <<<<<<< 1b44527c477053e1b834e73b348a4ba7e60ef691
   it('return courses', function() {
 
@@ -231,6 +242,10 @@ describe('CourseMapper', function() {
 =======
   let courseMapper = new CourseMapper(db)
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
+=======
+    courseMapper = new CourseMapper(db)
+  })
+>>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
 
   it('returns courses', function() {
     const courses = courseMapper.findAll()
@@ -238,8 +253,8 @@ describe('CourseMapper', function() {
     expect(courses.length).to.equal(3)
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
   })
-
-  it('returns data course', function() {
+  
+  it('returns course\'s data', function() {
     const course = new Course(0.1,'Node',3.5,'Node course','Waldeco')
     const data = courseMapper.insert(course.toJSON())
 
