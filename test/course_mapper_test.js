@@ -5,13 +5,13 @@ const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
 describe.only('DbMapper', function() {
+
   let db, courseMapper
 
   beforeEach(function() {
     db = {
       collection: function(collectionName) {
         return {
-
           find: function() {
             return [{ _id: 1, name: 'video1' }, {}, {}]
           },
@@ -32,7 +32,6 @@ describe.only('DbMapper', function() {
     }
     dbMapper = new DbMapper(db)
   })
-
 
   it('returns courses', function() {
     const courses = dbMapper.findAllCourses()
