@@ -2,10 +2,13 @@ const cool = require('cool-ascii-faces')
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
+const Course = require('./models/course')
+const bodyParser = require('body-parser')
 
 const app = express()
-const Schema = mongoose.Schema
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
+
+app.use(bodyParser.json())
 
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 
@@ -34,25 +37,18 @@ app.get('/cool', (request, response) => {
   response.send(cool())
 })
 
-app.get('/testa-mongoose', (req, res) => {
-  const courseSchema = new Schema({
-    title: String,
-    author: String,
-    content: [],
-    publication: Date,
-  })
-  const Course = mongoose.model('Course', courseSchema)
-  const newCourse = new Course({
-    title: 'Node.js API testável',
-    author: 'Waldemar',
-    content: [],
-    publication: Date.now(),
-  })
-  newCourse.save((err) => {
-    if (err) {
-      console.log(err)
+app.post('/course', (req, res) => {
+  const course = new Course()
+  course.title = req.body.title
+  course.author = req.body.author
+  course.content = req.body.content
+  course.publication = Date.now()
+
+  course.save((error) => {
+    if (error) {
+      console.log(error)
     } else {
-      res.send('Curso publicado!')
+      res.send('Salvo com sucesso!')
     }
   })
 })
