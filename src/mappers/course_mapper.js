@@ -5,8 +5,8 @@ class CourseMapper {
     return this.db.collection('Courses').find()
   }
 
-  insertData(courseId, courseName, courseDuration, courseDescription, courseAuthor) {
-    return this.db.collection('Courses').insert({ courseId: `${courseId}`, courseName: `${courseName}`, courseDuration: `${courseDuration}`, courseDescription: `${courseDescription}`, courseAuthor: `${courseAuthor}` })
+  insert(courses) {
+    return this.db.collection('Courses').insert(courses)
   }
 }
 
