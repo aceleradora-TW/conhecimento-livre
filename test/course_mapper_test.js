@@ -3,28 +3,32 @@ const CourseMapper = require('../src/mappers/course_mapper')
 const Course = require('../src/model/course')
 
 describe('CourseMapper', function() {
-  const db = {
-    collection: function(collectionName) {
-      return {
-        find: function() {
-          return [{}, {}, {}]
-        },
-        insert: function(data) {
-          return data
+  let db, courseMapper
+
+  beforeEach(function() {
+    db = {
+      collection: function(collectionName) {
+        return {
+          find: function() {
+            return [{}, {}, {}]
+          },
+          insert: function(data) {
+            return data
+          }
         }
       }
     }
-  }
 
-  let courseMapper = new CourseMapper(db)
+    courseMapper = new CourseMapper(db)
+  })
 
   it('returns courses', function() {
     const courses = courseMapper.findAll()
 
     expect(courses.length).to.equal(3)
   })
-
-  it('returns data course', function() {
+  
+  it('returns course\'s data', function() {
     const course = new Course(0.1,'Node',3.5,'Node course','Waldeco')
     const data = courseMapper.insert(course.toJSON())
 
