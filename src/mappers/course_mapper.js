@@ -12,10 +12,13 @@ class CourseMapper {
     return this.db.collection('Courses').insert({ courseId: `${courseId}`, courseName: `${courseName}`, courseDuration: `${courseDuration}`, courseDescription: `${courseDescription}`, courseAuthor: `${courseAuthor}` })
 =======
 
+<<<<<<< 55c4d2fa51e6b02837eebf34a1d37f1e9c960852
   insert(courses) {
     return this.db.collection('Courses').insert(courses)
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
   }
 
+=======
+>>>>>>> <Mauricio, Jessica, Fernanda> refatora teste
 }
 module.exports = CourseMapper
