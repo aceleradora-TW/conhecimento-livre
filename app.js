@@ -10,7 +10,6 @@ const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 
 mongoose.connect(app.get('MONGO_URL'))
-const db = mongoose.connection
 
 app.set('port', (process.env.PORT || 3000))
 
@@ -36,23 +35,24 @@ app.get('/cool', (request, response) => {
 })
 
 app.get('/testa-mongoose', (req, res) => {
-  const livroSchema = new Schema({
-    titulo: String,
-    autores: [String],
-    anoDePublicacao: Number,
-    recomendadoPelaCritica: Boolean,
+  const courseSchema = new Schema({
+    title: String,
+    author: String,
+    content: [],
+    publication: Date,
   })
-  const Livro = mongoose.model('Livro', livroSchema)
-  const novoLivro = new Livro()
-  novoLivro.titulo = 'O manifesto do partido comunista'
-  novoLivro.autores = ['Karl Marx', 'Friedrich Engels']
-  novoLivro.anoDePublicacao = 1848
-  novoLivro.recomendadoPelaCritica = false
-  novoLivro.save((err) => {
+  const Course = mongoose.model('Course', courseSchema)
+  const newCourse = new Course({
+    title: 'Node.js API testável',
+    author: 'Waldemar',
+    content: [],
+    publication: Date.now(),
+  })
+  newCourse.save((err) => {
     if (err) {
       console.log(err)
     } else {
-      res.send('Trabalhadores do mundo, uni-vos!')
+      res.send('Curso publicado!')
     }
   })
 })
