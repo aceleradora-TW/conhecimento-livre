@@ -39,7 +39,11 @@ describe.only('DbMapper', function() {
 =======
 const CourseMapper = require('../src/mappers/course_mapper')
 
+<<<<<<< 217315fdffe19ca8da9723721b3db80062ac37cf
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
+=======
+
+>>>>>>> <Mauricio, Jessica, Fernanda> refatora teste
 describe('CourseMapper', function() {
   it('return courses', function() {
     let db = {
@@ -103,6 +107,7 @@ describe('CourseMapper', function() {
       collection: function(collectionName) {
         return {
           find: function() {
+<<<<<<< 217315fdffe19ca8da9723721b3db80062ac37cf
 <<<<<<< 7032ee35b36c2b71ac35935b48d03c685497d68a
             return [{ _id: 1, name: 'video1' }, {}, {}]
           },
@@ -135,9 +140,12 @@ describe('CourseMapper', function() {
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
 =======
             return [{}, {}, {}]
+=======
+            return [{ _id: 1, name: 'video1' }, {}, {}]
+>>>>>>> <Mauricio, Jessica, Fernanda> refatora teste
           },
           insert: function(data) {
-            return data
+            return Object.assign({}, data, { _id: 1234 })
           }
 >>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
         }
@@ -251,12 +259,16 @@ describe('CourseMapper', function() {
     const courses = courseMapper.findAll()
 
     expect(courses.length).to.equal(3)
+<<<<<<< 217315fdffe19ca8da9723721b3db80062ac37cf
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
+=======
+//    expect(courses[0]).to.be.an.instanceof(Course)
+>>>>>>> <Mauricio, Jessica, Fernanda> refatora teste
   })
-  
+
   it('returns course\'s data', function() {
-    const course = new Course(0.1,'Node',3.5,'Node course','Waldeco')
-    const data = courseMapper.insert(course.toJSON())
+    const course = new Course('Node',3.5,'Node course','Waldeco')
+    const data = courseMapper.insert(course)
 
     expect(course.name).to.equal(data.name)
     expect(course.duration).to.equal(data.duration)
