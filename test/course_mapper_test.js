@@ -32,7 +32,7 @@ describe.only('DbMapper', function() {
     }
     dbMapper = new DbMapper(db)
   })
-
+  
   it('returns courses', function() {
     const courses = dbMapper.findAllCourses()
 
