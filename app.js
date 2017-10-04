@@ -18,6 +18,13 @@ mongoose.connect(app.get('MONGO_URL'))
 
 app.set('port', (process.env.PORT || 3000))
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/index.html`))
+})
+
+app.get('/video1', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/video1.html`))
+})
 app.get('/video2', (req, res) => {
   res.sendFile(path.join(`${__dirname}/video2.html`))
 })
@@ -37,14 +44,21 @@ app.post('/search', (req, res) => {
   res.redirect(`/search/${searchInput}`)
 })
 
+
 app.get('/search/:courseName', (req, res) => {
   const courseName = req.params.courseName
-  const courseFilter = courseTitle => item => item.includes(courseTitle)
-  const dataset = ['alvo', 'alvaro', 'leco']
-  const search = new Search(courseFilter)
+  const courseFilter = courseTitle => item => item.title.includes(courseTitle)
+  Course.find({}, (err, courses) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const dataset = courses;
+      const search = new Search(courseFilter)
 
-  const filteredData = search.filter(dataset, courseName)
-  res.send(filteredData)
+      const filteredData = search.filter(dataset, courseName)
+      res.send(filteredData)
+    }
+  })
 })
 
 app.post('/course', (req, res) => {
