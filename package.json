@@ -6,10 +6,10 @@
   "scripts": {
     "start": "nodemon app.js",
     "coverage": "nyc mocha",
-    "test": "mocha",
+    "test": "mocha --recursive",
     "lint": "eslint *.js",
     "check": "retire -p -n",
-    "watch": "mocha --watch"
+    "watch": "mocha --recursive --watch"
   },
   "repository": {
     "type": "git",
