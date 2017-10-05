@@ -46,8 +46,9 @@ app.post('/search', (req, res) => {
 
 
 app.get('/search/:courseName', (req, res) => {
-  const courseName = req.params.courseName
-  const courseFilter = courseTitle => item => item.title.includes(courseTitle)
+  const courseName = req.params.courseName.toLowerCase()
+  const courseFilter = courseTitle => item => item.title.toLowerCase().includes(courseTitle)
+
   Course.find({}, (err, courses) => {
     if (err) {
       console.log(err);
