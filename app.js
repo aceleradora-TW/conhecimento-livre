@@ -28,11 +28,10 @@ app.get('/', (req, res) => {
 
 app.get('/video/:id', (req, res) => {
   const videoId = parseInt(req.params.id, 10)
-  const videoAtual = videos.find(video => video.id === videoId)
-  if (videoAtual === undefined) {
-    res.send('Video não encontrado')
-  }
-  res.render('video', videoAtual)
+  const currentVideo = videos.find(video => video.id === videoId)
+  return currentVideo
+    ? res.render('video', currentVideo)
+    : res.send('Video não encontrado')
 })
 
 app.get('/cool', (request, response) => {
