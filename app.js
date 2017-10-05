@@ -54,6 +54,10 @@ app.post('/course', (req, res) => {
   })
 })
 
+app.get('/content', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/view/content.html`))
+})
+
 app.listen(app.get('port'), () => {
   console.log(`Node app is running on port ${app.get('port')}`)
 })
