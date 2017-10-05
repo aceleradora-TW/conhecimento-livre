@@ -7,7 +7,19 @@ const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const videos = require('./models/videosDb')
 
+const sassMiddleware = require('node-sass-middleware')
+
 const app = express()
+
+app.use(sassMiddleware({
+    src: path.join(`${__dirname}/view/sass`),
+    dest: path.join(`${__dirname}/view/css`),
+}))
+
+app.get('/spike', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/spike.html`))
+})
+
 
 app.use(express.static('view/css'))
 
