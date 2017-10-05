@@ -9,6 +9,8 @@ const videos = require('./models/videosDb')
 
 const app = express()
 
+app.use(express.static('view/css'))
+
 app.use(bodyParser.json())
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
