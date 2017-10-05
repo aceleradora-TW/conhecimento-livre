@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  overflow-x: 0;
+  overflow: hidden;
 }
 
 .content-section {
@@ -78,6 +78,21 @@
   border: 1px;
   border-color: #e2e2e2;
   border-left-style: dashed;
+  display: flex;
   height: 100%;
+  justify-content: flex-end;
+  margin-top: 3vh;
   width: 30%;
+  ul {
+    overflow: scroll;
+    height: 100%;
+    width: 90%;
+    li{
+      border: 1px solid #e2e2e2;
+      list-style: none;
+      height: 20%;
+      margin-bottom: 2vh;
+      width: 90%;
+    }
+  }
 }
