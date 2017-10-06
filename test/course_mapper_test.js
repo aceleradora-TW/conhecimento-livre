@@ -1,12 +1,11 @@
 const expect = require('chai').expect
-<<<<<<< 6f4b4c177cb860975df84c9de4eb5ea197f4232b
 const DbMapper = require('../src/mappers/db_mapper')
 const Course = require('../src/model/course')
 const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
 
-describe.only('DbMapper', function() {
+describe('DbMapper', function() {
   let db, courseMapper
 
   beforeEach(function() {
@@ -29,36 +28,21 @@ describe.only('DbMapper', function() {
           createUser: function(users,user) {
             return users.push(user)
           }
-=======
-const CourseMapper = require('../src/mappers/course_mapper')
-const Course = require('../src/model/course')
-
-describe('CourseMapper', function() {
-  const db = {
-    collection: function(collectionName) {
-      return {
-        find: function() {
-          return [{}, {}, {}]
-        },
-        insert: function(data) {
-          return data
->>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
         }
       }
     }
 
-<<<<<<< 6f4b4c177cb860975df84c9de4eb5ea197f4232b
     dbMapper = new DbMapper(db)
   })
 
-  it('returns courses', function() {
+  it('retorna cursos', function() {
 
     const courses = dbMapper.findAllCourses()
 
     expect(courses.length).to.equal(3)
   })
 
-  it('returns course\'s data', function() {
+  it('retorna dados do curso', function() {
     const course = new Course('Node',3.5,'Node course','Waldeco')
     const data = dbMapper.insert(course)
 
@@ -80,13 +64,13 @@ describe('CourseMapper', function() {
 
   })
 
-  it ('returns user\'s', function() {
+  it ('retorna user', function() {
 
     const users = dbMapper.getUsers()
     expect(users.length).to.equal(3)
   })
 
-  it ('returns new user', function() {
+  it ('retorna novo usuario', function() {
 
     const users = dbMapper.getUsers()
     const user = new User('joao bolao junior')
@@ -94,23 +78,5 @@ describe('CourseMapper', function() {
     dbMapper.createUser(users,user.name)
 
     expect(users[3]).to.equal(user.name)
-=======
-  let courseMapper = new CourseMapper(db)
-
-  it('returns courses', function() {
-    const courses = courseMapper.findAll()
-
-    expect(courses.length).to.equal(3)
-  })
-
-  it('returns data course', function() {
-    const course = new Course(0.1,'Node',3.5,'Node course','Waldeco')
-    const data = courseMapper.insert(course.toJSON())
-
-    expect(course.name).to.equal(data.name)
-    expect(course.duration).to.equal(data.duration)
-    expect(course.description).to.equal(data.description)
-    expect(course.author).to.equal(data.author)
->>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
   })
 })
