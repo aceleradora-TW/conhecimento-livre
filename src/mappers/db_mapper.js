@@ -13,6 +13,7 @@ class DbMapper {
   }
   getUsers() {
     return this.db.collection('Users').getUsers()
+
   }
   createUser(user, users) {
     return this.db.collection('Users').createUser(user, users)

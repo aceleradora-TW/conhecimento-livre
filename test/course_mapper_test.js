@@ -11,6 +11,7 @@ describe.only('DbMapper', function() {
     db = {
       collection: function(collectionName) {
         return {
+
           find: function() {
             return [{ _id: 1, name: 'video1' }, {}, {}]
           },
@@ -35,13 +36,11 @@ describe.only('DbMapper', function() {
   it('returns courses', function() {
     const courses = dbMapper.findAllCourses()
     expect(courses.length).to.equal(3)
-//    expect(courses[0]).to.be.an.instanceof(Course)
   })
 
   it('returns course\'s data', function() {
     const course = new Course('Node',3.5,'Node course','Waldeco')
     const data = dbMapper.insert(course)
-
 
     expect(course.name).to.equal(data.name)
     expect(course.duration).to.equal(data.duration)
@@ -50,7 +49,6 @@ describe.only('DbMapper', function() {
 
     const content = new Content('#1', 'Video Node 01', 5.0, 'API Testavel', 'www.meuvideo.com', 'video')
     const dataUpdate = dbMapper.update(content,data)
-
 
     expect(dataUpdate._id).to.equal(data._id)
     expect(content.order).to.equal(dataUpdate.content[0].order)
