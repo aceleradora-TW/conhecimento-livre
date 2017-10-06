@@ -16,4 +16,4 @@ class Course {
   }
 }
 
-module.exports = Course;
+module.exports = Course
