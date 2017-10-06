@@ -16,8 +16,4 @@ class Course {
   }
 }
 
-<<<<<<< 1b44527c477053e1b834e73b348a4ba7e60ef691
 module.exports = Course
-=======
-module.exports = Course;
->>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso

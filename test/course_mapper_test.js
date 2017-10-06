@@ -1,4 +1,5 @@
 const expect = require('chai').expect
+<<<<<<< 790e9bfbfea0dd4c29a4a34ad04287748b0cc87f
 <<<<<<< 815e22e8b8b6c7b94cd209736de53b409ce68808
 <<<<<<< a98d0a6665781a6936471a169b6fccbf53f8438c
 const CourseMapper = require('../src/mappers/course_mapper')
@@ -38,11 +39,18 @@ describe.only('DbMapper', function() {
 <<<<<<< 6da3ef7e4622dc2e24fcc4fa598d595724806865
 =======
 const CourseMapper = require('../src/mappers/course_mapper')
+=======
+const DbMapper = require('../src/mappers/db_mapper')
+const Course = require('../src/model/course')
+const Content = require ('../src/model/content')
+const User = require ('../src/model/user')
+>>>>>>> <Fernanda, Andrei, Mauricio> adiciona user crud
 
 <<<<<<< 217315fdffe19ca8da9723721b3db80062ac37cf
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
 =======
 
+<<<<<<< 790e9bfbfea0dd4c29a4a34ad04287748b0cc87f
 >>>>>>> <Mauricio, Jessica, Fernanda> refatora teste
 describe('CourseMapper', function() {
   it('return courses', function() {
@@ -100,20 +108,27 @@ describe('CourseMapper', function() {
 =======
 =======
 >>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
+=======
+describe.only('DbMapper', function() {
+>>>>>>> <Fernanda, Andrei, Mauricio> adiciona user crud
   let db, courseMapper
 
   beforeEach(function() {
     db = {
       collection: function(collectionName) {
         return {
+
           find: function() {
 <<<<<<< 217315fdffe19ca8da9723721b3db80062ac37cf
 <<<<<<< 7032ee35b36c2b71ac35935b48d03c685497d68a
             return [{ _id: 1, name: 'video1' }, {}, {}]
           },
           insert: function(data) {
+<<<<<<< 790e9bfbfea0dd4c29a4a34ad04287748b0cc87f
             return Object.assign({}, data, { _id: 1234 })
 =======
+=======
+>>>>>>> <Fernanda, Andrei, Mauricio> adiciona user crud
             return Object.assign({}, { _id: 1234 }, data)
           },
           update: function(dataUpdate,content) {
@@ -124,10 +139,13 @@ describe('CourseMapper', function() {
           },
           createUser: function(users,user) {
             return users.push(user)
+<<<<<<< 790e9bfbfea0dd4c29a4a34ad04287748b0cc87f
 >>>>>>> <Fernanda, Andrei, Mauricio> adiciona user crud
           }
 >>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
 =======
+=======
+>>>>>>> <Fernanda, Andrei, Mauricio> adiciona user crud
           }
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
 =======
@@ -152,6 +170,7 @@ describe('CourseMapper', function() {
       }
     }
 
+<<<<<<< 790e9bfbfea0dd4c29a4a34ad04287748b0cc87f
 <<<<<<< 7032ee35b36c2b71ac35935b48d03c685497d68a
 <<<<<<< 1b44527c477053e1b834e73b348a4ba7e60ef691
   it('return courses', function() {
@@ -252,27 +271,62 @@ describe('CourseMapper', function() {
 >>>>>>> <Mauricio, Fernanda, Jessica> refatora insere dados do curso
 =======
     courseMapper = new CourseMapper(db)
+=======
+    dbMapper = new DbMapper(db)
+>>>>>>> <Fernanda, Andrei, Mauricio> adiciona user crud
   })
 >>>>>>> <Mauricio, Jessica, Fernanda> adiciona beforeEach
 
   it('returns courses', function() {
-    const courses = courseMapper.findAll()
+
+    const courses = dbMapper.findAll()
 
     expect(courses.length).to.equal(3)
+<<<<<<< 790e9bfbfea0dd4c29a4a34ad04287748b0cc87f
 <<<<<<< 217315fdffe19ca8da9723721b3db80062ac37cf
 >>>>>>> <fe, leco> implementa esqueleto do CourseMapper
 =======
 //    expect(courses[0]).to.be.an.instanceof(Course)
 >>>>>>> <Mauricio, Jessica, Fernanda> refatora teste
+=======
+>>>>>>> <Fernanda, Andrei, Mauricio> adiciona user crud
   })
 
   it('returns course\'s data', function() {
     const course = new Course('Node',3.5,'Node course','Waldeco')
-    const data = courseMapper.insert(course)
+    const data = dbMapper.insert(course)
 
     expect(course.name).to.equal(data.name)
     expect(course.duration).to.equal(data.duration)
     expect(course.description).to.equal(data.description)
     expect(course.author).to.equal(data.author)
+
+    const content = new Content('#1', 'Video Node 01', 5.0, 'API Testavel', 'www.meuvideo.com', 'video')
+    const dataUpdate = dbMapper.update(content,data)
+
+    expect(dataUpdate._id).to.equal(data._id)
+    expect(content.order).to.equal(dataUpdate.content[0].order)
+    expect(content.className).to.equal(dataUpdate.content[0].className)
+    expect(content.duration).to.equal(dataUpdate.content[0].duration)
+    expect(content.description).to.equal(dataUpdate.content[0].description)
+    expect(content.url).to.equal(dataUpdate.content[0].url)
+    expect(content.type).to.equal(dataUpdate.content[0].type)
+
+  })
+
+  it ('returns user\'s', function() {
+
+    const users = dbMapper.getUsers()
+    expect(users.length).to.equal(3)
+  })
+
+  it ('returns new user', function() {
+
+    const users = dbMapper.getUsers()
+    const user = new User('joao bolao junior')
+
+    dbMapper.createUser(users,user.name)
+
+    expect(users[3]).to.equal(user.name)
   })
 })
