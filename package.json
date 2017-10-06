@@ -11,11 +11,8 @@
     "check": "retire -p -n",
     "watch": "mocha --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aceleradora-TW/conhecimento-livre.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
+  "author": "aceleradora12 <aceleradora12@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aceleradora-TW/conhecimento-livre/issues"
@@ -26,6 +23,8 @@
     "chai": "^4.1.2",
     "cool-ascii-faces": "1.3.4",
     "express": "^4.15.5",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.10",
     "mocha": "^3.5.3",
     "mongoose": "^4.11.14"
   },
