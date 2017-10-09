@@ -1,12 +1,8 @@
-$font-default: 'Fjalla One';
-$color-default: #009688;
-$font-color-default: #fff;
 $border-color-default: #e2e2e2;
-
-@mixin display($display) {
-  display: $display;
-
-}
+$color-default: #009688;
+$display-default: flex;
+$font-color-default: #fff;
+$font-default: 'Fjalla One';
 
 @mixin heigth-width($heigth, $width) {
   height: $heigth;
@@ -19,9 +15,6 @@ body {
   overflow: hidden;
 }
 
-
-
-
 .content-section {
   font-family: $font-default, sans-serif;
   @include heigth-width(100vh, 100vw);
@@ -30,21 +23,21 @@ body {
 .content-header {
   background: $color-default;
   color: $font-color-default;
-  display: flex;
+  display: $display-default;
   font-size: 1.5em;
   justify-content: space-between;
   @include heigth-width(10%, 100%);
 }
 
 .logo, .search {
-  @include display(flex);
   @include heigth-width(auto, 30%);
+  display: $display-default;
   align-items: center;
   justify-content: center;
 
   form {
-    @include display(flex);
     @include heigth-width(100%, 90%);
+    display: $display-default;
     align-items: center;
   }
 
@@ -58,26 +51,25 @@ body {
 
 .container {
   @include heigth-width(90%, 100%);
-  display: flex;
+  display: $display-default;
   justify-content: space-between;
 }
 
 .video-container{
   @include heigth-width(100%, 70%);
   align-items: flex-start;
-  display: flex;
+  display: $display-default;
   justify-content: center;
 }
 
-
 .player-container {
   @include heigth-width(75%, 95%);
-  display: flex;
+  display: $display-default;
   flex-direction: column;
   justify-content: space-around;
 
   .title-video {
-    @include display(flex);
+    display: $display-default;
     align-items: center;
     font-size: 1.3em;
   }
@@ -86,13 +78,12 @@ body {
   }
 }
 
-
 .playlist-container{
   @include heigth-width(100%, 30%);
   border: 1px;
-  border-color: #e2e2e2;
+  border-color: $border-color-default;
   border-left-style: dashed;
-  display: flex;
+  display: $display-default;
   justify-content: flex-end;
   margin-top: 3vh;
   ul {
