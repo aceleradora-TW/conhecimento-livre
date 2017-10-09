@@ -1,18 +1,26 @@
+$font-default: 'Fjalla One';
+$color-default: #009688;
+$font-color-default: #fff;
+$border-color-default: #e2e2e2;
+
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
+
+
+
 .content-section {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $font-default, sans-serif;
   height: 100vh;
   width: 100vw;
 }
 
 .content-header {
-  background: #009688;
-  color: #fff;
+  background: $color-default;
+  color: $font-color-default;
   display: flex;
   font-size: 1.5em;
   justify-content: space-between;
@@ -43,7 +51,8 @@ body {
   }
 }
 
-.container{
+.container {
+
   height: 90%;
   width: 100%;
   display: flex;
@@ -58,7 +67,7 @@ body {
   width: 70%;
 }
 
-.video {
+.player-container {
   display: flex;
   flex-direction: column;
   height: 75%;
