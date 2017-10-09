@@ -18,6 +18,8 @@ mongoose.connect(app.get('MONGO_URL'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
+mongoose.connect(app.get('MONGO_URL'))
+
 app.set('port', (process.env.PORT || 3000))
 
 app.use(express.static(path.join(`${__dirname}/public`)))

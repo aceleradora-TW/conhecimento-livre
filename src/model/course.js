@@ -16,4 +16,8 @@ class Course {
   }
 }
 
+<<<<<<< HEAD
 module.exports = Course
+=======
+module.exports = Course;
+>>>>>>> b76a83b798f6a69f7924c40bb3ff16c12ed09700
