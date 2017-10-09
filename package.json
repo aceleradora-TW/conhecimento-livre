@@ -12,7 +12,10 @@
     "check": "retire -p -n",
     "watch": "mocha --recursive --watch"
   },
-  "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aceleradora-TW/conhecimento-livre.git"
+  },
   "author": "aceleradora12 <aceleradora12@gmail.com>",
   "license": "ISC",
   "bugs": {
