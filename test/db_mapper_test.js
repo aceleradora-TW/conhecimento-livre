@@ -5,7 +5,11 @@ const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
 
+<<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
 describe('DbMapper', function() {
+=======
+describe.only('DbMapper', function() {
+>>>>>>> <Mauricio,Filipe> Adiciona users
   let db, courseMapper
 
   beforeEach(function() {
@@ -35,14 +39,24 @@ describe('DbMapper', function() {
     dbMapper = new DbMapper(db)
   })
 
+<<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
   it('retorna cursos', function() {
 
     const courses = dbMapper.findAllCourses()
+=======
+  it('returns courses', function() {
+
+    const courses = dbMapper.findAll()
+>>>>>>> <Mauricio,Filipe> Adiciona users
 
     expect(courses.length).to.equal(3)
   })
 
+<<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
   it('retorna dados do curso', function() {
+=======
+  it('returns course\'s data', function() {
+>>>>>>> <Mauricio,Filipe> Adiciona users
     const course = new Course('Node',3.5,'Node course','Waldeco')
     const data = dbMapper.insert(course)
 
@@ -64,13 +78,21 @@ describe('DbMapper', function() {
 
   })
 
+<<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
   it ('retorna user', function() {
+=======
+  it ('returns user\'s', function() {
+>>>>>>> <Mauricio,Filipe> Adiciona users
 
     const users = dbMapper.getUsers()
     expect(users.length).to.equal(3)
   })
 
+<<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
   it ('retorna novo usuario', function() {
+=======
+  it ('returns new user', function() {
+>>>>>>> <Mauricio,Filipe> Adiciona users
 
     const users = dbMapper.getUsers()
     const user = new User('joao bolao junior')
