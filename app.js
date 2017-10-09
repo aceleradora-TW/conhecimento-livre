@@ -9,6 +9,9 @@ const exphbs = require('express-handlebars')
 const sassMiddleware = require('node-sass-middleware')
 const routes = require('./src/routes/routes')
 
+const filter = require('./quick_filter')
+const content = require ('./models/content')
+
 const app = express()
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
