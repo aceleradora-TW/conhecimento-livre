@@ -11,6 +11,8 @@ const routes = require('./src/routes/routes')
 
 const filter = require('./quick_filter')
 const content = require ('./models/content')
+const Search = require('./src/search/search')
+const sassMiddleware = require('node-sass-middleware')
 
 const app = express()
 
