@@ -56,3 +56,9 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# nightwatch reports
+test/e2e/reports/
+
+# css files
+css/
