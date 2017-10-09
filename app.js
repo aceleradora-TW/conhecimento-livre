@@ -13,9 +13,6 @@ const content = require('./models/content')
 const Search = require('./src/search/search')
 const sassMiddleware = require('node-sass-middleware')
 
-const filter = require('./quick_filter')
-const content = require ('./models/content')
-
 const app = express()
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
