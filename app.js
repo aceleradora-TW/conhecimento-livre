@@ -6,8 +6,16 @@ const Course = require('./models/course')
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const videos = require('./models/videosDb')
+const sassMiddleware = require('node-sass-middleware')
 
 const app = express()
+
+app.use(sassMiddleware({
+  src: path.join(`${__dirname}/view/sass`),
+  dest: path.join(`${__dirname}/view/css`),
+}))
+
+app.use(express.static('public'))
 
 app.use(bodyParser.json())
 
@@ -52,6 +60,10 @@ app.post('/course', (req, res) => {
       res.send('Salvo com sucesso!')
     }
   })
+})
+
+app.get('/content', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/views/content.html`))
 })
 
 app.listen(app.get('port'), () => {

@@ -28,7 +28,8 @@
     "handlebars": "^4.0.10",
     "mocha": "^3.5.3",
     "mongoose": "^4.11.14",
-    "nightwatch": "^0.9.16"
+    "nightwatch": "^0.9.16",
+    "node-sass-middleware": "^0.11.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
