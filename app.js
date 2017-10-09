@@ -16,7 +16,7 @@ app.use(sassMiddleware({
     dest: path.join(`${__dirname}/view/css`),
 }))
 
-app.use(express.static('view/css'))
+app.use(express.static('public'))
 
 app.use(bodyParser.json())
 
@@ -64,7 +64,7 @@ app.post('/course', (req, res) => {
 })
 
 app.get('/content', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/view/content.html`))
+  res.sendFile(path.join(`${__dirname}/views/content.html`))
 })
 
 app.listen(app.get('port'), () => {
