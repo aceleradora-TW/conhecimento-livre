@@ -6,16 +6,12 @@ const Author = require('./models/author')
 const bodyParser = require('body-parser')
 
 const exphbs = require('express-handlebars')
-const sassMiddleware = require('node-sass-middleware')
 const routes = require('./src/routes/routes')
 
 const filter = require('./quick_filter')
 const content = require ('./models/content')
 const Search = require('./src/search/search')
 const sassMiddleware = require('node-sass-middleware')
-
-const filter = require('./quick_filter')
-const content = require ('./models/content')
 
 const app = express()
 
