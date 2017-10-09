@@ -58,7 +58,7 @@ typings/
 .env
 
 # nightwatch reports
-reports/
+test/e2e/reports/
 
 # css files
 css/
