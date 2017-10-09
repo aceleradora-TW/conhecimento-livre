@@ -4,12 +4,15 @@ const path = require('path')
 const mongoose = require('mongoose')
 const Course = require('./models/course')
 const bodyParser = require('body-parser')
+
 const exphbs = require('express-handlebars')
 const videos = require('./models/videosDb')
+const Search = require('./src/search/search')
 
 const app = express()
 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
@@ -36,6 +39,29 @@ app.get('/video/:id', (req, res) => {
 
 app.get('/cool', (request, response) => {
   response.send(cool())
+})
+
+app.post('/search', (req, res) => {
+  const searchInput = req.body.searchInput
+  res.redirect(`/search/${searchInput}`)
+})
+
+
+app.get('/search/:courseName', (req, res) => {
+  const courseName = req.params.courseName.toLowerCase()
+  const courseFilter = courseTitle => item => item.title.toLowerCase().includes(courseTitle)
+
+  Course.find({}, (err, courses) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const dataset = courses;
+      const search = new Search(courseFilter)
+
+      const filteredData = search.filter(dataset, courseName)
+      res.send(filteredData)
+    }
+  })
 })
 
 app.post('/course', (req, res) => {
