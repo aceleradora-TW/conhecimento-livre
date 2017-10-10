@@ -1,7 +1,32 @@
-<div>
-  <ul>
-{{#videos}}
-    <li><a class='link' href="/video/{{ id }}">{{ nome }}</li>
-{{/videos}}
-</ul>
-</div>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+</head>
+
+  <body>
+    <div class="content">
+      <header class="cabecalho">
+        <p> dadadadaa</p>
+      </header>
+
+      <div class="superior">
+        <div class="container">
+          <div class="logo">
+          </div>
+        </div>
+      </div>
+
+    <div class="inferior">
+        <div class="carrossel">
+          <ul>
+              {{#videos}}
+                <li><a href="/video/{{ id }}">{{ nome }}</li>
+              {{/videos}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

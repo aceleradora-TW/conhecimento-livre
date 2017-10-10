@@ -1,0 +1,37 @@
+@import "variables";
+@import "mixin";
+// @import "../public/images/banner.png";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.cabecalho {
+}
+.content{
+  @include size(100vh, 100vw);
+}
+
+.superior{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  @include size(50%, 100%);
+  // background-color:pink;
+  background-image: url('../images/banner.png');
+}
+
+.container{
+    @include size(50%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+  @include size(70%, 65%);
+  background: $color-default;
+}
+.inferior{
+}
+.carrossel{
+}
