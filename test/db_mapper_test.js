@@ -5,7 +5,7 @@ const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
 
-describe.only('DbMapper', function() {
+describe('DbMapper', function() {
   let db, courseMapper
 
   beforeEach(function() {
