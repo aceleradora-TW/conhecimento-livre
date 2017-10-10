@@ -2951,6 +2951,10 @@ object.omit@^2.0.0:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
 
+ometa@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/ometa/-/ometa-0.2.2.tgz#f53c4735ba6d56af5a46b04dfb7c4334c596d44e"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -3607,6 +3611,12 @@ scss-tokenizer@^0.2.3:
   dependencies:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
+
+scss@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/scss/-/scss-0.2.4.tgz#040d903ed37c5d4fa4ad33ae1fd389ac12a4e065"
+  dependencies:
+    ometa "0.2.2"
 
 semver-diff@^2.0.0:
   version "2.1.0"

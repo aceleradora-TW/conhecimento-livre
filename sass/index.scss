@@ -10,7 +10,10 @@
 }
 .content{
   @include size(100vh, 100vw);
+<<<<<<< 35b422b425cfb59afe2e5da3fbaa2a2e14771b87
   background: $border-color-default;
+=======
+>>>>>>> <Jessica, Luiz, Henrique> Cria parte superior pag inicial
 }
 
 .superior{
@@ -19,6 +22,7 @@
   align-items: flex-start;
   @include size(50%, 100%);
   // background-color:pink;
+<<<<<<< 35b422b425cfb59afe2e5da3fbaa2a2e14771b87
 }
 
 .banner{
@@ -121,4 +125,22 @@ align-items: flex-end;
       list-style: none;
     }
   }
+=======
+  background-image: url('../images/banner.png');
+}
+
+.container{
+    @include size(50%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+  @include size(70%, 65%);
+  background: $color-default;
+}
+.inferior{
+}
+.carrossel{
+>>>>>>> <Jessica, Luiz, Henrique> Cria parte superior pag inicial
 }

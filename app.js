@@ -20,7 +20,7 @@ app.use(sassMiddleware({
   prefix: '/css',
 }))
 
-app.use(express.static('public'))
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -35,8 +35,6 @@ app.set('view engine', 'handlebars')
 mongoose.connect(app.get('MONGO_URL'))
 
 app.set('port', (process.env.PORT || 3000))
-
-app.use(express.static(path.join(`${__dirname}/public`)))
 
 app.get('/', (req, res) => {
   res.render('index', { videos })
