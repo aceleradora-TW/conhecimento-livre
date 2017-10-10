@@ -60,6 +60,27 @@ app.post('/filter/:paramName', (req, res) => {
   res.redirect(`/search/${courseName}/${nivel}`)
 })
 
+app.post('/search', (req, res) => {
+  const nivel = req.body.nivel
+  res.redirect(`/search/${nivel}`)
+})
+
+app.get('/search/:nivel', (req, res) => {
+  const filterLevel = req.params.nivel
+
+  // Content.find({}, (err, contents) => {
+  //   console.log('entrou no find')
+  //   if (err) {
+  //     console.log('entrei primeiro if')
+  //   } else {
+  //     console.log('entrei no else if peguei nivel')
+  //     const database = contents
+  //     const filter1 = returnSearch(filterLevel, database)
+  //     console.log(filter1, 'resultado');
+  //   }
+  // })
+})
+
 app.post('/course', (req, res) => {
   const course = new Course()
   course.title = req.body.title
