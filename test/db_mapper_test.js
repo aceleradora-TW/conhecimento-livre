@@ -5,11 +5,15 @@ const Content = require ('../src/model/content')
 const User = require ('../src/model/user')
 
 
+<<<<<<< 757008c016b9bbb877dc84a4bbe5d8e30edaf8f7
 <<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
 describe('DbMapper', function() {
 =======
 describe.only('DbMapper', function() {
 >>>>>>> <Mauricio,Filipe> Adiciona users
+=======
+describe('DbMapper', function() {
+>>>>>>> <Mauricio,Claudia> Arruma conflitos
   let db, courseMapper
 
   beforeEach(function() {
