@@ -55,9 +55,25 @@ app.post('/search', (req, res) => {
 })
 
 
-app.get('/search/:courseName', (req, res) => {
+app.get('/search/course/:courseName', (req, res) => {
   const courseName = req.params.courseName.toLowerCase()
   const courseFilter = courseTitle => item => item.title.toLowerCase().includes(courseTitle)
+
+  Course.find({}, (err, courses) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const dataset = courses;
+      const search = new Search(courseFilter)
+
+      const filteredData = search.filter(dataset, courseName)
+      res.send(filteredData)
+    }
+  })
+})
+app.get('/search/author/:courseAuthor', (req, res) => {
+  const courseName = req.params.courseAuthor.toLowerCase()
+  const courseFilter = courseAuthor => item => item.author.toLowerCase().includes(courseAuthor)
 
   Course.find({}, (err, courses) => {
     if (err) {
@@ -78,6 +94,7 @@ app.post('/course', (req, res) => {
   course.author = req.body.author
   course.content = req.body.content
   course.publication = Date.now()
+
 
   course.save((error) => {
     if (error) {
