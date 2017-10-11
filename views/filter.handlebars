@@ -1,9 +1,19 @@
-<!-- INSERIR RESULTADO BUSCA -->
 <div>
-  <h3>Node.js</h3>
-  <form action="/search/" method="post">
-    <button type="submit" name="nivel" value="Iniciante"> Iniciante<br>
-    <button type="submit" name="nivel" value="Intermediario"> Intermediario<br>
-    <button type="submit" name="nivel" value="Avancado"> Avancado<br>
+  <ul>
+    {{#filteredData}}
+        <li>{{ title }} -
+        {{ author }} -
+        {{ content }} -
+        {{ publication }} -
+        {{ level }}</li>
+    {{/filteredData}}
+  </ul>
+</div>
+
+<div>
+  <form action="/filter/" method="post">
+    <button type="submit" name="nivel" value="js"> Iniciante<br>
+    <button type="submit" name="nivel" value="intermediario"> Intermediario<br>
+    <button type="submit" name="nivel" value="avancado"> Avancado<br>
   </form>
 </div>
