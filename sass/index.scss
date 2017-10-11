@@ -10,6 +10,7 @@
 }
 .content{
   @include size(100vh, 100vw);
+  background: $border-color-default;
 }
 
 .superior{
@@ -18,7 +19,16 @@
   align-items: flex-start;
   @include size(50%, 100%);
   // background-color:pink;
-  background-image: url('../images/banner.png');
+}
+
+.banner{
+  background-image: url('../public/images/banner3.jpg');
+  @include size(100%, 100%);
+}
+
+.course{
+  background-image: url('../public/images/pt.jpg.png');
+  @include size(100%, 100%);
 }
 
 .container{
@@ -32,6 +42,24 @@
   background: $color-default;
 }
 .inferior{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include size(50%, 100%);
 }
 .carrossel{
-}
+    @include size(50%, 100%);
+    border-color: $border-color-default;
+    border-left-style: dashed;
+    display: flex;
+    justify-content: center;
+    ul {
+      display: inherit;
+      @include size(100%, 90%);
+      overflow: scroll;
+     li{
+        @include size(image-height("../public/images/pt.jpg.png"), image-width("../public/images/pt.jpg.png"));
+        list-style: none;
+      }
+    }
+  }
