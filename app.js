@@ -1,14 +1,12 @@
-const cool = require('cool-ascii-faces')
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
-const Course = require('./models/course')
 const bodyParser = require('body-parser')
-
 const exphbs = require('express-handlebars')
-const videos = require('./models/videosDb')
-const Search = require('./src/search/search')
 const sassMiddleware = require('node-sass-middleware')
+const Search = require('./src/search/search')
+const Course = require('./models/course')
+const Content = require('./models/content')
 
 const app = express()
 
@@ -36,26 +34,25 @@ app.set('port', (process.env.PORT || 3000))
 app.use(express.static(path.join(`${__dirname}/public`)))
 
 app.get('/', (req, res) => {
-  res.render('index', { videos })
+  Content.find({}, (err, allContents) => {
+    res.render('index', { allContents })
+  })
 })
 
-app.get('/video/:id', (req, res) => {
-  const videoId = parseInt(req.params.id, 10)
-  const currentVideo = videos.find(video => video.id === videoId)
-  return currentVideo
-    ? res.render('video', currentVideo)
-    : res.send('Video não encontrado')
-})
-
-app.get('/cool', (request, response) => {
-  response.send(cool())
+app.get('/content/:id', (req, res) => {
+  const id = req.params.id
+  Content.find({}, (err, allContents) => {
+    const content = allContents.filter(function (item) {
+      return item._id.toString() === id
+    })
+    res.render('content', { allContents, content })
+  })
 })
 
 app.post('/search', (req, res) => {
   const searchInput = req.body.searchInput
   res.redirect(`/search/${searchInput}`)
 })
-
 
 app.get('/search/:courseName', (req, res) => {
   const courseName = req.params.courseName.toLowerCase()
@@ -88,10 +85,6 @@ app.post('/course', (req, res) => {
       res.send('Salvo com sucesso!')
     }
   })
-})
-
-app.get('/content', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/content.html`))
 })
 
 app.listen(app.get('port'), () => {
