@@ -1,7 +1,7 @@
 class DbMapper {
   constructor(db) { this.db = db }
 
-  findAll() {
+  findAllCourses() {
     return this.db.collection('Courses').find() // [Course, Course, Course, ...]
   }
 
