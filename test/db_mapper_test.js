@@ -42,7 +42,7 @@ describe('DbMapper', function() {
     expect(courses.length).to.equal(3)
   })
 
-  it('retorna curso\'s data', function() {
+  it('retorna dados do curso', function() {
     const course = new Course('Node',3.5,'Node course','Waldeco')
     const data = dbMapper.insert(course)
 
@@ -64,8 +64,7 @@ describe('DbMapper', function() {
 
   })
 
-
-  it ('retorna usuario\'s', function() {
+  it ('retorna user', function() {
     const users = dbMapper.getUsers()
     expect(users.length).to.equal(3)
   })
