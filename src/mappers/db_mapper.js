@@ -3,6 +3,7 @@ class DbMapper {
 
   findAllCourses() {
     return this.db.collection('Courses').find()
+
   }
 
   insert(courses) {

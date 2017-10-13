@@ -35,7 +35,7 @@ describe('DbMapper', function() {
     dbMapper = new DbMapper(db)
   })
 
-  it('retorna cursos', function() {
+  it('returns courses', function() {
 
     const courses = dbMapper.findAllCourses()
     expect(courses.length).to.equal(3)
