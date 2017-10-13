@@ -3,7 +3,6 @@ class DbMapper {
 
   findAllCourses() {
     return this.db.collection('Courses').find()
-
   }
 
   insert(courses) {
@@ -14,7 +13,6 @@ class DbMapper {
   }
   getUsers() {
     return this.db.collection('Users').getUsers()
-
   }
   createUser(user, users) {
     return this.db.collection('Users').createUser(user, users)
