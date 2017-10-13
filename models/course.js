@@ -7,7 +7,6 @@ const courseSchema = new Schema({
   author: String,
   content: [],
   publication: Date,
-  level: String,
 })
 
 module.exports = mongoose.model('Course', courseSchema)
