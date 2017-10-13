@@ -43,12 +43,16 @@ describe('DbMapper', function() {
     dbMapper = new DbMapper(db)
   })
 
+<<<<<<< 339d10015144c91dd2c8eca59dc5beb30e2081d8
 <<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
   it('retorna cursos', function() {
 
     const courses = dbMapper.findAllCourses()
 =======
   it('returns courses', function() {
+=======
+  it('retorna cursos', function() {
+>>>>>>> <@fealmeida,@filipeHassen> Descreve testes em pt
 
     const courses = dbMapper.findAll()
 >>>>>>> <Mauricio,Filipe> Adiciona users
@@ -56,11 +60,15 @@ describe('DbMapper', function() {
     expect(courses.length).to.equal(3)
   })
 
+<<<<<<< 339d10015144c91dd2c8eca59dc5beb30e2081d8
 <<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
   it('retorna dados do curso', function() {
 =======
   it('returns course\'s data', function() {
 >>>>>>> <Mauricio,Filipe> Adiciona users
+=======
+  it('retorna dados do curso', function() {
+>>>>>>> <@fealmeida,@filipeHassen> Descreve testes em pt
     const course = new Course('Node',3.5,'Node course','Waldeco')
     const data = dbMapper.insert(course)
 
@@ -82,21 +90,29 @@ describe('DbMapper', function() {
 
   })
 
+<<<<<<< 339d10015144c91dd2c8eca59dc5beb30e2081d8
 <<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
   it ('retorna user', function() {
 =======
   it ('returns user\'s', function() {
 >>>>>>> <Mauricio,Filipe> Adiciona users
+=======
+  it ('retorna user', function() {
+>>>>>>> <@fealmeida,@filipeHassen> Descreve testes em pt
 
     const users = dbMapper.getUsers()
     expect(users.length).to.equal(3)
   })
 
+<<<<<<< 339d10015144c91dd2c8eca59dc5beb30e2081d8
 <<<<<<< baefb2f8c30ebc579bc97ad9291b7e76338fa514
   it ('retorna novo usuario', function() {
 =======
   it ('returns new user', function() {
 >>>>>>> <Mauricio,Filipe> Adiciona users
+=======
+  it ('retorna novo usuario', function() {
+>>>>>>> <@fealmeida,@filipeHassen> Descreve testes em pt
 
     const users = dbMapper.getUsers()
     const user = new User('joao bolao junior')
