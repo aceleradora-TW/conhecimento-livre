@@ -22,7 +22,7 @@ app.use(sassMiddleware({
   prefix: '/css',
 }))
 
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -36,6 +36,8 @@ app.set('view engine', 'handlebars')
 mongoose.connect(app.get('MONGO_URL'))
 
 app.set('port', (process.env.PORT || 3000))
+
+app.use(express.static(path.join(`${__dirname}/public`)))
 
 app.get('/', (req, res) => {
   res.render('index', { videos })
@@ -90,10 +92,6 @@ app.post('/course', (req, res) => {
       res.send('Salvo com sucesso!')
     }
   })
-})
-
-app.listen(app.get('port'), () => {
-  console.log(`Node app is running on port ${app.get('port')}`)
 })
 
 app.get('/content', (req, res) => {
