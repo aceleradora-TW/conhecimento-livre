@@ -29,16 +29,20 @@
           </div>
 
           <div class="playlist-container">
-            <ul>
-              <li>Video 01</li>
-              <li>Video 02</li>
-              <li>Video 03</li>
-              <li>Video 04</li>
-              <li>Video 05</li>
-              <li>Video 06</li>
-              <li>Video 06</li>
-              <li>Video 06</li>
+
+
+            <div>
+              <ul>
+            {{#videos}}
+                <li><a class='miniatura' href="/video/{{ id }}">{{ nome }}</li>
+            {{/videos}}
             </ul>
+            </div>
+
+
+
+
+
           </div>
       </div>
     </section>

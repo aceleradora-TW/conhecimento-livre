@@ -4,7 +4,6 @@ const path = require('path')
 const mongoose = require('mongoose')
 const Course = require('./models/course')
 const bodyParser = require('body-parser')
-
 const exphbs = require('express-handlebars')
 const videos = require('./models/videosDb')
 const Search = require('./src/search/search')
@@ -91,7 +90,8 @@ app.post('/course', (req, res) => {
 })
 
 app.get('/content', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/content.html`))
+  res.render('content',{videos})
+  //res.sendFile(path.join(`${__dirname}/views/content.handlebars`))
 })
 
 app.listen(app.get('port'), () => {
