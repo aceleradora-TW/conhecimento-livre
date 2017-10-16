@@ -22,19 +22,19 @@
 }
 
 .banner{
-  background-image: url('../public/images/banner3.jpg');
+  background-image: url('../images/banner3.jpg');
   @include size(100%, 100%);
 }
 
 .course{
   @include size(100%, 100%);
-  background-image: url('../public/images/facebook-ad-nodejs-high.jpg.png');
+  background-image: url('../images/facebook-ad-nodejs-high.jpg.png');
 }
 .course2{
-  background-image: url('../public/images/vg.png.png');
+  background-image: url('../images/vg.png.png');
 }
 .course3{
-  background-image: url('../public/images/maxresdefdfdfault.jpg.png');
+  background-image: url('../images/maxresdefdfdfault.jpg.png');
 }
 
 .container-top {

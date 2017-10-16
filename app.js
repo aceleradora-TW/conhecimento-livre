@@ -17,10 +17,10 @@ app.use(sassMiddleware({
   dest: path.join(__dirname, 'public/css'),
   force: true,
   outputStyle: 'compressed',
-  prefix:  '/css'
-}));
+  prefix: '/css',
+}))
 
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -35,6 +35,8 @@ app.set('view engine', 'handlebars')
 mongoose.connect(app.get('MONGO_URL'))
 
 app.set('port', (process.env.PORT || 3000))
+
+app.use(express.static(path.join(`${__dirname}/public`)))
 
 app.get('/', (req, res) => {
   res.render('index', { videos })
