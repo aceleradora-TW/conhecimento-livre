@@ -48,8 +48,9 @@ app.get('/content/:id', routes.content)
 
 app.post('/search', (req, res) => {
   const searchInput = req.body.searchInput
-  const searchParam = req.body.searchParam
-  res.redirect(`/search/${searchParam}/${searchInput}`)
+  searchInput.length < 1
+  ? res.render('index', { videos })
+  : res.redirect(`/search/${searchInput}`)
 })
 
 app.get('/search/:courseName', routes.searchByCourseName)
