@@ -27,6 +27,9 @@ body {
   align-items: center;
   justify-content: center;
 
+
+
+
   form {
     @include heigth-width(100%, 90%);
     display: $display-default;
@@ -87,8 +90,7 @@ body {
       border: 1px solid #e2e2e2;
       list-style: none;
       margin-bottom: 2vh;
-<<<<<<< 8682bef9f03d5b92334269a2d973ee43c21725a6:public/sass/content.scss
-=======
+
       position: relative;
       img {
         @include size(100%, 100%);
@@ -115,7 +117,9 @@ body {
       	opacity:0.6;
         }
       }
->>>>>>> <@ClaudiaStrm> estiliza miniaturas de video:sass/content.scss
+      background-color: green($color);
     }
   }
+}
+
 }
