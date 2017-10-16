@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>CONHECIMENTO LIVRE</title>
-  <link rel="stylesheet" href="/css/content.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
-</head>
-<body>
-  <section class="content-section">
-    <header class="content-header">
-      <div class="logo">
-        <h1>&#60;/CONHECIMENTO LIVRE&#62;</h1>
-      </div>
-      <div class="search">
-        <form class="search" action="/" method="post">
-          <input id="search" type="text" name="search" placeholder="Procurar">
-        </form>
-      </div>
-    </header>
-    <div class="container">
-      <div class="content-container">
-        <div class="player-container">
-          {{#content}}
-          <p class="title">{{ title }}</p>
-          <iframe class="player-size" src="{{ url }}" frameborder="0" allowfullscreen></iframe>
-          {{/content}}
+  <head>
+    <meta charset="utf-8">
+    <title>Conhecimento Livre - Node.js API testável #1 - Setup com ES6 + Babel + Express</title>
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+  </head>
+  <body>
+
+
+    <section class="content-section">
+      <header class="content-header">
+        <div class="logo">
+          <h1>&#60;/CONHECIMENTO LIVRE&#62;</h1>
         </div>
+        <div class="search">
+          <form class="search" action="/" method="post">
+            <input id="search" type="text" name="search" placeholder="Procurar">
+          </form>
+        </div>
+      </header>
+      <div class="container">
+          <div class="content-container">
+            <div class="player-container">
+              <p class="title">Node.js API testável #1 - Setup com ES6 + Babel + Express</p>
+              <iframe class="player-size" src="https://www.youtube.com/embed/l4glc0XNVbM" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="playlist-container">
+
+
+            <div>
+              <ul>
+            {{#videos}}
+                <li><a class='miniatura' href="/video/{{ id }}">{{ nome }}</li>
+            {{/videos}}
+            </ul>
+            </div>
+
+
+
+
+
+          </div>
       </div>
-      <div class="playlist-container">
-        <ul>
-          {{#allContents}}
-          <a href="/content/{{ _id }}">
-            <li>{{ title }}</li>
-          </a>
-          {{/allContents}}
-        </ul>
-      </div>
-    </div>
-  </section>
-</body>
+    </section>
+  </body>
 </html>

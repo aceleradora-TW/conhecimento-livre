@@ -35,6 +35,9 @@ body {
   align-items: center;
   justify-content: center;
 
+
+
+
   form {
     @include heigth-width(100%, 90%);
     display: $display-default;
@@ -94,6 +97,9 @@ body {
       border: 1px solid #e2e2e2;
       list-style: none;
       margin-bottom: 2vh;
+      background-color: green($color);
     }
   }
+}
+
 }
