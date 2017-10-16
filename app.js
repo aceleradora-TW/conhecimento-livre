@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
+const Course = require('./models/course')
+const Author = require('./models/author')
 const bodyParser = require('body-parser')
 
 const exphbs = require('express-handlebars')

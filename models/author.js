@@ -9,7 +9,6 @@ const authorSchema = new Schema({
   course: [{
     title: String,
     content: [],
-    publication: Date,
   }],
 })
 
