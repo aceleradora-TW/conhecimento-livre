@@ -1,0 +1,123 @@
+@import "variables";
+@import "mixin";
+// @import "../public/images/banner.png";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.content{
+  @include size(100vh, 100vw);
+  background: $border-color-default;
+}
+
+.superior{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  @include size(50%, 100%);
+  // background-color:pink;
+}
+
+.banner{
+  background-image: url('../images/banner3.jpg');
+  @include size(100%, 100%);
+}
+
+.course{
+  @include size(100%, 100%);
+  background-image: url('../images/facebook-ad-nodejs-high.jpg.png');
+}
+.course2{
+  background-image: url('../images/vg.png.png');
+}
+.course3{
+  background-image: url('../images/maxresdefdfdfault.jpg.png');
+}
+
+.container-top {
+  @include size(65%, 100%);
+  display: $display-default;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-bottom {
+  @include size(35%, 100%);
+  display: $display-default;
+  justify-content: center;
+}
+
+.search {
+  @include size(30%, 40%);
+  text-align: center;
+  font-family: $font-default;
+}
+
+.logo{
+  @include size(55%, 65%);
+  display: inline-grid;
+  font-family: $font-default;
+  color: $font-color-default;
+  background: $color-default;
+  justify-content: center;
+}
+.inferior{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  @include size(40%, 100%);
+}
+
+.meio{
+@include size(10%, 100%);
+display: $display-default;
+align-items: flex-end;
+}
+
+.title {
+  @include size(50%, 100%);
+  font-family: $font-default;
+  align-items: center;
+  font-size: 20px;
+  margin-left: 10%;
+}
+.title-logo {
+  font-size: 62px;
+}
+
+.subtitle-top {
+  @include size(25%, 100%);
+  font-size: 20px;
+  justify-content: center;
+  display: $display-default;
+  margin-top: 1vh;
+}
+
+.subtitle-bottom {
+  @include size(25%, 100%);
+  font-size: 20px;
+  justify-content: center;
+  display: $display-default;
+  margin-bottom: 1vh;
+}
+
+.carrossel {
+  @include size(80%, 80%);
+  justify-content: center;
+  margin-top: 2vh;
+  ul {
+    @include size(100%, 100%);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: block;
+    white-space: nowrap;
+    li {
+      @include size(80%, 30%);
+      display: inline-flex;
+      margin-right: 3.5vw;
+      list-style: none;
+    }
+  }
+}

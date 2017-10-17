@@ -33,16 +33,16 @@
 
             <div>
               <ul>
-            {{#videos}}
-                <li><a class='miniatura' href="/video/{{ id }}">{{ nome }}</li>
-            {{/videos}}
-            </ul>
+                {{#videos}}
+                  <li>
+                    <!-- <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt=""> -->
+
+                    <a class='miniatura' href="/video/{{ id }}">{{ nome }}</a>
+                    <p class="descricao">{{ descricao }}</p>
+                  </li>
+                {{/videos}}
+              </ul>
             </div>
-
-
-
-
-
           </div>
       </div>
     </section>
