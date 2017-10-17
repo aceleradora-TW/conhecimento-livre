@@ -35,10 +35,13 @@
               <ul>
                 {{#videos}}
                   <li>
-                    <!-- <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt=""> -->
 
-                    <a class='miniatura' href="/video/{{ id }}">{{ nome }}</a>
-                    <p class="descricao">{{ descricao }}</p>
+                    <a class='miniatura' href="/video/{{ id }}">
+                      <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
+                      <div class="nome-video">{{ nome }}</div> 
+                      <p class="descricao">{{ descricao }}</p>
+                    </a>
+
                   </li>
                 {{/videos}}
               </ul>
