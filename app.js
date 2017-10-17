@@ -7,6 +7,9 @@ const sassMiddleware = require('node-sass-middleware')
 const Search = require('./src/search/search')
 const Course = require('./models/course')
 const Content = require('./models/content')
+const searchByCourseNameCreator = require('./src/routes/search_by_course_name')
+const searchByCourseName = searchByCourseNameCreator(Course)
+
 
 const app = express()
 
@@ -54,22 +57,7 @@ app.post('/search', (req, res) => {
   res.redirect(`/search/${searchInput}`)
 })
 
-app.get('/search/:courseName', (req, res) => {
-  const courseName = req.params.courseName.toLowerCase()
-  const courseFilter = courseTitle => item => item.title.toLowerCase().includes(courseTitle)
-
-  Course.find({}, (err, courses) => {
-    if (err) {
-      console.log(err);
-    } else {
-      const dataset = courses;
-      const search = new Search(courseFilter)
-
-      const filteredData = search.filter(dataset, courseName)
-      res.send(filteredData)
-    }
-  })
-})
+app.get('/search/:courseName', searchByCourseName)
 
 app.post('/course', (req, res) => {
   const course = new Course()
