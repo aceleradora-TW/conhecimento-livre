@@ -37,12 +37,7 @@ describe('DbMapper', function() {
 
   it('retorna cursos', function() {
 
-<<<<<<< f90524facf131fb35006f0cce3ac16d88a565397
-    const courses = dbMapper.findAll()
->>>>>>> <Mauricio,Filipe> Adiciona users
-=======
     const courses = dbMapper.findAllCourses()
->>>>>>> <@JessicaFranke,@MauricioSalin> Arruma conflitos
 
     expect(courses.length).to.equal(3)
   })
