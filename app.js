@@ -7,14 +7,20 @@ const bodyParser = require('body-parser')
 
 const exphbs = require('express-handlebars')
 const videos = require('./models/videosDb')
+const carousel = require('./models/listaCarousel')
 const Search = require('./src/search/search')
 const sassMiddleware = require('node-sass-middleware')
 
 const app = express()
 
+const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
+
 app.use(sassMiddleware({
-  src: path.join(`${__dirname}/view/sass`),
-  dest: path.join(`${__dirname}/view/css`),
+  src: path.join(__dirname, 'sass'),
+  dest: path.join(__dirname, 'public/css'),
+  force: true,
+  outputStyle: 'compressed',
+  prefix: '/css',
 }))
 
 app.use(express.static('public'))
@@ -22,7 +28,6 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 mongoose.connect(app.get('MONGO_URL'))
 
@@ -36,7 +41,7 @@ app.set('port', (process.env.PORT || 3000))
 app.use(express.static(path.join(`${__dirname}/public`)))
 
 app.get('/', (req, res) => {
-  res.render('index', { videos })
+  res.render('index', { carousel })
 })
 
 app.get('/video/:id', (req, res) => {
