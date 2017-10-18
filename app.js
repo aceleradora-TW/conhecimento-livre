@@ -4,8 +4,6 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const sassMiddleware = require('node-sass-middleware')
-const Search = require('./src/search/search')
-
 const routes = require('./src/routes/routes')
 
 const app = express()
