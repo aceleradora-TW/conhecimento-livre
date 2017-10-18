@@ -26,17 +26,6 @@
   @include size(100%, 100%);
 }
 
-.course{
-  @include size(100%, 100%);
-  background-image: url('../images/facebook-ad-nodejs-high.jpg.png');
-}
-.course2{
-  background-image: url('../images/vg.png.png');
-}
-.course3{
-  background-image: url('../images/maxresdefdfdfault.jpg.png');
-}
-
 .container-top {
   @include size(65%, 100%);
   display: $display-default;

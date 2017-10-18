@@ -34,9 +34,9 @@
     <div class="inferior">
       <div class="carrossel">
         <ul>
-          <li class="course"></li>
-          <li class="course2"></li>
-          <li class="course3"></li>
+          {{#carousel}}
+            <li>{{ nome }}<img src="{{ url }}"></li>
+          {{/carousel}}
         </ul>
       </div>
     </div>

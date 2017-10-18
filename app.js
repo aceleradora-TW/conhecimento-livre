@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 
 const exphbs = require('express-handlebars')
 const videos = require('./models/videosDb')
+const carousel = require('./models/listaCarousel')
 const Search = require('./src/search/search')
 const sassMiddleware = require('node-sass-middleware')
 
@@ -40,7 +41,7 @@ app.set('port', (process.env.PORT || 3000))
 app.use(express.static(path.join(`${__dirname}/public`)))
 
 app.get('/', (req, res) => {
-  res.render('index', { videos })
+  res.render('index', { carousel })
 })
 
 app.get('/video/:id', (req, res) => {
