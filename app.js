@@ -1,14 +1,10 @@
-const cool = require('cool-ascii-faces')
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
-const Course = require('./models/course')
 const bodyParser = require('body-parser')
-
 const exphbs = require('express-handlebars')
-const videos = require('./models/videosDb')
-const Search = require('./src/search/search')
 const sassMiddleware = require('node-sass-middleware')
+const routes = require('./src/routes/routes')
 
 const app = express()
 
@@ -35,44 +31,16 @@ app.set('port', (process.env.PORT || 3000))
 
 app.use(express.static(path.join(`${__dirname}/public`)))
 
-app.get('/', (req, res) => {
-  res.render('index', { videos })
-})
+app.get('/', routes.index)
 
-app.get('/video/:id', (req, res) => {
-  const videoId = parseInt(req.params.id, 10)
-  const currentVideo = videos.find(video => video.id === videoId)
-  return currentVideo
-    ? res.render('video', currentVideo)
-    : res.send('Video não encontrado')
-})
-
-app.get('/cool', (request, response) => {
-  response.send(cool())
-})
+app.get('/content/:id', routes.content)
 
 app.post('/search', (req, res) => {
   const searchInput = req.body.searchInput
   res.redirect(`/search/${searchInput}`)
 })
 
-
-app.get('/search/:courseName', (req, res) => {
-  const courseName = req.params.courseName.toLowerCase()
-  const courseFilter = courseTitle => item => item.title.toLowerCase().includes(courseTitle)
-
-  Course.find({}, (err, courses) => {
-    if (err) {
-      console.log(err);
-    } else {
-      const dataset = courses;
-      const search = new Search(courseFilter)
-
-      const filteredData = search.filter(dataset, courseName)
-      res.send(filteredData)
-    }
-  })
-})
+app.get('/search/:courseName', routes.searchByCourseName)
 
 app.post('/course', (req, res) => {
   const course = new Course()
@@ -88,10 +56,6 @@ app.post('/course', (req, res) => {
       res.send('Salvo com sucesso!')
     }
   })
-})
-
-app.get('/content', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/content.html`))
 })
 
 app.listen(app.get('port'), () => {
