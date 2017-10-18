@@ -5,13 +5,8 @@ const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const sassMiddleware = require('node-sass-middleware')
 const Search = require('./src/search/search')
-const Course = require('./models/course')
-const Content = require('./models/content')
-const searchByCourseNameCreator = require('./src/routes/search_by_course_name')
-const filter = new Search(() => x => true)
-const searchByCourseName = searchByCourseNameCreator(Course,filter)
 
-
+const routes = require('./src/routes/routes')
 
 const app = express()
 
@@ -38,28 +33,16 @@ app.set('port', (process.env.PORT || 3000))
 
 app.use(express.static(path.join(`${__dirname}/public`)))
 
-app.get('/', (req, res) => {
-  Content.find({}, (err, allContents) => {
-    res.render('index', { allContents })
-  })
-})
+app.get('/', routes.index)
 
-app.get('/content/:id', (req, res) => {
-  const id = req.params.id
-  Content.find({}, (err, allContents) => {
-    const content = allContents.filter(function (item) {
-      return item._id.toString() === id
-    })
-    res.render('content', { allContents, content })
-  })
-})
+app.get('/content/:id', routes.content)
 
 app.post('/search', (req, res) => {
   const searchInput = req.body.searchInput
   res.redirect(`/search/${searchInput}`)
 })
 
-app.get('/search/:courseName', searchByCourseName)
+app.get('/search/:courseName', routes.searchByCourseName)
 
 app.post('/course', (req, res) => {
   const course = new Course()
