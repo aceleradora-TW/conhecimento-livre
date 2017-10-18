@@ -7,7 +7,7 @@
     "functions": 99,
     "branches": 99,
     "include": [
-      "./**/*.js"
+      "./**/**/*.js"
     ],
     "exclude": [
       "test/**/*.js"

@@ -1,11 +1,14 @@
 const content = (Content, Search) => (req, res) => {
   const id = req.params.id
-
-  Content.find({}, (err, allContents) => {
-    const content = allContents.filter(function (item) {
-      return item._id.toString() === id
-    })
-    res.render('content', { allContents, content })
+  const contentFilter = id => item => item._id.toString() === id.toString()
+  Search.setFilter(contentFilter)
+  Content.find({}, (err, allContents) =>  {
+    if (err){
+      console.log(err);
+    } else {
+      const content = Search.filter(allContents, id)
+      res.render('content', { allContents, content })
+    }
   })
 }
 
