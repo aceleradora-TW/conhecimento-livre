@@ -1,6 +1,6 @@
-const Search = require('../search/search')
+// const Search = require('../search/search')
 
-const searchByCourseName = Course => (req, res) => {
+const searchByCourseName = (Course, Search) => (req, res) => {
   const courseName = req.params.courseName.toLowerCase()
   const courseFilter = courseTitle => item => item.title.toLowerCase().includes(courseTitle)
 
@@ -9,9 +9,9 @@ const searchByCourseName = Course => (req, res) => {
       console.log(err);
     } else {
       const dataset = courses;
-      const search = new Search(courseFilter)
+      // const search = new Search(courseFilter)
 
-      const filteredData = search.filter(dataset, courseName)
+      const filteredData = Search.filter(dataset, courseName)
       res.send(filteredData)
     }
   })

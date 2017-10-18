@@ -8,7 +8,9 @@ const Search = require('./src/search/search')
 const Course = require('./models/course')
 const Content = require('./models/content')
 const searchByCourseNameCreator = require('./src/routes/search_by_course_name')
-const searchByCourseName = searchByCourseNameCreator(Course)
+const filter = new Search(() => x => true)
+const searchByCourseName = searchByCourseNameCreator(Course,filter)
+
 
 
 const app = express()
