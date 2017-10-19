@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const routes = require('./src/routes/routes')
 
-const filter = require('./quick_filter')
+const filter = require('./src/filter/quick_filter')
 const content = require ('./models/content')
 const Search = require('./src/search/search')
 const sassMiddleware = require('node-sass-middleware')
