@@ -9,7 +9,7 @@ describe('quickFilter', function () {
     const array = [objeto1, objeto2, objeto3]
     const resultTest = [objeto1, objeto3]
     const nivel = 'beginner'
-    expect(quickFilter.returnSearch(nivel, array).toString()).to.equal(resultTest.toString())
+    expect(quickFilter(nivel, array).toString()).to.equal(resultTest.toString())
   })
   it('#returnSearch() deve retornar vazio quando nao ha o parametro beginner', function() {
     const objeto1 = { curso: 'js', nivel: 'advanced'}
@@ -18,6 +18,6 @@ describe('quickFilter', function () {
     const array = [objeto1, objeto2, objeto3]
     const resultTest = 0
     const nivel = 'beginner'
-    expect(quickFilter.returnSearch(nivel, array).length).to.equal(resultTest)
+    expect(quickFilter(nivel, array).length).to.equal(resultTest)
   })
 })
