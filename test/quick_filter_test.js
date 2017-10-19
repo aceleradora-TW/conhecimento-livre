@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const quickFilter = require('../quick_filter')
+const quickFilter = require('../src/filter/quick_filter')
 
 describe('quickFilter', function () {
   it('#returnSearch() deve retornar os objetos correspondentes ao level do curso', function() {
