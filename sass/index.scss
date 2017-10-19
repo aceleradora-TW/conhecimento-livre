@@ -6,8 +6,7 @@
   margin: 0;
   padding: 0;
 }
-.cabecalho {
-}
+
 .content{
   @include size(100vh, 100vw);
   background: $border-color-default;
