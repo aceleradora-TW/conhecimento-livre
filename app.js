@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
+const Course = require('./models/course')
+const Author = require('./models/author')
 const bodyParser = require('body-parser')
 
 const exphbs = require('express-handlebars')
@@ -59,6 +61,16 @@ app.post('/course', (req, res) => {
       console.log(error)
     } else {
       res.send('Salvo com sucesso!')
+    }
+  })
+})
+
+app.get('/autor', (req, res) => {
+  Author.find({}, (err, autores) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.render('autor', { authors: autores })
     }
   })
 })

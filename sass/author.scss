@@ -1,0 +1,142 @@
+$border-color-default: #e2e2e2;
+$color-default: #009688;
+$display-default: flex;
+$font-color-default: #fff;
+$font-default: 'Fjalla One';
+
+@mixin heigth-width($heigth, $width) {
+  height: $heigth;
+  width: $width;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.author-section {
+  font-family: $font-default, sans-serif;
+  @include heigth-width(100vh, 100vw);
+}
+
+.author-header {
+  background: $color-default;
+  color: $font-color-default;
+  display: $display-default;
+  font-size: 1.5em;
+  justify-content: space-between;
+  @include heigth-width(10%, 100%);
+}
+
+.logo, .search {
+  @include heigth-width(auto, 30%);
+  display: $display-default;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    @include heigth-width(100%, 90%);
+    display: $display-default;
+    align-items: center;
+  }
+
+  .search input{
+    @include heigth-width(50%, 100%);
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+  }
+}
+
+.container {
+  @include heigth-width(90%, 100%);
+  display: $display-default;
+  justify-content: space-between;
+  background-color: pink;
+
+
+  .author-container{
+    @include heigth-width(100%, 70%);
+    align-items: flex-start;
+    display: $display-default;
+    justify-content: space-between;
+    background-color: blue;
+    flex-direction: column;
+
+
+    .info-author {
+      @include heigth-width(35%, 100%);
+      background-color: yellow;
+      display: $display-default;
+      align-items: center;
+
+      .photo-container {
+        @include heigth-width(100%, 50%);
+        background-color: grey;
+        display: $display-default;
+        justify-content: center;
+        align-items: center;
+
+        .photo-author {
+          @include heigth-width(80%, 70%);
+          background-color: red;
+        }
+      }
+        .info-container {
+          @include heigth-width(100%, 50%);
+          background: black;
+          display: $display-default;
+          justify-content: center;
+          flex-direction: column;
+          // align-items: center;
+
+          .name {
+            @include heigth-width(50%, 100%);
+            background-color: yellow;
+          }
+          .email {
+            @include heigth-width(50%, 100%);
+            background-color: purple;
+          }
+        }
+    }
+
+    .bio-container {
+      @include heigth-width(65%, 100%);
+      background-color: white;
+      display: $display-default;
+      justify-content: center;
+      align-items: center;
+
+      .text-bio {
+        @include heigth-width(80%, 80%);
+        background-color: black;
+
+        p{
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+.playlist-container{
+  @include heigth-width(100%, 30%);
+  border: 1px;
+  border-color: $border-color-default;
+  border-left-style: dashed;
+  display: $display-default;
+  justify-content: flex-end;
+  margin-top: 3vh;
+  background-color: green;
+  ul {
+    @include heigth-width(100%, 90%);
+    overflow: scroll;
+   li{
+      @include heigth-width(20%, 90%);
+      border: 1px solid #e2e2e2;
+      list-style: none;
+      margin-bottom: 2vh;
+    }
+  }
+}
