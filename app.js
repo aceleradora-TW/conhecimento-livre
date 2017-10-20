@@ -65,15 +65,7 @@ app.post('/course', (req, res) => {
   })
 })
 
-app.get('/autor', (req, res) => {
-  Author.find({}, (err, autores) => {
-    if (err) {
-      console.log(err)
-    } else {
-      res.render('autor', { authors: autores })
-    }
-  })
-})
+app.get('/autor/:idAuthor', routes.author)
 
 app.listen(app.get('port'), () => {
   console.log(`Node app is running on port ${app.get('port')}`)
