@@ -42,6 +42,8 @@ app.get('/', routes.index)
 
 app.get('/content/:id', routes.content)
 
+app.get('/author/:idAuthor', routes.author)
+
 app.post('/search', (req, res) => {
   const searchInput = req.body.searchInput
   res.redirect(`/search/${searchInput}`)
@@ -65,7 +67,6 @@ app.post('/course', (req, res) => {
   })
 })
 
-app.get('/autor/:idAuthor', routes.author)
 
 app.listen(app.get('port'), () => {
   console.log(`Node app is running on port ${app.get('port')}`)

@@ -4,10 +4,20 @@ const author = (Author, Search, Content) => (req, res) => {
   Search.setFilter(authorFilter)
   Author.find({}, (err, allAuthors) =>  {
     if (err){
-      console.log(err);
+      console.log(err)
     } else {
       const author = Search.filter(allAuthors, id)
-      res.render('author', { author })
+      const authorName = author[0].name
+      Content.find({}, (err, allContents) => {
+        if (err) {
+          console.log(err)
+        }else {
+          const filtroContent = allContents => item => item.author.toLowerCase() === authorName.toLowerCase()
+          Search.setFilter(filtroContent)
+          const authorCourses = Search.filter(allContents, authorName)
+          res.render('author', { author, authorCourses})
+        }
+      })
     }
   })
 }

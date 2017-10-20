@@ -17,7 +17,7 @@ class Content {
       description: this.description,
       url: this.url,
       type: this.type,
-      author: this.author,
+      author: this.author
     }
   }
 }
