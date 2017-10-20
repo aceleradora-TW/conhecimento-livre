@@ -65,25 +65,6 @@ app.post('/course', (req, res) => {
   })
 })
 
-app.get('/testa-autor', (req, res) => {
-  const novoAutor = new Author({
-    nome: 'Autor',
-    bio: 'djsoisjaasklsdja',
-    email: 'jdoa@jfidds.com',
-    course: [{
-      title: 'JS',
-      content: [],
-    }],
-  })
-  novoAutor.save((err) => {
-    if (err) {
-      console.log(err)
-    } else {
-      res.send('Novo autor!!!')
-    }
-  })
-})
-
 app.get('/autor', (req, res) => {
   Author.find({}, (err, autores) => {
     if (err) {
