@@ -1,7 +1,43 @@
-<div>
-  <ul>
-    {{#allContents}}
-      <li><a class='link' href="/content/{{ _id }}">{{ title }}</li>
-    {{/allContents}}
-    </ul>
-  </div>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+</head>
+
+<body>
+  <div class="content">
+    <div class="superior">
+      <div class="banner">
+        <div class="container-top">
+          <div class="logo">
+
+            <div class="subtitle-top">
+              <p>Programe-se para aprender!</p>
+            </div>
+            <div class="title-logo">
+              <p>&#60;/CONHECIMENTO LIVRE&#62;</p>
+            </div>
+            <div class="subtitle-bottom">
+              <p>Cursos de programação gratuitos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="container-bottom">
+          <input class="search" type="text" placeholder="Procurar">
+        </div>
+      </div>
+    </div>
+    <div class="meio">
+      <p class="title">Cursos em destaque:</p>
+    </div>
+    <div class="inferior">
+      <ul>
+        {{#allContents}}
+        <li><a class='link' href="/content/{{ _id }}">{{ title }}</a></li>
+        {{/allContents}}
+      </ul>
+    </div>
+  </div>  
+</body>
+</html>

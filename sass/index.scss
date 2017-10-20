@@ -6,7 +6,8 @@
   margin: 0;
   padding: 0;
 }
-
+.cabecalho {
+}
 .content{
   @include size(100vh, 100vw);
   background: $border-color-default;
@@ -23,17 +24,6 @@
 .banner{
   background-image: url('../images/banner3.jpg');
   @include size(100%, 100%);
-}
-
-.course{
-  @include size(100%, 100%);
-  background-image: url('../images/facebook-ad-nodejs-high.jpg.png');
-}
-.course2{
-  background-image: url('../images/vg.png.png');
-}
-.course3{
-  background-image: url('../images/maxresdefdfdfault.jpg.png');
 }
 
 .container-top {
@@ -101,23 +91,4 @@ align-items: flex-end;
   justify-content: center;
   display: $display-default;
   margin-bottom: 1vh;
-}
-
-.carrossel {
-  @include size(80%, 80%);
-  justify-content: center;
-  margin-top: 2vh;
-  ul {
-    @include size(100%, 100%);
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: block;
-    white-space: nowrap;
-    li {
-      @include size(80%, 30%);
-      display: inline-flex;
-      margin-right: 3.5vw;
-      list-style: none;
-    }
-  }
 }
