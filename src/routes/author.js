@@ -1,4 +1,4 @@
-const author = (Author, Search) => (req, res) => {
+const author = (Author, Search, Content) => (req, res) => {
   const id = req.params.idAuthor
   const authorFilter = id => item => item._id.toString() === id.toString()
   Search.setFilter(authorFilter)
