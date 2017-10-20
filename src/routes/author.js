@@ -7,7 +7,7 @@ const author = (Author, Search) => (req, res) => {
       console.log(err);
     } else {
       const author = Search.filter(allAuthors, id)
-      res.render('author', { allAuthors, author })
+      res.render('author', { author })
     }
   })
 }
