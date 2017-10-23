@@ -1,5 +1,5 @@
 class Author {
-  constructor(name, bio, email, course) {
+  constructor(name, bio, email) {
     this.name = name;
     this.bio = bio;
     this.email = email

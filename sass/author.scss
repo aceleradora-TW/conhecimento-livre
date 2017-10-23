@@ -27,6 +27,14 @@ body {
   font-size: 1.5em;
   justify-content: space-between;
   @include heigth-width(10%, 100%);
+  .logo {
+    h1 {
+      .link-logo {
+        color: $font-color-default;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .logo, .search {
@@ -53,7 +61,6 @@ body {
   @include heigth-width(90%, 100%);
   display: $display-default;
   justify-content: space-between;
-  background-color: pink;
 
 
   .author-container{
@@ -61,19 +68,16 @@ body {
     align-items: flex-start;
     display: $display-default;
     justify-content: space-between;
-    background-color: blue;
     flex-direction: column;
 
 
     .info-author {
       @include heigth-width(35%, 100%);
-      background-color: yellow;
       display: $display-default;
       align-items: center;
 
       .photo-container {
         @include heigth-width(100%, 50%);
-        background-color: grey;
         display: $display-default;
         justify-content: center;
         align-items: center;
@@ -85,19 +89,19 @@ body {
       }
         .info-container {
           @include heigth-width(100%, 50%);
-          background: black;
           display: $display-default;
           justify-content: center;
           flex-direction: column;
-          // align-items: center;
 
-          .name {
+          .name, .email {
             @include heigth-width(50%, 100%);
-            background-color: yellow;
-          }
-          .email {
-            @include heigth-width(50%, 100%);
-            background-color: purple;
+            display: table;
+            span {
+              display: table-cell;
+              font-size: 1.5em;
+              vertical-align: middle;
+              text-align: center;
+            }
           }
         }
     }
@@ -110,12 +114,10 @@ body {
       align-items: center;
 
       .text-bio {
-        @include heigth-width(80%, 80%);
-        background-color: black;
-
-        p{
-          color: #FFFFFF;
-        }
+        @include heigth-width(80%, 85%);
+        border: 2px solid $color-default;
+        border-radius: 5px;
+        text-indent: 1em;
       }
     }
   }
