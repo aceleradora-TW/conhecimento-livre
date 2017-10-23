@@ -9,6 +9,7 @@ const contentSchema = new Schema({
   author: String,
   preview: String,
   views: Number,
+
 })
 
 
