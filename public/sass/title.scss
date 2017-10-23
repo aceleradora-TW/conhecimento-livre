@@ -1,0 +1,36 @@
+.logo{
+  @include size(55%, 65%);
+  display: inline-grid;
+  font-family: $font-default;
+  color: $font-color-default;
+  background: $color-default;
+  justify-content: center;
+}
+
+.title {
+  @include size(50%, 100%);
+  font-family: $font-default;
+  align-items: center;
+  font-size: 20px;
+  margin-left: 10%;
+}
+
+.title-logo {
+  font-size: 62px;
+}
+
+.subtitle-top {
+  @include size(25%, 100%);
+  font-size: 20px;
+  justify-content: center;
+  display: $display-default;
+  margin-top: 1vh;
+}
+
+.subtitle-bottom {
+  @include size(25%, 100%);
+  font-size: 20px;
+  justify-content: center;
+  display: $display-default;
+  margin-bottom: 1vh;
+}

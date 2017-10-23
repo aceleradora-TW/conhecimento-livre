@@ -1,0 +1,12 @@
+.bottom{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  @include size(40%, 100%);
+}
+
+.middle{
+  @include size(10%, 100%);
+  display: $display-default;
+  align-items: flex-end;
+}
