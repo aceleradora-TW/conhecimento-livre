@@ -12,8 +12,8 @@ const author = (Author, Search, Content) => (req, res) => {
         if (err) {
           console.log(err)
         }else {
-          const filtroContent = allContents => item => item.author.toLowerCase() === authorName.toLowerCase()
-          Search.setFilter(filtroContent)
+          const ContentFilter = allContents => item => item.author.toLowerCase() === authorName.toLowerCase()
+          Search.setFilter(ContentFilter)
           const authorCourses = Search.filter(allContents, authorName)
           res.render('author', { author, authorCourses})
         }
