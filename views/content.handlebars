@@ -28,21 +28,10 @@
           <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
           <p class="views">Views: {{views}}</p>
         </div>
-        {{/content}}
-      </div>
-      <div class="playlist-container">
-        <div>
-          <ul>
-            {{#allContents}}
-            <li>
-              <a class='thumbnail' href="/content/{{ id }}">
-                <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
-                <div class="title-video">{{ title }}</div>
-                <p class="preview"> {{ preview }}</p>
-              </a>
-            </li>
-            {{/allContents}}
-          </ul>
+        <div class="search">
+          <form class="search" action="/" method="post">
+            <input id="search" type="text" name="search" placeholder="Procurar">
+          </form>
         </div>
       </header>
       <div class="container">
@@ -79,7 +68,6 @@
           </div>
 
       </div>
-    </div>
-  </section>
-</body>
+    </section>
+  </body>
 </html>
