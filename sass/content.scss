@@ -71,13 +71,14 @@ body {
     }
   }
 }
-.playlist-container{
+.playlist-container {
   @include size(100%, 30%);
   border: 1px;
   border-color: $border-color-default;
   border-left-style: dashed;
   display: $display-default;
   margin-top: 2vh;
+
   ul {
     @include size(100%, 90%);
     overflow: scroll;
@@ -105,6 +106,7 @@ body {
         position: absolute;
         bottom: -10%;
         width:100%;
+        height: 50%;
 
 
         &:hover {
