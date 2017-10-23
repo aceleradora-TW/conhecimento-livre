@@ -87,23 +87,23 @@ body {
           background-color: red;
         }
       }
-        .info-container {
-          @include heigth-width(100%, 50%);
-          display: $display-default;
-          justify-content: center;
-          flex-direction: column;
+      .info-container {
+        @include heigth-width(100%, 50%);
+        display: $display-default;
+        justify-content: center;
+        flex-direction: column;
 
-          .name, .email {
-            @include heigth-width(50%, 100%);
-            display: table;
-            span {
-              display: table-cell;
-              font-size: 1.5em;
-              vertical-align: middle;
-              text-align: center;
-            }
+        .name, .email {
+          @include heigth-width(50%, 100%);
+          display: table;
+          span {
+            display: table-cell;
+            font-size: 1.5em;
+            vertical-align: middle;
+            text-align: center;
           }
         }
+      }
     }
 
     .bio-container {
@@ -117,7 +117,7 @@ body {
         @include heigth-width(80%, 85%);
         border: 2px solid $color-default;
         border-radius: 5px;
-        text-indent: 1em;
+        text-indent: 1.5em;
       }
     }
   }
@@ -130,15 +130,42 @@ body {
   display: $display-default;
   justify-content: flex-end;
   margin-top: 3vh;
-  background-color: green;
   ul {
     @include heigth-width(100%, 90%);
     overflow: scroll;
-   li{
+    li{
       @include heigth-width(20%, 90%);
       border: 1px solid #e2e2e2;
       list-style: none;
       margin-bottom: 2vh;
+      position: relative;
+      img {
+        @include heigth-width(100%, 100%);
+      }
+
+      .title-video {
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        height: 20%;
+        background-color:$color-default;
+        color:white;
+        opacity: 0.8;
+      }
+
+      p {
+        opacity: 0;
+        position: absolute;
+        bottom: -10%;
+        width:100%;
+        height: 30%;
+
+        &:hover {
+          background-color:black;
+          color:white;
+          opacity:0.7;
+        }
+      }
+    }
     }
   }
-}
