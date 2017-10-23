@@ -7,7 +7,6 @@ class Content {
     this.url = url;
     this.type = type;
     this.author = author;
-    this.views = 0;
   }
   toJSON() {
     return {
@@ -18,7 +17,6 @@ class Content {
       url: this.url,
       type: this.type,
       author: this.author
-      views: this.views,
     }
   }
 }
