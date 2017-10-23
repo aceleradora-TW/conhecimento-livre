@@ -4,7 +4,6 @@ const mongoose = require('mongoose')
 const Course = require('./models/course')
 const Author = require('./models/author')
 const bodyParser = require('body-parser')
-const Visualization = require('./models/visualization')
 
 const exphbs = require('express-handlebars')
 const sassMiddleware = require('node-sass-middleware')
