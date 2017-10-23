@@ -1,10 +1,15 @@
 <div>
   <ul>
-    {{#filteredData}}
-        <li>{{ title }} -
-        {{ author }} -
-        {{ content }} -
-        {{ publication }} -</li>
-    {{/filteredData}}
+    {{#courses}}
+    <li>{{_id}}
+    </li>
+
   </ul>
-</div>
+    <div>
+      <form action="/search/{{_id}}/Intermediario" method="post">
+        <button type="submit" name="nivel" value="iniciante"> Iniciante<br>
+          <button type="submit" name="nivel" value="intermediario"> Intermediario<br>
+            <button type="submit" name="nivel" value="avancado"> Avancado<br>
+            </form>
+      {{/courses}}
+   <div>

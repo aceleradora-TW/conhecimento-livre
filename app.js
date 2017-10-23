@@ -57,6 +57,7 @@ app.post('/search', (req, res) => {
 
 app.get('/search/:courseName', routes.searchByCourseName)
 
+
 app.post('/filter/:paramName', (req, res) => {
   const nivel = req.body.nivel
   const courseName = req.params.paramName
@@ -68,6 +69,8 @@ app.post('/filter/:paramName', (req, res) => {
   const courseName = req.params.paramName
   res.redirect(`/search/${courseName}/${nivel}`)
 })
+
+app.get('/search/:courseName/:level', routes.searchByLevel)
 
 app.post('/course', (req, res) => {
   const course = new Course()
