@@ -6,11 +6,11 @@ module.exports = {
       .assert.title('Conhecimento Livre')
       .click('a[class=link]')
       .pause(1000)
-      .assert.visible('a[class=miniatura]')
+      .assert.visible('a[class=thumbnail]')
       .assert.visible('p[class=title]')
-      .click('aa[class=miniatura]')
+      .click('aa[class=thumbnail]')
       .pause(1000)
-      .assert.visible('a[class=miniatura]')
+      .assert.visible('a[class=thumbail]')
       .assert.visible('p[class=title]')
       .end();
   }
