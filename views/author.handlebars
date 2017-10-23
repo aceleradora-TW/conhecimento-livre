@@ -21,35 +21,27 @@
     <div class="container">
       <div class="author-container">
         <div class="info-author">
-
           {{#author}}
           <div class="photo-container">
             <div class="photo-author">
             </div>
           </div>
-
           <div class="info-container">
-
             <div class="name">
               {{name}}
             </div>
-
             <div class="email">
               {{email}}
             </div>
-
           </div>
-        </div> <!--class info-author-->
-
+        </div>
         <div class="bio-container">
           <div class="text-bio">
             <p>{{bio}}</p>
           </div>
         </div>
-
-      </div><!-- class author-container-->
+      </div>
       {{/author}}
-
       <div class="playlist-container">
         <ul>
           {{#authorCourses}}
@@ -59,17 +51,14 @@
           {{/authorCourses}}
         </ul>
       </div>
-  </div>
+    </div>
   </section>
 </body>
 </html>
-
-
-
 <div>
   <ul>
-{{#authors}}
+    {{#authors}}
     <li>{{bio}} </li>
-{{/authors}}
-</ul>
+    {{/authors}}
+  </ul>
 </div>
