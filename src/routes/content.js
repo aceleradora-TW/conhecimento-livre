@@ -1,7 +1,6 @@
 const content = (Content, Search) => (req, res) => {
-  const id = req.params.id
 
-  //função que incrementa a visualização
+const id = req.params.id
 
 Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
   if (err){
