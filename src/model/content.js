@@ -7,7 +7,6 @@ class Content {
     this.url = url;
     this.type = type;
     this.author = author;
-
   }
   toJSON() {
     return {
