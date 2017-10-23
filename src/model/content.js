@@ -1,11 +1,12 @@
 class Content {
-  constructor(order, className, duration, description, url, type) {
+  constructor(order, className, duration, description, url, type, author) {
     this.order = order;
     this.className = className;
     this.duration = duration;
     this.description = description;
     this.url = url;
     this.type = type;
+    this.author = author;
   }
   toJSON() {
     return {
@@ -15,6 +16,7 @@ class Content {
       description: this.description,
       url: this.url,
       type: this.type,
+      author: this.author
     }
   }
 }
