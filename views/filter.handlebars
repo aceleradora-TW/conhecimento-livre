@@ -1,0 +1,19 @@
+<div>
+  <ul>
+    {{#filteredData}}
+        <li>{{ title }} -
+        {{ author }} -
+        {{ content }} -
+        {{ publication }} -
+        {{ level }}</li>
+    {{/filteredData}}
+  </ul>
+</div>
+
+<div>
+  <form action="/filter/{{paramName}}" method="post">
+    <button type="submit" name="nivel" value="iniciante"> Iniciante<br>
+    <button type="submit" name="nivel" value="intermediario"> Intermediario<br>
+    <button type="submit" name="nivel" value="avancado"> Avancado<br>
+  </form>
+</div>

@@ -1,7 +1,7 @@
 {
   "name": "conhecimento-livre",
   "version": "1.0.0",
-  "description": "",
+  "description": "![Build Status](https://travis-ci.org/aceleradora-TW/conhecimento-livre.svg?branch=master)",
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
@@ -12,7 +12,10 @@
     "check": "retire -p -n",
     "watch": "mocha --recursive --watch"
   },
-  "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aceleradora-TW/conhecimento-livre.git"
+  },
   "author": "aceleradora12 <aceleradora12@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -44,5 +47,8 @@
     "nodemon": "^1.12.1",
     "nyc": "^11.2.1",
     "retire": "^1.4.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }

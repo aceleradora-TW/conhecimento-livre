@@ -59,7 +59,6 @@ body {
       display: $display-default;
       flex-direction: column;
       justify-content: space-around;
-
     }
     .title {
       display: $display-default;
@@ -77,40 +76,20 @@ body {
   border-color: $border-color-default;
   border-left-style: dashed;
   display: $display-default;
-  margin-top: 2vh;
+  justify-content: flex-end;
+  margin-top: 3vh;
   ul {
     @include size(100%, 90%);
     overflow: scroll;
-    font-size: 0.9em;
    li{
       @include size(20%, 90%);
       border: 1px solid #e2e2e2;
       list-style: none;
       margin-bottom: 2vh;
-      position: relative;
-      img {
-        @include size(100%, 100%);
-
-      }
-      .nome-video {
-        position: absolute;
-        top: 0%;
-        width: 100%;
-        height: 20%;
-        background-color:$color-default;
-      	color:white;
-      }
       p {
         opacity: 0;
-        position: absolute;
-        bottom: -10%;
-        width:100%;
-
-
         &:hover {
-        background-color:black;
-      	color:white;
-      	opacity:0.7;
+        opacity: 1;
         }
       }
     }
