@@ -1,7 +1,5 @@
 .bottom{
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
+  @include display(flex, center, baseline);
   @include size(40%, 100%);
 }
 
