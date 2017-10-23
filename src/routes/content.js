@@ -1,15 +1,15 @@
 const content = (Content, Search) => (req, res) => {
-
-//ID do conteudo
-// quantidade de visualizacoes
-
-
-
-
-
-
   const id = req.params.id
-  console.log (id)
+
+  //função que incrementa a visualização
+
+Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
+  if (err){
+    console.log(err);
+  } else {
+      console.log("allContents");
+  }
+})
 
   const contentFilter = id => item => item._id.toString() === id.toString()
   Search.setFilter(contentFilter)
@@ -18,6 +18,9 @@ const content = (Content, Search) => (req, res) => {
       console.log(err);
     } else {
       const content = Search.filter(allContents, id)
+
+      content
+
       res.render('content', { allContents, content })
     }
   })
