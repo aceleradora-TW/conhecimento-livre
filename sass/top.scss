@@ -31,6 +31,12 @@
   justify-content: center;
 }
 
+form{
+  @include size(100%, 100%);
+  display: $display-default;
+  justify-content: center;
+}
+
 .search {
   @include size(30%, 40%);
   text-align: center;
