@@ -8,6 +8,7 @@ const contentSchema = new Schema({
   url: String,
   author: String,
   preview: String,
+  views: Number,
 })
 
 module.exports = mongoose.model('Content', contentSchema)

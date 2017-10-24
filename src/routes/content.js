@@ -1,5 +1,12 @@
 const content = (Content, Search) => (req, res) => {
-  const id = req.params.id
+const id = req.params.id
+
+Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
+  if (err){
+    console.log(err);
+  }
+})
+
   const contentFilter = id => item => item._id.toString() === id.toString()
   Search.setFilter(contentFilter)
   Content.find({}, (err, allContents) =>  {
@@ -7,6 +14,9 @@ const content = (Content, Search) => (req, res) => {
       console.log(err);
     } else {
       const content = Search.filter(allContents, id)
+
+      content
+
       res.render('content', { allContents, content })
     }
   })
