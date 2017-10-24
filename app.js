@@ -45,7 +45,7 @@ app.get('/content/:id', routes.content)
 app.get('/author/:idAuthor', routes.author)
 
 app.post('/search', (req, res) => {
-  const searchInput = req.body.searchInput
+  const searchInput = req.body.search
   res.redirect(`/search/${searchInput}`)
 })
 
