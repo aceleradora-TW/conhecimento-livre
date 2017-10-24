@@ -7,6 +7,9 @@ const author = (Author, Search, Content) => (req, res) => {
       console.log(err)
     } else {
       const author = Search.filter(allAuthors, id)
+      if (author.length === 0) {
+        return res.send("Autor não encontrado.");
+      }
       const authorName = author[0].name
       Content.find({}, (err, allContents) => {
         if (err) {
