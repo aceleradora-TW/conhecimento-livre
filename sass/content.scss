@@ -102,7 +102,8 @@ body {
         width: 100%;
         height: 20%;
         background-color:$color-default;
-        color:white;
+      	color:white;
+        opacity: 0.8;
       }
 
       p {
@@ -111,7 +112,7 @@ body {
         bottom: -10%;
         width:100%;
         height: 50%;
-        
+
         &:hover {
           background-color:black;
           color:white;

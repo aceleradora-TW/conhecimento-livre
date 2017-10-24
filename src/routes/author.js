@@ -1,9 +1,11 @@
 const author = (Author, Search, Content) => (req, res) => {
   const id = req.params.idAuthor
   const authorFilter = id => item => item._id.toString() === id.toString()
+
   Search.setFilter(authorFilter)
   Author.find({}, (err, allAuthors) =>  {
-    if (err){
+    allAuthors.forEach(a => console.log(a._id))
+    if (err) {
       console.log(err)
     } else {
       const author = Search.filter(allAuthors, id)
@@ -14,7 +16,7 @@ const author = (Author, Search, Content) => (req, res) => {
       Content.find({}, (err, allContents) => {
         if (err) {
           console.log(err)
-        }else {
+        } else {
           const ContentFilter = allContents => item => item.author.toLowerCase() === authorName.toLowerCase()
           Search.setFilter(ContentFilter)
           const authorCourses = Search.filter(allContents, authorName)

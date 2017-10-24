@@ -27,6 +27,14 @@ body {
   font-size: 1.5em;
   justify-content: space-between;
   @include heigth-width(10%, 100%);
+  .logo {
+    h1 {
+      .link-logo {
+        color: $font-color-default;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .logo, .search {
@@ -53,7 +61,6 @@ body {
   @include heigth-width(90%, 100%);
   display: $display-default;
   justify-content: space-between;
-  background-color: pink;
 
 
   .author-container{
@@ -61,19 +68,16 @@ body {
     align-items: flex-start;
     display: $display-default;
     justify-content: space-between;
-    background-color: blue;
     flex-direction: column;
 
 
     .info-author {
       @include heigth-width(35%, 100%);
-      background-color: yellow;
       display: $display-default;
       align-items: center;
 
       .photo-container {
         @include heigth-width(100%, 50%);
-        background-color: grey;
         display: $display-default;
         justify-content: center;
         align-items: center;
@@ -83,23 +87,23 @@ body {
           background-color: red;
         }
       }
-        .info-container {
-          @include heigth-width(100%, 50%);
-          background: black;
-          display: $display-default;
-          justify-content: center;
-          flex-direction: column;
-          // align-items: center;
+      .info-container {
+        @include heigth-width(100%, 50%);
+        display: $display-default;
+        justify-content: center;
+        flex-direction: column;
 
-          .name {
-            @include heigth-width(50%, 100%);
-            background-color: yellow;
-          }
-          .email {
-            @include heigth-width(50%, 100%);
-            background-color: purple;
+        .name, .email {
+          @include heigth-width(50%, 100%);
+          display: table;
+          span {
+            display: table-cell;
+            font-size: 1.5em;
+            vertical-align: middle;
+            text-align: center;
           }
         }
+      }
     }
 
     .bio-container {
@@ -110,12 +114,10 @@ body {
       align-items: center;
 
       .text-bio {
-        @include heigth-width(80%, 80%);
-        background-color: black;
-
-        p{
-          color: #FFFFFF;
-        }
+        @include heigth-width(80%, 85%);
+        border: 2px solid $color-default;
+        border-radius: 5px;
+        text-indent: 1.5em;
       }
     }
   }
@@ -128,15 +130,42 @@ body {
   display: $display-default;
   justify-content: flex-end;
   margin-top: 3vh;
-  background-color: green;
   ul {
     @include heigth-width(100%, 90%);
     overflow: scroll;
-   li{
+    li{
       @include heigth-width(20%, 90%);
       border: 1px solid #e2e2e2;
       list-style: none;
       margin-bottom: 2vh;
+      position: relative;
+      img {
+        @include heigth-width(100%, 100%);
+      }
+
+      .title-video {
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        height: 20%;
+        background-color:$color-default;
+        color:white;
+        opacity: 0.8;
+      }
+
+      p {
+        opacity: 0;
+        position: absolute;
+        bottom: -10%;
+        width:100%;
+        height: 30%;
+
+        &:hover {
+          background-color:black;
+          color:white;
+          opacity:0.7;
+        }
+      }
+    }
     }
   }
-}

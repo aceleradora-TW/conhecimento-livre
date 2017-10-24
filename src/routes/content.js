@@ -9,8 +9,8 @@ Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
 
   const contentFilter = id => item => item._id.toString() === id.toString()
   Search.setFilter(contentFilter)
-  Content.find({}, (err, allContents) =>  {
-    if (err){
+  Content.find({}, (err, allContents) => {
+    if (err) {
       console.log(err);
     } else {
       const content = Search.filter(allContents, id)

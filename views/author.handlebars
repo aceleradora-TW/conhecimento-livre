@@ -10,7 +10,7 @@
   <section class="author-section">
     <header class="author-header">
       <div class="logo">
-        <h1>&#60;/CONHECIMENTO LIVRE&#62;</h1>
+        <h1><a href="/" class="link-logo">&#60;/CONHECIMENTO LIVRE&#62;</a></h1>
       </div>
       <div class="search">
         <form class="search" action="/" method="post">
@@ -24,14 +24,15 @@
           {{#author}}
           <div class="photo-container">
             <div class="photo-author">
+                <img src="{{ photourl }}" alt="" width="100%" height="100%">
             </div>
           </div>
           <div class="info-container">
             <div class="name">
-              {{name}}
+              <span>{{name}}</span>
             </div>
             <div class="email">
-              {{email}}
+              <span> {{email}}</span>
             </div>
           </div>
         </div>
@@ -46,7 +47,10 @@
         <ul>
           {{#authorCourses}}
           <a href="/content/{{ _id }}">
-            <li>{{ title }}</li>
+            <li>
+                <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
+              <p>{{ title }}</p>
+            </li>
           </a>
           {{/authorCourses}}
         </ul>
