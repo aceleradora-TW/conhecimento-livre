@@ -9,9 +9,6 @@ const contentSchema = new Schema({
   author: String,
   preview: String,
   views: Number,
-
 })
-
-
 
 module.exports = mongoose.model('Content', contentSchema)
