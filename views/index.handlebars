@@ -4,4 +4,8 @@
       <li><a class='link' href="/content/{{ _id }}">{{ title }}</li>
     {{/allContents}}
     </ul>
+    <form action="/search" method="post">
+       <input type="search" name="searchInput" placeholder="Pesquisar" autofocus>
+       <button type="submit">Pesquisar</button>
+    </form>
   </div>

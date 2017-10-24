@@ -4,7 +4,6 @@ class DbMapper {
   findAllCourses() {
     return this.db.collection('Courses').find()
   }
-
   insert(courses) {
     return this.db.collection('Courses').insert(courses.toJSON())
   }

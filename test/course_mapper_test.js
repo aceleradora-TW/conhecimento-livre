@@ -1,10 +1,11 @@
 const expect = require('chai').expect
 const DbMapper = require('../src/mappers/db_mapper')
-const Course = require('../models/course')
-const Content = require ('../models/content')
+const Course = require('../src/model/course')
+const Content = require ('../src/model/content')
+const User = require ('../src/model/user')
 
 
-describe('DbMapper', function() {
+describe.only('DbMapper', function() {
   let db, courseMapper
 
   beforeEach(function() {
@@ -21,12 +22,12 @@ describe('DbMapper', function() {
           update: function(dataUpdate,content) {
             return Object.assign({}, content, {content: [dataUpdate]})
           },
-          // getUsers: function() {
-          //   return ['Joao','lucas','bruno']
-          // },
-          // createUser: function(users,user) {
-          //   return users.push(user)
-          // }
+          getUsers: function() {
+            return ['Joao','lucas','bruno']
+          },
+          createUser: function(users,user) {
+            return users.push(user)
+          }
         }
       }
     }
@@ -34,14 +35,14 @@ describe('DbMapper', function() {
     dbMapper = new DbMapper(db)
   })
 
-  it('retorna cursos', function() {
+  it('returns courses', function() {
 
     const courses = dbMapper.findAllCourses()
 
     expect(courses.length).to.equal(3)
   })
 
-  it('retorna dados do curso', function() {
+  it('returns course\'s data', function() {
     const course = new Course('Node',3.5,'Node course','Waldeco')
     const data = dbMapper.insert(course)
 
@@ -63,19 +64,19 @@ describe('DbMapper', function() {
 
   })
 
-  // it ('retorna user', function() {
-  //
-  //   const users = dbMapper.getUsers()
-  //   expect(users.length).to.equal(3)
-  // })
-  //
-  // it ('retorna novo usuario', function() {
-  //
-  //   const users = dbMapper.getUsers()
-  //   const user = new User('joao bolao junior')
-  //
-  //   dbMapper.createUser(users,user.name)
-  //
-  //   expect(users[3]).to.equal(user.name)
-  // })
+  it ('returns user\'s', function() {
+
+    const users = dbMapper.getUsers()
+    expect(users.length).to.equal(3)
+  })
+
+  it ('returns new user', function() {
+
+    const users = dbMapper.getUsers()
+    const user = new User('joao bolao junior')
+
+    dbMapper.createUser(users,user.name)
+
+    expect(users[3]).to.equal(user.name)
+  })
 })

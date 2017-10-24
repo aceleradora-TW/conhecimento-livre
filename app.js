@@ -6,8 +6,12 @@ const Author = require('./models/author')
 const bodyParser = require('body-parser')
 
 const exphbs = require('express-handlebars')
-const sassMiddleware = require('node-sass-middleware')
 const routes = require('./src/routes/routes')
+
+const filter = require('./src/filter/quick_filter')
+const content = require('./models/content')
+const Search = require('./src/search/search')
+const sassMiddleware = require('node-sass-middleware')
 
 const app = express()
 
@@ -50,6 +54,19 @@ app.post('/search', (req, res) => {
 })
 
 app.get('/search/:courseName', routes.searchByCourseName)
+
+
+app.post('/filter/:paramName', (req, res) => {
+  const nivel = req.body.nivel
+  const courseName = req.params.paramName
+  res.redirect(`/search/${courseName}/${nivel}`)
+})
+
+app.post('/filter/:paramName', (req, res) => {
+  const nivel = req.body.nivel
+  const courseName = req.params.paramName
+  res.redirect(`/search/${courseName}/${nivel}`)
+})
 
 app.post('/course', (req, res) => {
   const course = new Course()

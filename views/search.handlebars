@@ -1,10 +1,7 @@
 <div>
   <ul>
-    {{#filteredData}}
-        <li>{{ title }} -
-        {{ author }} -
-        {{ content }} -
-        {{ publication }} -</li>
-    {{/filteredData}}
+    {{#courses}}
+      <li>Id:'{{_id}}' -  Title: {{title}} - Author: {{author}} - Level: {{level}}</li>
+    {{/courses}}
   </ul>
-</div>
+ <div>

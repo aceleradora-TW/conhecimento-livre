@@ -6,6 +6,7 @@ const searchByCourseName = require('./search_by_course_name')
 const index = require('./index')
 const content = require('./content')
 const author = require('./author')
+
 const search = new Search()
 
 const allRoutes = {
