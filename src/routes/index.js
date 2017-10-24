@@ -1,8 +1,8 @@
 const index = Content => (req, res) => {
   Content.find({}, (err, allContents) => {
-    if(err){
+    if (err) {
       console.log(err);
-    }else{
+    } else {
       res.render('index', { allContents })
     }
   })

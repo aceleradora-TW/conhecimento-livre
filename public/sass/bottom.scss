@@ -1,0 +1,10 @@
+.bottom{
+  @include display(flex, center, baseline);
+  @include size(40%, 100%);
+}
+
+.middle{
+  @include size(10%, 100%);
+  display: $display-default;
+  align-items: flex-end;
+}

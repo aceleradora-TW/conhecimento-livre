@@ -1,0 +1,5 @@
+@mixin display($display, $justifyC, $align) {
+  display: $display;
+  justify-content: $justifyC;
+  align-items: $align;
+}

@@ -1,0 +1,8 @@
+.logo{
+  @include size(55%, 65%);
+  display: inline-grid;
+  font-family: $font-default;
+  color: $font-color-default;
+  background: $color-default;
+  justify-content: center;
+}
