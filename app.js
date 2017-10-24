@@ -2,26 +2,14 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 const Course = require('./models/course')
-const Author = require('./models/author')
 const bodyParser = require('body-parser')
 
 const exphbs = require('express-handlebars')
-const sassMiddleware = require('node-sass-middleware')
 const routes = require('./src/routes/routes')
 
 const app = express()
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
-
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'sass'),
-  dest: path.join(__dirname, 'public/css'),
-  force: true,
-  outputStyle: 'compressed',
-  prefix: '/css',
-}))
-
-app.use(express.static('public'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -66,7 +54,6 @@ app.post('/course', (req, res) => {
     }
   })
 })
-
 
 app.listen(app.get('port'), () => {
   console.log(`Node app is running on port ${app.get('port')}`)

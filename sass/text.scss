@@ -1,18 +1,21 @@
+@import "./_mixin.scss";
+@import "./_variables.scss";
+
 .title {
   @include size(50%, 100%);
   font-family: $font-default;
   align-items: center;
-  font-size: 20em;
+  font-size: 1.5em;
   margin-left: 10%;
 }
 
 .title-logo {
-  font-size: 62em;
+  font-size: 3em;
 }
 
 .subtitle-top {
   @include size(25%, 100%);
-  font-size: 20em;
+  font-size: 1em;
   justify-content: center;
   display: $display-default;
   margin-top: 1vh;
@@ -20,7 +23,7 @@
 
 .subtitle-bottom {
   @include size(25%, 100%);
-  font-size: 20em;
+  font-size: 1em;
   justify-content: center;
   display: $display-default;
   margin-bottom: 1vh;
