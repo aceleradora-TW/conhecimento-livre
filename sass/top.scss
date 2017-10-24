@@ -1,3 +1,6 @@
+@import "./_mixin.scss";
+@import "./_variables.scss";
+
 .content{
   @include size(100vh, 100vw);
   background: $border-color-default;
@@ -24,6 +27,12 @@
 
 .container-bottom {
   @include size(35%, 100%);
+  display: $display-default;
+  justify-content: center;
+}
+
+form{
+  @include size(100%, 100%);
   display: $display-default;
   justify-content: center;
 }

@@ -1,14 +1,13 @@
 const searchByCourseName = (Course, Search) => (req, res) => {
-  const courseName = req.params.courseName.toLowerCase()
-  const courseFilter = courseTitle => item => item.title.toLowerCase().includes(courseTitle)
-  Search.setFilter(courseFilter)
-  Course.find({}, (err, courses) => {
+  const title = req.params.courseName.toLowerCase()
+  const contentFilter = title => item => item.title.toString().toLowerCase().includes(title.toString())
+  Search.setFilter(contentFilter)
+  Course.find({}, (err, AllCourses) => {
     if (err) {
-      console.log(err);
+      console.log(err)
     } else {
-      const dataset = courses;
-      const filteredData = Search.filter(dataset, courseName)
-      res.send(filteredData)
+      const courses = Search.filter(AllCourses, title)
+      res.render('search', { courses })
     }
   })
 }

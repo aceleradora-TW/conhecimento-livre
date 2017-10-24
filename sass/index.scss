@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixin";
+@import "display";
+// @import "author";
+@import "content";
+@import "bottom";
+@import "carousel";
+@import "top";
+@import "default";
+@import "image";
+@import "text";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.content{
+  @include size(100vh, 100vw);
+  background: $border-color-default;
+}

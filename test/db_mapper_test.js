@@ -1,8 +1,7 @@
 const expect = require('chai').expect
 const DbMapper = require('../src/mappers/db_mapper')
-const Course = require('../src/model/course')
-const Content = require ('../src/model/content')
-const User = require ('../src/model/user')
+const Course = require('../models/course')
+const Content = require ('../models/content')
 
 
 describe('DbMapper', function() {
@@ -62,21 +61,5 @@ describe('DbMapper', function() {
     expect(content.url).to.equal(dataUpdate.content[0].url)
     expect(content.type).to.equal(dataUpdate.content[0].type)
 
-  })
-
-  it ('retorna user', function() {
-
-    const users = dbMapper.getUsers()
-    expect(users.length).to.equal(3)
-  })
-
-  it ('retorna novo usuario', function() {
-
-    const users = dbMapper.getUsers()
-    const user = new User('joao bolao junior')
-
-    dbMapper.createUser(users,user.name)
-
-    expect(users[3]).to.equal(user.name)
   })
 })

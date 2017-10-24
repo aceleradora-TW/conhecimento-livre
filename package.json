@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "yarn compile && nodemon app.js",
     "coverage": "nyc mocha",
     "test": "mocha --recursive",
     "e2e": "nightwatch ./test/e2e/*.js",
     "lint": "eslint *.js",
     "check": "retire -p -n",
-    "watch": "mocha --recursive --watch"
+    "watch": "mocha --recursive --watch",
+    "compile": "node-sass sass/ -o public/css"
   },
   "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
   "author": "aceleradora12 <aceleradora12@gmail.com>",
@@ -41,6 +42,7 @@
     "eslint-plugin-react": "^7.4.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.5.3",
+    "node-sass": "^4.5.3",
     "nodemon": "^1.12.1",
     "nyc": "^11.2.1",
     "retire": "^1.4.0"
