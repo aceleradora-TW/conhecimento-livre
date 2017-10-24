@@ -1,3 +1,6 @@
+@import "./_mixin.scss";
+@import "./_variables.scss";
+
 .logo{
   @include size(55%, 65%);
   display: inline-grid;
