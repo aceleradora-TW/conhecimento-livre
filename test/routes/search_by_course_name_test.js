@@ -1,20 +1,19 @@
-const chai = require('chai')
+const {expect} = require('../setup')
 const sinon = require('sinon')
-const sinonChai = require('sinon-chai')
-const stubPromise = require('sinon-stub-promise')
-chai.use(sinonChai)
-stubPromise(sinon)
-const expect = chai.expect
-
 const searchByCourseName = require('../../src/routes/search_by_course_name')
 
 describe('unit -> routes -> SearchByCourseName', () => {
 
+  const Course = {findByTitle: sinon.stub()}
+  const params = {courseName: 'Aritmetica'}
+  const request = {params}
+
+  beforeEach(() => {
+    Course.findByTitle.reset()
+  })
+
   it('Busca pelo titulo em caixa baixa', () => {
-    const Course = {findByTitle: sinon.stub()}
     const findPromise = Course.findByTitle.returnsPromise()
-    const params = {courseName: 'Aritmetica'}
-    const request = {params}
     const response = {send: sinon.spy()}
     findPromise.resolves('whatever')
 
@@ -24,10 +23,7 @@ describe('unit -> routes -> SearchByCourseName', () => {
   })
 
   it('Responde com o curso encontrado', () => {
-    const Course = {findByTitle: sinon.stub()}
     const findPromise = Course.findByTitle.returnsPromise()
-    const params = {courseName: 'Aritmetica'}
-    const request = {params}
     const response = {send: sinon.spy()}
     findPromise.resolves('AA')
 
@@ -38,19 +34,16 @@ describe('unit -> routes -> SearchByCourseName', () => {
   })
 
   it('Responde com mensagem de erro em caso de falha', () => {
-    const Course = {findByTitle: sinon.stub()}
     const findPromise = Course.findByTitle.returnsPromise()
-    const params = {courseName: 'Aritmetica'}
-    const request = {params}
-    const responseStatus = sinon.stub()
-    const responseJson = sinon.stub()
-    responseStatus.returns({json: responseJson})
-    const response = {status: responseStatus}
+    const status = sinon.stub()
+    const json = sinon.stub()
+    status.returns({json})
+    const response = {status}
     findPromise.rejects({message: 'Falhou'})
 
     searchByCourseName(Course)(request, response)
 
-    expect(responseStatus).to.have.been.calledWith(500)
-    expect(responseJson).to.have.been.calledWith({error: 'Falhou'})
+    expect(status).to.have.been.calledWith(500)
+    expect(json).to.have.been.calledWith({error: 'Falhou'})
   })
 })
