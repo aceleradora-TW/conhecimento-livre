@@ -89,7 +89,8 @@ body {
         width: 100%;
         height: 20%;
         background-color: #009688;
-        color: white; }
+        color: white;
+        opacity: 0.8; }
       .playlist-container ul li p {
         opacity: 0;
         position: absolute;
@@ -138,7 +139,7 @@ body {
   width: 100%; }
 
 .container-top {
-  height: 65%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -167,7 +168,7 @@ form {
   padding: 0; }
 
 .logo {
-  height: 55%;
+  height: 40%;
   width: 65%;
   display: inline-grid;
   font-family: "Fjalla One";
