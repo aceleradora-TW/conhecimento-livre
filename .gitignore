@@ -62,3 +62,7 @@ test/e2e/reports/
 
 # css files
 public/css/
+css/
+
+# vim files
+*.swp

@@ -45,6 +45,9 @@
     "node-sass": "^4.5.3",
     "nodemon": "^1.12.1",
     "nyc": "^11.2.1",
-    "retire": "^1.4.0"
+    "retire": "^1.4.0",
+    "sinon": "^4.0.1",
+    "sinon-chai": "^2.14.0",
+    "sinon-stub-promise": "^4.0.0"
   }
 }

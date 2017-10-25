@@ -1,15 +1,9 @@
-const searchByCourseName = (Course, Search) => (req, res) => {
-  const title = req.params.courseName.toLowerCase()
-  const contentFilter = title => item => item.title.toString().toLowerCase().includes(title.toString())
-  Search.setFilter(contentFilter)
-  Course.find({}, (err, AllCourses) => {
-    if (err) {
-      console.log(err)
-    } else {
-      const courses = Search.filter(AllCourses, title)
-      res.render('search', { courses })
-    }
-  })
-}
+const courseName = (req) => (req.params.courseName || '').toLowerCase()
+
+const searchByCourseName = (Course) => (req, res) =>
+  Course
+    .findByTitle(courseName(req))
+    .then(courses => res.render('search', {courses}))
+    .catch(error => res.status(500).json({error: error.message}))
 
 module.exports = searchByCourseName
