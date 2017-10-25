@@ -139,7 +139,7 @@ body {
   width: 100%; }
 
 .container-top {
-  height: 65%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -168,7 +168,7 @@ form {
   padding: 0; }
 
 .logo {
-  height: 55%;
+  height: 40%;
   width: 65%;
   display: inline-grid;
   font-family: "Fjalla One";

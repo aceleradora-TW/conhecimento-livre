@@ -2,7 +2,7 @@
 @import "./_variables.scss";
 
 .logo{
-  @include size(55%, 65%);
+  @include size(40%, 65%);
   display: inline-grid;
   font-family: $font-default;
   color: $font-color-default;
