@@ -14,23 +14,21 @@ describe('unit -> routes -> SearchByCourseName', () => {
 
   it('Busca pelo titulo em caixa baixa', () => {
     const findPromise = Course.findByTitle.returnsPromise()
-    const response = {send: sinon.spy()}
-    findPromise.resolves('whatever')
+    const response = {render: sinon.spy()}
 
     searchByCourseName(Course)(request, response)
 
     expect(Course.findByTitle).to.have.been.calledWith('aritmetica')
   })
 
-  it('Responde com o curso encontrado', () => {
+  it('Renderiza view com o curso encontrado', () => {
     const findPromise = Course.findByTitle.returnsPromise()
-    const response = {send: sinon.spy()}
-    findPromise.resolves('AA')
+    const response = {render: sinon.spy()}
+    findPromise.resolves({title: 'bla'})
 
     searchByCourseName(Course)(request, response)
 
-    expect(Course.findByTitle).to.have.been.calledWith('aritmetica')
-    expect(response.send).to.have.been.calledWith('AA')
+    expect(response.render).to.have.been.calledWith('search', {courses: {title: 'bla'}})
   })
 
   it('Responde com mensagem de erro em caso de falha', () => {
