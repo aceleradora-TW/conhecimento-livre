@@ -5,8 +5,11 @@ const Schema = mongoose.Schema
 const courseSchema = new Schema({
   title: String,
   author: String,
-  content: [],
+  description: String,
+  details: String,
+  duration: String,
   publication: Date,
+  lessons: Number,
 })
 
 module.exports = mongoose.model('Course', courseSchema)
