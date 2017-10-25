@@ -32,13 +32,6 @@ app.get('/content/:id', routes.content)
 
 app.get('/author/:idAuthor', routes.author)
 
-app.post('/search', (req, res) => {
-  const searchInput = req.body.search
-  res.redirect(`/search/${searchInput}`)
-})
-
-app.get('/search/:courseName', routes.searchByCourseName)
-
 app.post('/course', (req, res) => {
   const course = new Course()
   course.title = req.body.title
