@@ -89,7 +89,8 @@ body {
         width: 100%;
         height: 20%;
         background-color: #009688;
-        color: white; }
+        color: white;
+        opacity: 0.8; }
       .playlist-container ul li p {
         opacity: 0;
         position: absolute;
