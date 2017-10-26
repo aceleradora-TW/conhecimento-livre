@@ -15,7 +15,12 @@
   padding: 0;
 }
 
+body {
+    overflow: scroll;
+    background: $border-color-default;
+}
+
 .content{
-  @include size(100vh, 100vw);
+  // @include size(100vh, 100vw);
   background: $border-color-default;
 }

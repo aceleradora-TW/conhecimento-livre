@@ -2,9 +2,67 @@
 @import "./_mixin.scss";
 @import "./_variables.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 .bottom{
-  @include display(flex, center, baseline);
-  @include size(40%, 100%);
+  @include display(flex, center, stretch);
+  // @include size(0%, 98%);
+
+  ul {
+    @include size(100%, 80%);
+    margin-left: 4%;
+
+    li {
+      display: inline-flex;
+      list-style-type: none;
+      margin: 1%;
+
+      a {
+        @include size(100%, 100%);
+        text-decoration: none;
+        color: black;
+        font-family: $font-default;
+
+        .lista-cursos {
+          position: relative;
+          background: $border-color-default;
+          height: 12.5rem;
+          width: 20rem;
+          border-radius: 2px;
+          border: 1px solid $color-default;
+          border-top: 11px solid $color-default;
+          box-shadow: 0 2px 8px 0 rgba(0,0,0,0.25);
+          transition: box-shadow .25s ease-in;
+
+          .card-title  {
+            display: block;
+            font-size: 1.4em;
+            margin-left: 5%;
+            margin-top: 6%;
+          }
+
+          .card-description {
+            display: block;
+            color: #58595b;
+            font-size: 1em;
+            margin-left: 5%;
+            margin-top: 6%;
+          }
+
+          .card-author {
+            display: block;
+            color: #58595b;
+            font-size: 0.8em;
+            margin-left: 5%;
+            margin-top: 6%;
+            line-height: 9em;
+          }
+        }
+      }
+    }
+  }
 }
 
 .middle{
