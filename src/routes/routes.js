@@ -5,12 +5,15 @@ const Search = require('../search/search')
 const index = require('./index')
 const content = require('./content')
 const author = require('./author')
+const course = require('./course')
+
 const search = new Search()
 
 const allRoutes = {
   index: index(Content),
   content: content(Content, search),
-  author: author(Author, search, Content)
+  author: author(Author, search, Content),
+  course: course(Course, search),
 }
 
 module.exports = allRoutes
