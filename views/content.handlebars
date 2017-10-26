@@ -30,6 +30,7 @@
           <ul>
             {{#allContents}}
             <li>
+              <input id="content-id" type="hidden" value="{{ id }}"/>
               <a class='thumbnail' href="/content/{{ id }}">
                 <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
                 <div class="title-video">{{ title }}</div>
@@ -42,5 +43,13 @@
       </div>
     </div>
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.js" charset="utf-8"></script>
+  <script>
+    const contentId = document.querySelector('#content-id').value
+    axios
+      .post('/content/view/increment', {id: contentId})
+      .then(() => console.log('View count atualizado'))
+      .catch(error => console.log('Erro ao atualizar view count', error.message))
+  </script>
 </body>
 </html>
