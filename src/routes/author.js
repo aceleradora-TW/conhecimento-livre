@@ -4,7 +4,6 @@ const author = (Author, Search, Content) => (req, res) => {
 
   Search.setFilter(authorFilter)
   Author.find({}, (err, allAuthors) =>  {
-    allAuthors.forEach(a => console.log(a._id))
     if (err) {
       console.log(err)
     } else {

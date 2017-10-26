@@ -3,7 +3,7 @@ class Search {
     this.anyFilter = anyFilter
   }
 
-  setFilter(anyFilter){
+  setFilter(anyFilter) {
     this.anyFilter = anyFilter
   }
 
