@@ -30,6 +30,8 @@ app.get('/', routes.index)
 
 app.get('/content/:id', routes.content)
 
+app.post('/content/views/increment', routes.incrementContentViewCount)
+
 app.get('/author/:idAuthor', routes.author)
 
 app.post('/course', (req, res) => {
