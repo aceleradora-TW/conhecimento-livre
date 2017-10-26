@@ -1,11 +1,11 @@
 const content = (Content, Search) => (req, res) => {
 const id = req.params.id
 
-Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
-  if (err){
-    console.log(err);
-  }
-})
+Content.update({ '_id': id }, { '$inc': { 'views': 1 } }, function (err, allContents) {
+    if (err) {
+      console.log(err);
+    }
+  })
 
   const contentFilter = id => item => item._id.toString() === id.toString()
   Search.setFilter(contentFilter)
@@ -14,9 +14,6 @@ Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
       console.log(err);
     } else {
       const content = Search.filter(allContents, id)
-
-      content
-
       res.render('content', { allContents, content })
     }
   })
