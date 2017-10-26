@@ -12,7 +12,7 @@ Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
   Search.setFilter(contentFilter)
   Content.find({}, (err, allContents) => {
     if (err) {
-      console.log(err);
+      console.log(err); 
     } else {
       const content = Search.filter(allContents, id)
       Author.find({ name: content[0].author }, (err, author) => {
