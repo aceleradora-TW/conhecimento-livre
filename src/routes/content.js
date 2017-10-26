@@ -21,7 +21,14 @@ Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
         }
         else{
           author = author[0]
-          res.render('content', { allContents, content, author})
+
+          indexNext = (content.indexOf(content[0]) + 1)
+          next = allContents[indexNext]
+
+          indexPrevious = (indexNext - 1)
+          previous = allContents[indexPrevious]
+
+          res.render('content', { allContents, content, author, next, previous})
       }
       })
     }
