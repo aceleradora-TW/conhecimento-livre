@@ -8,7 +8,6 @@
 
 .bottom{
   @include display(flex, center, stretch);
-  // @include size(0%, 98%);
 
   ul {
     @include size(100%, 80%);
@@ -30,10 +29,10 @@
           background: $border-color-default;
           height: 12.5rem;
           width: 20rem;
-          border-radius: 2px;
-          border: 1px solid $color-default;
-          border-top: 11px solid $color-default;
-          box-shadow: 0 2px 8px 0 rgba(0,0,0,0.25);
+          border-radius: 0.1em;
+          border: 0.09em solid $color-default;
+          border-top: 1em solid $color-default;
+          box-shadow: 0.1em 0.1em 0.5em rgba(0,0,0,0.25);
           transition: box-shadow .25s ease-in;
 
           .card-title  {

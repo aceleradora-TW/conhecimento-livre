@@ -128,10 +128,10 @@ body {
           background: #e2e2e2;
           height: 12.5rem;
           width: 20rem;
-          border-radius: 2px;
-          border: 1px solid #009688;
-          border-top: 11px solid #009688;
-          box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+          border-radius: 0.1em;
+          border: 0.09em solid #009688;
+          border-top: 1em solid #009688;
+          box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.25);
           transition: box-shadow .25s ease-in; }
           .bottom ul li a .lista-cursos .card-title {
             display: block;
@@ -251,8 +251,9 @@ form {
   padding: 0; }
 
 body {
-  overflow: scroll;
   background: #e2e2e2; }
 
 .content {
+  height: 100vh;
+  width: 100vw;
   background: #e2e2e2; }

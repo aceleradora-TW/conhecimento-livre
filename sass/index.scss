@@ -1,7 +1,6 @@
 @import "variables";
 @import "mixin";
 @import "display";
-// @import "author";
 @import "content";
 @import "bottom";
 @import "carousel";
@@ -16,11 +15,10 @@
 }
 
 body {
-    overflow: scroll;
     background: $border-color-default;
 }
 
 .content{
-  // @include size(100vh, 100vw);
+  @include size(100vh, 100vw);
   background: $border-color-default;
 }
