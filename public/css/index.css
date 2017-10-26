@@ -47,7 +47,7 @@ body {
     display: flex;
     justify-content: center; }
     .container .content-container .player-container {
-      height: 75%;
+      height: 95%;
       width: 95%;
       display: flex;
       flex-direction: column;
@@ -57,8 +57,8 @@ body {
       align-items: center;
       font-size: 1.3em; }
     .container .content-container .player-size {
-      height: 80%;
-      width: 90%; }
+      height: 100%;
+      width: 100%; }
 
 .playlist-container {
   height: 100%;
@@ -101,6 +101,12 @@ body {
           background-color: black;
           color: white;
           opacity: 0.7; }
+
+.right {
+  float: right; }
+
+.left {
+  float: left; }
 
 .bottom {
   display: flex;
