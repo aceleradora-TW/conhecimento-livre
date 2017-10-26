@@ -1,3 +1,4 @@
+const Author = require('../../models/author')
 const content = (Content, Search) => (req, res) => {
 const id = req.params.id
 
@@ -14,10 +15,15 @@ Content.update({'_id': id},{'$inc': {'views': 1}}, function(err, allContents)  {
       console.log(err);
     } else {
       const content = Search.filter(allContents, id)
-
-      content
-
-      res.render('content', { allContents, content })
+      Author.find({ name: content[0].author }, (err, author) => {
+        if(err){
+          console.log(err);
+        }
+        else{
+          author = author[0]
+          res.render('content', { allContents, content, author})
+      }
+      })
     }
   })
 }
