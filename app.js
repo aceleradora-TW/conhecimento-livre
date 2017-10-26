@@ -13,14 +13,6 @@ const app = express()
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'sass'),
-  dest: path.join(__dirname, 'public/css'),
-  force: true,
-  outputStyle: 'compressed',
-  prefix: '/css',
-}))
-
 app.use(express.static('public'))
 
 app.use(bodyParser.json())
