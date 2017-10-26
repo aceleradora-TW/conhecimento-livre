@@ -1,17 +1,9 @@
-module.exports = (Content) => (request, response) => {
-  Content.find({_id: request.body.id}, (error, content) => {
-    if (error) {
-      return response.status(500).json({message: error.message})
-    }
-
+module.exports = (Content) => (request, response) => Content
+  .find({_id: request.body.id})
+  .exec()
+  .then(content => {
     content.set({views: content.views + 1})
-
-    content.save((error) => {
-      if (error) {
-        return response.status(500).json({message: error.message})
-      }
-
-      return response.sendStatus(200)
-    })
+    return content.save()
   })
-}
+  .then(() => response.sendStatus(200))
+  .catch(error => response.status(500).json({message: error.message}))

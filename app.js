@@ -11,6 +11,8 @@ const app = express()
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 
+mongoose.Promise = Promise
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
