@@ -8,7 +8,7 @@ const author = (Author, Course) => (req, res) => {
       res.send('404')
     } else {
       const courseModel = new Controller(Course)
-      courseModel.findByName(authorItem[0].name, (courseItens) => {
+      courseModel.findByName(authorItem[0].author, (courseItens) => {
         if (courseItens === null) {
           res.send('404')
         } else {

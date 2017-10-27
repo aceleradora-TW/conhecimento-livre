@@ -7,6 +7,7 @@ class ModelsController {
     this.model.find({}, function (err, all) {
       if (err) {
         console.log(err);
+        fn(null)
       } else {
         fn(all)
       }
