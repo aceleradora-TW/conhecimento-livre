@@ -19,7 +19,7 @@
       margin: 1%;
 
       a {
-        @include size(100%, 100%)
+        @include size(100%, 100%);
         text-decoration: none;
         color: black;
         font-family: $font-default;
