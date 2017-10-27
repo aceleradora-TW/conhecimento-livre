@@ -11,7 +11,7 @@ const search = new Search()
 
 const allRoutes = {
   index: index(Course),
-  content: content(Content, search),
+  content: content(Content, search, Author),
   author: author(Author, search, Content),
   course: course(Course, search),
 }
