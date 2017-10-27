@@ -11,6 +11,8 @@ const app = express()
 
 const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 
+mongoose.Promise = Promise
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -29,6 +31,8 @@ app.use(express.static(path.join(`${__dirname}/public`)))
 app.get('/', routes.index)
 
 app.get('/content/:id', routes.content)
+
+app.post('/content/views/increment', routes.incrementContentViewCount)
 
 app.get('/author/:idAuthor', routes.author)
 
