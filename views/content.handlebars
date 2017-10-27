@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  {{#content}}
+  {{#contentItem}}
   <meta charset="utf-8">
   <title>Conhecimento Livre</title>
   <link rel="stylesheet" href="/css/content.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
-  {{/content}}
+  {{/contentItem}}
 </head>
 <body>
   <section class="content-section">
@@ -18,14 +18,14 @@
     <div class="container">
       <div class="content-container">
         <div class="player-container">
-          {{#content}}
+          {{#contentItem}}
           <p class="title">{{title}}</p>
           <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
             <p class="line">Views: {{ views }}
-              {{/content}}
-              {{#author}}
+              {{/contentItem}}
+              {{#authorItem}}
               <a class="right" href="/author/{{ _id }}">{{author}}</a></p>
-              {{/author}}
+              {{/authorItem}}
             <div class="line">
               {{#previous}}
               <form class="left" action="/content/{{ id }}">
