@@ -16,10 +16,10 @@
     <div class="container">
       <div class="author-container">
         <div class="info-author">
-          {{#author}}
+          {{#authorItem}}
           <div class="photo-container">
             <div class="photo-author">
-                <img src="{{ photourl }}" alt="" width="100%" height="100%">
+              <img src="{{ photourl }}" alt="" width="100%" height="100%">
             </div>
           </div>
           <div class="info-container">
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      {{/author}}
+      {{/authorItem}}
       <div class="playlist-container">
         <ul>
           {{#authorCourses}}
@@ -54,10 +54,3 @@
   </section>
 </body>
 </html>
-<div>
-  <ul>
-    {{#authors}}
-    <li>{{bio}} </li>
-    {{/authors}}
-  </ul>
-</div>
