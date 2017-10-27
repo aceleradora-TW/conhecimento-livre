@@ -2,10 +2,11 @@
   {{#allContents}}
       <li class="">
         <a href="/course/{{ _id }}">
-          <div class="lista-cursos">
+          <div class="lista-cursos curso-{{language}}">
             <span class="card-title"> {{ title }} </span>
-            <span class="card-description">{{ description }}</span>
+            <span class="card-description">{{ description }}</span>            
             <span class="card-author">{{ author }}</span>
+            <span class="card-language">{{ language }}</span>
           </div>
         </a>
       </li>
