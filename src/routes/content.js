@@ -16,10 +16,9 @@ Content.update({ '_id': id }, { '$inc': { 'views': 1 } }, function (err, allCont
     } else {
       const content = Search.filter(allContents, id)
       Author.find({ name: content[0].author }, (err, author) => {
-        if(err){
+        if (err) {
           console.log(err);
-        }
-        else{
+        } else {
           author = author[0]
           res.render('content', { allContents, content, author})
       }
