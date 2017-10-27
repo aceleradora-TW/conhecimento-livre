@@ -1,5 +1,5 @@
 const author = (Author, Search, Content) => (req, res) => {
-  const id = req.params.idAuthor
+  const id = req.params.id
   const authorFilter = id => item => item._id.toString() === id.toString()
 
   Search.setFilter(authorFilter)
