@@ -7,8 +7,19 @@ class ModelsController {
     this.model.find({}, function (err, all) {
       if (err) {
         console.log(err);
+      } else {
+        fn(all)
       }
-      fn(all)
+    })
+  }
+
+  findById(id, fn) {
+    this.model.find({ _id: id }, function (err, item) {
+      if (err) {
+        console.log(err);
+      } else {
+        fn(item)
+      }
     })
   }
 }
