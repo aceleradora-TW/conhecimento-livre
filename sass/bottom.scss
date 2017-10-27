@@ -50,13 +50,18 @@
             margin-top: 6%;
           }
 
-          .card-author {
-            display: block;
+          .card-author, .card-language {
+            display: inline;
             color: #58595b;
             font-size: 0.8em;
             margin-left: 5%;
             margin-top: 6%;
             line-height: 9em;
+          }
+
+          .card-language {
+            position:absolute;
+            right: 5%;
           }
         }
       }

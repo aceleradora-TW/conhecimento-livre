@@ -10,6 +10,7 @@ const courseSchema = new Schema({
   duration: String,
   publication: Date,
   lessons: Number,
+  language: String,
 })
 
 module.exports = mongoose.model('Course', courseSchema)

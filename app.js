@@ -30,9 +30,9 @@ app.get('/', routes.index)
 
 app.get('/content/:id', routes.content)
 
-app.get('/course/:idCourse', routes.course)
+app.get('/course/:id', routes.course)
 
-app.get('/author/:idAuthor', routes.author)
+app.get('/author/:id', routes.author)
 
 app.post('/course', (req, res) => {
   const course = new Course()

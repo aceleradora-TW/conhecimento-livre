@@ -144,13 +144,16 @@ body {
             font-size: 1em;
             margin-left: 5%;
             margin-top: 6%; }
-          .bottom ul li a .lista-cursos .card-author {
-            display: block;
+          .bottom ul li a .lista-cursos .card-author, .bottom ul li a .lista-cursos .card-language {
+            display: inline;
             color: #58595b;
             font-size: 0.8em;
             margin-left: 5%;
             margin-top: 6%;
             line-height: 9em; }
+          .bottom ul li a .lista-cursos .card-language {
+            position: absolute;
+            right: 5%; }
 
 .middle {
   height: 10%;
