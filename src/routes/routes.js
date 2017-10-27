@@ -13,6 +13,6 @@ const allRoutes = {
   index: index(Course),
   content: content(Content, search, Author),
   author: author(Author, search, Content),
-  course: course(Course, search),
+  course: course(Course),
 }
 module.exports = allRoutes

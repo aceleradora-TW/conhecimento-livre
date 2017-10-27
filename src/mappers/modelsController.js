@@ -16,7 +16,8 @@ class ModelsController {
   findById(id, fn) {
     this.model.find({ _id: id }, function (err, item) {
       if (err) {
-        console.log(err);
+        console.log(err)
+        fn(null)
       } else {
         fn(item)
       }
