@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <body>
-      {{#filtercourse}}
-      <p>{{ title }}</p>
-      <p>{{ author }}</p>
-      <p>{{ description }}</p>
-      <p>{{ duration }}</p>
-      <p>{{ lessons }}</p>
-      <p>{{ language }}</p>
-      {{/filtercourse}}
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Conhecimento Livre</title>
+  <link rel="stylesheet" href="/css/content.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+</head>
+<body>
+  <section class="content-section">
+    <header class="content-header">
+      <div class="logo">
+        <h1><a href="/">&#60;/CONHECIMENTO LIVRE&#62;</a></h1>
+      </div>
+    </header>
+    {{#filtercourse}}
+
+    <p>{{ title }}</p>
+    <p>{{ author }}</p>
+    <p>{{ duration }}</p>
+    <p>{{ language }}</p>
+    <p>{{ lessons }}</p>
+
+    <p>{{ description }}</p>
+    {{/filtercourse}}
+  </section>
+</body>
 </html>

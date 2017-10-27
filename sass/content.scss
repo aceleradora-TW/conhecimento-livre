@@ -13,8 +13,8 @@ body {
 }
 
 .content-header {
-  background: $color-default;
-  color: $font-color-default;
+  background: $blue-color;
+  color: $white-font-color;
   display: $display-default;
   font-size: 1.5em;
   justify-content: space-between;
@@ -74,7 +74,7 @@ body {
 .playlist-container {
   @include size(100%, 30%);
   border: 1px;
-  border-color: $border-color-default;
+  border-color: $grey-border-color;
   border-left-style: dashed;
   display: $display-default;
   margin-top: 2vh;
@@ -101,7 +101,7 @@ body {
         top: 0%;
         width: 100%;
         height: 20%;
-        background-color:$color-default;
+        background-color:$blue-color;
       	color:white;
         opacity: 0.8;
       }

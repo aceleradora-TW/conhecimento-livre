@@ -1,8 +1,5 @@
-$border-color-default: #e2e2e2;
-$color-default: #009688;
-$display-default: flex;
-$font-color-default: #fff;
-$font-default: 'Fjalla One';
+@import "variables";
+@import "mixin";
 
 @mixin heigth-width($heigth, $width) {
   height: $heigth;
@@ -21,8 +18,8 @@ body {
 }
 
 .author-header {
-  background: $color-default;
-  color: $font-color-default;
+  background: $blue-color;
+  color: $white-font-color;
   display: $display-default;
   font-size: 1.5em;
   justify-content: space-between;
@@ -30,7 +27,7 @@ body {
   .logo {
     h1 {
       .link-logo {
-        color: $font-color-default;
+        color: $white-font-color;
         text-decoration: none;
       }
     }
@@ -115,7 +112,7 @@ body {
 
       .text-bio {
         @include heigth-width(80%, 85%);
-        border: 2px solid $color-default;
+        border: 2px solid $blue-color;
         border-radius: 5px;
         text-indent: 1.5em;
       }
@@ -125,7 +122,7 @@ body {
 .playlist-container{
   @include heigth-width(100%, 30%);
   border: 1px;
-  border-color: $border-color-default;
+  border-color: $grey-border-color;
   border-left-style: dashed;
   display: $display-default;
   justify-content: flex-end;
@@ -148,7 +145,7 @@ body {
         top: 0%;
         width: 100%;
         height: 20%;
-        background-color:$color-default;
+        background-color:$blue-color;
         color:white;
         opacity: 0.8;
       }

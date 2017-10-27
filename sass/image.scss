@@ -5,7 +5,7 @@
   @include size(40%, 65%);
   display: inline-grid;
   font-family: $font-default;
-  color: $font-color-default;
-  background: $color-default;
+  color: $white-font-color;
+  background: $blue-color;
   justify-content: center;
 }
