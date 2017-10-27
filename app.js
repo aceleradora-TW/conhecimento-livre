@@ -11,7 +11,7 @@ const routes = require('./src/routes/routes')
 
 const app = express()
 
-const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
+const MONGO_URL = 'mongodb://admin:geoprocessamento@ds125195.mlab.com:25195/conhecimento-livre-dev'
 
 app.use(express.static('public'))
 
