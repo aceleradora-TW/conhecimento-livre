@@ -15,10 +15,10 @@
 }
 
 body {
-    background: $grey-border-color;
+    background: $border-color-default;
 }
 
 .content{
   @include size(100vh, 100vw);
-  background: $grey-border-color;
+  background: $border-color-default;
 }

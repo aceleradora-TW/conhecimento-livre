@@ -3,7 +3,7 @@
 
 .content{
   @include size(100vh, 100vw);
-  background: $grey-border-color;
+  background: $border-color-default;
 }
 
 .top{

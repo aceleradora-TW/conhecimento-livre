@@ -26,12 +26,12 @@
 
         .lista-cursos {
           position: relative;
-          background: $grey-border-color;
+          background: $border-color-default;
           height: 12.5rem;
           width: 20rem;
           border-radius: 0.1em;
-          border: 0.09em solid $blue-color;
-          border-top: 1em solid $blue-color;
+          border: 0.09em solid $color-deafult;
+          border-top: 1em solid $color-deafult;
           box-shadow: 0.1em 0.1em 0.5em rgba(0,0,0,0.25);
           transition: box-shadow .25s ease-in;
 
