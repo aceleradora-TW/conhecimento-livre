@@ -9,7 +9,7 @@ const course = (Course, Search) => (req, res) => {
       console.log(err);
     } else {
       const filtercourse = Search.filter(allCourse, id)
-      if (!filtercourse.length === 0) {
+      if (filtercourse.length === 0) {
         return res.send('Curso não encontrado.');
       }
 
