@@ -1,25 +1,18 @@
-const author = (Author, Search, Content) => (req, res) => {
-  const id = req.params.id
-  const authorFilter = id => item => item._id.toString() === id.toString()
+const Controller = require('../mappers/modelsController')
 
-  Search.setFilter(authorFilter)
-  Author.find({}, (err, allAuthors) => {
-    if (err) {
-      console.log(err)
+const author = (Author, Course) => (req, res) => {
+  const id = req.params.idAuthor
+  const authorModel = new Controller(Author)
+  authorModel.findById(id, (authorItem) => {
+    if (authorItem === null) {
+      res.send('404')
     } else {
-      const author = Search.filter(allAuthors, id)
-      if (author.length === 0) {
-        return res.send('Autor não encontrado.');
-      }
-      const authorName = author[0].name
-      Content.find({}, (err, allContents) => {
-        if (err) {
-          console.log(err)
+      const courseModel = new Controller(Course)
+      courseModel.findByName(authorItem[0].name, (courseItens) => {
+        if (courseItens === null) {
+          res.send('404')
         } else {
-          const ContentFilter = allContents => item => item.author.toLowerCase() === authorName.toLowerCase()
-          Search.setFilter(ContentFilter)
-          const authorCourses = Search.filter(allContents, authorName)
-          res.render('author', { author, authorCourses })
+          res.render('author', { authorItem, courseItens })
         }
       })
     }

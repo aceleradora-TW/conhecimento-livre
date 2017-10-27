@@ -12,7 +12,7 @@ const search = new Search()
 const allRoutes = {
   index: index(Course),
   content: content(Content, search, Author),
-  author: author(Author, search, Content),
+  author: author(Author, Course),
   course: course(Course),
 }
 module.exports = allRoutes

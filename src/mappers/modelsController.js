@@ -23,6 +23,17 @@ class ModelsController {
       }
     })
   }
+
+  findByName(name, fn) {
+    this.model.find({ author: name }, function (err, item) {
+      if (err) {
+        console.log(err)
+        fn(null)
+      } else {
+        fn(item)
+      }
+    })
+  }
 }
 
 module.exports = ModelsController

@@ -11,4 +11,5 @@ const course = Course => (req, res) => {
     }
   })
 }
+
 module.exports = course
