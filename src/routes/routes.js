@@ -12,4 +12,5 @@ const allRoutes = {
   content: content(Content, new Search()),
   author: author(Author, new Search(), Content),
   course: course(Course, new Search()),
+}
 module.exports = allRoutes
