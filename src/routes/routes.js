@@ -7,10 +7,12 @@ const content = require('./content')
 const author = require('./author')
 const course = require('./course')
 
+const search = new Search()
+
 const allRoutes = {
   index: index(Course),
-  content: content(Content, new Search()),
-  author: author(Author, new Search(), Content),
-  course: course(Course, new Search()),
+  content: content(Content, search, Author),
+  author: author(Author, search, Content),
+  course: course(Course, search),
 }
 module.exports = allRoutes

@@ -1,8 +1,9 @@
 const Author = require('../../models/author')
-const content = (Content, Search) => (req, res) => {
-const id = req.params.id
 
-Content.update({ '_id': id }, { '$inc': { 'views': 1 } }, function (err, allContents) {
+const content = (Content, Search) => (req, res) => {
+  const id = req.params.id
+
+  Content.update({ '_id': id }, { '$inc': { 'views': 1 } }, function (err, allContents) {
     if (err) {
       console.log(err);
     }
@@ -21,7 +22,7 @@ Content.update({ '_id': id }, { '$inc': { 'views': 1 } }, function (err, allCont
         } else {
           author = author[0]
           res.render('content', { allContents, content, author})
-      }
+        }
       })
     }
   })

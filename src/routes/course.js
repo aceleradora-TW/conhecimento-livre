@@ -3,8 +3,7 @@ const course = (Course, Search) => (req, res) => {
   const courseFilter = id => item => item._id.toString() === id.toString()
   Search.setFilter(courseFilter)
 
-  Course.find({}, (err, allCourse) => {
-    console.log(allCourse);
+  Course.find({ }, (err, allCourse) => {
     if (err) {
       console.log(err);
     } else {
@@ -12,7 +11,6 @@ const course = (Course, Search) => (req, res) => {
       if (filtercourse.length === 0) {
         return res.send('Curso não encontrado.');
       }
-      console.log(filtercourse);
       res.render('course', { filtercourse })
     }
   })
