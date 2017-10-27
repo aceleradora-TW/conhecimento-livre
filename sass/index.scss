@@ -1,7 +1,6 @@
 @import "variables";
 @import "mixin";
 @import "display";
-// @import "author";
 @import "content";
 @import "bottom";
 @import "carousel";
@@ -13,6 +12,10 @@
 *{
   margin: 0;
   padding: 0;
+}
+
+body {
+    background: $border-color-default;
 }
 
 .content{

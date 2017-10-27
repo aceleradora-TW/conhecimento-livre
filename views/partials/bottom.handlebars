@@ -1,6 +1,13 @@
 <ul>
   {{#allContents}}
-  <li class="carousel-visible"><a class='link' href="/content/{{ _id }}">{{ title }}</a></li>
+      <li class="">
+        <a href="/content/{{ _id }}">
+          <div class="lista-cursos">
+            <span class="card-title"> {{ title }} </span>
+            <span class="card-description">{{ description }}</span>
+            <span class="card-author">{{ author }}</span>
+          </div>
+        </a>
+      </li>
   {{/allContents}}
 </ul>
-<i><input id="clickMe" type="button" value="clickme" onclick="carousel();" /></i>
