@@ -1,21 +1,28 @@
 module.exports = function(grunt) {
 
-  // Project configuration.
   grunt.initConfig({
     sass: {
       development: {
         options: {
         },
-        files: {
-          'public/css/content.css': 'sass/content.scss'
-        }
+        files: [{
+          expand: true,
+          cwd: "sass/",
+          src: ["**/*.sass"],
+          dest: "public/css",
+          ext: ".css"
+        }]
       },
       production: {
         options: {
         },
-        files: {
-          'public/css/content.css': 'sass/content.scss'
-        }
+        files: [{
+          expand: true,
+          cwd: "sass/",
+          src: ["**/*.sass"],
+          dest: "public/css",
+          ext: ".css"
+        }]
       }
     },
     watch: {
