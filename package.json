@@ -11,7 +11,8 @@
     "lint": "eslint *.js",
     "check": "retire -p -n",
     "watch": "mocha --recursive --watch",
-    "compile": "node-sass sass/ -o public/css"
+    "compile": "node-sass sass/ -o public/css",
+    "postinstall": "grunt sass:production"
   },
   "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
   "author": "aceleradora12 <aceleradora12@gmail.com>",
@@ -30,7 +31,15 @@
     "mocha": "^3.5.3",
     "mongoose": "^4.11.14",
     "nightwatch": "^0.9.16",
-    "node-sass-middleware": "^0.11.0"
+    "node-sass-middleware": "^0.11.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
