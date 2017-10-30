@@ -11,7 +11,7 @@ const author = (Author, Search, Content) => (req, res) => {
       if (author.length === 0) {
         return res.send('Autor não encontrado.');
       }
-      const authorName = author[0].name
+      const authorName = author[0].author
       Content.find({}, (err, allContents) => {
         if (err) {
           console.log(err)
