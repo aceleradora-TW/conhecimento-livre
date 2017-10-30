@@ -53,7 +53,7 @@ body {
     justify-content: center;
 
     .player-container {
-      @include size(75%, 95%);
+      @include size(95%, 95%);
       display: $display-default;
       flex-direction: column;
       justify-content: space-around;
@@ -66,7 +66,7 @@ body {
     }
 
     .player-size {
-      @include size(80%, 90%);
+      @include size(100%, 100%);
     }
   }
 }
@@ -121,4 +121,12 @@ body {
       }
     }
   }
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
 }
