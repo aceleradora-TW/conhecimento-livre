@@ -1,4 +1,4 @@
-const author = (Author, Search, Content) => (req, res) => {
+const author = (Author, Search, Course) => (req, res) => {
   const id = req.params.id
   const authorFilter = id => item => item._id.toString() === id.toString()
 
@@ -12,13 +12,13 @@ const author = (Author, Search, Content) => (req, res) => {
         return res.send('Autor não encontrado.');
       }
       const authorName = author[0].author
-      Content.find({}, (err, allContents) => {
+      Course.find({}, (err, allCourses) => {
         if (err) {
           console.log(err)
         } else {
-          const ContentFilter = allContents => item => item.author.toLowerCase() === authorName.toLowerCase()
-          Search.setFilter(ContentFilter)
-          const authorCourses = Search.filter(allContents, authorName)
+          const CourseFilter = allCourses => item => item.author.toLowerCase() === authorName.toLowerCase()
+          Search.setFilter(CourseFilter)
+          const authorCourses = Search.filter(allCourses, authorName)
           res.render('author', { author, authorCourses })
         }
       })
