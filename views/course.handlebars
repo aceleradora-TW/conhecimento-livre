@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Conhecimento Livre</title>
+  <link rel="stylesheet" href="/css/course.css">
   <link rel="stylesheet" href="/css/content.css">
+  <link rel="stylesheet" href="/css/text.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
 </head>
 <body>
@@ -14,14 +16,27 @@
       </div>
     </header>
     {{#filtercourse}}
-
-    <p>{{ title }}</p>
-    <p>{{ author }}</p>
-    <p>{{ duration }}</p>
-    <p>{{ language }}</p>
-    <p>{{ lessons }}</p>
-
-    <p>{{ description }}</p>
+    <div class="container-course">
+      <div class="top-course">
+        <div class="info-course">
+          <p class="big-title bold-font" >{{ title }}</p>
+          <p><span class="bold-font">Autor:</span> {{ author }}</p>
+          <p><span class="bold-font">Duração:</span> {{ duration }}</p>
+          <p><span class="bold-font">Linguagem:</span> {{ language }}</p>
+          <p><span class="bold-font">Número de aulas:</span> {{ lessons }}</p>
+        </div>
+        <div class="player-course">
+        </div>
+      </div>
+      <div class="bottom-course">
+        <div class="description-course">
+          <p><span class="bold-font">Descrição do curso:</span></p>
+          <p>{{ description }}</p>
+        </div>
+        <div class="classes">
+        </div>
+      </div>
+    </div>
     {{/filtercourse}}
   </section>
 </body>

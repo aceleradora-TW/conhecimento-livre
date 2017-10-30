@@ -260,6 +260,61 @@ form {
   display: flex;
   margin-bottom: 1vh; }
 
+.big-title {
+  font-size: 1.5em; }
+
+.bold-font {
+  font-weight: bold; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+.container-course {
+  height: 90%;
+  width: 100%;
+  display: block; }
+
+.top-course {
+  height: 50%;
+  width: 100%;
+  display: inline-flex; }
+
+.info-course {
+  height: 100%;
+  width: 50%;
+  margin-left: 2%; }
+
+.player-course {
+  height: 100%;
+  width: 50%;
+  border: 1px;
+  border-color: #e2e2e2;
+  border-left-style: dashed; }
+
+.bottom-course {
+  height: 50%;
+  width: 100%;
+  display: inline-block; }
+
+.description-course {
+  height: 50%;
+  width: 100%;
+  display: inline-block;
+  margin-left: 2%;
+  border: 1px;
+  border-color: #e2e2e2;
+  border-top-style: dashed;
+  border-bottom-style: dashed; }
+
+.classes {
+  height: 50%;
+  width: 100%;
+  display: inline-block;
+  border: 1px;
+  border-color: #e2e2e2; }
+
 * {
   margin: 0;
   padding: 0; }
