@@ -1,9 +1,9 @@
-const index = Content => (req, res) => {
-  Content.find({}, (err, allContents) => {
+const index = Course => (req, res) => {
+  Course.find({}, (err, allCourses) => {
     if (err) {
       console.log(err);
     } else {
-      res.render('index', { allContents })
+      res.render('index', { allCourses })
     }
   })
 }
