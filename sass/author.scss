@@ -18,8 +18,8 @@ body {
 }
 
 .author-header {
-  background: $color-deafult;
-  color: $font-color-deafult;
+  background: $color-default;
+  color: $font-color-default;
   display: $display-default;
   font-size: 1.5em;
   justify-content: space-between;
@@ -27,7 +27,7 @@ body {
   .logo {
     h1 {
       .link-logo {
-        color: $font-color-deafult;
+        color: $font-color-default;
         text-decoration: none;
       }
     }
@@ -112,7 +112,7 @@ body {
 
       .text-bio {
         @include heigth-width(80%, 85%);
-        border: 2px solid $color-deafult;
+        border: 2px solid $color-default;
         border-radius: 5px;
         text-indent: 1.5em;
       }
@@ -145,7 +145,7 @@ body {
         top: 0%;
         width: 100%;
         height: 20%;
-        background-color:$color-deafult;
+        background-color:$color-default;
         color:white;
         opacity: 0.8;
       }
