@@ -9,7 +9,7 @@ const author = (Author, Course) => (req, res) => {
   const findCourseByAuthor = (author) =>
     new Promise((resolve, reject) => courseModel
       .find(byName(author.author))
-      .then(courseData => ({authorItem: author, courseItems: courseData}))
+      .then(courseData => resolve({authorItem: author, courseItems: courseData}))
       .catch(reject))
 
   authorModel
