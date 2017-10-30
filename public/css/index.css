@@ -260,6 +260,50 @@ form {
   display: flex;
   margin-bottom: 1vh; }
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+.container-course {
+  height: 100%;
+  width: 100%;
+  display: block; }
+
+.top-course {
+  height: 50%;
+  width: 100%;
+  background: grey;
+  display: inline-flex; }
+
+.info-course {
+  height: 100%;
+  width: 50%;
+  background-color: pink; }
+
+.player-course {
+  height: 100%;
+  width: 50%;
+  background: green; }
+
+.bottom-course {
+  height: 50%;
+  width: 100%;
+  background: yellow;
+  display: inline-block; }
+
+.description-course {
+  height: 50%;
+  width: 100%;
+  background: red;
+  display: inline-block; }
+
+.classes {
+  height: 50%;
+  width: 100%;
+  background: grey;
+  display: inline-block; }
+
 * {
   margin: 0;
   padding: 0; }
