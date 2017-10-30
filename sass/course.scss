@@ -8,8 +8,7 @@ body {
 }
 
 .container-course{
-  @include size(100%,100%);
-  // overflow: scroll;
+  @include size(90%,100%);
   display: block;
 }
 
@@ -18,9 +17,11 @@ body {
   background: grey;
   display: inline-flex;
 }
+
 .info-course {
   @include size(100%, 50%);
   background-color: pink;
+  margin-left: 2%;
 }
 
 .player-course {
@@ -34,10 +35,12 @@ body {
   background: yellow;
   display: inline-block;
 }
+
 .description-course{
   @include size(50%, 100%);
   background: red;
   display: inline-block;
+  margin-left: 2%;
 }
 
 .classes {
