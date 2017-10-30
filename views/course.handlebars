@@ -15,36 +15,28 @@
         <h1><a href="/">&#60;/CONHECIMENTO LIVRE&#62;</a></h1>
       </div>
     </header>
-
     {{#filtercourse}}
-<div class="container-course">
-
-    <div class="top-course">
-
-<div class="info-course">
-
-    <p class="big-title" >{{ title }}</p>
-    <p>Autor: {{ author }}</p>
-    <p>Duração: {{ duration }}</p>
-    <p>Linguagem: {{ language }}</p>
-    <p>Número de aulas: {{ lessons }}</p>
-</div>
-<div class="player-course">
-
-</div>
-</div>
-<div class="bottom-course">
-
-<div class="description-course">
-<p>Descrição do curso:</p>
-    <p>{{ description }}</p>
-  </div>
-  <div class="classes">
-
-  </div>
-</div>
-</div>
-
+    <div class="container-course">
+      <div class="top-course">
+        <div class="info-course">
+          <p class="big-title bold-font" >{{ title }}</p>
+          <p><span class="bold-font">Autor:</span> {{ author }}</p>
+          <p><span class="bold-font">Duração:</span> {{ duration }}</p>
+          <p><span class="bold-font">Linguagem:</span> {{ language }}</p>
+          <p><span class="bold-font">Número de aulas:</span> {{ lessons }}</p>
+        </div>
+        <div class="player-course">
+        </div>
+      </div>
+      <div class="bottom-course">
+        <div class="description-course">
+          <p><span class="bold-font">Descrição do curso:</span></p>
+          <p>{{ description }}</p>
+        </div>
+        <div class="classes">
+        </div>
+      </div>
+    </div>
     {{/filtercourse}}
   </section>
 </body>

@@ -263,6 +263,9 @@ form {
 .big-title {
   font-size: 1.5em; }
 
+.bold-font {
+  font-weight: bold; }
+
 body {
   margin: 0;
   padding: 0;
