@@ -11,6 +11,7 @@ const courseSchema = new Schema({
   publication: Date,
   lessons: Number,
   language: String,
+  image: String,
 })
 
 module.exports = mongoose.model('Course', courseSchema)
