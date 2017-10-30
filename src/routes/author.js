@@ -5,15 +5,18 @@ const author = (Author, Course) => (req, res) => {
   const id = req.params.id
   const authorModel = new Controller(Author)
   const courseModel = new Controller(Course)
-  authorModel.find(byId(id), (authorItem) => {
-    courseModel.find(byName(authorItem.author), (courseItens) => {
-      if (courseItens === null) {
-        res.send('404')
-      } else {
-        res.render('author', { authorItem, courseItens })
-      }
-    })
-  })
+
+  const findCourseByAuthor = (author) =>
+    new Promise((resolve, reject) => courseModel
+      .find(byName(author.author))
+      .then(courseData => ({authorItem: author, courseItems: courseData}))
+      .catch(reject))
+
+  authorModel
+    .find(byId(id))
+    .then(author => courseModel.find(byName(author.author)))
+    .then(data => res.render('author', data))
+    .catch(error => res.sendStatus(404))
 }
 
 module.exports = author

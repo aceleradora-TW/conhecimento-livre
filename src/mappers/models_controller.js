@@ -4,14 +4,8 @@ class ModelsController {
     this.model = model
   }
 
-  find(query, callback) {
-    this.model.findOne(query, (error, item) => {
-      if (error) {
-        console.log(error)
-      }
-
-      callback(null, item)
-    })
+  find(query) {
+    return this.model.findOne(query).exec()
   }
 
   updateViews(id, fn) {
