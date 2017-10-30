@@ -21,29 +21,41 @@
           {{#content}}
           <p class="title">{{title}}</p>
           <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
-          <p>Views: {{ views }}</p>
-          {{/content}}
-          {{#author}}
-          <a href="/author/{{ _id }}">{{author}}</a>
-          {{/author}}
+            <p class="line">Views: {{ views }}
+              {{/content}}
+              {{#author}}
+              <a class="right" href="/author/{{ _id }}">{{author}}</a></p>
+              {{/author}}
+            <div class="line">
+              {{#previous}}
+              <form class="left" action="/content/{{ id }}">
+                <input type="submit" value="Anterior">
+              </form>
+              {{/previous}}
+              {{#next}}
+              <form class="right" action="/content/{{ id }}">
+                <input type="submit" value="Proximo">
+              </form>
+              {{/next}}
+            </div>
+          </div>
+        </div>
+        <div class="playlist-container">
+          <div>
+            <ul>
+              {{#allContents}}
+              <li>
+                <a class='thumbnail' href="/content/{{ id }}">
+                  <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
+                  <div class="title-video">{{ title }}</div>
+                  <p class="preview"> {{ preview }}</p>
+                </a>
+              </li>
+              {{/allContents}}
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="playlist-container">
-        <div>
-          <ul>
-            {{#allContents}}
-            <li>
-              <a class='thumbnail' href="/content/{{ id }}">
-                <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
-                <div class="title-video">{{ title }}</div>
-                <p class="preview"> {{ preview }}</p>
-              </a>
-            </li>
-            {{/allContents}}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
+    </section>
+  </body>
+  </html>
