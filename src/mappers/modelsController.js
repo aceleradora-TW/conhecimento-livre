@@ -3,7 +3,7 @@ class ModelsController {
     this.model = model
   }
   findAll(fn) {
-    this.model.find({}, function (err, all) {
+    this.model.find({}, (err, all) => {
       if (err) {
         console.log(err);
         fn(null)
@@ -13,7 +13,7 @@ class ModelsController {
     })
   }
   findById(id, fn) {
-    this.model.find({ _id: id }, function (err, item) {
+    this.model.findOne({ _id: id }, (err, item) => {
       if (err) {
         console.log(err)
         fn(null)
@@ -23,7 +23,7 @@ class ModelsController {
     })
   }
   findByName(name, fn) {
-    this.model.find({ author: name }, function (err, item) {
+    this.model.findOne({ author: name }, (err, item) => {
       if (err) {
         console.log(err)
         fn(null)
@@ -33,7 +33,7 @@ class ModelsController {
     })
   }
   updateViews(id, fn) {
-    this.model.update({ _id: id }, { $inc: { views: 1 } }, function (err, item) {
+    this.model.update({ _id: id }, { $inc: { views: 1 } }, (err, item) => {
       if (err) {
         console.log(err);
         fn(null)

@@ -6,7 +6,7 @@ const content = (Content, Author) => (req, res) => {
   const authorModel = new Controller(Author)
   contentModel.findAll((allContents) => {
     contentModel.findById(id, (contentItem) => {
-      authorModel.findByName(contentItem[0].author, (authorItem) => {
+      authorModel.findByName(contentItem.author, (authorItem) => {
         contentModel.updateViews(id, (views) => {
           if ((allContents || contentItem || authorItem) === null) {
             res.send('404')
