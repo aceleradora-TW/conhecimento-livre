@@ -7,18 +7,15 @@ const content = (Content, Author) => (req, res) => {
   contentModel.findAll((allContents) => {
     contentModel.findById(id, (contentItem) => {
       authorModel.findByName(contentItem[0].author, (authorItem) => {
-        if ((allContents || contentItem || authorItem) === null) {
-          res.send('404')
-        } else {
-          res.render('content', { allContents, contentItem, authorItem })
-        }
+        contentModel.updateViews(id, (views) => {
+          if ((allContents || contentItem || authorItem) === null) {
+            res.send('404')
+          } else {
+            res.render('content', { allContents, contentItem, authorItem })
+          }
+        })
       })
     })
-  })
-  Content.update({ '_id': id }, { '$inc': { 'views': 1 } }, function (err, allContents) {
-    if (err) {
-      console.log(err);
-    }
   })
 }
 
