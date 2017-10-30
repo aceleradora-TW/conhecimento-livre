@@ -103,10 +103,15 @@ body {
           opacity: 0.7; }
 
 .right {
-  float: right; }
+  justify-content: flex-end; }
 
 .left {
-  float: left; }
+  justify-content: flex-start; }
+
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
 
 * {
   box-sizing: border-box; }

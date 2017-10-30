@@ -21,22 +21,22 @@
           {{#content}}
           <p class="title">{{title}}</p>
           <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
-          <p>Views: {{ views }}
-            {{/content}}
-            {{#author}}
-            <a class="right" href="/author/{{ _id }}">{{author}}</a></p>
-            {{/author}}
-            <div>
-              {{#next}}
-              <form class="right" action="/content/{{ id }}">
-                <input type="submit" value="Proximo">
-              </form>
-              {{/next}}
+            <p class="line">Views: {{ views }}
+              {{/content}}
+              {{#author}}
+              <a class="right" href="/author/{{ _id }}">{{author}}</a></p>
+              {{/author}}
+            <div class="line">
               {{#previous}}
               <form class="left" action="/content/{{ id }}">
                 <input type="submit" value="Anterior">
               </form>
               {{/previous}}
+              {{#next}}
+              <form class="right" action="/content/{{ id }}">
+                <input type="submit" value="Proximo">
+              </form>
+              {{/next}}
             </div>
           </div>
         </div>
