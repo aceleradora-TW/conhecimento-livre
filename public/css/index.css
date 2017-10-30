@@ -279,38 +279,41 @@ body {
 .top-course {
   height: 50%;
   width: 100%;
-  background: grey;
   display: inline-flex; }
 
 .info-course {
   height: 100%;
   width: 50%;
-  background-color: pink;
   margin-left: 2%; }
 
 .player-course {
   height: 100%;
   width: 50%;
-  background: green; }
+  border: 1px;
+  border-color: #e2e2e2;
+  border-left-style: dashed; }
 
 .bottom-course {
   height: 50%;
   width: 100%;
-  background: yellow;
   display: inline-block; }
 
 .description-course {
   height: 50%;
   width: 100%;
-  background: red;
   display: inline-block;
-  margin-left: 2%; }
+  margin-left: 2%;
+  border: 1px;
+  border-color: #e2e2e2;
+  border-top-style: dashed;
+  border-bottom-style: dashed; }
 
 .classes {
   height: 50%;
   width: 100%;
-  background: grey;
-  display: inline-block; }
+  display: inline-block;
+  border: 1px;
+  border-color: #e2e2e2; }
 
 * {
   margin: 0;

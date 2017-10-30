@@ -14,37 +14,39 @@ body {
 
 .top-course{
   @include size(50%,100%);
-  background: grey;
   display: inline-flex;
 }
 
 .info-course {
   @include size(100%, 50%);
-  background-color: pink;
   margin-left: 2%;
 }
 
 .player-course {
   @include size (100%, 50%);
-  background: green;
-
+  border: 1px;
+  border-color: #e2e2e2;
+  border-left-style: dashed;
 }
 
 .bottom-course{
   @include size(50%,100%);
-  background: yellow;
   display: inline-block;
 }
 
 .description-course{
   @include size(50%, 100%);
-  background: red;
   display: inline-block;
   margin-left: 2%;
+  border: 1px;
+  border-color: #e2e2e2;
+  border-top-style: dashed;
+  border-bottom-style: dashed;
 }
 
 .classes {
   @include size(50%,100%);
-  background: grey;
   display: inline-block;
+  border: 1px;
+  border-color: #e2e2e2;
 }
