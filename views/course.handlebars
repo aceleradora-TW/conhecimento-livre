@@ -20,7 +20,11 @@
       <div class="top-course">
         <div class="info-course">
           <p class="big-title bold-font" >{{ title }}</p>
-          <p><span class="bold-font">Autor:</span> {{ author }}</p>
+          {{/courseItem}}
+          {{#authorItem}}
+          <p><span class="bold-font">Autor:</span><a href="/author/{{ _id }}"> {{author}}</a></p>
+          {{/authorItem}}
+          {{#courseItem}}
           <p><span class="bold-font">Duração:</span> {{ duration }}</p>
           <p><span class="bold-font">Linguagem:</span> {{ language }}</p>
           <p><span class="bold-font">Número de aulas:</span> {{ lessons }}</p>
