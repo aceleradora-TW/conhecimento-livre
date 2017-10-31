@@ -1,7 +1,7 @@
 const Controller = require('../mappers/modelsController')
 
 const course = Course => (req, res) => {
-  const id = req.params.idCourse
+  const id = req.params.id
   const courseModel = new Controller(Course)
   courseModel.findById(id, (courseItem) => {
     if (courseItem === null) {
