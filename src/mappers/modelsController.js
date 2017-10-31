@@ -32,6 +32,16 @@ class ModelsController {
       }
     })
   }
+  findByLanguage(technology, fn) {
+    this.model.findOne({ language: technology }, (err, item) => {
+      if (err) {
+        console.log(err)
+        fn(null)
+      } else {
+        fn(item)
+      }
+    })
+  }
   updateViews(id, fn) {
     this.model.update({ _id: id }, { $inc: { views: 1 } }, (err, item) => {
       if (err) {
