@@ -1,20 +1,15 @@
-const course = (Course, Search) => (req, res) => {
-  const id = req.params.id
-  const courseFilter = id => item => item._id.toString() === id.toString()
-  Search.setFilter(courseFilter)
+const Controller = require('../mappers/modelsController')
 
-  Course.find({}, (err, allCourse) => {
-    console.log(allCourse);
-    if (err) {
-      console.log(err);
+const course = Course => (req, res) => {
+  const id = req.params.id
+  const courseModel = new Controller(Course)
+  courseModel.findById(id, (courseItem) => {
+    if (courseItem === null) {
+      res.send('404')
     } else {
-      const filtercourse = Search.filter(allCourse, id)
-      if (filtercourse.length === 0) {
-        return res.send('Curso não encontrado.');
-      }
-      console.log(filtercourse);
-      res.render('course', { filtercourse })
+      res.render('course', { courseItem })
     }
   })
 }
+
 module.exports = course

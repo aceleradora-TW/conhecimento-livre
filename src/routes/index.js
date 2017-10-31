@@ -1,10 +1,10 @@
+const Controller = require('../mappers/modelsController')
+
 const index = Course => (req, res) => {
-  Course.find({}, (err, allCourses) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('index', { allCourses })
-    }
+  const course = new Controller(Course)
+  course.findAll((allContents) => {
+    res.render('index', { allContents })
   })
 }
+
 module.exports = index
