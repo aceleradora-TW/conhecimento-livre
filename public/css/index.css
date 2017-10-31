@@ -122,8 +122,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  height: 40%;
-  width: 80%; }
+  height: 80%;
+  width: 100%; }
   .bottom ul {
     height: 100%;
     width: 80%;

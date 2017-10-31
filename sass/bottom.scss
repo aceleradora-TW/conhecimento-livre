@@ -8,7 +8,7 @@
 
 .bottom{
   @include display(flex, center, stretch);
-  @include size(40%, 80%);
+  @include size(80%, 100%);
 
   ul {
     @include size(100%, 80%);
