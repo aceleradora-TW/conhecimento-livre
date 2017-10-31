@@ -9,7 +9,7 @@ const course = (Course, Author, Content) => (req, res) => {
     authorModel.findByName(courseItem.author, (authorItem) => {
       contentModel.findByName(courseItem.author, (contentItem) => {
         contentModel.findByLanguage(courseItem.language, (languageItem) => {
-          if ((courseItem || authorItem) === null) {
+          if (((contentItem || authorItem || languageItem) === null) && (contentItem === languageItem)){
             res.send('404')
           } else {
             res.render('course', { courseItem, authorItem })
