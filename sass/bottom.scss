@@ -28,7 +28,7 @@
           position: relative;
           background: $border-color-default;
           height: 12.5rem;
-          width: 20rem;
+          width: 19rem;
           border-radius: 0.1em;
           border: 0.09em solid $color-default;
           border-top: 1em solid $color-default;
@@ -48,6 +48,7 @@
             font-size: 1em;
             margin-left: 5%;
             margin-top: 6%;
+            margin-bottom: 3%;
           }
 
           .card-author, .card-language {
@@ -55,8 +56,8 @@
             color: #58595b;
             font-size: 0.8em;
             margin-left: 5%;
-            margin-top: 6%;
-            line-height: 9em;
+            margin-top: 5%;
+            line-height: 2em;
           }
 
           .card-language {
