@@ -1,4 +1,4 @@
-const Controller = require('../mappers/modelsController')
+const Controller = require('../mappers/models_controller')
 
 const author = (Author, Course) => (req, res) => {
   const id = req.params.id

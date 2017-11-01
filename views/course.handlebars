@@ -30,6 +30,11 @@
           <p><span class="bold-font">Número de aulas:</span> {{ lessons }}</p>
         </div>
         <div class="player-course">
+          {{/courseItem}}
+          {{#titleItem}}
+          <a href="/content/{{ _id }}"> {{class}}</a>
+          {{/titleItem}}
+          {{#courseItem}}
         </div>
       </div>
       <div class="bottom-course">

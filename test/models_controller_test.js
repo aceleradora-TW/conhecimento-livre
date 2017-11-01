@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const ModelsController = require('../src/mappers/modelsController')
+const ModelsController = require('../src/mappers/models_controller')
 const Course = require('../models/course')
 const Content = require ('../models/content')
 const Author = require ('../models/author')

@@ -1,4 +1,4 @@
-const Controller = require('../mappers/modelsController')
+const Controller = require('../mappers/models_controller')
 
 const content = (Content, Author) => (req, res) => {
   const id = req.params.id
@@ -11,7 +11,7 @@ const content = (Content, Author) => (req, res) => {
           if ((allContents || contentItem || authorItem) === null) {
             res.send('404')
           } else {
-            res.render('content', { allContents, contentItem, authorItem})
+            res.render('content', { allContents, contentItem, authorItem })
           }
         })
       })

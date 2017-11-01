@@ -32,6 +32,16 @@ class ModelsController {
       }
     })
   }
+  findByTitle(titleName, fn) {
+    this.model.findOne({ title: titleName }, (err, item) => {
+      if (err) {
+        console.log(err)
+        fn(null)
+      } else {
+        fn(item)
+      }
+    })
+  }
   updateViews(id, fn) {
     this.model.update({ _id: id }, { $inc: { views: 1 } }, (err, item) => {
       if (err) {
