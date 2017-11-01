@@ -32,8 +32,8 @@ class ModelsController {
       }
     })
   }
-  findByTitle(technology, fn) {
-    this.model.findOne({ title: technology }, (err, item) => {
+  findByTitle(titleName, fn) {
+    this.model.findOne({ title: titleName }, (err, item) => {
       if (err) {
         console.log(err)
         fn(null)
