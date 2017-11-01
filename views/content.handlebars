@@ -19,7 +19,7 @@
       <div class="content-container">
         <div class="player-container">
           {{#contentItem}}
-          <p class="title">{{title}}</p>
+          <p class="title">{{title}} - {{ class }}</p>
           <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
             <p class="line">Views: {{ views }}
               {{/contentItem}}
@@ -35,7 +35,7 @@
               <li>
                 <a class='thumbnail' href="/content/{{ id }}">
                   <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
-                  <div class="title-video">{{ title }}</div>
+                  <div class="title-video">{{ class }}</div>
                   <p class="preview"> {{ preview }}</p>
                 </a>
               </li>
