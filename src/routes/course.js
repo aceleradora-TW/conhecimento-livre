@@ -7,14 +7,12 @@ const course = (Course, Author, Content) => (req, res) => {
   const contentModel = new Controller(Content)
   courseModel.findById(id, (courseItem) => {
     authorModel.findByName(courseItem.author, (authorItem) => {
-      contentModel.findByName(courseItem.author, (contentItem) => {
-        contentModel.findByLanguage(courseItem.language, (languageItem) => {
-          if (((contentItem || authorItem || languageItem) === null) && (contentItem === languageItem)) {
-            res.send('404')
-          } else {
-            res.render('course', { courseItem, authorItem })
-          }
-        })
+      contentModel.findByTitle(courseItem.title, (titleItem) => {
+        if ((authorItem || titleItem) === null) {
+          res.send('404')
+        } else {
+          res.render('course', { courseItem, authorItem, titleItem })
+        }
       })
     })
   })

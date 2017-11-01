@@ -32,8 +32,8 @@ class ModelsController {
       }
     })
   }
-  findByLanguage(technology, fn) {
-    this.model.findOne({ language: technology }, (err, item) => {
+  findByTitle(technology, fn) {
+    this.model.findOne({ title: technology }, (err, item) => {
       if (err) {
         console.log(err)
         fn(null)
