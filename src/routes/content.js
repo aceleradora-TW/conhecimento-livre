@@ -11,7 +11,21 @@ const content = (Content, Author) => (req, res) => {
           if ((allContents || contentItem || authorItem) === null) {
             res.send('404')
           } else {
-            res.render('content', { allContents, contentItem, authorItem })
+            const contents = [];
+
+            allContents.forEach(function (item) {
+              contents.push(item.toString());
+            });
+
+            const atualContent = contentItem.toString()
+
+            const indexNext = (contents.indexOf(atualContent) + 1)
+            const next = allContents[indexNext]
+
+            const indexPrevious = (contents.indexOf(atualContent) - 1)
+            const previous = allContents[indexPrevious]
+
+            res.render('content', { allContents, contentItem, authorItem, next, previous })
           }
         })
       })
