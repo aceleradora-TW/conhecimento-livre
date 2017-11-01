@@ -31,7 +31,7 @@
         <div class="playlist-container">
           <div>
             <ul>
-              {{#allContents}}
+              {{#arrayContents}}
               <li>
                 <a class='thumbnail' href="/content/{{ id }}">
                   <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
@@ -39,7 +39,7 @@
                   <p class="preview"> {{ preview }}</p>
                 </a>
               </li>
-              {{/allContents}}
+              {{/arrayContents}}
             </ul>
           </div>
         </div>
