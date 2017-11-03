@@ -2,7 +2,7 @@ const Controller = require('../mappers/models_controller')
 
 const content = (Content, Author) => (req, res) => {
   const id = req.params.id
-  let arrayContents = []
+  let contents= []
   const contentModel = new Controller(Content)
   const authorModel = new Controller(Author)
   contentModel.findAll((allContents) => {
@@ -15,10 +15,10 @@ const content = (Content, Author) => (req, res) => {
             } else {
               for (let i = 0; i < allContents.length; i++) {
                 if (allContents[i].title === titleContent.title) {
-                  arrayContents.push(allContents[i])
+                  contents.push(allContents[i])
                 }
               }
-              res.render('content', { arrayContents, contentItem, authorItem })
+              res.render('content', { contents, contentItem, authorItem })
             }
           })
         })
