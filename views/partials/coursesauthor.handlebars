@@ -1,0 +1,24 @@
+{{#arrayCourses}}
+<a href="/course/{{ _id }}">
+  <div class="card">
+    <div class="card-image">
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="{{ image }}" alt="imagem do curso">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">{{ title }}</p>
+          <p class="subtitle is-6"> Author: {{ author}}</p>
+        </div>
+      </div>
+      <div class="content">
+        {{ description }}
+      </div>
+    </div>
+  </div>
+{{/arrayCourses}}
+</a>
