@@ -10,74 +10,138 @@
 
 </head>
 <body>
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation" style=" z-index: 3;">
     <div class="navbar-brand">
-      <a href="/" class="navbar-item link-logo">&#60;/CONHECIMENTO LIVRE&#62;</a>
+      <a class="navbar-item link-logo" href="/">
+        <h1>&#60;/CONHECIMENTO LIVRE&#62;</h1>
+      </a>
     </div>
   </nav>
 
   <div class="columns">
-  <div class="column">
-    <div class="content box">
-    <h1>Hello World</h1>
-    <p>Lorem ipsum<sup><a>[1]</a></sup> dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub<sub>script</sub> works as well!</p>
-  </div>
-  </div>
-  <div class="column content is-4 box playlist-container ">
-      <ul>
+    <div class="column is-9">
+      <div class="content">
+        {{#authorItem}}
+  <article class="media box">
+    <div class="media-left">
+      <figure class="image is-256x256">
+        <img src="{{ photourl }}" alt="foto do autor" >
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <h2>{{ author }}<br></h2>
+          <small>{{ email }}</small>
+          
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+      </div>
+
+      <div class="content box">
+        <h5>BIO:</h5>
+          {{ bio }}
+      </div>
+      {{/authorItem}}
+    </div>
+    <div style="overflow-y: scroll;max-height: 90vh; z-index: 0;" class="column is-3 box">
+      <p class="menu-label">
+        <h5 class="subtitle is-5 ">Cursos do Autor:</h5>
+      </p>
+      <ul class="menu-list">
         {{#courseItens}}
         <a href="/course/{{ _id }}">
-          <li >
-            <img src="{{ image }}" alt="imagem do curso">
-            <p>{{ title }}</p>
-          </li>
+        <li class="box">
+          <figure class="image is-4by3">
+        <img src="{{ image }}" alt="imagem do curso">
+      </figure>
+        <p>{{ title }}</p>
+        </li>
+        <li class="box">
+          <figure class="image is-4by3">
+        <img src="{{ image }}" alt="imagem do curso">
+      </figure>
+        <p>{{ title }}</p>
+        </li>
+        <li class="box">
+          <figure class="image is-4by3">
+        <img src="{{ image }}" alt="imagem do curso">
+      </figure>
+        <p>{{ title }}</p>
+        </li>
+        <li class="box">
+          <figure class="image is-4by3">
+        <img src="{{ image }}" alt="imagem do curso">
+      </figure>
+        <p>{{ title }}</p>
+        </li>
+        <li class="box">
+          <figure class="image is-4by3">
+        <img src="{{ image }}" alt="imagem do curso">
+      </figure>
+        <p>{{ title }}</p>
+        </li>
+        <li class="box">
+          <figure class="image is-4by3">
+        <img src="{{ image }}" alt="imagem do curso">
+      </figure>
+        <p>{{ title }}</p>
+        </li>
+        <li class="box">
+          <figure class="image is-4by3">
+        <img src="{{ image }}" alt="imagem do curso">
+      </figure>
+        <p>{{ title }}</p>
+        </li>
+
         </a>
         {{/courseItens}}
       </ul>
-  </div>
-
-
-
-  <!-- <section class="author-section">
-    <div class="container">
-      <div class="author-container">
-        <div class="info-author">
-          {{#authorItem}}
-          <div class="photo-container">
-            <div class="photo-author">
-              <img src="{{ photourl }}" alt="" width="100%" height="100%">
-            </div>
-          </div>
-          <div class="info-container">
-            <div class="name">
-              <span>{{author}}</span>
-            </div>
-            <div class="email">
-              <span> {{email}}</span>
-            </div>
-          </div>
-        </div>
-        <div class="bio-container">
-          <div class="text-bio">
-            <p>{{bio}}</p>
-          </div>
-        </div>
-      </div>
-      {{/authorItem}}
-      <div class="playlist-container">
-        <ul>
-          {{#courseItens}}
-          <a href="/course/{{ _id }}">
-            <li>
-              <img src="{{ image }}" alt="imagem do curso">
-              <p>{{ title }}</p>
-            </li>
-          </a>
-          {{/courseItens}}
-        </ul>
-      </div>
     </div>
-  </section> -->
 
+
+
+    <!-- <div class="container">
+    <div class="author-container">
+    <div class="info-author">
+    {{#authorItem}}
+    <div class="photo-container">
+    <div class="photo-author">
+    <img src="{{ photourl }}" alt="" width="100%" height="100%">
+  </div>
+</div>
+<div class="info-container">
+<div class="name">
+<span>{{author}}</span>
+</div>
+<div class="email">
+<span> {{email}}</span>
+</div>
+</div>
+</div>
+<div class="bio-container">
+<div class="text-bio">
+<p>{{bio}}</p>
+</div>
+</div>
+</div>
+{{/authorItem}}
+<div class="playlist-container">
+<ul>
+{{#courseItens}}
+<a href="/course/{{ _id }}">
+<li>
+<img src="{{ image }}" alt="imagem do curso">
+<p>{{ title }}</p>
+</li>
+</a>
+{{/courseItens}}
+</ul>
+</div>
+</div> -->
 </body>
 </html>
