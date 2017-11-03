@@ -1,0 +1,10 @@
+@import "_variables";
+@import "_mixin";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: scroll;
+}
