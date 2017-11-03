@@ -5,14 +5,40 @@
   <title>Autor</title>
   <link rel="stylesheet" href="/css/author.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+
 </head>
 <body>
-  <section class="author-section">
-    <header class="author-header">
-      <div class="logo">
-        <h1><a href="/" class="link-logo">&#60;/CONHECIMENTO LIVRE&#62;</a></h1>
-      </div>
-    </header>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a href="/" class="navbar-item link-logo">&#60;/CONHECIMENTO LIVRE&#62;</a>
+    </div>
+  </nav>
+
+  <div class="columns">
+  <div class="column">
+    <div class="content box">
+    <h1>Hello World</h1>
+    <p>Lorem ipsum<sup><a>[1]</a></sup> dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub<sub>script</sub> works as well!</p>
+  </div>
+  </div>
+  <div class="column content is-4 box playlist-container ">
+      <ul>
+        {{#courseItens}}
+        <a href="/course/{{ _id }}">
+          <li >
+            <img src="{{ image }}" alt="imagem do curso">
+            <p>{{ title }}</p>
+          </li>
+        </a>
+        {{/courseItens}}
+      </ul>
+  </div>
+
+
+
+  <!-- <section class="author-section">
     <div class="container">
       <div class="author-container">
         <div class="info-author">
@@ -43,7 +69,7 @@
           {{#courseItens}}
           <a href="/course/{{ _id }}">
             <li>
-                <img src="{{ image }}" alt="imagem do curso">
+              <img src="{{ image }}" alt="imagem do curso">
               <p>{{ title }}</p>
             </li>
           </a>
@@ -51,6 +77,7 @@
         </ul>
       </div>
     </div>
-  </section>
+  </section> -->
+
 </body>
 </html>
