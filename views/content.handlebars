@@ -21,29 +21,46 @@
           {{#contentItem}}
           <p class="title">{{title}}</p>
           <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
-            <p class="line">Views: {{ views }}
-              {{/contentItem}}
-              {{#authorItem}}
-              <a class="right" href="/author/{{ _id }}">{{author}}</a></p>
-              {{/authorItem}}
+          {{/contentItem}}
+          <div class="line">
+            {{#previous}}
+            <form action="/content/{{ id }}">
+              <input type="submit" value="Anterior">
+            </form>
+            {{/previous}}
+            {{#next}}
+            <form action="/content/{{ id }}">
+              <input type="submit" value="Proximo">
+            </form>
+            {{/next}}
           </div>
-        </div>
-        <div class="playlist-container">
-          <div>
-            <ul>
-              {{#allContents}}
-              <li>
-                <a class='thumbnail' href="/content/{{ id }}">
-                  <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
-                  <div class="title-video">{{ title }}</div>
-                  <p class="preview"> {{ preview }}</p>
-                </a>
-              </li>
-              {{/allContents}}
-            </ul>
+          <div class="line">
+            {{#authorItem}}
+            <a href="/author/{{ _id }}">{{author}}</a>
+            {{/authorItem}}
+
+            {{#contentItem}}
+            Views: {{ views }}
+            {{/contentItem}}
           </div>
         </div>
       </div>
-    </section>
-  </body>
-  </html>
+      <div class="playlist-container">
+        <div>
+          <ul>
+            {{#allContents}}
+            <li>
+              <a class='thumbnail' href="/content/{{ id }}">
+                <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
+                <div class="title-video">{{ title }}</div>
+                <p class="preview"> {{ preview }}</p>
+              </a>
+            </li>
+            {{/allContents}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
