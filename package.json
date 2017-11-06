@@ -11,7 +11,7 @@
     "lint": "eslint *.js",
     "check": "retire -p -n",
     "watch": "mocha --recursive --watch",
-    "compile": "node-sass node_modules/bulma/bulma.sass -o public/css",
+    "compile": "node-sass bulma/bulma.sass -o public/css",
     "postinstall": "grunt sass:production"
   },
   "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
