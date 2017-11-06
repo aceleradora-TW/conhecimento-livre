@@ -29,31 +29,29 @@
             {{/next}}
           </div>
         </div>
-        <div class="playlist-container">
-          <div>
-            <ul>
-              {{#contents}}
-              <li>
-                <a class='thumbnail' href="/content/{{ id }}">
-                  <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
-                  <div class="title-video">{{ class }}</div>
-                  <p class="preview"> {{ preview }}</p>
-                </a>
-              </li>
-              {{/contents}}
-            </ul>
-          <div class="line">
-            {{#authorItem}}
-            <a href="/author/{{ _id }}">{{author}}</a>
-            {{/authorItem}}
-            {{#contentItem}}
-            Views: {{ views }}
-            {{/contentItem}}
-          </div>
-        </div>
       </div>
-
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-warning">
+          <div class="content">
+            <div class="content">
+              <h5 class="title is-5">Outras aulas:</h5>
+              <div class="scroll playlist-container">
+                <ul>
+                  {{#allContents}}
+                  <li>
+                    <a class='thumbnail' href="/content/{{ id }}">
+                      <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
+                      <div class="title-video">{{ title }}</div>
+                      <p class="preview"> {{ preview }}</p>
+                    </a>
+                  </li>
+                  {{/allContents}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
-  </section>
-</body>
-</html>
+  </body>
+  </html>
