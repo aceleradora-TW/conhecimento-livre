@@ -19,7 +19,7 @@
       <div class="content-container">
         <div class="player-container">
           {{#contentItem}}
-          <p class="title">{{title}}</p>
+          <p class="title">{{title}} - {{ class }}</p>
           <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
           {{/contentItem}}
           <div class="line">
@@ -34,32 +34,31 @@
             </form>
             {{/next}}
           </div>
+        </div>
+        <div class="playlist-container">
+          <div>
+            <ul>
+              {{#contents}}
+              <li>
+                <a class='thumbnail' href="/content/{{ id }}">
+                  <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
+                  <div class="title-video">{{ class }}</div>
+                  <p class="preview"> {{ preview }}</p>
+                </a>
+              </li>
+              {{/contents}}
+            </ul>
           <div class="line">
             {{#authorItem}}
             <a href="/author/{{ _id }}">{{author}}</a>
             {{/authorItem}}
-
             {{#contentItem}}
             Views: {{ views }}
             {{/contentItem}}
           </div>
         </div>
       </div>
-      <div class="playlist-container">
-        <div>
-          <ul>
-            {{#allContents}}
-            <li>
-              <a class='thumbnail' href="/content/{{ id }}">
-                <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
-                <div class="title-video">{{ title }}</div>
-                <p class="preview"> {{ preview }}</p>
-              </a>
-            </li>
-            {{/allContents}}
-          </ul>
-        </div>
-      </div>
+
     </div>
   </section>
 </body>
