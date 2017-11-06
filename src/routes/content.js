@@ -13,7 +13,12 @@ const content = (Content, Author) => (req, res) => {
               res.send('404')
             } else {
               const contents = allContents.filter(content => content.title === titleContent.title)
-              res.render('content', { contents, contentItem, authorItem })
+              const atualContent = contentItem.toString()
+              const indexNext = (contents.indexOf(atualContent) + 1)
+              const next = allContents[indexNext]
+              const indexPrevious = (contents.indexOf(atualContent) - 1)
+              const previous = allContents[indexPrevious]
+              res.render('content', { contents, contentItem, authorItem, next, previous })
             }
           })
         })
