@@ -33,7 +33,7 @@
         <p>
           <h2>{{ author }}<br></h2>
           <small>{{ email }}</small>
-          
+
         </p>
       </div>
 
@@ -48,100 +48,22 @@
       </div>
       {{/authorItem}}
     </div>
-    <div style="overflow-y: scroll;max-height: 90vh; z-index: 0;" class="column is-3 box">
+    <div style="overflow-y: scroll;max-height: 90vh; margin-top: 1%;" class="column is-3 box">
       <p class="menu-label">
         <h5 class="subtitle is-5 ">Cursos do Autor:</h5>
       </p>
       <ul class="menu-list">
         {{#courseItens}}
-        <a href="/course/{{ _id }}">
-        <li class="box">
-          <figure class="image is-4by3">
-        <img src="{{ image }}" alt="imagem do curso">
-      </figure>
-        <p>{{ title }}</p>
-        </li>
-        <li class="box">
-          <figure class="image is-4by3">
-        <img src="{{ image }}" alt="imagem do curso">
-      </figure>
-        <p>{{ title }}</p>
-        </li>
-        <li class="box">
-          <figure class="image is-4by3">
-        <img src="{{ image }}" alt="imagem do curso">
-      </figure>
-        <p>{{ title }}</p>
-        </li>
-        <li class="box">
-          <figure class="image is-4by3">
-        <img src="{{ image }}" alt="imagem do curso">
-      </figure>
-        <p>{{ title }}</p>
-        </li>
-        <li class="box">
-          <figure class="image is-4by3">
-        <img src="{{ image }}" alt="imagem do curso">
-      </figure>
-        <p>{{ title }}</p>
-        </li>
-        <li class="box">
-          <figure class="image is-4by3">
-        <img src="{{ image }}" alt="imagem do curso">
-      </figure>
-        <p>{{ title }}</p>
-        </li>
-        <li class="box">
-          <figure class="image is-4by3">
-        <img src="{{ image }}" alt="imagem do curso">
-      </figure>
-        <p>{{ title }}</p>
-        </li>
-
+          <a href="/course/{{ _id }}">
+            <li class="box">
+              <figure class="image is-4by3">
+                <img src="{{ image }}" alt="imagem do curso">
+              </figure>
+              <p>{{ title }}</p>
+            </li>
         </a>
         {{/courseItens}}
       </ul>
     </div>
-
-
-
-    <!-- <div class="container">
-    <div class="author-container">
-    <div class="info-author">
-    {{#authorItem}}
-    <div class="photo-container">
-    <div class="photo-author">
-    <img src="{{ photourl }}" alt="" width="100%" height="100%">
-  </div>
-</div>
-<div class="info-container">
-<div class="name">
-<span>{{author}}</span>
-</div>
-<div class="email">
-<span> {{email}}</span>
-</div>
-</div>
-</div>
-<div class="bio-container">
-<div class="text-bio">
-<p>{{bio}}</p>
-</div>
-</div>
-</div>
-{{/authorItem}}
-<div class="playlist-container">
-<ul>
-{{#courseItens}}
-<a href="/course/{{ _id }}">
-<li>
-<img src="{{ image }}" alt="imagem do curso">
-<p>{{ title }}</p>
-</li>
-</a>
-{{/courseItens}}
-</ul>
-</div>
-</div> -->
 </body>
 </html>
