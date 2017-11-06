@@ -10,20 +10,20 @@
 }
 
 .title-logo {
-  font-size: 3em;
+  font-size: 3.2em;
 }
 
 .subtitle-top {
-  @include size(25%, 100%);
-  font-size: 1em;
+  @include size(95%, 100%);
+  font-size: 1.7em;
   justify-content: center;
   display: $display-default;
   margin-top: 1vh;
 }
 
 .subtitle-bottom {
-  @include size(25%, 100%);
-  font-size: 1em;
+  @include size(28%, 100%);
+  font-size: 1.7em;
   justify-content: center;
   display: $display-default;
   margin-bottom: 1vh;

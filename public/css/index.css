@@ -104,16 +104,11 @@ body {
           color: white;
           opacity: 0.7; }
 
-.right {
-  justify-content: flex-end; }
-
-.left {
-  justify-content: flex-start; }
-
 .line {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-top: 2vh; }
 
 * {
   box-sizing: border-box; }
@@ -250,20 +245,20 @@ body {
   margin-left: 10%; }
 
 .title-logo {
-  font-size: 3em; }
+  font-size: 3.2em; }
 
 .subtitle-top {
-  height: 25%;
+  height: 95%;
   width: 100%;
-  font-size: 1em;
+  font-size: 1.7em;
   justify-content: center;
   display: flex;
   margin-top: 1vh; }
 
 .subtitle-bottom {
-  height: 25%;
+  height: 28%;
   width: 100%;
-  font-size: 1em;
+  font-size: 1.7em;
   justify-content: center;
   display: flex;
   margin-bottom: 1vh; }
