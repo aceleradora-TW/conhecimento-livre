@@ -1,45 +1,24 @@
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Conhecimento Livre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bulma.css">
 </head>
 <body>
   {{> header}}
-  <section class="content-section">
-    {{#courseItem}}
-    <div class="container-course">
-      <div class="top-course">
-        <div class="info-course">
-          <p class="big-title bold-font" >{{ title }}</p>
-          {{/courseItem}}
-          {{#authorItem}}
-          <p><span class="bold-font">Autor:</span><a href="/author/{{ _id }}"> {{author}}</a></p>
-          {{/authorItem}}
-          {{#courseItem}}
-          <p><span class="bold-font">Duração:</span> {{ duration }}</p>
-          <p><span class="bold-font">Linguagem:</span> {{ language }}</p>
-          <p><span class="bold-font">Número de aulas:</span> {{ lessons }}</p>
-        </div>
-        <div class="player-course">
-          {{/courseItem}}
-          {{#titleItem}}
-          <a href="/content/{{ _id }}"> {{class}}</a>
-          {{/titleItem}}
-          {{#courseItem}}
+  <section class="hero is-fullheight is-default is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+          {{> courseImage}}
+          <div class="column is-6 is-offset-1">
+            {{> courseDescription}}
+            <br>
+            {{> courseDetails}}
+            </div>
+          </div>
         </div>
       </div>
-      <div class="bottom-course">
-        <div class="description-course">
-          <p><span class="bold-font">Descrição do curso:</span></p>
-          <p>{{ description }}</p>
-        </div>
-        <div class="classes">
-        </div>
-      </div>
-    </div>
-    {{/courseItem}}
-  </section>
-</body>
-</html>
+    </section>
+  </body>
+  </html>
