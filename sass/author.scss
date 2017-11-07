@@ -54,6 +54,8 @@ body {
   }
 }
 
+
+
 .container {
   @include heigth-width(90%, 100%);
   display: $display-default;
@@ -122,7 +124,7 @@ body {
 .playlist-container{
   @include heigth-width(100%, 30%);
   border: 1px;
-  border-color: $border-color-default;
+  border-color: $color-default;
   border-left-style: dashed;
   display: $display-default;
   justify-content: flex-end;

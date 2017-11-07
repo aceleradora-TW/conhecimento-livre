@@ -7,45 +7,57 @@
 </head>
 <body>
   {{> header}}
-  <section class="author-section">
-    <div class="container">
-      <div class="author-container">
-        <div class="info-author">
-          {{#authorItem}}
-          <div class="photo-container">
-            <div class="photo-author">
-              <img src="{{ photourl }}" alt="" width="100%" height="100%">
+
+
+  <div class="hero-body">
+      {{#authorItem}}
+        <div class="container has-text-centered">
+          <div class="columns is-vcentered">
+            <div class="column is-5">
+              <figure class="image is-256x256 box">
+                <img src="{{ photourl }}" alt="foto do autor" >
+              </figure>
             </div>
-          </div>
-          <div class="info-container">
-            <div class="name">
-              <span>{{author}}</span>
-            </div>
-            <div class="email">
-              <span> {{email}}</span>
+            <div class="column is-6 is-offset-1">
+              <h1 class="title is-2">
+                {{ author }}
+              </h1>
+              <h2 class="subtitle is-4">
+                {{ email }}
+              </h2>
+              <br>
+              <strong>BIO: </strong>
+              <p class="has-text-centered box">
+                {{ bio }}
+
+              </p>
+
             </div>
           </div>
         </div>
-        <div class="bio-container">
-          <div class="text-bio">
-            <p>{{bio}}</p>
-          </div>
-        </div>
+        {{/authorItem}}
       </div>
-      {{/authorItem}}
-      <div class="playlist-container">
-        <ul>
-          {{#arrayCourses}}
-          <a href="/course/{{ _id }}">
-            <li>
-                <img src="{{ image }}" alt="imagem do curso">
-              <p>{{ title }}</p>
-            </li>
-          </a>
-          {{/arrayCourses}}
-        </ul>
+
+      <div class="hero-foot">
+      <div class="container">
+        <div class="tabs is-centered">
+          <ul>
+            <li><strong>Cursos do Autor</strong></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </section>
-</body>
-</html>
+
+
+
+    <div class="courses">
+                  {{> coursesauthor}}
+
+    </div>
+
+
+
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+
+  </body>
+  </html>
