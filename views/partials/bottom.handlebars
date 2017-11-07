@@ -1,3 +1,26 @@
+<div class="container is-fluid">
+  {{#allContents}}
+  <a href="/course/{{ _id }}">
+  <div class="card" style="width: 30%; margin: 1%; display: inline-block;">
+    <header class="card-header">
+      <p class="card-header-title" style="height: 10vh">
+        {{ title }}
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{ description }}
+        {{ author }}
+        <br>
+        {{ language }}
+      </div>
+    </div>
+  </div>
+  {{/allContents}}
+</a>
+</div>
+<!--
+
 <ul>
   {{#allContents}}
       <li class="">
@@ -11,4 +34,4 @@
         </a>
       </li>
   {{/allContents}}
-</ul>
+</ul> -->
