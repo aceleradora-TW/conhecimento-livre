@@ -3,57 +3,39 @@
 <head>
   <meta charset="utf-8">
   <title>Autor</title>
-  <link rel="stylesheet" href="/css/author.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-
+  <link rel="stylesheet" href="../css/bulma.css">
 </head>
 <body>
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation" style=" z-index: 3;">
-    <div class="navbar-brand">
-      <a class="navbar-item link-logo" href="/">
-        <h1>&#60;/CONHECIMENTO LIVRE&#62;</h1>
-      </a>
-    </div>
-  </nav>
-
-  <div class="columns">
-    <div class="column is-9">
-      <div class="content">
-        {{#authorItem}}
-  <article class="media box">
-    <div class="media-left">
-      <figure class="image is-256x256">
-        <img src="{{ photourl }}" alt="foto do autor" >
-      </figure>
-    </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <h2>{{ author }}<br></h2>
-          <small>{{ email }}</small>
-
-        </p>
-      </div>
-
-    </div>
-  </article>
-
-      </div>
-
-      <div class="content box">
-        <h5>BIO:</h5>
-          {{ bio }}
+  {{> header}}
+  <section class="author-section">
+    <div class="container">
+      <div class="author-container">
+        <div class="info-author">
+          {{#authorItem}}
+          <div class="photo-container">
+            <div class="photo-author">
+              <img src="{{ photourl }}" alt="" width="100%" height="100%">
+            </div>
+          </div>
+          <div class="info-container">
+            <div class="name">
+              <span>{{author}}</span>
+            </div>
+            <div class="email">
+              <span> {{email}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="bio-container">
+          <div class="text-bio">
+            <p>{{bio}}</p>
+          </div>
+        </div>
       </div>
       {{/authorItem}}
-    </div>
-    <div style="overflow-y: scroll;max-height: 90vh; margin-top: 1%;" class="column is-3 box">
-      <p class="menu-label">
-        <h5 class="subtitle is-5 ">Cursos do Autor:</h5>
-      </p>
-      <ul class="menu-list">
-        {{#courseItens}}
+      <div class="playlist-container">
+        <ul>
+          {{#arrayCourses}}
           <a href="/course/{{ _id }}">
             <li class="box">
               <figure class="image is-4by3">
@@ -61,9 +43,10 @@
               </figure>
               <p>{{ title }}</p>
             </li>
-        </a>
-        {{/courseItens}}
-      </ul>
+          </a>
+          {{/arrayCourses}}
+        </ul>
+      </div>
     </div>
 </body>
 </html>

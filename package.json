@@ -11,7 +11,7 @@
     "lint": "eslint *.js",
     "check": "retire -p -n",
     "watch": "mocha --recursive --watch",
-    "compile": "node-sass sass/ -o public/css",
+    "compile": "node-sass bulma/bulma.sass -o public/css",
     "postinstall": "grunt sass:production"
   },
   "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
@@ -39,8 +39,12 @@
     "mocha": "^3.5.3",
     "mongoose": "^4.11.14",
     "nightwatch": "^0.9.16",
+<<<<<<< HEAD
     "node-sass-middleware": "^0.11.0",
     "sass": "^1.0.0-beta.2"
+=======
+    "node-sass-middleware": "^0.11.0"
+>>>>>>> 92bd6c4ba19bb19707be86b0cd86166ab0531bb7
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",

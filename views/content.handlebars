@@ -1,49 +1,59 @@
-<!DOCTYPE html>
 <html>
 <head>
   {{#contentItem}}
   <meta charset="utf-8">
   <title>Conhecimento Livre</title>
-  <link rel="stylesheet" href="/css/content.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+  <link rel="stylesheet" href="../css/bulma.css">
   {{/contentItem}}
 </head>
 <body>
+  {{> header}}
   <section class="content-section">
-    <header class="content-header">
-      <div class="logo">
-        <h1><a href="/" class="link-logo">&#60;/CONHECIMENTO LIVRE&#62;</a></h1>
-      </div>
-    </header>
     <div class="container">
       <div class="content-container">
         <div class="player-container">
           {{#contentItem}}
-          <p class="title">{{title}}</p>
+          <p class="title">{{title}} - {{ class }}</p>
           <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
-            <p class="line">Views: {{ views }}
-              {{/contentItem}}
-              {{#authorItem}}
-              <a class="right" href="/author/{{ _id }}">{{author}}</a></p>
-              {{/authorItem}}
+          {{/contentItem}}
+          <div class="line">
+            {{#previous}}
+            <form action="/content/{{ id }}">
+              <input type="submit" value="Anterior">
+            </form>
+            {{/previous}}
+            {{#next}}
+            <form action="/content/{{ id }}">
+              <input type="submit" value="Proximo">
+            </form>
+            {{/next}}
           </div>
         </div>
         <div class="playlist-container">
           <div>
             <ul>
-              {{#allContents}}
+              {{#contents}}
               <li>
                 <a class='thumbnail' href="/content/{{ id }}">
                   <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
-                  <div class="title-video">{{ title }}</div>
+                  <div class="title-video">{{ class }}</div>
                   <p class="preview"> {{ preview }}</p>
                 </a>
               </li>
-              {{/allContents}}
+              {{/contents}}
             </ul>
+          <div class="line">
+            {{#authorItem}}
+            <a href="/author/{{ _id }}">{{author}}</a>
+            {{/authorItem}}
+            {{#contentItem}}
+            Views: {{ views }}
+            {{/contentItem}}
           </div>
         </div>
       </div>
-    </section>
-  </body>
-  </html>
+
+    </div>
+  </section>
+</body>
+</html>
