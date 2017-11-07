@@ -8,16 +8,19 @@ const content = (Content, Author) => (req, res) => {
     contentModel.findById(id, (contentItem) => {
       contentModel.findByTitle(contentItem.title, (titleContent) => {
         authorModel.findByName(contentItem.author, (authorItem) => {
-          contentModel.updateViews(id, (views) => {
+          contentModel.updateViews(id, () => {
             if ((allContents || contentItem || authorItem) === null) {
               res.send('404')
             } else {
-              const contents = allContents.filter(content => content.title === titleContent.title)
-              const atualContent = contentItem.toString()
-              const indexNext = (contents.indexOf(atualContent) + 1)
-              const next = allContents[indexNext]
-              const indexPrevious = (contents.indexOf(atualContent) - 1)
-              const previous = allContents[indexPrevious]
+              const contents = allContents
+                .filter(content => content.title === titleContent.title)
+              const currentIndex = contents
+                .findIndex(content => content._id.toString() === contentItem._id.toString())
+              const next = contents[currentIndex + 1]
+              const previous = contents[currentIndex - 1]
+
+              contents.splice(currentIndex, 1)
+
               res.render('content', { contents, contentItem, authorItem, next, previous })
             }
           })
