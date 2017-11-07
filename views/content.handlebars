@@ -1,43 +1,67 @@
 <html>
 <head>
-  {{#contentItem}}
-  <meta charset="utf-8">
-  <title>Conhecimento Livre</title>
   <link rel="stylesheet" href="../css/bulma.css">
-  {{/contentItem}}
 </head>
 <body>
   {{> header}}
-  <section class="content-section">
-    <div class="container">
-      <div class="content-container">
-        <div class="player-container">
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+
+      <div class="tile is-parent">
+        <article class="tile is-child notification">
           {{#contentItem}}
-          <p class="title">{{title}} - {{ class }}</p>
-          <iframe class="player-size" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
-          {{/contentItem}}
-          <div class="line">
-            {{#previous}}
-            <form action="/content/{{ id }}">
-              <input type="submit" value="Anterior">
-            </form>
-            {{/previous}}
-            {{#next}}
-            <form action="/content/{{ id }}">
-              <input type="submit" value="Proximo">
-            </form>
-            {{/next}}
-          </div>
+          <p class="title">{{title}}</p>
+          <div class="content">
+            <iframe width="100%" height="480" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
+            {{/contentItem}}
+            <nav class="level">
+              <div class="level-left">
+                {{#authorItem}}
+                <a href="/author/{{ _id }}">{{author}}</a>
+                {{/authorItem}}
+              </div>
+              <div class="level-right">
+                {{#contentItem}}
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading title is-6">Views: {{ views }}</p>
+                    {{/contentItem}}
+
+
+                  </div>
+
+                </div>
+              </nav>
+            <nav class="level">
+              <div class="level-left">
+                {{#previous}}
+                <form  action="/content/{{ id }}">
+                  <input class="button is-primary" type="submit" value="Anterior">
+                </form>
+                {{/previous}}
+              </div>
+              <div class="level-right">
+
+                    {{#next}}
+                    <form action="/content/{{ id }}">
+                      <input class="button is-primary"type="submit" value="Proximo">
+                    </form>
+
+                  {{/next}}
+
+              </nav>
+            </div>
+          </article>
         </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-warning">
+        <article class="tile is-child notification ">
           <div class="content">
             <div class="content">
               <h5 class="title is-5">Outras aulas:</h5>
               <div class="scroll playlist-container">
                 <ul>
-                  {{#allContents}}
+                  {{#contents}}
                   <li>
                     <a class='thumbnail' href="/content/{{ id }}">
                       <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
@@ -45,7 +69,7 @@
                       <p class="preview"> {{ preview }}</p>
                     </a>
                   </li>
-                  {{/allContents}}
+                  {{/contents}}
                 </ul>
               </div>
             </div>
