@@ -1,4 +1,4 @@
-$navbar-background-color: $turquoise !default
+$navbar-background-color: $black !default
 $navbar-height: 3.25rem !default
 
 $navbar-item-color: $grey-dark !default
@@ -36,6 +36,7 @@ $navbar-divider-background-color: $border !default
 .navbar
   background-color: $navbar-background-color
   min-height: $navbar-height
+  opacity: 0.7
   position: relative
   @each $name, $pair in $colors
     $color: nth($pair, 1)
