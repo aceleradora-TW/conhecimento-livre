@@ -2,57 +2,27 @@ class ModelsController {
   constructor(model) {
     this.model = model
   }
-  findAll(fn) {
-    this.model.find({}, (err, all) => {
-      if (err) {
-        console.log(err);
-        fn(null)
-      } else {
-        fn(all)
-      }
-    })
+
+  findAll() {
+    return this.model.find({}).exec()
   }
-  findById(id, fn) {
-    this.model.findOne({ _id: id }, (err, item) => {
-      if (err) {
-        console.log(err)
-        fn(null)
-      } else {
-        fn(item)
-      }
-    })
+
+  findAuthorById(id) {
+    return this.model.findOne({ _id: id }).exec()
   }
-  findByName(name, fn) {
-    this.model.findOne({ author: name }, (err, item) => {
-      if (err) {
-        console.log(err)
-        fn(null)
-      } else {
-        fn(item)
-      }
-    })
+
+  findCourseById(id) {
+    return this.model.find({'course._id': id}, {"course.$":1, "name": 1}).exec()
   }
-  findByTitle(titleName, fn) {
-    this.model.findOne({ title: titleName }, (err, item) => {
-      if (err) {
-        console.log(err)
-        fn(null)
-      } else {
-        fn(item)
-      }
-    })
+
+  findCourseByContentId(id) {
+    return this.model.findOne({'course.content._id': id}, {"course.$":1, "name": 1}).exec()
   }
-  
-  updateViews(id, fn) {
-    this.model.update({ _id: id }, { $inc: { views: 1 } }, (err, item) => {
-      if (err) {
-        console.log(err);
-        fn(null)
-      } else {
-        fn(item)
-      }
-    })
-  }
+
+  updateViews(id, views) {
+    return this.model.update({'course.content._id': id }, { $inc: { views: 1 } }).exec()
+ }
+
 }
 
 module.exports = ModelsController

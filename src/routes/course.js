@@ -1,25 +1,17 @@
 const Controller = require('../mappers/models_controller')
 
-const course = (Course, Author, Content) => (req, res) => {
+const course = (Author) => (req, res) => {
   const id = req.params.id
-  const courseModel = new Controller(Course)
-  const authorModel = new Controller(Author)
-  const contentModel = new Controller(Content)
-  courseModel.findById(id, (courseItem) => {
-    if (courseItem === null) {
-      res.send('404 - curso não encontrado')
-      return
-    }
-    authorModel.findByName(courseItem.author, (authorItem) => {
-      contentModel.findByTitle(courseItem.title, (titleItem) => {
-        if ((authorItem || titleItem) === null) {
-          res.send('404')
-        } else {
-          res.render('course', { courseItem, authorItem, titleItem })
-        }
-      })
-    })
+  const author = new Controller(Author)
+
+  author
+  .findCourseById(id)
+  .then(courseItem => {
+    firstContent = courseItem[0].course[0].content[0]
+    console.log(firstContent);
+    res.render('course', { courseItem, firstContent })
   })
+  .catch(error => res.render('error', { error: error.message }))
 }
 
 module.exports = course
