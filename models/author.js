@@ -22,6 +22,7 @@ const courseSchema = new Schema({
   publication: Date,
   lessons: Number,
   language: String,
+  image: String,
   contents: [contentSchema],
 })
 
