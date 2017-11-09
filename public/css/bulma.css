@@ -3336,7 +3336,9 @@ a.tag:hover {
   display: inline-block;
   margin: 1%;
   position: relative;
-  width: 30%; }
+  display: inline-block;
+  width: 30%;
+  margin: 1%; }
 
 .card-header {
   align-items: stretch;
