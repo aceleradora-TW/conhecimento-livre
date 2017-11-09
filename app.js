@@ -8,7 +8,7 @@ const routes = require('./src/routes/routes')
 
 const app = express()
 
-const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
+const MONGO_URL = process.env.DATABASELOGIN
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
