@@ -2,13 +2,13 @@
   {{#courseItem}}
   <div class="column">
     <div class="media-content subtitle is-5">
-      <p>Pessoa autora: <a class="has-text-info" href="/author/{{ _id }}"> {{author}}</a></p>
+      <p>Pessoa autora: <a class="has-text-info" href="/author/{{ _id }}"> {{name}}</a></p>
       {{#course}}
       <div class="media-content subtitle is-6 has-text-grey-darker">
         <p><span>Duração:</span> {{ duration }}</p>
         <p><span>Linguagem:</span> {{ language }}</p>
         <p><span>Número de aulas:</span> {{ lessons }}</p>
-        {{/course}}
+        {{/courses}}
       </div>
     </div>
   </div>

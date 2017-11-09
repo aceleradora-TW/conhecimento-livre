@@ -7,8 +7,7 @@ const course = (Author) => (req, res) => {
   author
   .findCourseById(id)
   .then(courseItem => {
-    firstContent = courseItem[0].course[0].content[0]
-    console.log(firstContent);
+    firstContent = courseItem.courses[0].contents[0]
     res.render('course', { courseItem, firstContent })
   })
   .catch(error => res.render('error', { error: error.message }))

@@ -9,17 +9,12 @@ const content = (Author) => (req, res) => {
   author
   .findCourseByContentId(id)
   .then(courseItem => {
-    courseItem.course[0].content.filter((item) => {
-      if(item._id.toString() == id.toString()){
-        responseData.contentItem = item
-      }
-      responseData.allContents.push(item)
-    })
-    responseData.authorName = courseItem.name
+    responseData.allContents = courseItem.courses[0].contents
+    responseData.contentItem = responseData.allContents
+    .find(item => item._id.toString() == id.toString())
+      responseData.authorName = courseItem.name
   })
-  .then(() => {
-    res.render('content', responseData)
-  })
+  .then(() => res.render('content', responseData))
   .catch(error => res.render('error', {error:error.message}))
 }
 

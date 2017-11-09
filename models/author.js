@@ -22,7 +22,7 @@ const courseSchema = new Schema({
   publication: Date,
   lessons: Number,
   language: String,
-  content: [contentSchema],
+  contents: [contentSchema],
 })
 
 const authorSchema = new Schema({
@@ -30,7 +30,7 @@ const authorSchema = new Schema({
   bio: String,
   email: String,
   photourl: String,
-  course: [courseSchema],
+  courses: [courseSchema],
 })
 
 module.exports = mongoose.model('Author', authorSchema)

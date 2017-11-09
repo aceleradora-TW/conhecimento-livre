@@ -1,7 +1,6 @@
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
-const Course = require('./models/course')
 const bodyParser = require('body-parser')
 
 const exphbs = require('express-handlebars')
@@ -33,22 +32,6 @@ app.get('/content/:id', routes.content)
 app.get('/course/:id', routes.course)
 
 app.get('/author/:id', routes.author)
-
-app.post('/course', (req, res) => {
-  const course = new Course()
-  course.title = req.body.title
-  course.author = req.body.author
-  course.content = req.body.content
-  course.publication = Date.now()
-
-  course.save((error) => {
-    if (error) {
-      console.log(error)
-    } else {
-      res.send('Salvo com sucesso!')
-    }
-  })
-})
 
 app.listen(app.get('port'), () => {
   console.log(`Node app is running on port ${app.get('port')}`)
