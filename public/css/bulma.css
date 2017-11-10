@@ -3102,9 +3102,8 @@ a.tag:hover {
     vertical-align: middle; }
 
 .title {
-  color: #0a0a0a;
+  color: white;
   font-size: 1.5rem;
-  font-weight: 600;
   line-height: 1.125; }
   .title strong {
     color: inherit;
@@ -3879,8 +3878,9 @@ a.dropdown-item {
   padding: 20px; }
 
 .navbar {
-  background-color: #00d1b2;
+  background-color: #0a0a0a;
   min-height: 3.25rem;
+  opacity: 0.7;
   position: relative; }
   .navbar.is-white {
     background-color: white;
