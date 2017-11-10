@@ -5618,8 +5618,6 @@ label.panel-block {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
-  .hero .navbar {
-    background: none; }
   .hero .tabs ul {
     border-bottom: none; }
   .hero.is-white {
