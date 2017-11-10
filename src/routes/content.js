@@ -1,7 +1,7 @@
 
 const Controller = require('../mappers/models_controller')
 
-const content = (Author) => (req, res) => {
+const content = Author => (req, res) => {
   const id = req.params.id
   const author = new Controller(Author)
   const responseData = {}
