@@ -1,5 +1,4 @@
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
   grunt.initConfig({
     sass: {
       development: {
@@ -7,28 +6,28 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: "sass/",
-          src: ["**/*.scss"],
-          dest: "public/css",
-          ext: ".css"
-        }]
+          cwd: 'sass/',
+          src: ['**/*.scss'],
+          dest: 'public/css',
+          ext: '.css',
+        }],
       },
       production: {
         options: {
         },
         files: [{
           expand: true,
-          cwd: "sass/",
-          src: ["**/*.scss"],
-          dest: "public/css",
-          ext: ".css"
-        }]
-      }
+          cwd: 'sass/',
+          src: ['**/*.scss'],
+          dest: 'public/css',
+          ext: '.css',
+        }],
+      },
     },
     watch: {
       files: ['<%= sass.files %>'],
-      tasks: ['sass']
-    }
+      tasks: ['sass'],
+    },
   });
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
