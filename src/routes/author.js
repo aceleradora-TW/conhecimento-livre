@@ -23,8 +23,8 @@ const author = (Author, Course) => (req, res) => {
 
           arrayCourses.forEach(function(item){
            item.title = item.title.substring(0, 19)+"..."+"\n"
-          })
-
+           console.log(item.title);
+         })
 
           res.render('author', { authorItem, arrayCourses })
         }
