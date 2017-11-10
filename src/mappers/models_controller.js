@@ -42,6 +42,7 @@ class ModelsController {
       }
     })
   }
+  
   updateViews(id, fn) {
     this.model.update({ _id: id }, { $inc: { views: 1 } }, (err, item) => {
       if (err) {
