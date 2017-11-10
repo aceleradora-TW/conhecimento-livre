@@ -86,8 +86,7 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
-  overflow-y: scroll; }
+  text-size-adjust: 100%; }
 
 article,
 aside,
