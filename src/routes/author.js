@@ -1,10 +1,10 @@
 const Controller = require('../mappers/models_controller')
 
-const author = (Author) => (req, res) => {
+const author = Author => (req, res) => {
   const id = req.params.id
-  const author = new Controller(Author)
+  const authorController = new Controller(Author)
 
-  author
+  authorController
   .findAuthorById(id)
   .then(authorItem =>{
     authorItem.courses.forEach( item => {
