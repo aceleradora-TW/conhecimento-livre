@@ -7,6 +7,10 @@ const author = (Author, Course) => (req, res) => {
   const courseModel = new Controller(Course)
   courseModel.findAll((allCourses) => {
     authorModel.findById(id, (authorItem) => {
+      if (authorItem === null) {
+        res.send('404 - autor não encontrado')
+        return
+      }
       courseModel.findByName(authorItem.author, (courseItens) => {
         if (courseItens === null) {
           res.send('404')
