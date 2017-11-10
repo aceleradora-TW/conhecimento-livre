@@ -6064,7 +6064,8 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .hero.is-medium .hero-body {
       padding-bottom: 9rem;
-      padding-top: 9rem; } }
+      padding-top: 9rem;
+      background-image: url("../images/banner-inicial.jpg"); } }
   @media screen and (min-width: 769px), print {
     .hero.is-large .hero-body {
       padding-bottom: 18rem;
