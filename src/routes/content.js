@@ -6,6 +6,10 @@ const content = (Content, Author) => (req, res) => {
   const authorModel = new Controller(Author)
   contentModel.findAll((allContents) => {
     contentModel.findById(id, (contentItem) => {
+      if (contentItem === null) {
+        res.send('404 - aula não encontrada')
+        return
+      }
       contentModel.findByTitle(contentItem.title, (titleContent) => {
         authorModel.findByName(contentItem.author, (authorItem) => {
           contentModel.updateViews(id, () => {
