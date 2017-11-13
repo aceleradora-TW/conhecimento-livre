@@ -3333,13 +3333,13 @@ a.tag:hover {
 
 .card {
   background-color: white;
-  box-shadow: 1px 1px 3px #969696;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: #4a4a4a;
   display: inline-block;
   margin: 1%;
   position: relative;
   display: inline-block;
-  width: 22.5%;
+  width: 30%;
   margin: 1%; }
 
 .card-header {
