@@ -5616,8 +5616,6 @@ label.panel-block {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
-  .hero .pag-inicial {
-    background-image: url("../images/banner-inicial.jpg"); }
   .hero .tabs ul {
     border-bottom: none; }
   .hero.is-white {
@@ -6188,6 +6186,7 @@ label.panel-block {
 .fullhight {
   min-height: 96.5vh; }
 
+<<<<<<< e2c5e6a1c3f0713f6d8d0087dee6de92988e11f4
 .is-black {
   color: black; }
 
@@ -6206,3 +6205,10 @@ label.panel-block {
 .lateral-padding {
   padding-left: 15vw;
   padding-right: 15vw; }
+=======
+.absolute {
+  position: absolute; }
+
+.pag-inicial {
+  background-image: url("../images/banner-inicial.jpg"); }
+>>>>>>> <@JessicaFranke, @FilipeHassen> Corrige header e hero pag inicial #81

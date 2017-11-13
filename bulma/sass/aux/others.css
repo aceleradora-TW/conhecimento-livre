@@ -7,9 +7,9 @@
 }
 
 .playlist-container ul {
-    height: 100%;
-    width: 90%;
-    font-size: 0.9em;
+  height: 100%;
+  width: 90%;
+  font-size: 0.9em;
 }
 
 .playlist-container ul li {
@@ -74,6 +74,17 @@
 }
 
 .lateral-padding {
-padding-left: 15vw;
-padding-right: 15vw;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.pag-inicial{
+  background-image: url('../images/banner_inicial.png');
+  background-size: cover;
+  background-position: top;
+
 }
