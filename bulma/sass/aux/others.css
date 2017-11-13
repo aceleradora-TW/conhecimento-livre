@@ -60,3 +60,11 @@
 .card .card-body{
   background: #e5e5e5;
 }
+
+.max-height {
+  max-height: 40vh;
+}
+
+.border-radius {
+  border-radius: 50%
+}

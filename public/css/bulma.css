@@ -6179,8 +6179,19 @@ label.panel-block {
 .fullhight {
   min-height: 96.5vh; }
 
+<<<<<<< fe9a713e425e11b50d095f0a8a0eb923b3b20913
 .is-black {
   color: black; }
 
 .card .card-body {
   background: #e5e5e5; }
+=======
+.absolute {
+  position: absolute; }
+
+.max-height {
+  max-height: 40vh; }
+
+.border-radius {
+  border-radius: 50%; }
+>>>>>>> <@FeAlmeida,@MauricioSalin> define estrutura hero
