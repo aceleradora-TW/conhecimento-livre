@@ -6200,7 +6200,7 @@ label.panel-block {
   color: black; }
 
 .card .card-body {
-  background: #e5e5e5;
+  background: #e5e5e5 !important;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
