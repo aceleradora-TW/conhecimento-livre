@@ -6136,15 +6136,11 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
-.content-columns {
+.margin-hero {
   width: 100%;
-  heigth: 100%;
   margin-top: -20%; }
-  .content-columns .thumbnail-align {
+  .margin-hero .thumbnail-align {
     margin-left: -10%; }
-
-.absolute {
-  position: absolute; }
 
 .scroll {
   overflow-y: scroll;
@@ -6154,6 +6150,9 @@ label.panel-block {
   height: 100%;
   width: 90%;
   font-size: 0.9em; }
+
+.playlist-container ul:first-child {
+  margin-top: 11.5%; }
 
 .playlist-container ul li {
   height: 20%;
