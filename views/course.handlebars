@@ -5,20 +5,44 @@
   <link rel="stylesheet" href="../css/bulma.css">
 </head>
 <body>
-  {{> hero}}
-  <section class="hero is-fullheight is-default is-bold">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <div class="columns is-vcentered">
-          {{> courseImage}}
-          <div class="column is-6 is-offset-1">
-            {{> courseDescription}}
-            <br>
+  <section class="hero is-primary">
+    {{> header}}
+    <div class="hero-body columns max-height">
+      <div class="column is-half ">
+        <div class="content full-hight">
+        <h1 class="title is-2 ">
+          <div class="column">
+          {{#courseItem}}
+          {{ title }}
+        </div>
+        </h1>
+        <h2 class="subtitle is-5 has-text-left">
+          <div class="column">
+
+          {{ description }}
+          {{/courseItem}}
+        </div>
+        </h2>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="box_radius">
+          <figure class="image is-4by3">
+            {{#courseItem}}
+            <img src="{{ image }}" alt="imagem do curso">
+            {{/courseItem}}
+          </figure>
+          <div>
             {{> courseDetails}}
-            </div>
           </div>
         </div>
       </div>
-    </section>
-  </body>
-  </html>
+    </div>
+
+
+  </section>
+
+
+</body>
+</html>

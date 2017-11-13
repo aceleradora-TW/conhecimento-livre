@@ -2,10 +2,10 @@
   <div class="column">
     {{#authorItem}}
     <div class="media-content subtitle is-5">
-      <p><a href="/author/{{ _id }}"> {{author}}</a></p>
+      <p><a class="has-text-info" href="/author/{{ _id }}"> {{author}}</a></p>
       {{/authorItem}}
       {{#courseItem}}
-      <div class="media-content subtitle is-6">
+      <div class="media-content subtitle is-6 has-text-black">
         <p><span>Duração:</span> {{ duration }}</p>
         <p><span>Linguagem:</span> {{ language }}</p>
         <p><span>Número de aulas:</span> {{ lessons }}</p>
@@ -17,7 +17,7 @@
     <p class="has-text-centered">
       {{#titleItem}}
       <br>
-      <a class="button is-primary is-medium" href="/content/{{ _id }}"> >> Começar o curso <<
+      <a class="button is-primary is-medium" href="/content/{{ _id }}"> Começar
         {{/titleItem}}</a>
       </p>
     </div>

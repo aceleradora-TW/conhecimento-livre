@@ -6150,6 +6150,11 @@ label.panel-block {
   overflow-y: scroll;
   max-height: 80vh; }
 
+.absolute {
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute; }
+
 .playlist-container ul {
   height: 100%;
   width: 90%;
@@ -6216,3 +6221,11 @@ label.panel-block {
   background-image: url("../images/banner_inicial.png");
   background-size: cover;
   background-position: top; }
+
+.box_radius {
+  margin: 0% 10% 20% 20%;
+  border-style: solid;
+  border-color: #363636;
+  border-width: thick;
+  border-radius: 5px;
+  padding: 1% 1% 1% 1%; }
