@@ -57,6 +57,6 @@
   color: black;
 }
 
-.card-body{
-  background: #e5e5e5 !important;
+.card .card-body{
+  background: #e5e5e5;
 }
