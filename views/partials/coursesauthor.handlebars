@@ -1,18 +1,24 @@
 <div class="container">
   {{#arrayCourses}}
   <a href="/course/{{ _id }}">
-  <div class="card">
-    <header class="card-header">
-      <p class="card-header-title">
-        {{ title }}
-      </p>
-    </header>
-    <div class="card-content has-text-grey-darker">
-      <div class="has-text-grey">
-        {{ description }}
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-16by">
+          <img src="{{ image }}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content card-body">
+        <header class="card-header">
+          <p class="card-header-title">
+            {{ title }}
+          </p>
+        </header>
+
+        <div class="content">
+          {{ description }}
+        </div>
       </div>
     </div>
-  </div>
-  {{/arrayCourses}}
   </a>
+{{/arrayCourses}}
 </div>
