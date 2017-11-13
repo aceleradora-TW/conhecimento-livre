@@ -6210,5 +6210,11 @@ label.panel-block {
   position: absolute; }
 
 .pag-inicial {
+<<<<<<< 351bb0ef717b856c8175cdcb19f5233e51d5d0ad
   background-image: url("../images/banner-inicial.jpg"); }
 >>>>>>> <@JessicaFranke, @FilipeHassen> Corrige header e hero pag inicial #81
+=======
+  background-image: url("../images/banner_inicial.png");
+  background-size: cover;
+  background-position: center; }
+>>>>>>> <@JessicaFranke, @FilipeHassen> Altera banner da pag inicial #81
