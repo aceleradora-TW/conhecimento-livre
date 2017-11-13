@@ -20,6 +20,11 @@ const author = (Author, Course) => (req, res) => {
               arrayCourses.push(allCourses[i])
             }
           }
+          arrayCourses.forEach(function(item){
+            if (item.title.length > 30) {
+              item.title = item.title.substring(0, 30)+"..."+"\n"
+            }
+          })
           res.render('author', { authorItem, arrayCourses })
         }
       })
