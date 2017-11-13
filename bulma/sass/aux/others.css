@@ -105,3 +105,11 @@
   background: #e5e5e5 !important;
 >>>>>>> <@DesireeMenezes, @ClaudiaStrm> arruma responsividade nos cards #81
 }
+
+.max-height {
+  max-height: 40vh;
+}
+
+.border-radius {
+  border-radius: 50%
+}
