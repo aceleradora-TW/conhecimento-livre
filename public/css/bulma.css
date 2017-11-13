@@ -6216,5 +6216,9 @@ label.panel-block {
 =======
   background-image: url("../images/banner_inicial.png");
   background-size: cover;
+<<<<<<< 9a7ba966f244946c4a1dbd6692e4eaf26a371a15
   background-position: center; }
 >>>>>>> <@JessicaFranke, @FilipeHassen> Altera banner da pag inicial #81
+=======
+  background-position: top; }
+>>>>>>> <@JessicaFranke, @FilipeHassen> Ajusta banner da pag inicial #81
