@@ -6214,18 +6214,15 @@ label.panel-block {
   padding-left: 15vw;
   padding-right: 15vw; }
 
-.absolute {
-  position: absolute; }
-
 .inicial-page {
   background-image: url("../images/banner_inicial.png");
   background-size: cover;
   background-position: top; }
 
 .box_radius {
-  margin: 0% 10% 20% 20%;
-  border-style: solid;
-  border-color: #363636;
-  border-width: thick;
-  border-radius: 5px;
-  padding: 1% 1% 1% 1%; }
+  margin: 0% 10% 20% -4%;
+  width: 100%;
+  padding: 2% 2% 2% 2%;
+  background-color: white;
+  box-shadow: 3px 3px 2px #888888;
+  border-radius: 10px; }
