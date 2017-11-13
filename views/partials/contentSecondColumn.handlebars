@@ -1,0 +1,22 @@
+<div class="tile is-parent">
+  <article class="tile is-child notification">
+    <div class="content">
+      <h5 class="title is-5">Outras aulas:</h5>
+      <div class="playlist-container">
+        {{#contents}}
+        <ul>
+          <li class="thumbnail-align">
+            <a href="/content/{{ id }}">
+              <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
+              <div class="title-video">{{ title }}</div>
+              <p class="preview"> {{ preview }}</p>
+            </a>
+          </li>
+        </ul>
+        {{else}}
+        <p class="title is-7"> Não possui proximas aulas</p>
+      </div>
+      {{/contents}}
+    </div>
+  </article>
+</div>

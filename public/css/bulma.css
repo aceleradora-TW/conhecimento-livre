@@ -5548,6 +5548,7 @@ label.panel-block {
     --columnGap: 2rem; }
 
 .tile {
+  background: transparent;
   align-items: stretch;
   display: block;
   flex-basis: 0;
@@ -6135,6 +6136,16 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
+.content-columns {
+  width: 100%;
+  heigth: 100%;
+  margin-top: -20%; }
+  .content-columns .thumbnail-align {
+    margin-left: -10%; }
+
+.absolute {
+  position: absolute; }
+
 .scroll {
   overflow-y: scroll;
   max-height: 80vh; }
@@ -6160,7 +6171,6 @@ label.panel-block {
   top: 0%;
   width: 100%;
   height: 20%;
-  background-color: #009688;
   color: white;
   opacity: 0.8; }
 

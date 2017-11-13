@@ -1,3 +1,7 @@
+.absolute {
+  position: absolute;
+}
+
 .scroll {
   overflow-y: scroll;
   max-height: 80vh;
