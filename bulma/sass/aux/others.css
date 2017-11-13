@@ -68,3 +68,12 @@
 .border-radius {
   border-radius: 50%
 }
+
+.padding-top {
+  padding-top: 10vh;
+}
+
+.lateral-padding {
+padding-left: 15vw;
+padding-right: 15vw;
+}

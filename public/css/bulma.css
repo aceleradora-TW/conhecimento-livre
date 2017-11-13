@@ -78,7 +78,7 @@ th {
   text-align: left; }
 
 html {
-  background-color: #fff;
+  background-color: whitesmoke;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -5626,7 +5626,7 @@ label.panel-block {
     .hero.is-white .title {
       color: #0a0a0a; }
     .hero.is-white .subtitle {
-      color: rgba(10, 10, 10, 0.9); }
+      color: #363636; }
       .hero.is-white .subtitle a:not(.button),
       .hero.is-white .subtitle strong {
         color: #0a0a0a; }
@@ -5670,7 +5670,7 @@ label.panel-block {
     .hero.is-black .title {
       color: white; }
     .hero.is-black .subtitle {
-      color: rgba(255, 255, 255, 0.9); }
+      color: #363636; }
       .hero.is-black .subtitle a:not(.button),
       .hero.is-black .subtitle strong {
         color: white; }
@@ -5714,7 +5714,7 @@ label.panel-block {
     .hero.is-light .title {
       color: #363636; }
     .hero.is-light .subtitle {
-      color: rgba(54, 54, 54, 0.9); }
+      color: #363636; }
       .hero.is-light .subtitle a:not(.button),
       .hero.is-light .subtitle strong {
         color: #363636; }
@@ -5758,7 +5758,7 @@ label.panel-block {
     .hero.is-dark .title {
       color: whitesmoke; }
     .hero.is-dark .subtitle {
-      color: rgba(245, 245, 245, 0.9); }
+      color: #363636; }
       .hero.is-dark .subtitle a:not(.button),
       .hero.is-dark .subtitle strong {
         color: whitesmoke; }
@@ -5802,7 +5802,7 @@ label.panel-block {
     .hero.is-primary .title {
       color: #fff; }
     .hero.is-primary .subtitle {
-      color: rgba(255, 255, 255, 0.9); }
+      color: #363636; }
       .hero.is-primary .subtitle a:not(.button),
       .hero.is-primary .subtitle strong {
         color: #fff; }
@@ -5846,7 +5846,7 @@ label.panel-block {
     .hero.is-link .title {
       color: #fff; }
     .hero.is-link .subtitle {
-      color: rgba(255, 255, 255, 0.9); }
+      color: #363636; }
       .hero.is-link .subtitle a:not(.button),
       .hero.is-link .subtitle strong {
         color: #fff; }
@@ -5890,7 +5890,7 @@ label.panel-block {
     .hero.is-info .title {
       color: #fff; }
     .hero.is-info .subtitle {
-      color: rgba(255, 255, 255, 0.9); }
+      color: #363636; }
       .hero.is-info .subtitle a:not(.button),
       .hero.is-info .subtitle strong {
         color: #fff; }
@@ -5934,7 +5934,7 @@ label.panel-block {
     .hero.is-success .title {
       color: #fff; }
     .hero.is-success .subtitle {
-      color: rgba(255, 255, 255, 0.9); }
+      color: #363636; }
       .hero.is-success .subtitle a:not(.button),
       .hero.is-success .subtitle strong {
         color: #fff; }
@@ -5978,7 +5978,7 @@ label.panel-block {
     .hero.is-warning .title {
       color: rgba(0, 0, 0, 0.7); }
     .hero.is-warning .subtitle {
-      color: rgba(0, 0, 0, 0.9); }
+      color: #363636; }
       .hero.is-warning .subtitle a:not(.button),
       .hero.is-warning .subtitle strong {
         color: rgba(0, 0, 0, 0.7); }
@@ -6022,7 +6022,7 @@ label.panel-block {
     .hero.is-danger .title {
       color: #fff; }
     .hero.is-danger .subtitle {
-      color: rgba(255, 255, 255, 0.9); }
+      color: #363636; }
       .hero.is-danger .subtitle a:not(.button),
       .hero.is-danger .subtitle strong {
         color: #fff; }
@@ -6179,19 +6179,21 @@ label.panel-block {
 .fullhight {
   min-height: 96.5vh; }
 
-<<<<<<< fe9a713e425e11b50d095f0a8a0eb923b3b20913
 .is-black {
   color: black; }
 
 .card .card-body {
   background: #e5e5e5; }
-=======
-.absolute {
-  position: absolute; }
 
 .max-height {
   max-height: 40vh; }
 
 .border-radius {
   border-radius: 50%; }
->>>>>>> <@FeAlmeida,@MauricioSalin> define estrutura hero
+
+.padding-top {
+  padding-top: 10vh; }
+
+.lateral-padding {
+  padding-left: 15vw;
+  padding-right: 15vw; }

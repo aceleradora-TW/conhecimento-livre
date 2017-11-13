@@ -17,12 +17,30 @@
           </figure>
         </div>
         <div class="column has-text-centered">
-          <p class="title is-3">{{ author }}</p>
+          <p class="title is-2">{{ author }}</p>
           <p class="subtitle">{{ email }}</p>
         </div>
       </div>
     </section>
+    <section>
+    <div class="columns">
+      <div class=" column is-one-quarter">
+      </div>
+        <div class="column has-text-centered padding-top">
+          <div class=" notification is-light lateral-padding">
+            <p class="subtitle is-2">Biografia</p>
+            <p class="subtitle">{{ bio }}</p>
+          </div>
+      </div>
+    </div>
     {{/authorItem}}
+  </section>
+  </div>
+    <div class="notification is-light">
+    <p class="subtitle is-3">Cursos</p>
+    <div class="courses">
+    {{> coursesauthor}}
+    </div>
   </div>
 </body>
 </html>
