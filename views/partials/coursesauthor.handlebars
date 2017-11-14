@@ -1,24 +1,21 @@
-{{#arrayCourses}}
-<a href="/course/{{ _id }}">
-  <div class="card">
-    <div class="card-image">
-    </div>
-    <div class="card-content is-hidden-mobile">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-48x48">
-            <img src="{{ image }}" alt="imagem do curso">
-          </figure>
-        </div>
-        <div class="media-content">
-          <p class="title is-size-4">{{ title }}</p>
-          <p class="subtitle is-size-6">{{ author}}</p>
+  {{#arrayCourses}}
+  <a href="/course/{{ _id }}">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-16by">
+          <img src="{{ image }}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content card-body">
+        <header class="card-header has-text-centered">
+          <p class="card-header-title">
+            {{ title }}
+          </p>
+        </header>
+        <div class="content">
+          {{ description }}
         </div>
       </div>
-      <div class="content">
-        {{ description }}
-      </div>
     </div>
-  </div>
+  </a>
 {{/arrayCourses}}
-</a>

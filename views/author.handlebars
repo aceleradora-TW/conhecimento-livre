@@ -6,44 +6,41 @@
   <link rel="stylesheet" href="../css/bulma.css">
 </head>
 <body>
-  {{> hero}}
-  <div class="hero-body">
+  <div>
     {{#authorItem}}
-    <div class="container has-text-centered">
-      <div class="columns is-vcentered">
-        <div class="column is-5">
-          <figure class="image">
-            <img src="{{ photourl }}" alt="foto do autor" >
+    <section class="hero is-primary is-medium">
+      {{> header}}
+      <div class="max-height hero-body columns">
+        <div class="column is-one-quarter">
+          <figure class="image absolute">
+            <img class="border-radius" src="{{ photourl }}" alt="foto do autor" >
           </figure>
         </div>
-        <div class="column is-6 is-offset-1">
-          <h1 class="title is-size-2">
-            {{ author }}
-          </h1>
-          <h2 class="subtitle is-size-4">
-            {{ email }}
-          </h2>
-          <br>
-          <strong>BIO: </strong>
-          <p class="has-text-centered box">
-            {{ bio }}
-          </p>
+        <div class="column has-text-centered">
+          <p class="title is-2">{{ author }}</p>
+          <p class="subtitle">{{ email }}</p>
         </div>
+      </div>
+    </section>
+    <section>
+    <div class="columns">
+      <div class=" column is-one-quarter">
+      </div>
+        <div class="column has-text-centered padding-top">
+          <div class=" notification is-light lateral-padding">
+            <p class="subtitle is-2">Biografia</p>
+            <p class="subtitle">{{ bio }}</p>
+          </div>
       </div>
     </div>
     {{/authorItem}}
+  </section>
   </div>
-  <div class="hero-foot">
-    <div class="container">
-      <div class="tabs is-centered">
-        <ul>
-          <li><strong>Cursos</strong></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="courses">
+    <div class="notification is-light">
+    <p class="subtitle is-3">Cursos</p>
+    <div class="courses">
     {{> coursesauthor}}
+    </div>
   </div>
 </body>
 </html>
