@@ -3152,6 +3152,9 @@ a.tag:hover {
   .subtitle.is-7 {
     font-size: 0.75rem; }
 
+.btnpospreview {
+  margin-left: 40%; }
+
 .block:not(:last-child) {
   margin-bottom: 1.5rem; }
 
