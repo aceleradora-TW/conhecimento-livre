@@ -1,46 +1,20 @@
-<<<<<<< 7c909a6b6e829bd49a27391ae33ae68dfa4b6831
+<div class="container test" >
   {{#arrayCourses}}
   <a href="/course/{{ _id }}">
     <div class="card">
       <div class="card-image">
-        <figure class="image is-16by">
+        <figure class="image is-4by3">
           <img src="{{ image }}" alt="Placeholder image">
         </figure>
-=======
-{{#arrayCourses}}
-<a href="/course/{{ _id }}">
-  <div class="card">
-    <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="{{image}}" alt="Placeholder image">
-    </figure>
-  </div>
-    <div class="card-content is-hidden-mobile">
-      <div class="media">
-        <div class="media-content">
-          <p class="card-header-title is-size-4">{{title}}</p>
-          <p class="subtitle is-size-6"> Author: {{ author}}</p>
->>>>>>> <@luizfetrindade, @DesireeMenezes> adiciona limite de caracteres para o titulo dos cards
-        </div>
       </div>
-      <div class="card-content card-body">
-        <header class="card-header">
-          <p class="card-header-title">
-            {{ title }}
-          </p>
-        </header>
-        <div class="content">
-          {{ description }}
+      <div class="card-content card-body min-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-5"> {{ title }}</p>
+            </div>
+          </div>
         </div>
-      </div>
     </div>
-<<<<<<< 164cc21df3079c51a86cad733dbe751e684e3754
   </a>
-=======
-  </div>
-<<<<<<< 7c909a6b6e829bd49a27391ae33ae68dfa4b6831
-  </body>
->>>>>>> adiciona cards responsivos
-=======
->>>>>>> <@luizfetrindade, @DesireeMenezes> adiciona limite de caracteres para o titulo dos cards
-{{/arrayCourses}}
+  {{/arrayCourses}}
+</div>

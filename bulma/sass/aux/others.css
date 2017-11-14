@@ -89,3 +89,8 @@
   box-shadow: 3px 3px 2px #888888;
   border-radius: 10px;
 }
+
+.test{
+  align-items: flex-end | flex-start | baseline;
+  align-content: flex-end | flex-start;
+}

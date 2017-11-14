@@ -3353,7 +3353,7 @@ a.tag:hover {
   flex-grow: 1;
   font-weight: 500; }
   .card-header-title.is-centered {
-    justify-content: left; }
+    justify-content: center; }
 
 .card-header-icon {
   align-items: center;
