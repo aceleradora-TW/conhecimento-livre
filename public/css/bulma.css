@@ -6142,6 +6142,10 @@ label.panel-block {
   .margin-hero .thumbnail-align {
     margin-left: -10%; }
 
+.margin-icon {
+  margin-left: auto;
+  margin-right: auto; }
+
 .scroll {
   overflow-y: scroll;
   max-height: 80vh; }
@@ -6186,7 +6190,6 @@ label.panel-block {
 .fullhight {
   min-height: 96.5vh; }
 
-<<<<<<< e2c5e6a1c3f0713f6d8d0087dee6de92988e11f4
 .is-black {
   color: black; }
 
@@ -6205,20 +6208,11 @@ label.panel-block {
 .lateral-padding {
   padding-left: 15vw;
   padding-right: 15vw; }
-=======
+
 .absolute {
   position: absolute; }
 
-.pag-inicial {
-<<<<<<< 351bb0ef717b856c8175cdcb19f5233e51d5d0ad
-  background-image: url("../images/banner-inicial.jpg"); }
->>>>>>> <@JessicaFranke, @FilipeHassen> Corrige header e hero pag inicial #81
-=======
+.inicial-page {
   background-image: url("../images/banner_inicial.png");
   background-size: cover;
-<<<<<<< 9a7ba966f244946c4a1dbd6692e4eaf26a371a15
-  background-position: center; }
->>>>>>> <@JessicaFranke, @FilipeHassen> Altera banner da pag inicial #81
-=======
   background-position: top; }
->>>>>>> <@JessicaFranke, @FilipeHassen> Ajusta banner da pag inicial #81
