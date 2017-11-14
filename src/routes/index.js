@@ -1,9 +1,9 @@
 const Controller = require('../mappers/models_controller')
 
 const index = Author => (req, res) => {
-  const author = new Controller(Author)
+  const authorController = new Controller(Author)
 
-  author
+  authorController
   .findAll()
   .then(allAuthors => {
     authorItem.courses.forEach( item => {

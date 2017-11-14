@@ -10,16 +10,15 @@ const app = express()
 
 const MONGO_URL = process.env.DATABASELOGIN
 
+app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
+
+mongoose.connect(app.get('MONGO_URL'))
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
-mongoose.connect(app.get('MONGO_URL'))
-
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
-
-mongoose.connect(app.get('MONGO_URL'))
 
 app.set('port', (process.env.PORT || 3000))
 

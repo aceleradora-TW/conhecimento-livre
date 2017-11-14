@@ -12,17 +12,17 @@ class ModelsController {
   }
 
   findCourseById(id) {
-    return this.model.findOne({'courses._id': id}, {"courses.$":1, "name": 1}).exec()
+    return this.model.findOne({ 'courses._id': id }, { 'courses.$': 1, name: 1 }).exec()
   }
 
   findCourseByContentId(id) {
-    return this.model.findOne({'courses.contents._id': id}, {"courses.$":1, "name": 1}).exec()
+    return this.model.findOne({ 'courses.contents._id': id }, { 'courses.$': 1, name: 1 }).exec()
   }
 
-  updateViews(id, views) {
-    return this.model.update({'courses.contents._id': id }, { $inc: { views: 1 } }).exec()
- }
-
+  updateViews(contentId, authorData) {
+    authorData.courses[0].contents.id(contentId).views += 1
+    return this.model.update(authorData).exec()
+  }
 }
 
 module.exports = ModelsController
