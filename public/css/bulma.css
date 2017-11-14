@@ -5548,6 +5548,7 @@ label.panel-block {
     --columnGap: 2rem; }
 
 .tile {
+  background: transparent;
   align-items: stretch;
   display: block;
   flex-basis: 0;
@@ -6134,6 +6135,12 @@ label.panel-block {
 .footer {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
+
+.margin-hero {
+  width: 100%;
+  margin-top: -20%; }
+  .margin-hero .thumbnail-align {
+    margin-left: -10%; }
 
 .scroll {
   overflow-y: scroll;

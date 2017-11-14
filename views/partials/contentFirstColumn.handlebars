@@ -1,0 +1,40 @@
+<article class="tile is-child notification">
+  {{#contentItem}}
+  <p class="title is-2 has-text-white">{{title}}</p>
+  <div class="content">
+    <iframe width="100%" height="480" src="https://www.youtube.com/embed/{{url}}" frameborder="0" allowfullscreen></iframe>
+    {{/contentItem}}
+    <nav class="level">
+      <div class="level-left">
+        {{#authorItem}}
+        <a class="subtitle has-text-info" href="/author/{{ _id }}">{{author}}</a>
+        {{/authorItem}}
+      </div>
+      <div class="level-right">
+        {{#contentItem}}
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="subtitle">Views: {{ views }}</p>
+            {{/contentItem}}
+          </div>
+        </div>
+      </nav>
+      <nav class="level">
+        <div class="level-left">
+          {{#previous}}
+          <form  action="/content/{{ id }}">
+            <input class="button is-primary" type="submit" value="Anterior">
+          </form>
+          {{/previous}}
+        </div>
+        <div class="level-right">
+          {{#next}}
+          <form action="/content/{{ id }}">
+            <input class="button is-primary" type="submit" value="Proximo">
+          </form>
+          {{/next}}
+        </nav>
+      </div>
+    </article>
+  </div>
+</div>
