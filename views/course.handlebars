@@ -5,47 +5,38 @@
   <link rel="stylesheet" href="../css/bulma.css">
 </head>
 <body>
-  <section class="hero is-primary">
-    {{> header}}
-    <div class="hero-body columns max-height">
-      <div class="column is-half ">
-        <div class="content full-hight">
+  {{> hero}}
+  <div class="margin-hero columns">
+    <div class="column is-half ">
+      <div class="content full-hight">
         <p>
-        <h1 class="title is-2 ">
-          <div class="column">
-          {{#courseItem}}
-          {{ title }}
-        </div>
-        </h1>
-        <h2 class="subtitle is-4 has-text-left has-text-grey-darker">
-          <div class="column">
-          {{ description }}
-          {{/courseItem}}
-        </div>
-        </h2>
+          <h1 class="title is-2 has-text-white">
+            <div class="column">
+              {{#courseItem}}
+              {{ title }}
+            </div>
+          </h1>
+          <h2 class="subtitle is-4 has-text-left has-text-grey-darker">
+            <div class="column">
+              {{ description }}
+              {{/courseItem}}
+            </div>
+          </h2>
         </p>
-        </div>
       </div>
-
-      <div class="column is-half">
-        <div class="box_radius">
-          <figure class="image is-16by9">
-            {{#courseItem}}
-            <img src="{{ image }}" alt="imagem do curso">
-            {{/courseItem}}
-          </figure>
-          <div class="column">
-
-            {{> courseDetails}}
-
-          </div>
+    </div>
+    <div class="column is-half">
+      <div class="box-radius">
+        <figure class="image is-16by9">
+          {{#courseItem}}
+          <img src="{{ image }}" alt="imagem do curso">
+          {{/courseItem}}
+        </figure>
+        <div class="column">
+          {{> courseDetails}}
         </div>
       </div>
     </div>
-
-
-  </section>
-
-
+  </div>
 </body>
 </html>

@@ -3152,7 +3152,7 @@ a.tag:hover {
   .subtitle.is-7 {
     font-size: 0.75rem; }
 
-.btnpospreview {
+.btn-course-page {
   margin-left: 40%; }
 
 .block:not(:last-child) {
@@ -6153,11 +6153,6 @@ label.panel-block {
   overflow-y: scroll;
   max-height: 80vh; }
 
-.absolute {
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute; }
-
 .playlist-container ul {
   height: 100%;
   width: 90%;
@@ -6222,7 +6217,7 @@ label.panel-block {
   background-size: cover;
   background-position: top; }
 
-.box_radius {
+.box-radius {
   margin: 0% 10% 20% -4%;
   width: 100%;
   padding: 2% 2% 2% 2%;
