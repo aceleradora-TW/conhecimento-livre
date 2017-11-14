@@ -12,6 +12,9 @@ const content = Author => (req, res) => {
       responseData.allContents = authorItem.courses[0].contents
       responseData.contentItem = responseData.allContents.id(id)
       responseData.authorItem = authorItem
+      const currentContentIndex = responseData.allContents.indexOf(responseData.contentItem)
+      responseData.next = responseData.allContents[currentContentIndex + 1]
+      responseData.previous = responseData.allContents[currentContentIndex - 1]
     })
     .then(() => authorController.updateViews(id, responseData.authorItem))
     .then(() => res.render('content', responseData))
