@@ -25,6 +25,9 @@ const author = (Author, Course) => (req, res) => {
             if (item.title.length > 25) {
               item.title = item.title.substring(0, 22)+"..."
             }
+            if (item.description.length > 155) {
+              item.description = item.description.substring(0, 152)+"..."
+            }
           })
           res.render('author', { authorItem, arrayCourses})
         }
