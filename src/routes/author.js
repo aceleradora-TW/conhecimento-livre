@@ -3,6 +3,7 @@ const Controller = require('../mappers/models_controller')
 const author = (Author, Course) => (req, res) => {
   const id = req.params.id
   let arrayCourses = []
+  let arrayNameReduced = []
   const authorModel = new Controller(Author)
   const courseModel = new Controller(Course)
   courseModel.findAll((allCourses) => {
@@ -20,7 +21,12 @@ const author = (Author, Course) => (req, res) => {
               arrayCourses.push(allCourses[i])
             }
           }
-          res.render('author', { authorItem, arrayCourses })
+          arrayCourses.forEach(function(item) {
+            if (item.title.length > 25) {
+              item.title = item.title.substring(0, 22)+"..."
+            }
+          })
+          res.render('author', { authorItem, arrayCourses})
         }
       })
     })

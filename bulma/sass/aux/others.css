@@ -56,6 +56,12 @@
 
 .card .card-body{
   background: #e5e5e5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+   display: -webkit-box;
+   min-height: 15vh;
+   max-height: 15vh;      /* fallback */
+   -webkit-box-orient: vertical;
 }
 
 .max-height {
@@ -88,4 +94,9 @@
   background-color: white;
   box-shadow: 3px 3px 2px #888888;
   border-radius: 10px;
+}
+
+.test{
+  align-items: flex-end | flex-start | baseline;
+  align-content: flex-end | flex-start;
 }

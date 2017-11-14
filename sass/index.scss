@@ -22,4 +22,5 @@ body {
 .content{
   @include size(100vh, 100vw);
   background: $border-color-default;
+min-height: 100px;
 }
