@@ -6142,6 +6142,10 @@ label.panel-block {
   .margin-hero .thumbnail-align {
     margin-left: -10%; }
 
+.margin-icon {
+  margin-left: auto;
+  margin-right: auto; }
+
 .scroll {
   overflow-y: scroll;
   max-height: 80vh; }
@@ -6204,3 +6208,11 @@ label.panel-block {
 .lateral-padding {
   padding-left: 15vw;
   padding-right: 15vw; }
+
+.absolute {
+  position: absolute; }
+
+.inicial-page {
+  background-image: url("../images/banner_inicial.png");
+  background-size: cover;
+  background-position: top; }
