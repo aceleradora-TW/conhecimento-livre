@@ -6151,9 +6151,6 @@ label.panel-block {
   width: 90%;
   font-size: 0.9em; }
 
-.playlist-container ul:first-child {
-  margin-top: 11.5%; }
-
 .playlist-container ul li {
   height: 20%;
   width: 100%;
@@ -6170,6 +6167,7 @@ label.panel-block {
   top: 0%;
   width: 100%;
   height: 20%;
+  background-color: #009688;
   color: white;
   opacity: 0.8; }
 
