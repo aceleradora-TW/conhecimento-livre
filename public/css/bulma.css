@@ -6149,6 +6149,9 @@ label.panel-block {
   margin-left: auto;
   margin-right: auto; }
 
+.slogan {
+  text-shadow: 2px 2px 5px #0a0a0a; }
+
 .scroll {
   overflow-y: scroll;
   max-height: 80vh; }
