@@ -7,13 +7,14 @@
           <img src="{{ image }}" alt="Placeholder image">
         </figure>
       </div>
-      <div class="card-content card-body min-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-5"> {{ title }}</p>
-            </div>
-          </div>
-        </div>
+      <header class="card-header has-text-centered">
+        <p class="card-header-title">
+          {{ title }}
+        </p>
+      </header>
+      <div class="card-content card-body">
+        {{ description }}
+      </div>
     </div>
   </a>
   {{/arrayCourses}}

@@ -3345,7 +3345,8 @@ a.tag:hover {
 .card-header {
   align-items: stretch;
   display: flex;
-  height: 10vh; }
+  min-height: 5vh;
+  max-height: 5vh; }
 
 .card-header-title {
   align-items: center;
@@ -6197,7 +6198,14 @@ label.panel-block {
   color: black; }
 
 .card .card-body {
-  background: #e5e5e5; }
+  background: #e5e5e5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  min-height: 15vh;
+  max-height: 15vh;
+  /* fallback */
+  -webkit-box-orient: vertical; }
 
 .max-height {
   max-height: 40vh; }
@@ -6224,3 +6232,7 @@ label.panel-block {
   background-color: white;
   box-shadow: 3px 3px 2px #888888;
   border-radius: 10px; }
+
+.test {
+  align-items: flex-end | flex-start | baseline;
+  align-content: flex-end | flex-start; }
