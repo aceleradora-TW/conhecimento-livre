@@ -21,7 +21,7 @@ class ModelsController {
 
   updateViews(contentId, authorData) {
     authorData.courses[0].contents.id(contentId).views += 1
-    return this.model.update(authorData).exec()
+    return this.model.update({ 'courses.contents._id': contentId }, authorData).exec()
   }
 }
 

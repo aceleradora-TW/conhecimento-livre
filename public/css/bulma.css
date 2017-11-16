@@ -6200,7 +6200,7 @@ label.panel-block {
   color: black; }
 
 .card .card-body {
-  background: #e5e5e5 !important;
+  background: #e5e5e5;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -6238,3 +6238,19 @@ label.panel-block {
 .test {
   align-items: flex-end | flex-start | baseline;
   align-content: flex-end | flex-start; }
+
+.card-body {
+  background: #e5e5e5 !important; }
+
+.max-height {
+  max-height: 40vh; }
+
+.border-radius {
+  border-radius: 50%; }
+
+.padding-top {
+  padding-top: 10vh; }
+
+.lateral-padding {
+  padding-left: 15vw;
+  padding-right: 15vw; }

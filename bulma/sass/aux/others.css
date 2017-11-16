@@ -54,7 +54,6 @@
   color: black;
 }
 
-<<<<<<< aa52eeb5facd5d53ec2b95f68f0a644beb5af2c0
 .card .card-body{
   background: #e5e5e5;
   overflow: hidden;
@@ -100,10 +99,9 @@
 .test{
   align-items: flex-end | flex-start | baseline;
   align-content: flex-end | flex-start;
-=======
+}
 .card-body{
   background: #e5e5e5 !important;
->>>>>>> <@DesireeMenezes, @ClaudiaStrm> arruma responsividade nos cards #81
 }
 
 .max-height {
