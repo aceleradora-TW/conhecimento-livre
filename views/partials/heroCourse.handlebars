@@ -7,14 +7,16 @@
           <p>
             <h1 class="title is-2 has-text-white">
               <div class="column">
-                {{#courseItem}}
+                {{#authorItem}}
+                {{#courses}}
                 {{ title }}
               </div>
             </h1>
             <h2 class="subtitle is-4 has-text-left has-text-grey-darker is-hidden-mobile">
               <div class="column">
                 {{ description }}
-                {{/courseItem}}
+                {{/courses}}
+                {{/authorItem}}
               </div>
             </h2>
           </p>
@@ -23,9 +25,11 @@
       <div class="column is-half" style="margin-top: -2%;">
         <div class="box-radius">
           <figure class="image is-16by9">
-            {{#courseItem}}
+            {{#authorItem}}
+            {{#courses}}
             <img src="{{ image }}" alt="imagem do curso">
-            {{/courseItem}}
+            {{/courses}}
+            {{/authorItem}}
           </figure>
           <div class="column">
             {{> courseDetails}}

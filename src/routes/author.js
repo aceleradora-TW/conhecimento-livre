@@ -6,7 +6,7 @@ const author = Author => (req, res) => {
 
   authorController
   .findAuthorById(id)
-  .then(authorItem =>{
+  .then(authorItem => {
     authorItem.courses.forEach( item => {
       if (item.title.length > 25) {
         item.title = item.title.substring(0, 22)+"..."
@@ -15,9 +15,12 @@ const author = Author => (req, res) => {
         item.description = item.description.substring(0, 152)+"..."
       }
     })
+    res.render('author', {authorItem})
   })
-  .then(() => res.render('author', { authorItem}))
-  .catch(error => res.render('error', { error: error.message }))
+  .catch(error => {
+    res.status(404).send('404 - NOT FOUND')
+    console.log(error)
+  })
 }
 
 module.exports = author

@@ -1,4 +1,3 @@
-
 const Controller = require('../mappers/models_controller')
 
 const content = Author => (req, res) => {
