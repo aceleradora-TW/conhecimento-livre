@@ -4,7 +4,7 @@
       <h5 class="subtitle has-text-dark">Outras aulas:</h5>
       <div class="playlist-container">
         <ul>
-          {{#contents}}
+          {{#allContents}}
           <li class="thumbnail-align">
             <a href="/content/{{ id }}">
               <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="">
@@ -12,13 +12,13 @@
               <p class="preview"> {{ preview }}</p>
             </a>
           </li>
-          {{/contents}}
+          {{/allContents}}
         </ul>
-        {{#contents}}
+        {{#allContents}}
         {{else}}
         <p class="subtitle is-6"> Não possui próximas aulas</p>
       </div>
-      {{/contents}}
+      {{/allContents}}
     </div>
   </article>
 </div>
