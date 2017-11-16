@@ -66,4 +66,4 @@ test/e2e/reports/
 # css files
 .sass-cache
 .retire-cache
-public/css/
+public/css/*.css
