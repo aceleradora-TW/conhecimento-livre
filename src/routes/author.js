@@ -18,7 +18,7 @@ const author = Author => (req, res) => {
     res.render('author', {authorItem})
   })
   .catch(error => {
-    res.status(404).send('404 - NOT FOUND')
+    res.status(404).render('404')
     console.log(error)
   })
 }

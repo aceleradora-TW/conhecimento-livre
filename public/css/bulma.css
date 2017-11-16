@@ -6236,10 +6236,13 @@ label.panel-block {
   box-shadow: 3px 3px 2px #888888;
   border-radius: 10px; }
 
+<<<<<<< 16f6cfdfe9a1793710441e7835ef3404b47ea2a4
 .test {
   align-items: flex-end | flex-start | baseline;
   align-content: flex-end | flex-start; }
 
+=======
+>>>>>>> <@DesireeMenezes @ClaudiaStrm> cria página de erro #99
 .max-height {
   max-height: 40vh; }
 
@@ -6252,6 +6255,9 @@ label.panel-block {
 .lateral-padding {
   padding-left: 15vw;
   padding-right: 15vw; }
+<<<<<<< 16f6cfdfe9a1793710441e7835ef3404b47ea2a4
 
 .container .subtitle {
   margin: 3vh 1vh; }
+=======
+>>>>>>> <@DesireeMenezes @ClaudiaStrm> cria página de erro #99
