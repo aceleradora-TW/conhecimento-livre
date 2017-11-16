@@ -16,7 +16,10 @@ const index = Author => (req, res) => {
    }))
     res.render('index', { allAuthors })
   })
-  .catch(error => console.log(error))
+  .catch(error => {
+    res.status(404).render('404')
+    console.log(error)
+  })
 }
 
 module.exports = index

@@ -10,7 +10,11 @@ const course = Author => (req, res) => {
       const firstContent = authorItem.courses[0].contents[0]
       res.render('course', { authorItem, firstContent })
     })
-    .catch(error => console.log(error))
-}
+    .catch(error => {
+      res.status(404).render('404')
+      console.log(error)
+    })
+  }
+
 
 module.exports = course

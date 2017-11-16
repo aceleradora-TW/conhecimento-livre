@@ -17,7 +17,11 @@ const content = Author => (req, res) => {
     })
     .then(() => authorController.updateViews(id, responseData.authorItem))
     .then(() => res.render('content', responseData))
-    .catch(error => console.log(error))
-}
+    .catch(error => {
+      res.status(404).render('404')
+      console.log(error)
+    })
+  }
+
 
 module.exports = content
