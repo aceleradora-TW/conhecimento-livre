@@ -1,7 +1,7 @@
 {
   "name": "conhecimento-livre",
   "version": "1.0.0",
-  "description": "",
+  "description": "Conhecimento Livre",
   "main": "index.js",
   "scripts": {
     "start": "yarn compile && nodemon app.js",
