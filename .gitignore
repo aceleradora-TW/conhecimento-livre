@@ -60,5 +60,10 @@ typings/
 # nightwatch reports
 test/e2e/reports/
 
+# Vim swap files
+*.swp
+
 # css files
+.sass-cache
+.retire-cache
 public/css/
