@@ -1,6 +1,6 @@
 <div class="columns">
   {{#authorItem}}
-  <div class="column">
+  <div class="column is-two-thirds">
     <div class="media-content subtitle is-5">
       <p>Pessoa autora: <a class="has-text-info" href="/author/{{ _id }}"> {{name}}</a></p>
       {{#courses}}
@@ -17,8 +17,7 @@
     <p class="has-text-centered">
       {{#firstContent}}
       <br>
-      <a class="button is-primary is-large btn-course-page" href="/content/{{ _id }}"> Começar
-      {{/firstContent}}</a>
+      <a class="button is-primary is-large" href="/content/{{ _id }}"> Começar{{/firstContent}}</a>
       </p>
     </div>
   </div>
