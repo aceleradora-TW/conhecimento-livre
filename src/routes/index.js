@@ -18,7 +18,6 @@ const index = Author => (req, res) => {
   })
   .catch(error => {
     res.status(404).render('404')
-    console.log(error)
   })
 }
 
