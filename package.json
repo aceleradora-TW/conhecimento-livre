@@ -25,8 +25,6 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "bulma": "^0.6.0",
-    "chai": "^4.1.2",
-    "cool-ascii-faces": "1.3.4",
     "express": "^4.15.5",
     "express-handlebars": "^3.0.0",
     "grunt": "*",
@@ -37,10 +35,7 @@
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-contrib-watch": "*",
     "handlebars": "^4.0.10",
-    "mocha": "^3.5.3",
-    "mongoose": "^4.11.14",
-    "nightwatch": "^0.9.16",
-    "node-sass-middleware": "^0.11.0"
+    "mongoose": "^4.11.14"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
@@ -51,7 +46,8 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.4.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.5.3",
+    "mocha": "^4.0.1",
+    "nightwatch": "^0.9.16",
     "node-sass": "^4.5.3",
     "nodemon": "^1.12.1",
     "nyc": "^11.2.1",
