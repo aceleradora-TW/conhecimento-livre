@@ -64,6 +64,10 @@
   -webkit-box-orient: vertical;
 }
 
+.card-header-title {
+  line-height: 4.8vh;
+}
+
 .max-height {
   max-height: 40vh;
 }

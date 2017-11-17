@@ -6208,8 +6208,8 @@ label.panel-block {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical; }
 
-p .card-header-title {
-  line-height: 4.5vh; }
+.card-header-title {
+  line-height: 4.8vh; }
 
 .max-height {
   max-height: 40vh; }
