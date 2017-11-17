@@ -26,6 +26,8 @@ app.use(express.static(path.join(`${__dirname}/public`)))
 
 app.get('/', routes.index)
 
+app.get('/admin', routes.admin)
+
 app.get('/content/:id', routes.content)
 
 app.get('/course/:id', routes.course)
