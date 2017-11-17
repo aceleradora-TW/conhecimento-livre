@@ -57,10 +57,10 @@
 .card .card-body{
   background: #e5e5e5;
   overflow: hidden;
-  min-height: 8.5vh;
-  max-height: 8.5vh;
+  min-height: 13.5vh;
+  max-height: 13.5vh;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
