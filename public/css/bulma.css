@@ -6252,3 +6252,6 @@ label.panel-block {
 .lateral-padding {
   padding-left: 15vw;
   padding-right: 15vw; }
+
+.container .subtitle {
+  margin: 3vh 1vh; }
