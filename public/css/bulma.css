@@ -3339,8 +3339,7 @@ a.tag:hover {
   margin: 1%;
   position: relative;
   display: inline-block;
-  width: 30%;
-  margin: 1%; }
+  width: 30%; }
 
 .card-header {
   align-items: stretch;
@@ -6202,10 +6201,10 @@ label.panel-block {
 .card .card-body {
   background: #e5e5e5;
   overflow: hidden;
-  min-height: 8.5vh;
-  max-height: 8.5vh;
+  min-height: 13.5vh;
+  max-height: 13.5vh;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical; }
 
 .card-header-title {
@@ -6253,3 +6252,6 @@ label.panel-block {
 .lateral-padding {
   padding-left: 15vw;
   padding-right: 15vw; }
+
+.container .subtitle {
+  margin: 3vh 1vh; }

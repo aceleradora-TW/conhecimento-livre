@@ -57,10 +57,10 @@
 .card .card-body{
   background: #e5e5e5;
   overflow: hidden;
-  min-height: 8.5vh;
-  max-height: 8.5vh;
+  min-height: 13.5vh;
+  max-height: 13.5vh;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
@@ -91,7 +91,7 @@
   background-position: top;
 }
 
-.box-radius{
+.box-radius {
   margin: 0% 10% 20% -4%;
   width: 100%;
   padding: 2% 2% 2% 2%;
@@ -118,6 +118,10 @@
 }
 
 .lateral-padding {
-padding-left: 15vw;
-padding-right: 15vw;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+
+.container .subtitle {
+  margin: 3vh 1vh;
 }
