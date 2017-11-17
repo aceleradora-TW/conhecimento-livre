@@ -12,8 +12,9 @@
     "lint:fix": "eslint --fix src/**/*.js models/**/*.js",
     "check": "retire -p -n",
     "watch": "mocha --recursive --watch",
-    "compile": "node-sass bulma/bulma.sass -o public/css",
-    "postinstall": "node-sass bulma/bulma.sass -o public/css"
+    "compile": "node-sass --output public/css sass/index.sass",
+    "compile:dev": "node-sass --output public/css --source-comments sass/index.sass",
+    "postinstall": "yarn compile"
   },
   "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
   "author": "aceleradora12 <aceleradora12@gmail.com>",
