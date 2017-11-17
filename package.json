@@ -28,7 +28,8 @@
     "express": "^4.15.5",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.10",
-    "mongoose": "^4.11.14"
+    "mongoose": "^4.11.14",
+    "passport": "^0.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",

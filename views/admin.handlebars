@@ -4,13 +4,13 @@
       <div class="columns is-centered">
         <article class="card is-rounded">
           <div class="card-content">
-            <p class="content control has-icon">
-              <input class="input" type="password" placeholder="Senha">
-            </p>
-            <p class="control">
-              <button class="button is-primary is-medium is-fullwidth">
-                Entrar
-              </button>
+            <p class="control has-icon">
+              <form action="/admin/authorList" method="post">
+                <input type="password" name="Senha" class="input" placeholder="Senha">
+              </p>
+              <p class="control">
+                <input type="submit" value="Entrar" class="button is-primary is-medium is-fullwidth">
+              </form>
             </p>
           </div>
         </article>
