@@ -13,7 +13,7 @@
     "check": "retire -p -n",
     "watch": "mocha --recursive --watch",
     "compile": "node-sass bulma/bulma.sass -o public/css",
-    "postinstall": "grunt sass:production"
+    "postinstall": "yarn compile"
   },
   "repository": "git+https://github.com/aceleradora-TW/conhecimento-livre.git",
   "author": "aceleradora12 <aceleradora12@gmail.com>",
@@ -27,15 +27,9 @@
     "bulma": "^0.6.0",
     "express": "^4.15.5",
     "express-handlebars": "^3.0.0",
-    "grunt": "*",
-    "grunt-cli": "*",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-sass": "*",
-    "grunt-contrib-uglify": "~0.5.0",
-    "grunt-contrib-watch": "*",
     "handlebars": "^4.0.10",
-    "mongoose": "^4.11.14"
+    "mongoose": "^4.11.14",
+    "node-sass": "^4.6.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
@@ -48,7 +42,6 @@
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
     "nightwatch": "^0.9.16",
-    "node-sass": "^4.5.3",
     "nodemon": "^1.12.1",
     "nyc": "^11.2.1",
     "retire": "^1.4.0"
