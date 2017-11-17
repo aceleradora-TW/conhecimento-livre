@@ -62,3 +62,8 @@ test/e2e/reports/
 
 # css files
 public/css/
+
+# cache and swap files
+.sass-cache
+.retire-cache
+*.swp
