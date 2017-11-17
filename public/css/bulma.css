@@ -6202,12 +6202,14 @@ label.panel-block {
 .card .card-body {
   background: #e5e5e5;
   overflow: hidden;
-  text-overflow: ellipsis;
+  min-height: 8.5vh;
+  max-height: 8.5vh;
   display: -webkit-box;
-  min-height: 15vh;
-  max-height: 15vh;
-  /* fallback */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical; }
+
+.card-header-title {
+  line-height: 4.8vh; }
 
 .max-height {
   max-height: 40vh; }
@@ -6238,9 +6240,6 @@ label.panel-block {
 .test {
   align-items: flex-end | flex-start | baseline;
   align-content: flex-end | flex-start; }
-
-.card-body {
-  background: #e5e5e5 !important; }
 
 .max-height {
   max-height: 40vh; }
