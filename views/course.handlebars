@@ -1,5 +1,41 @@
-<html>
-  <body>
-    {{> heroCourse}}
-  </body>
-</html>
+<section class="hero is-primary is-medium">
+  {{> header}}
+  <div class="hero-body max-height is-mobile is-tablet is-widescreen">
+    <div class="columns">
+      <div class="column is-half margin-hero">
+        <div class="content full-hight">
+          <p>
+            <h1 class="title is-2 has-text-white">
+              <div class="column">
+                {{#authorItem}}
+                {{#courses}}
+                {{ title }}
+              </div>
+            </h1>
+            <h2 class="subtitle is-4 has-text-left has-text-grey-darker is-hidden-mobile">
+              <div class="column">
+                {{ description }}
+                {{/courses}}
+                {{/authorItem}}
+              </div>
+            </h2>
+          </p>
+        </div>
+      </div>
+      <div class="column is-half" style="margin-top: -2%;">
+        <div class="box-radius">
+          <figure class="image is-16by9">
+            {{#authorItem}}
+            {{#courses}}
+            <img src="{{ image }}" alt="imagem do curso">
+            {{/courses}}
+            {{/authorItem}}
+          </figure>
+          <div class="column">
+            {{> courseDetails}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

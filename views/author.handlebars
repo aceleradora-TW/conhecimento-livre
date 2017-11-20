@@ -1,43 +1,36 @@
-<html>
-<head>
-  <title>Autor</title>
-</head>
-<body>
-  <div>
-    {{#authorItem}}
-    <section class="hero is-primary is-medium">
-      {{> header}}
-      <div class="max-height hero-body columns is-mobile is-tablet is-widescreen">
-        <div class="column is-one-quarter">
-          <figure class="image is-mobile is-tablet is-widescreen">
-            <img class="border-radius" src="{{ photourl }}" alt="foto do autor" >
-          </figure>
-        </div>
-        <div class="column has-text-centered">
-          <p class="title is-2">{{ name }}</p>
-          <p class="subtitle">{{ email }}</p>
+<div>
+  {{#authorItem}}
+  <section class="hero is-primary is-medium">
+    {{> header}}
+    <div class="max-height hero-body columns is-mobile is-tablet is-widescreen">
+      <div class="column is-one-quarter">
+        <figure class="image is-mobile is-tablet is-widescreen">
+          <img class="border-radius" src="{{ photourl }}" alt="foto do autor" >
+        </figure>
+      </div>
+      <div class="column has-text-centered">
+        <p class="title is-2">{{ name }}</p>
+        <p class="subtitle">{{ email }}</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="columns">
+      <div class=" column is-one-quarter">
+      </div>
+      <div class="column has-text-centered padding-top">
+        <div class=" notification is-light lateral-padding">
+          <p class="subtitle is-2">Biografia</p>
+          <p class="subtitle">{{ bio }}</p>
         </div>
       </div>
-    </section>
-    <section>
-      <div class="columns">
-        <div class=" column is-one-quarter"></div>
-        <div class="column has-text-centered padding-top">
-          <div class=" notification is-light lateral-padding">
-            <p class="subtitle is-2">Biografia</p>
-            <p class="subtitle">{{ bio }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    {{/authorItem}}
-  </div>
-  <div class="notification is-light">
-    <div class="container">
-      <h1 class="subtitle">Cursos:</h1>
     </div>
-    <div class="courses">
-      {{> coursesAuthor}}
-    </div>
+  </section>
+  {{/authorItem}}
+</div>
+<div class="notification is-light">
+  <h1 id="courses" class="subtitle">Cursos:</h1>
+  <div class="courses">
+    {{> coursesAuthor}}
   </div>
-  </html>
+</div>
