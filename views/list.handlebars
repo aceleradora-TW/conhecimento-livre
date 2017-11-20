@@ -2,20 +2,54 @@
 
 <section>
   <div class="tab">
-    <button class="tablink" onclick="openList(event, 'Author')">'Autor'</button>
-    <button class="tablink" onclick="openList(event, 'Content')">'Curso'</button>
+    <button class="tablink" onclick="openList(event, 'Author')">Autor</button>
+    <button class="tablink" onclick="openList(event, 'Content')">Curso</button>
 
     <div class="tabcontent" id="Author">
-      {{#allAuthors}}
-      {{name}}
-      {{/allAuthors}}
+
+        <table class="table">
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Id</th>
+            <th></th>
+            
+          </tr>
+          {{#allAuthors}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td>{{_id}}</td>
+            <td>
+              <button type="button" name="delete">Delete</button>
+              <button type="button" name="delete">Edit</button>
+            </td>
+          </tr>
+          {{/allAuthors}}
+        </table>
     </div>
 
     <div class="tabcontent" id="Content">
-      {{#allAuthors}}
-      {{#courses}}
-      {{title}}
-      {{/courses}}
-      {{/allAuthors}}
+      <table class="table">
+        <tr>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>Id</th>
+          <th></th>
+        </tr>
+        {{#allAuthors}}
+        {{#courses}}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{author}}</td>
+          <td>{{_id}}</td>
+          <td>
+            <button type="button" name="delete">Delete</button>
+            <button type="button" name="delete">Edit</button>
+          </td>
+        </tr>
+        {{/courses}}
+        {{/allAuthors}}
+      </table>
     </div>
   </section>
