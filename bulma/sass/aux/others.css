@@ -22,13 +22,13 @@
 .playlist-container ul li img {
   height: 100%;
   width: 100%;
-  margin-left: -5%;
+  margin-left: 0%;
 }
 
-.playlist-container ul li .title-video {
+.playlist-container ul li .preview-video {
   position: absolute;
   top: 0%;
-  width: 60%;
+  width: 58%;
   height: 100%;
   color: white;
   opacity: 0.8;
@@ -40,6 +40,7 @@
   position: absolute;
   width: 90%;
   height: 100%;
+  left: 5%;
 }
 
 .playlist-container ul li span {
@@ -51,6 +52,7 @@
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   font-weight: 400;
+  margin-left: 5%;
 }
 
 .notification {
