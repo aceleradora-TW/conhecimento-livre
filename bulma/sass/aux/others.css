@@ -32,19 +32,19 @@
   height: 100%;
   color: white;
   opacity: 0.8;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .playlist-container ul li p {
   opacity: 0;
   position: absolute;
-  width: 114%;
+  width: 90%;
   height: 100%;
 }
 
 .playlist-container ul li span {
   font-size: 0.9em;
-  width: 50%;
+  width: 90%;
   height: 100%;
   overflow: hidden;
   display: -webkit-box;
@@ -54,7 +54,7 @@
 }
 
 .notification {
-  padding: 1.25rem 1.0rem 1.25rem 1.8rem;  
+  padding: 1.25rem 1.0rem 1.25rem 1.8rem;
 }
 
 
