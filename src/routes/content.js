@@ -1,6 +1,6 @@
 const Controller = require('../mappers/models_controller')
 
-const content = Author => (req, res) => {
+const content = Author => (req, res, next) => {
   const id = req.params.id
   const authorController = new Controller(Author)
   const responseData = {}
@@ -17,7 +17,11 @@ const content = Author => (req, res) => {
     })
     .then(() => authorController.updateViews(id, responseData.authorItem))
     .then(() => res.render('content', responseData))
-    .catch(error => console.log(error))
-}
+    .catch((error) => {
+      console.log(error)
+      next()
+    })
+  }
+
 
 module.exports = content

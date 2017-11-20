@@ -100,11 +100,6 @@
   border-radius: 10px;
 }
 
-.test{
-  align-items: flex-end | flex-start | baseline;
-  align-content: flex-end | flex-start;
-}
-
 .max-height {
   max-height: 40vh;
 }
