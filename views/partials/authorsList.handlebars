@@ -1,0 +1,21 @@
+<div class="tabcontent" id="Author">
+  <table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Id</th>
+      <th></th>
+    </tr>
+    {{#allAuthors}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{email}}</td>
+      <td>{{_id}}</td>
+      <td>
+        <button type="button" name="delete">Delete</button>
+        <button type="button" name="edit">Edit</button>
+      </td>
+    </tr>
+    {{/allAuthors}}
+  </table>
+</div>

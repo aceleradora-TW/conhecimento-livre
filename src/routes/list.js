@@ -5,10 +5,7 @@ const list = Author => (req, res, next) => {
 
   authorController
     .findAll()
-    .then((allAuthors) => {
-      console.log(allAuthors);
-      res.render('list', { allAuthors })
-    })
+    .then(allAuthors => res.render('list', { allAuthors }))
     .catch((error) => {
       next()
       console.log(error)
