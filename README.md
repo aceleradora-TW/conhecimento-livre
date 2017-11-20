@@ -80,6 +80,12 @@ Para acessar em staging:
 https://conhecimento-livre-staging.herokuapp.com/
 
 
+Para acessar em produção:
+
+
+http://conhecimento-livre.herokuapp.com
+
+
 Para acessar localmente na URL:
 ```
 localhost:3000
