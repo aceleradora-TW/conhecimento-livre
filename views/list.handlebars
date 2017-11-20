@@ -1,0 +1,11 @@
+<script src="/js/tabs.js"></script>
+<section>
+  <div class="tabs">
+    <ul>
+      <li class="tablink is-active" onclick="openList(event, 'Author')"><a>Autor</a></li>
+      <li class="tablink" onclick="openList(event, 'Courses')"><a >Curso</a></li>
+    </ul>
+  </div>
+    {{>authorsList}}
+    {{>coursesList}}
+  </section>
