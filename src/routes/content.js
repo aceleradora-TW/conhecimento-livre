@@ -1,6 +1,6 @@
 const Controller = require('../mappers/models_controller')
 
-const content = Author => (req, res) => {
+const content = Author => (req, res, next) => {
   const id = req.params.id
   const authorController = new Controller(Author)
   const responseData = {}
@@ -17,8 +17,9 @@ const content = Author => (req, res) => {
     })
     .then(() => authorController.updateViews(id, responseData.authorItem))
     .then(() => res.render('content', responseData))
-    .catch(error => {
-      res.status(404).render('404')  
+    .catch((error) => {
+      console.log(error)
+      next()
     })
   }
 
