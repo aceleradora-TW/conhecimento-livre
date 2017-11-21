@@ -26,6 +26,10 @@ class ModelsController {
     }).exec()
   }
 
+  deleteAuthor(id) {
+    return this.model.remove({_id: id}).exec()
+  }
+
   updateViews(contentId, authorData) {
     authorData.courses[0].contents.id(contentId).views += 1
     return this.model.update({ 'courses.contents._id': contentId }, authorData).exec()

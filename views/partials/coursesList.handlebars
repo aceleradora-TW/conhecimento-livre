@@ -29,6 +29,7 @@ $('#deleteCourse-{{_id}}').click(function(e) {
   e.preventDefault();
   var data = {};
   data.id = $('#id-{{_id}}').text()
+  data.collection = 'courses'
   $.ajax('http://localhost:3000/deleteCourse', {
     type: 'POST',
     data: JSON.stringify(data),
