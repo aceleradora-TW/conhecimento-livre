@@ -1,0 +1,17 @@
+<table class="table">
+  <div class="tabs">
+    <ul>
+      <li class="tablink is-active"><a href="/admin/list">Retornar a página anterior</a></li>
+    </ul>
+  </div>
+  <tr>
+    <th>Aula</th>
+    <th></th>
+  </tr>
+  {{#contents}}
+  <tr>
+    <td>{{title}}</td>
+    {{>excluirEditar}}
+  </tr>
+  {{/contents}}
+</table>
