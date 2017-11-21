@@ -27,8 +27,6 @@
     "bulma": "^0.6.0",
     "express": "^4.15.5",
     "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.6",
-    "express-validator": "*",
     "handlebars": "^4.0.10",
     "mongoose": "^4.11.14",
     "passport": "^0.4.0",

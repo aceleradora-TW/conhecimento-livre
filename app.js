@@ -24,6 +24,14 @@ app.use(passport.initialize())
 app.use(passport.session())
 passport.use(localStrategy)
 
+app.post('/admin/list',
+  passport.authenticate('local', { failureRedirect: '/admin' }),
+  routes.list
+)
+
+passport.serializeUser((user, done) => done(null, user))
+passport.deserializeUser((user, done) => done(null, user))
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
@@ -34,14 +42,6 @@ app.use(express.static(path.join(`${__dirname}/public`)))
 app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
-
-app.post('/admin/list',
-  passport.authenticate('local', { failureRedirect: '/admin' }),
-  routes.list
-)
-
-passport.serializeUser((user, done) => done(null, user))
-passport.deserializeUser((user, done) => done(null, user))
 
 app.get('/content/:id', routes.content)
 
