@@ -63,6 +63,9 @@ test/e2e/reports/
 # css files
 public/css/
 
+# script for mongodb
+mongoScript.js
+
 # cache and swap files
 .sass-cache
 .retire-cache

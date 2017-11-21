@@ -49,8 +49,18 @@ app.get('/course/:id', routes.course)
 
 app.get('/author/:id', routes.author)
 
+<<<<<<< 69cea683a9633f71d94aba3cfd4ad939fe344fa5
 app.use((req, res) =>
   res.status(404).render('404'))
+=======
+app.post('/deleteCourse', (req, res) => {
+  console.log("olaaaaa");
+})
+
+app.use((req, res, next) => {
+  res.status(404).render('404')
+})
+>>>>>>> <@AndreiRupertti> cria ajax request
 
 app.listen(app.get('port'), () =>
   console.log(`Node app is running on port ${app.get('port')}`))
