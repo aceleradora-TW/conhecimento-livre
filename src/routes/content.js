@@ -21,7 +21,6 @@ const content = Author => (req, res, next) => {
       console.log(error)
       next()
     })
-  }
-
+}
 
 module.exports = content

@@ -47,6 +47,8 @@ app.get('/admin/list', routes.list)
 
 app.get('/admin/newAuthor', routes.newAuthor)
 
+app.get('/admin/contentList/:id', routes.contentList)
+
 app.get('/content/:id', routes.content)
 
 app.get('/course/:id', routes.course)
