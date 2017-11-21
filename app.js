@@ -49,6 +49,7 @@ app.get('/course/:id', routes.course)
 
 app.get('/author/:id', routes.author)
 
+<<<<<<< 4cd7a8476832c5f7837539cfa993739015abdb74
 <<<<<<< 69cea683a9633f71d94aba3cfd4ad939fe344fa5
 app.use((req, res) =>
   res.status(404).render('404'))
@@ -56,6 +57,10 @@ app.use((req, res) =>
 app.post('/deleteCourse', (req, res) => {
   console.log("olaaaaa");
 })
+=======
+app.post('/deleteCourse', routes.deleteCourse)
+
+>>>>>>> <@JessicaFranke, @AndreiRupertti> Deleta curso
 
 app.use((req, res, next) => {
   res.status(404).render('404')

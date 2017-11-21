@@ -1,7 +1,7 @@
 $('#deleteCourse').click(function(e) {
   e.preventDefault();
   var data = {};
-  data.id = $('#id').val()
+  data.id = $('#id').text()
   $.ajax('http://localhost:3000/deleteCourse', {
     type: 'POST',
     data: JSON.stringify(data),
