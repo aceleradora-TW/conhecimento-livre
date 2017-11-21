@@ -5,7 +5,7 @@ const author = require('./author')
 const course = require('./course')
 const admin = require('./admin')
 const list = require('./list')
-const deleteCourse = require('./deleteCourse')
+const deletePost = require('./deletePost')
 
 const allRoutes = {
   index: index(Author),
@@ -14,6 +14,6 @@ const allRoutes = {
   course: course(Author),
   admin: admin(),
   list: list(Author),
-  deleteCourse: deleteCourse(Author),
+  deletePost: deletePost(Author),
 }
 module.exports = allRoutes

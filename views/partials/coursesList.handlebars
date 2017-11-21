@@ -13,32 +13,32 @@
       <td>{{author}}</td>
       <td id="id-{{_id}}">{{_id}}</td>
       <td>
-        <button id='deleteCourse-{{_id}}' type="button" name="delete">Delete</button>
+      <button id='deleteCourse-{{_id}}' type="button" name="delete">Delete</button>
         <button id="editCourse" type="button" name="edit">Edit</button>
       </td>
     </tr>
     {{/courses}}
     {{/allAuthors}}
   </table>
-  <!-- <script language="JavaScript" type="text/javascript" src="/js/deleteCourse.js"></script> -->
 </div>
 <script language="JavaScript" type="text/javascript">
 {{#allAuthors}}
 {{#courses}}
 $('#deleteCourse-{{_id}}').click(function(e) {
   e.preventDefault();
-  var data = {};
-  data.id = $('#id-{{_id}}').text()
-  data.collection = 'courses'
-  $.ajax('http://localhost:3000/deleteCourse', {
-    type: 'POST',
-    data: JSON.stringify(data),
-    contentType: 'application/json',
-    success: function() { console.log('success');},
-    error  : function() { console.log('error');}
-  });
+  if (confirm('Esta operação deletará todos os conteúdos deste curso. Você tem certeza disto?')){
+    var data = {};
+    data.id = $('#id-{{_id}}').text()
+    data.collection = 'courses'
+    $.ajax('http://localhost:3000/deletePost', {
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      success: function() {console.log('success');},
+      error  : function() { console.log('error');}
+    });
+  }
 })
 {{/courses}}
 {{/allAuthors}}
-
 </script>

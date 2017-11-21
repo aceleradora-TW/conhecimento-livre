@@ -19,22 +19,22 @@
     {{/allAuthors}}
   </table>
 </div>
-
 <script language="JavaScript" type="text/javascript">
 {{#allAuthors}}
 $('#deleteAuthor-{{_id}}').click(function(e) {
   e.preventDefault();
-  var data = {};
-  data.id = $('#id-{{_id}}').text()
-  data.collection = 'author'
-  $.ajax('http://localhost:3000/deleteCourse', {
-    type: 'POST',
-    data: JSON.stringify(data),
-    contentType: 'application/json',
-    success: function() { console.log('success');},
-    error  : function() { console.log('error');}
-  });
+  if (confirm('Esta operação deletará todos os cursos deste autor. Você tem certeza disto?')){
+    var data = {};
+    data.id = $('#id-{{_id}}').text()
+    data.collection = 'author'
+    $.ajax('http://localhost:3000/deletePost', {
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      success: function() { console.log('success');},
+      error  : function() { console.log('error');}
+    });
+  }
 })
 {{/allAuthors}}
-
 </script>
