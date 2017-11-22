@@ -22,16 +22,19 @@ class ModelsController {
   deleteCourse(id) {
     return this.model.update(
       { 'courses._id': id },
-      { $pull: { 'courses': { '_id': id } }
-    }).exec()
+      { $pull: { 'courses': { '_id': id } } }).exec()
   }
 
   deleteAuthor(id) {
-    return this.model.remove({_id: id}).exec()
+    return this.model.remove({ _id: id }).exec()
   }
 
-  insertAuthor(data){
-    return this.model.insert({name: data.name, bio: data.bio, email: data.email, photourl: data.photourl}).exec()
+  deleteContent(id) {
+    return this.model.update({ 'courses.contents._id': id }, { $pull: { 'courses.$.contents': { '_id': id } } }).exec()
+  }
+
+  insertAuthor(data) {
+    return this.model.insert({ name: data.name, bio: data.bio, email: data.email, photourl: data.photourl }).exec()
   }
   updateViews(contentId, authorData) {
     authorData.courses[0].contents.id(contentId).views += 1

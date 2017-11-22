@@ -6201,6 +6201,9 @@ label.panel-block {
 .notification {
   padding: 1.25rem 1.0rem 1.25rem 1.8rem; }
 
+.notification a:not(.button) {
+  text-decoration: none; }
+
 .playlist-container ul li p:hover {
   background-color: black;
   color: white;
@@ -6271,3 +6274,6 @@ label.panel-block {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none; }
+
+.vertical-align {
+  align-items: center; }
