@@ -52,6 +52,8 @@ app.get('/admin/contentList/:id', routes.contentList)
 
 app.post('/admin/saveAuthor/:id', routes.saveAuthor)
 
+app.post('/admin/saveAuthor', routes.saveNewAuthor)
+
 app.get('/content/:id', routes.content)
 
 app.get('/course/:id', routes.course)
