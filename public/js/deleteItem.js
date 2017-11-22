@@ -1,6 +1,4 @@
-function deleteItem(evt, itemId, collection) {
-  evt.preventDefault();
-  console.log(itemId);
+function deleteItem(itemId, collection) {
   var message;
 
   if (collection === 'author') {
