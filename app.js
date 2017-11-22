@@ -11,7 +11,7 @@ const localStrategy = require('./src/auth/local_strategy')
 
 const app = express()
 
-const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
+const MONGO_URL = process.env.DATABASELOGIN
 
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 
