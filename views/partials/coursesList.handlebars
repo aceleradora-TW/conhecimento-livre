@@ -4,7 +4,7 @@
       <th>Titulo</th>
       <th>Autor</th>
       <th>Id</th>
-      <th></th>
+      <th> <a href="/admin/newCourse"><div class="button is-primary">+</div></a></th>
     </tr>
     {{#allAuthors}}
     {{#courses}}
@@ -34,7 +34,7 @@ $('#deleteCourse-{{_id}}').click(function(e) {
       type: 'POST',
       data: JSON.stringify(data),
       contentType: 'application/json',
-      success: function() {console.log('success');},
+      success: function() {console.log('sucess');},
       error  : function() { console.log('error');}
     });
   }

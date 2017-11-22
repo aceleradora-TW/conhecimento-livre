@@ -30,6 +30,9 @@ class ModelsController {
     return this.model.remove({_id: id}).exec()
   }
 
+  insertAuthor(data){
+    return this.model.insert({name: data.name, bio: data.bio, email: data.email, photourl: data.photourl}).exec()
+  }
   updateViews(contentId, authorData) {
     authorData.courses[0].contents.id(contentId).views += 1
     return this.model.update({ 'courses.contents._id': contentId }, authorData).exec()

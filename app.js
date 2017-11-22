@@ -43,6 +43,15 @@ app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
 
+<<<<<<< 745f846f940914d8ec8e9d8287f100256a93973f
+=======
+app.get('/admin/list', routes.list)
+
+app.get('/admin/newAuthor', routes.newAuthor)
+
+app.post('/admin/newAuthor', routes.insert)
+
+>>>>>>> <@AndreiRupertti, @JessicaFranke> adiciona rota para novo autor
 app.get('/content/:id', routes.content)
 
 app.get('/course/:id', routes.course)
