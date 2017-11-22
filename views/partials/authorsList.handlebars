@@ -12,29 +12,11 @@
       <td>{{email}}</td>
       <td id="id-{{_id}}">{{_id}}</td>
       <td>
-        <button id="deleteAuthor-{{_id}}" type="button" name="delete">Delete</button>
+        <button onclick="deleteItem(event, '{{_id}}', 'author')" id="deleteAuthor-{{_id}}"  type="button" name="delete">Delete</button>
         <button type="button" name="edit">Edit</button>
       </td>
     </tr>
     {{/allAuthors}}
   </table>
 </div>
-<script language="JavaScript" type="text/javascript">
-{{#allAuthors}}
-$('#deleteAuthor-{{_id}}').click(function(e) {
-  e.preventDefault();
-  if (confirm('Esta operação deletará todos os cursos deste autor. Você tem certeza disto?')){
-    var data = {};
-    data.id = $('#id-{{_id}}').text()
-    data.collection = 'author'
-    $.ajax('http://localhost:3000/deletePost', {
-      type: 'POST',
-      data: JSON.stringify(data),
-      contentType: 'application/json',
-      success: function() { console.log('success');},
-      error  : function() { console.log('error');}
-    });
-  }
-})
-{{/allAuthors}}
-</script>
+<script src="/js/deleteItem.js"></script>

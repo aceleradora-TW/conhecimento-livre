@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const axios = require('axios')
 
 const exphbs = require('express-handlebars')
 const routes = require('./src/routes/routes')
@@ -11,7 +12,7 @@ const localStrategy = require('./src/auth/local_strategy')
 
 const app = express()
 
-const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
+const MONGO_URL = process.env.DATABASELOGIN
 
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 
@@ -43,24 +44,19 @@ app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
 
-<<<<<<< 745f846f940914d8ec8e9d8287f100256a93973f
-=======
 app.get('/admin/list', routes.list)
 
 app.get('/admin/newAuthor', routes.newAuthor)
 
 app.post('/admin/newAuthor', routes.insert)
 
->>>>>>> <@AndreiRupertti, @JessicaFranke> adiciona rota para novo autor
 app.get('/content/:id', routes.content)
 
 app.get('/course/:id', routes.course)
 
 app.get('/author/:id', routes.author)
 
-app.post('/deleteCourse', (req, res) => {
-  console.log("olaaaaa");
-})
+app.post('/deleteItem/:id', routes.deleteItem)
 
 app.use((req, res, next) => {
   res.status(404).render('404')

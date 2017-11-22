@@ -1,6 +1,6 @@
 const Controller = require('../mappers/models_controller')
 
-const deletePost = Author => (req, res, next) => {
+const deleteItem = Author => (req, res, next) => {
   const authorController = new Controller(Author)
   if(req.body.collection === 'author'){
     authorController
@@ -20,4 +20,4 @@ const deletePost = Author => (req, res, next) => {
 }
 
 
-module.exports = deletePost
+module.exports = deleteItem
