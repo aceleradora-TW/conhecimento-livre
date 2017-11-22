@@ -8,6 +8,7 @@ const list = require('./list')
 const deleteItem = require('./deleteItem')
 const authorData = require('./authorData')
 const newAuthor = require('./newAuthor')
+const newContent = require('./newContent')
 const contentList = require('./contentList')
 const saveAuthor = require('./saveAuthor')
 const authenticate = require('./authenticate')
@@ -21,6 +22,7 @@ const allRoutes = {
   list: list(Author),
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
+  newContent: newContent(Author),
   contentList: contentList(Author),
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
