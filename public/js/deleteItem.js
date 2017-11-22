@@ -17,10 +17,10 @@ function deleteItem(itemId, collection) {
       }
     })
     .then(function(response) {
-      console.log(sucess)
+      console.log('sucess')
     })
     .catch(function(error) {
-      console.log(error)
+      console.log('error')
     })
   }
 }
