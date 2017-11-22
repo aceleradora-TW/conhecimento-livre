@@ -1,7 +1,7 @@
 function deleteItem(evt, itemId, collection) {
   evt.preventDefault();
   console.log(itemId);
-  let message;
+  var message;
 
   if (collection === 'author') {
     message = 'Esta operação deletará todos os cursos deste autor. Você tem certeza disto?'
