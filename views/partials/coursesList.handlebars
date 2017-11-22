@@ -9,11 +9,11 @@
     {{#allAuthors}}
     {{#courses}}
     <tr>
-      <td><a href="/admin/list/contentList/{{ _id }}">{{title}}</a></td>
+      <td><a href="/admin/contentList/{{ _id }}">{{title}}</a></td>
       <td>{{author}}</td>
       <td id="id-{{_id}}">{{_id}}</td>
       <td>
-      <button onclick="deleteItem('{{_id}}', 'courses')" id='deleteCourse-{{_id}}' type="button" name="delete">Delete</button>
+      <button onclick="deleteItem('{{_id}}', 'courses')" type="button" name="delete">Delete</button>
         <button id="editCourse" type="button" name="edit">Edit</button>
       </td>
     </tr>

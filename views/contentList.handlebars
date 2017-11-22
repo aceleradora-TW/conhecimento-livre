@@ -6,13 +6,16 @@
   </div>
   <tr>
     <th>Aula</th>
-    {{>incluir}}
+    <button type="button" name="include">Incluir</button>
     <th></th>
   </tr>
   {{#contents}}
   <tr>
     <td>{{title}}</td>
-    {{>excluirEditar}}
+    <td>
+      <button onclick="deleteItem('{{_id}}', 'content')" type="button" name="delete">Delete</button>
+      <button type="button" name="edit">Edit</button>
+    </td>
   </tr>
   {{/contents}}
 </table>
