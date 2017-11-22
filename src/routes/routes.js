@@ -16,6 +16,6 @@ const allRoutes = {
   admin: admin(),
   list: list(Author),
   deleteItem: deleteItem(Author),
-  newAuthor: newAuthor(Author),
+  newAuthor: newAuthor(),
 }
 module.exports = allRoutes

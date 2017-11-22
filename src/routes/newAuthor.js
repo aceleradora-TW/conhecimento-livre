@@ -1,8 +1,4 @@
-const Controller = require('../mappers/models_controller')
-
-const newAuthor = Author => (req, res, next) => {
-  const authorController = new Controller(Author)
-
+const newAuthor = () => (req, res, next) => {
   res.render('authorForm')
 }
 
