@@ -4,18 +4,19 @@
       <th>Nome</th>
       <th>Email</th>
       <th>Id</th>
-      <th></th>
+      <th> <a href="/admin/newAuthor"><div class="button is-primary">+</div></a></th>
     </tr>
     {{#allAuthors}}
     <tr>
       <td>{{name}}</td>
       <td>{{email}}</td>
-      <td>{{_id}}</td>
+      <td id="id-{{_id}}">{{_id}}</td>
       <td>
-        <button type="button" name="delete">Delete</button>
+        <button onclick="deleteItem('{{_id}}', 'author')" id="deleteAuthor-{{_id}}"  type="button" name="delete">Delete</button>
         <button type="button" name="edit">Edit</button>
       </td>
     </tr>
     {{/allAuthors}}
   </table>
 </div>
+<script src="/js/deleteItem.js"></script>

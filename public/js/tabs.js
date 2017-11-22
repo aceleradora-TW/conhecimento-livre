@@ -1,7 +1,7 @@
 function openList(evt, listName) {
-  let i
-  let tabcontent
-  let tablinks
+  var i
+  var tabcontent
+  var tablinks
 
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++){
