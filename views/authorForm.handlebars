@@ -44,26 +44,3 @@
     </div>
   </div>
 </div>
-<script language="JavaScript" type="text/javascript">
-$('#submit').click(function(e) {
-  e.preventDefault();
-  var data = {};
-  data.name = $('#name').val()
-  data.email = $('#email').val()
-  data.bio = $('#bio').val()
-  data.photourl = $('#photourl').val()
-
-console.log(data);
-  if ((data.name || data.email || data.bio || data.photourl) === "") {
-    alert('TODOS OS CAMPOS SÃO NECESSÁRIOS')
-  }else{
-    $.ajax('http://localhost:3000/admin/newAuthor', {
-      type: 'POST',
-      data: JSON.stringify(data),
-      contentType: 'application/json',
-      success: function() {console.log('sucess');},
-      error  : function() { console.log('error');}
-    });
-  }
-})
-</script>

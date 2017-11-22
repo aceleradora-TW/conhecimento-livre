@@ -48,8 +48,6 @@ app.get('/admin/list', routes.list)
 
 app.get('/admin/newAuthor', routes.newAuthor)
 
-app.post('/admin/newAuthor', routes.insert)
-
 app.get('/content/:id', routes.content)
 
 app.get('/course/:id', routes.course)
