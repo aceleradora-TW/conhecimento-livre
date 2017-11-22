@@ -42,9 +42,15 @@ app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
 
+app.get('/admin/list', routes.list)
+
+app.post('/admin/authorData/:id', routes.authorData)
+
 app.get('/admin/newAuthor', routes.newAuthor)
 
 app.get('/admin/contentList/:id', routes.contentList)
+
+app.post('/admin/saveAuthor/:id', routes.saveAuthor)
 
 app.get('/content/:id', routes.content)
 
