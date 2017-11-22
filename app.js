@@ -43,7 +43,7 @@ app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
 
-app.get('/admin/list', routes.list)
+// app.get('/admin/list', routes.list)
 
 app.get('/admin/newAuthor', routes.newAuthor)
 
