@@ -26,8 +26,7 @@ passport.use(localStrategy)
 
 app.post('/admin/list',
   passport.authenticate('local', { failureRedirect: '/admin' }),
-  routes.list
-)
+  routes.list)
 
 passport.serializeUser((user, done) => done(null, user))
 passport.deserializeUser((user, done) => done(null, user))
@@ -47,6 +46,8 @@ app.get('/admin/list', routes.list)
 
 app.get('/admin/newAuthor', routes.newAuthor)
 
+app.get('/admin/contentList/:id', routes.contentList)
+
 app.get('/content/:id', routes.content)
 
 app.get('/course/:id', routes.course)
@@ -55,7 +56,7 @@ app.get('/author/:id', routes.author)
 
 app.delete('/deleteItem/:id', routes.deleteItem)
 
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(404).render('404')
 })
 
