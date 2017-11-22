@@ -19,7 +19,6 @@ const deleteItem = Author => (req, res, next) => {
         next()
       })
   } else if (req.body.collection === 'contents') {
-    console.log('oi');
     authorController
       .deleteContent(req.body.id)
       .then(() => res.sendStatus(200))
