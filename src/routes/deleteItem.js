@@ -5,6 +5,7 @@ const deleteItem = Author => (req, res, next) => {
   if(req.body.collection === 'author'){
     authorController
     .deleteAuthor(req.body.id)
+    .then(() => res.sendStatus(200))
     .catch((error) => {
       console.log(error)
       next()
@@ -12,6 +13,7 @@ const deleteItem = Author => (req, res, next) => {
   }else if(req.body.collection === 'courses'){
     authorController
     .deleteCourse(req.body.id)
+    .then(() => res.sendStatus(200))
     .catch((error) => {
       console.log(error)
       next()
