@@ -11,7 +11,7 @@ const localStrategy = require('./src/auth/local_strategy')
 
 const app = express()
 
-const MONGO_URL = process.env.DATABASELOGIN
+const MONGO_URL = 'mongodb://localhost:27017/conhecimento-livre-dev'
 
 app.set('MONGO_URL', (process.env.MONGO_URL || MONGO_URL))
 
@@ -53,7 +53,7 @@ app.get('/course/:id', routes.course)
 
 app.get('/author/:id', routes.author)
 
-app.post('/deleteItem/:id', routes.deleteItem)
+app.delete('/deleteItem/:id', routes.deleteItem)
 
 app.use((req, res, next) => {
   res.status(404).render('404')

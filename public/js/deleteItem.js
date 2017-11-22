@@ -3,15 +3,15 @@ function deleteItem(evt, itemId, collection) {
   console.log(itemId);
   let message;
 
-  if (collection==='author') {
+  if (collection === 'author') {
     message = 'Esta operação deletará todos os cursos deste autor. Você tem certeza disto?'
-  }else if (collection==='courses') {
+  }else if (collection === 'courses') {
     message = 'Esta operação deletará todos as aulas deste curso. Você tem certeza disto?'
   }
 
   if (confirm(message)) {
     axios({
-      method:'post',
+      method:'delete',
       url:'/deleteItem/'+itemId,
       data: {
         id: itemId,
