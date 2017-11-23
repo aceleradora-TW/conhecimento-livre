@@ -170,3 +170,7 @@
   overflow: hidden;
   margin-left: 3%;
 }
+
+.no-border {
+  border: none;
+}
