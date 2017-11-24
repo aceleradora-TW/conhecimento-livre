@@ -36,5 +36,8 @@ const allRoutes = {
   newCourse: newCourse(Author),
   saveCourse: saveCourse(Author),
   insertCourse: insertCourse(Author),
+  contentData: contentData(Author),
+  saveContent: saveContent(Author),
 }
+
 module.exports = allRoutes
