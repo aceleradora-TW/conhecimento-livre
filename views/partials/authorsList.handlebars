@@ -12,10 +12,8 @@
       <td>{{email}}</td>
       <td id="id-{{_id}}">{{_id}}</td>
       <td>
-        <button onclick="deleteItem('{{_id}}', 'author')"  type="button" name="delete">Delete</button>
-        <form action="/admin/author/{{_id}}" method="get">
-          <button type="submit" value={{_id}}>Editar</button>
-        </form>
+        <a class="button is-info" href="/admin/author/{{_id}}">Editar</a>
+        <a class="button is-danger" onclick="deleteItem('{{_id}}', 'author')">Delete</a>
       </td>
     </tr>
     {{/allAuthors}}
