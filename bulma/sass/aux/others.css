@@ -24,7 +24,7 @@
   width: 100%;
 }
 
-.playlist-container ul li .preview-video {
+.playlist-container ul li .preview-video{
   position: absolute;
   width: 58%;
   height: 100%;
@@ -57,7 +57,7 @@
 }
 
 .notification a:not(.button) {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .playlist-container ul li p:hover {
@@ -150,4 +150,28 @@
 
 .vertical-align {
   align-items: center;
+}
+
+.next-video {
+  margin-left: 1%;
+}
+
+.next-video-preview {
+  display: flex;
+  height: 100%;
+  color: white;
+  font-size: 0.9em;
+}
+
+.next-video-preview img{
+  height: 100%;
+  width: 100%;
+}
+
+.next-video-preview span {
+  font-size: 0.9em;
+  width: 90%;
+  overflow: hidden;
+  display: -webkit-box;
+  margin-left: 3%;
 }
