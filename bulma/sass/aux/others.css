@@ -36,7 +36,7 @@
 .playlist-container ul li p {
   opacity: 0;
   position: absolute;
-  width: 89%;
+  width: 100%;
   height: 100%;
 }
 
@@ -62,8 +62,7 @@
 
 .playlist-container ul li p:hover {
   background-color: black;
-  color: white;
-  opacity: 0.8;
+  opacity: 0.2;
 }
 
 .fullhight{
