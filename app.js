@@ -8,6 +8,7 @@ const routes = require('./src/routes/routes')
 
 const passport = require('passport')
 const localStrategy = require('./src/auth/local_strategy')
+const expressSession = require('express-session')
 
 const app = express()
 
@@ -20,13 +21,20 @@ mongoose.connect(app.get('MONGO_URL'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(passport.initialize())
-app.use(passport.session())
 passport.use(localStrategy)
 
+app.use(expressSession({
+  secret: 'keyboard_cat',
+  resave: true,
+  saveUninitialized: false,
+}));
+
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.post('/admin/list',
-  passport.authenticate('local', { failureRedirect: '/admin' }),
-  routes.list)
+passport.authenticate('local', { failureRedirect: '/admin' }),
+routes.authenticate, routes.list)
 
 passport.serializeUser((user, done) => done(null, user))
 passport.deserializeUser((user, done) => done(null, user))
@@ -44,9 +52,11 @@ app.get('/admin', routes.admin)
 
 app.get('/admin/author/:id', routes.authorData)
 
-app.get('/admin/newAuthor', routes.newAuthor)
+app.get('/admin/newAuthor', routes.authenticate, routes.newAuthor)
 
-app.get('/admin/contentList/:id', routes.contentList)
+app.get('/admin/contentList/:id', routes.authenticate, routes.contentList)
+
+app.get('/admin/list', routes.authenticate, routes.list)
 
 app.post('/admin/saveAuthor', routes.saveAuthor)
 
@@ -61,4 +71,4 @@ app.delete('/deleteItem/:id', routes.deleteItem)
 app.use((req, res) => res.status(404).render('404'))
 
 app.listen(app.get('port'), () =>
-  console.log(`Node app is running on port ${app.get('port')}`))
+console.log(`Node app is running on port ${app.get('port')}`))
