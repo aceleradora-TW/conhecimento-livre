@@ -1,11 +1,12 @@
 <a class="button" href="/admin/list">Retornar para a página anterior</a></li>
 <div class="hero-body">
   {{#authorItem}}
-  <form action="/admin/saveAuthor/{{_id}}" method="post">
+  <form action="/admin/saveAuthor" method="post">
     <div class="field">
       <label class="label">Nome</label>
       <div class="control">
         <input id="name" name="name" class="input" type="text" placeholder="insira aqui nome completo" value="{{name}}">
+        <input id="id" name="id" class="input" type="hidden" value="{{_id}}">
       </div>
     </div>
 

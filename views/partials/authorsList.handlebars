@@ -13,7 +13,7 @@
       <td id="id-{{_id}}">{{_id}}</td>
       <td>
         <button onclick="deleteItem('{{_id}}', 'author')"  type="button" name="delete">Delete</button>
-        <form action="/admin/authorData/{{_id}}" method="post">
+        <form action="/admin/author/{{_id}}" method="get">
           <button type="submit" value={{_id}}>Editar</button>
         </form>
       </td>

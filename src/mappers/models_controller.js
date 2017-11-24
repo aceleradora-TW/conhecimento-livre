@@ -43,7 +43,7 @@ class ModelsController {
   }
 
   updateAuthor(authorData) {
-    return this.model.update({ '_id': authorData._id }, authorData).exec()
+    return this.model.update({ '_id': authorData.id }, authorData).exec()
   }
 }
 

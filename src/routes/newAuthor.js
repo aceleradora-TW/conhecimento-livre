@@ -1,5 +1,5 @@
 const newAuthor = () => (req, res) => {
-  const authorItem = 0
+  const authorItem = {}
   res.render('authorForm', { authorItem })
 }
 

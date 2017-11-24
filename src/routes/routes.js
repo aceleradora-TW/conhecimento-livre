@@ -10,7 +10,6 @@ const authorData = require('./authorData')
 const newAuthor = require('./newAuthor')
 const contentList = require('./contentList')
 const saveAuthor = require('./saveAuthor')
-const saveNewAuthor = require('./saveNewAuthor')
 
 const allRoutes = {
   index: index(Author),
@@ -24,6 +23,5 @@ const allRoutes = {
   contentList: contentList(Author),
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
-  saveNewAuthor: saveNewAuthor(Author),
 }
 module.exports = allRoutes
