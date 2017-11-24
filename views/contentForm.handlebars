@@ -1,41 +1,34 @@
 <fieldset class="no-border">
   <div class="hero-body">
-    <legend class="subtitle is-3">Inserir nova aula</legend>
-    <div class="field">
-      <label class="label">Título</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Insira o título da aula aqui">
-      </div>
-    </div>
-    <div class="field">
-      <label class="label">Autor</label>
-      <div class="control">
-        <div class="select">
-          <select>
-            <option>Selecione o autor</option>
-            {{#allAuthors}}
-            <option>{{name}}</option>
-            {{/allAuthors}}
-          </select>
+    <form action="/admin/saveContent/{{_id}}" method="post">
+      <legend class="subtitle is-3">Inserir nova aula</legend>
+
+      <div class="field">
+        <label class="label">Título</label>
+        <div class="control">
+          <input id="title" name="title" class="input" type="text" placeholder="Insira o título da aula aqui" value="{{title}}">
         </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label">URL</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" type="text" placeholder="Insira o URL da aula aqui">
+
+      <div class="field">
+        <label class="label">URL</label>
+        <div class="control has-icons-left has-icons-right">
+          <input id="url" name="url" class="input" type="text" placeholder="Insira o URL da aula aqui" value="{{url}}">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label">Descrição</label>
-      <div class="control">
-        <textarea class="textarea" placeholder="Insira aqui a descrição da aula"></textarea>
+
+      <div class="field">
+        <label class="label">Descrição</label>
+        <div class="control">
+          <textarea id="description" name="description" class="textarea" placeholder="Insira aqui a descrição da aula" value="{{description}}"></textarea>
+        </div>
       </div>
-    </div>
-    <div class="field is-grouped">
-      <div class="control">
-        <button class="button is-link is-success">Salvar</button>
-      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <input type="submit" value="Salvar" class="button is-primary is-medium is-fullwidth">
+        </div>
+      </form>
       <div class="control">
         <button class="button is-text">Cancelar</button>
       </div>

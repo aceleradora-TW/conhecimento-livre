@@ -27,5 +27,9 @@ const allRoutes = {
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
   authenticate: authenticate(),
+  contentData: contentData(Author),
+  newContent: newContent(),
+  saveContent: saveContent(Author),
+  saveNewContent: saveNewContent(Author)
 }
 module.exports = allRoutes

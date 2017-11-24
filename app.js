@@ -66,7 +66,11 @@ app.get('/course/:id', routes.course)
 
 app.get('/author/:id', routes.author)
 
-app.get('/form/content', routes.newContent)
+app.get('/admin/newContent', routes.newContent)
+
+app.post('/admin/saveContent/:id', routes.saveContent)
+
+app.post('/admin/saveContent', routes.saveNewContent)
 
 app.delete('/deleteItem/:id', routes.deleteItem)
 
