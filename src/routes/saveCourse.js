@@ -15,9 +15,7 @@ const saveCourse = Author => (req, res, next) => {
   } else {
     authorController
       .updateCourse(courseEdit)
-      .then(() => {
-        console.log(courseEdit)
-        res.redirect('/admin/list')})
+      .then(() => res.redirect('/admin/list'))
       .catch((error) => {
         console.log(error)
         next()

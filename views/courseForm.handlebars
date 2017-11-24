@@ -1,9 +1,24 @@
 <a class="button" href="/admin/list">Retornar para a página anterior</a></li>
 <div class="hero-body">
 
-  {{#authorItem}}
-  {{#courses}}
   <form action="/admin/saveCourse" method="post">
+    <div class="field">
+      <label class="label">Pessoa autora</label>
+      <div class="control">
+        <div class="select">
+          <select>
+            <option>Escolha uma pessoa autora</option>
+            {{#allAuthors}}
+            <option>{{name}}</option>
+            {{/allAuthors}}
+            <input id="idAuthor" name="idAuthor" class="input" type="hidden" value="{{_id}}">
+          </select>
+        </div>
+      </div>
+    </div>
+
+    {{#authorItem}}
+    {{#courses}}
     <div class="field">
       <label class="label">Título</label>
       <div class="control">
@@ -11,20 +26,10 @@
         <input id="id" name="id" class="input" type="hidden" value="{{_id}}">
       </div>
     </div>
-
     {{/courses}}
-    <div class="field">
-      <label class="label">Autor</label>
-      <div class="control">
-        <div class="select">
-          <select>
-            <option>{{name}}</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    {{#courses}}
 
+
+    {{#courses}}
     <div class="field">
       <label class="label">Descrição</label>
       <div class="control">
