@@ -42,9 +42,13 @@ app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
 
+app.get('/admin/author/:id', routes.authorData)
+
 app.get('/admin/newAuthor', routes.newAuthor)
 
 app.get('/admin/contentList/:id', routes.contentList)
+
+app.post('/admin/saveAuthor', routes.saveAuthor)
 
 app.get('/content/:id', routes.content)
 
@@ -54,9 +58,7 @@ app.get('/author/:id', routes.author)
 
 app.delete('/deleteItem/:id', routes.deleteItem)
 
-app.use((req, res) => {
-  res.status(404).render('404')
-})
+app.use((req, res) => res.status(404).render('404'))
 
 app.listen(app.get('port'), () =>
   console.log(`Node app is running on port ${app.get('port')}`))
