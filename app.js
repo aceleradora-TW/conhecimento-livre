@@ -50,6 +50,8 @@ app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
 
+app.get('/admin/contentList/:id', routes.contentList)
+
 app.get('/admin/author/:id', routes.authorData)
 
 app.get('/admin/newAuthor', routes.authenticate, routes.newAuthor)
@@ -59,6 +61,12 @@ app.get('/admin/contentList/:id', routes.authenticate, routes.contentList)
 app.get('/admin/list', routes.authenticate, routes.list)
 
 app.post('/admin/saveAuthor', routes.saveAuthor)
+
+app.get('/admin/course/:id', routes.courseData)
+
+app.get('/admin/newCourse', routes.newCourse)
+
+app.post('/admin/saveCourse', routes.saveCourse)
 
 app.get('/content/:id', routes.content)
 

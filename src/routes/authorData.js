@@ -6,9 +6,7 @@ const authorData = Author => (req, res, next) => {
 
   authorController
     .findAuthorById(id)
-    .then((authorItem) => {
-      res.render('authorForm', { authorItem })
-    })
+    .then(authorItem => res.render('authorForm', { authorItem }))
     .catch((error) => {
       console.log(error)
       next()

@@ -4,7 +4,7 @@
       <th>Titulo</th>
       <th>Autor</th>
       <th>Id</th>
-      <th> <a href="/admin/newCourse"><div class="button is-primary">+</div></a></th>
+      <th><a class="button is-primary" href="/admin/newCourse">+</a></th>
     </tr>
     {{#allAuthors}}
     {{#courses}}
@@ -13,8 +13,8 @@
       <td>{{author}}</td>
       <td id="id-{{_id}}">{{_id}}</td>
       <td>
-      <a class="button is-danger" onclick="deleteItem('{{_id}}', 'courses')">Delete</button>
-        <button id="editCourse" type="button" name="edit">Edit</button>
+        <a class="button is-info" href="/admin/course/{{_id}}">Editar</a>
+        <a class="button is-danger" onclick="deleteItem('{{_id}}', 'courses')">Deletar</a>
       </td>
     </tr>
     {{/courses}}

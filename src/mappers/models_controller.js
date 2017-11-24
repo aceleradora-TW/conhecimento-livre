@@ -37,6 +37,10 @@ class ModelsController {
     return this.model.create({ name: data.name, email: data.email, bio: data.bio, photourl: data.photourl })
   }
 
+  insertCourse(data) {
+    return this.model.create({ title: data.title, author: data.author, description: data.description, duration: data.duration, publication: data.publication, lessons: data.lessons, language: data.language, image: data.image })
+  }
+
   updateViews(contentId, authorData) {
     authorData.courses[0].contents.id(contentId).views += 1
     return this.model.update({ 'courses.contents._id': contentId }, authorData).exec()
@@ -44,6 +48,10 @@ class ModelsController {
 
   updateAuthor(authorData) {
     return this.model.update({ '_id': authorData.id }, authorData).exec()
+  }
+
+  updateCourse(courseData) {
+    return this.model.update({ 'courses._id': courseData.id }, courseData).exec()
   }
 }
 
