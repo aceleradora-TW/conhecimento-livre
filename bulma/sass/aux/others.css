@@ -24,7 +24,7 @@
   width: 100%;
 }
 
-.playlist-container ul li .preview-video{
+.playlist-container ul li .preview-video {
   position: absolute;
   width: 58%;
   height: 100%;
@@ -152,10 +152,6 @@
   align-items: center;
 }
 
-.next-video {
-  margin-left: 1%;
-}
-
 .next-video-preview {
   display: flex;
   height: 100%;
@@ -172,6 +168,5 @@
   font-size: 0.9em;
   width: 90%;
   overflow: hidden;
-  display: -webkit-box;
   margin-left: 3%;
 }
