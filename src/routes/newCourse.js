@@ -5,7 +5,6 @@ const newCourse = Author => (req, res, next) => {
   const authorItem = { courses: {} }
   const showAuthor = {}
 
-
   authorController
     .findAll()
     .then((allAuthors) => {

@@ -1,3 +1,5 @@
+const mongoose = require('mongoose')
+
 class ModelsController {
   constructor(model) {
     this.model = model
@@ -34,11 +36,14 @@ class ModelsController {
   }
 
   insertAuthor(data) {
-    return this.model.create({ name: data.name, email: data.email, bio: data.bio, photourl: data.photourl })
+    return this.model.create(
+      { name: data.name, email: data.email, bio: data.bio, photourl: data.photourl }
+    )
   }
 
-  insertCourse(data) {
-    return this.model.create({ title: data.title, author: data.author, description: data.description, duration: data.duration, publication: data.publication, lessons: data.lessons, language: data.language, image: data.image })
+  insertCourse(id, data) {
+    data._id = new mongoose.Types.ObjectId()
+    return this.model.findOneAndUpdate({ _id: id }, { $push: { 'courses': data } })
   }
 
   updateViews(contentId, authorData) {

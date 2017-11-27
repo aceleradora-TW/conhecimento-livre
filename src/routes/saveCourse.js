@@ -2,13 +2,15 @@ const Controller = require('../mappers/models_controller')
 
 const saveCourse = Author => (req, res, next) => {
   const authorController = new Controller(Author)
-  const courseEdit = req.body
+  const course = req.body
+  const idAuthor = course.idAuthor
+  delete course.idAuthor
 
-  console.log('dasdasdsadsadsadoi');
-
-  if (courseEdit.id === '') {
+  if (course._id === '') {
     authorController
-      .insertCourse(courseEdit)
+      .findAuthorById(idAuthor)
+      .then(Author => course.author = Author.name)
+      .then(() => authorController.insertCourse(idAuthor, course))
       .then(() => res.redirect('/admin/list'))
       .catch((error) => {
         console.log(error)
@@ -16,7 +18,7 @@ const saveCourse = Author => (req, res, next) => {
       })
   } else {
     authorController
-      .updateCourse(courseEdit)
+      .updateCourse(course)
       .then(() => res.redirect('/admin/list'))
       .catch((error) => {
         console.log(error)

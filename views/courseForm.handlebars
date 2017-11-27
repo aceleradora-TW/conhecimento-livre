@@ -7,13 +7,14 @@
       <label class="label">Pessoa autora</label>
       <div class="control">
         <div class="select">
-          <select>
+          <select id="idAuthor" name="idAuthor" >
             <option>Escolha uma pessoa autora</option>
             {{/showAuthor}}
             {{#allAuthors}}
-            <option>{{name}}</option>
+            <option value="{{_id}}" selected="selected">
+              {{name}}
+            </option>
             {{/allAuthors}}
-            <input id="idAuthor" name="idAuthor" class="input" type="hidden" value="{{_id}}">
           </select>
           {{#showAuthor}}
         </div>
@@ -27,7 +28,7 @@
       <label class="label">Título</label>
       <div class="control">
         <input id="title" name="title" class="input" type="text" placeholder="insira aqui o título do curso" value="{{title}}">
-        <input id="id" name="id" class="input" type="hidden" value="{{_id}}">
+        <input id="_id" name="_id" class="input" type="hidden" value="{{_id}}">
       </div>
     </div>
     {{/courses}}
