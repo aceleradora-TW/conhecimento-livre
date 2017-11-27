@@ -14,6 +14,7 @@ const saveAuthor = require('./saveAuthor')
 const authenticate = require('./authenticate')
 const saveContent = require('./saveContent')
 const saveNewContent = require('./saveNewContent')
+const contentData = require('./contentData')
 
 const allRoutes = {
   index: index(Author),
@@ -31,8 +32,6 @@ const allRoutes = {
   saveAuthor: saveAuthor(Author),
   authenticate: authenticate(),
   contentData: contentData(Author),
-  newContent: newContent(),
-  saveContent: saveContent(Author),
-  saveNewContent: saveNewContent(Author)
+  saveNewContent: saveNewContent(Author),
 }
 module.exports = allRoutes
