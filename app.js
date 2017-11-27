@@ -78,8 +78,6 @@ app.get('/author/:id', routes.author)
 
 app.get('/admin/newContent', routes.newContent)
 
-app.post('/admin/saveContent/:id', routes.saveContent)
-
 app.post('/admin/saveContent', routes.saveNewContent)
 
 app.delete('/deleteItem/:id', routes.deleteItem)
