@@ -40,11 +40,7 @@ const allRoutes = {
   saveCourse: saveCourse(Author),
   insertCourse: insertCourse(Author),
   contentData: contentData(Author),
-<<<<<<< 45b77427df39171f1b8d12f4c48850582f9b2567
   saveContent: saveContent(Author),
-=======
-  saveNewContent: saveNewContent(Author),
->>>>>>> atualiza com a master
 }
 
 module.exports = allRoutes
