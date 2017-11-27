@@ -12,6 +12,8 @@ const newContent = require('./newContent')
 const contentList = require('./contentList')
 const saveAuthor = require('./saveAuthor')
 const authenticate = require('./authenticate')
+const saveContent = require('./saveContent')
+const saveNewContent = require('./saveNewContent')
 
 const allRoutes = {
   index: index(Author),
@@ -23,6 +25,7 @@ const allRoutes = {
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
   newContent: newContent(Author),
+  saveContent: saveContent(Author),
   contentList: contentList(Author),
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
