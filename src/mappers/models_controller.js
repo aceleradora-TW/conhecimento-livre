@@ -56,7 +56,7 @@ class ModelsController {
   }
 
   updateCourse(courseData) {
-    return this.model.update({ 'courses._id': courseData.id }, courseData).exec()
+    return this.model.update({ 'courses._id': courseData.id }, { $set: { 'courses.$': courseData } }).exec()
   }
 }
 
