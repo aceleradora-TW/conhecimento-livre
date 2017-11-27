@@ -57,7 +57,7 @@
 }
 
 .notification a:not(.button) {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .playlist-container ul li p:hover {
@@ -150,4 +150,23 @@
 
 .vertical-align {
   align-items: center;
+}
+
+.next-video-preview {
+  display: flex;
+  height: 100%;
+  color: white;
+  font-size: 0.9em;
+}
+
+.next-video-preview img{
+  height: 100%;
+  width: 100%;
+}
+
+.next-video-preview span {
+  font-size: 0.9em;
+  width: 90%;
+  overflow: hidden;
+  margin-left: 3%;
 }
