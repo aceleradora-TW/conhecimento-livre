@@ -19,8 +19,12 @@
         <h5 class="subtitle has-text-dark">Outras aulas:</h5>
         <div class="playlist-container">
           <ul>
+            <div class="content">
+            <button id="prev" class="button" onclick="prevPage()">&#10094;</button>
+            <button id="next" class="button" onclick="nextPage()">&#10095;</button>
+          </div>
             {{#allContents}}
-            <li>
+            <li class="nextContents">
               <a class="link-card" href="/content/{{ id }}">
                 <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="Link para a aula {{ title }}">
                 <span class="has-text-black"> {{ title }}</span>
@@ -37,3 +41,40 @@
     </article>
   </div>
 </div>
+<script type="text/javascript">
+let count=0
+let numberClasses = 5
+let classes = document.getElementsByClassName("nextContents");
+let i;
+
+$(document).ready(function() {
+  nextPage()
+  document.getElementById("prev").style.display = "none"
+});
+
+function nextPage(){
+  document.getElementById("prev").style.display = "inline"
+  for (let k = 0; k < classes.length; k++) {
+    classes[k].style.display = "none";
+  }
+  for (i = count; i < count+numberClasses; i++) {
+    classes[i].style.display = "flex";
+  }
+  count=i;
+  if(count == classes.length){document.getElementById("next").style.display = "none"}
+}
+
+function prevPage(){
+  document.getElementById("next").style.display = "inline"
+  count= count - (numberClasses*2);
+  for (let k = 0; k < classes.length; k++) {
+    classes[k].style.display = "none";
+  }
+  for (i = count; i < count+numberClasses; i++) {
+    classes[i].style.display = "flex";
+  }
+  count=i;
+  if(count == numberClasses){document.getElementById("prev").style.display = "none"}
+}
+
+</script>
