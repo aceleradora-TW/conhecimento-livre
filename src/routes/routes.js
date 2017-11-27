@@ -17,6 +17,7 @@ const courseData = require('./courseData')
 const newCourse = require('./newCourse')
 const saveCourse = require('./saveCourse')
 const insertCourse = require('./insertCourse')
+const saveContent = require('./saveContent')
 
 const allRoutes = {
   index: index(Author),
@@ -28,6 +29,7 @@ const allRoutes = {
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
   newContent: newContent(Author),
+  saveContent: saveContent(Author),
   contentList: contentList(Author),
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
