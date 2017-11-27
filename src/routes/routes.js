@@ -18,6 +18,7 @@ const newCourse = require('./newCourse')
 const saveCourse = require('./saveCourse')
 const insertCourse = require('./insertCourse')
 const saveContent = require('./saveContent')
+const contentData = require('./contentData')
 
 const allRoutes = {
   index: index(Author),
@@ -39,7 +40,11 @@ const allRoutes = {
   saveCourse: saveCourse(Author),
   insertCourse: insertCourse(Author),
   contentData: contentData(Author),
+<<<<<<< 45b77427df39171f1b8d12f4c48850582f9b2567
   saveContent: saveContent(Author),
+=======
+  saveNewContent: saveNewContent(Author),
+>>>>>>> atualiza com a master
 }
 
 module.exports = allRoutes
