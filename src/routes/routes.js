@@ -10,6 +10,7 @@ const authorData = require('./authorData')
 const newAuthor = require('./newAuthor')
 const contentList = require('./contentList')
 const saveAuthor = require('./saveAuthor')
+const authenticate = require('./authenticate')
 
 const allRoutes = {
   index: index(Author),
@@ -23,5 +24,6 @@ const allRoutes = {
   contentList: contentList(Author),
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
+  authenticate: authenticate(),
 }
 module.exports = allRoutes
