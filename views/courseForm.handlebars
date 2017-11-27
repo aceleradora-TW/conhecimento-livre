@@ -2,20 +2,24 @@
 <div class="hero-body">
 
   <form action="/admin/saveCourse" method="post">
+    {{#showAuthor}}
     <div class="field">
       <label class="label">Pessoa autora</label>
       <div class="control">
         <div class="select">
           <select>
             <option>Escolha uma pessoa autora</option>
+            {{/showAuthor}}
             {{#allAuthors}}
             <option>{{name}}</option>
             {{/allAuthors}}
             <input id="idAuthor" name="idAuthor" class="input" type="hidden" value="{{_id}}">
           </select>
+          {{#showAuthor}}
         </div>
       </div>
     </div>
+    {{/showAuthor}}
 
     {{#authorItem}}
     {{#courses}}
