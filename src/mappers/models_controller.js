@@ -34,7 +34,20 @@ class ModelsController {
   }
 
   insertAuthor(data) {
-    return this.model.create({ name: data.name, email: data.email, bio: data.bio, photourl: data.photourl })
+    return this.model.create({
+      name: data.name,
+      email: data.email,
+      bio: data.bio,
+      photourl: data.photourl,
+    })
+  }
+
+  insertContent(courseId, data) {
+    return this.model.create({
+      title: data.title,
+      url: data.url,
+      description: data.description,
+    })
   }
 
   updateViews(contentId, authorData) {
