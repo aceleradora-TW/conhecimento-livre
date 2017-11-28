@@ -33,8 +33,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.post('/admin/list',
-passport.authenticate('local', { failureRedirect: '/admin' }),
-routes.authenticate, routes.list)
+  passport.authenticate('local', { failureRedirect: '/admin' }),
+  routes.authenticate, routes.list)
 
 passport.serializeUser((user, done) => done(null, user))
 passport.deserializeUser((user, done) => done(null, user))
@@ -50,7 +50,9 @@ app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
 
-app.get('/admin/author/:id', routes.authorData)
+app.get('/admin/contentList/:id', routes.authenticate, routes.contentList)
+
+app.get('/admin/author/:id', routes.authenticate, routes.authorData)
 
 app.get('/admin/newAuthor', routes.authenticate, routes.newAuthor)
 
@@ -58,7 +60,13 @@ app.get('/admin/contentList/:id', routes.authenticate, routes.contentList)
 
 app.get('/admin/list', routes.authenticate, routes.list)
 
-app.post('/admin/saveAuthor', routes.saveAuthor)
+app.post('/admin/saveAuthor', routes.authenticate, routes.saveAuthor)
+
+app.get('/admin/course/:id', routes.authenticate, routes.courseData)
+
+app.get('/admin/newCourse', routes.authenticate, routes.newCourse)
+
+app.post('/admin/saveCourse', routes.authenticate, routes.saveCourse)
 
 app.get('/content/:id', routes.content)
 
@@ -71,4 +79,4 @@ app.delete('/deleteItem/:id', routes.deleteItem)
 app.use((req, res) => res.status(404).render('404'))
 
 app.listen(app.get('port'), () =>
-console.log(`Node app is running on port ${app.get('port')}`))
+  console.log(`Node app is running on port ${app.get('port')}`))

@@ -1,0 +1,80 @@
+<a class="button" href="/admin/list">Retornar para a página anterior</a></li>
+<div class="hero-body">
+
+  <form action="/admin/saveCourse" method="post">
+    {{#showAuthor}}
+    <div class="field">
+      <label class="label">Pessoa autora</label>
+      <div class="control">
+        <div class="select">
+          <select id="idAuthor" name="idAuthor" >
+            {{/showAuthor}}
+            {{#allAuthors}}
+            <option value="{{_id}}" selected="selected">
+              {{name}}
+            </option>
+            {{/allAuthors}}
+          </select>
+          {{#showAuthor}}
+        </div>
+      </div>
+    </div>
+    {{/showAuthor}}
+
+    {{#authorItem}}
+    {{#courses}}
+    <div class="field">
+      <label class="label">Título</label>
+      <div class="control">
+        <input id="title" name="title" class="input" type="text" placeholder="insira aqui o título do curso" value="{{title}}" required>
+        <input id="_id" name="_id" class="input" type="hidden" value="{{_id}}">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Descrição</label>
+      <div class="control">
+        <textarea id='description' name="description" class="textarea" placeholder="insira aqui a descrição do curso">{{description}}</textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Imagem (url)</label>
+      <div class="control">
+        <input id="image" name="image" class="input" type="text" placeholder="insira aqui a imagem do curso" value="{{image}}">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Quantidade de aulas</label>
+      <div class="control">
+        <input id="lessons" name="lessons" class="input" type="number" min="0" placeholder="insira aqui a quantidade de aulas" value="{{lessons}}">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Duração</label>
+      <div class="control">
+        <input id="duration" name="duration" class="input" type="text" placeholder="insira aqui a duração" value="{{duration}}" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Linguagem</label>
+      <div class="control">
+        <input id="language" name="language" class="input" type="text" placeholder="insira aqui a linguagem" value="{{language}}" required>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <input type="submit" value="Salvar" class="button is-primary is-medium is-fullwidth">
+      </form>
+    </div>
+    <div class="control">
+      <a class="button is-danger is-medium is-fullwidth" href="/admin/list">Cancelar</a>
+    </div>
+  </div>
+  {{/courses}}
+  {{/authorItem}}
+</div>
