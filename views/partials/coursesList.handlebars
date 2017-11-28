@@ -5,6 +5,7 @@
       <th>Autor</th>
       <th>Id</th>
       <th><a class="button is-primary" href="/admin/newCourse">+</a></th>
+      <th>Banco de dados</th>
     </tr>
     {{#allAuthors}}
     {{#courses}}
@@ -16,6 +17,7 @@
         <a class="button is-info" href="/admin/course/{{_id}}">Editar</a>
         <a class="button is-danger" onclick="deleteItem('{{_id}}', 'courses')">Deletar</a>
       </td>
+      <td><input id="checkBox" type="checkbox"> Mostrar em produção</td>
     </tr>
     {{/courses}}
     {{/allAuthors}}
