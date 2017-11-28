@@ -6,11 +6,11 @@
         <div class="next-video">
           {{#next}}
           <h5 class="subtitle has-text-dark">Próxima aula:</h5>
-          <div class="next-video-preview">
-            <a href="/content/{{ id }}">
+          <div class="playlist-container">
+            <a class="link-card" href="/content/{{ id }}">
               <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="Link para a aula {{ title }}">
+              <span class="has-text-black"> {{ title }}</span>
             </a>
-            <span class="has-text-black"> {{ title }}</span>
           </div>
           <hr>
           {{/next}}
@@ -20,12 +20,11 @@
         <div class="playlist-container">
           <ul>
             {{#allContents}}
-            <li class="thumbnail-align">
-              <a href="/content/{{ id }}">
-                <div class="preview-video"> <p class=""> {{ preview }}</p></div>
+            <li>
+              <a class="link-card" href="/content/{{ id }}">
                 <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="Link para a aula {{ title }}">
+                <span class="has-text-black"> {{ title }}</span>
               </a>
-              <span class="has-text-black"> {{ title }}</span>
             </li>
             {{/allContents}}
           </ul>
