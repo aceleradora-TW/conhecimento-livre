@@ -12,7 +12,6 @@ const saveCourse = Author => (req, res, next) => {
   if (course._id === '') {
     const idAuthor = course.idAuthor
     delete course.idAuthor
-
     authorController
       .findAuthorById(idAuthor)
       .then(Author => course.author = Author.name)
@@ -26,13 +25,7 @@ const saveCourse = Author => (req, res, next) => {
     authorController
       .findCourseById(course._id)
       .then((authorItem) => {
-        authorItem.courses[0].title = course.title
-        authorItem.courses[0].description = course.description
-        authorItem.courses[0].duration = course.duration
-        authorItem.courses[0].lessons = course.lessons
-        authorItem.courses[0].language = course.language
-        authorItem.courses[0].image = course.image
-        data = authorItem.courses[0]
+        data = Object.assign(authorItem.courses[0], course)
       })
       .then(() => {
         authorController.updateCourse(data)
