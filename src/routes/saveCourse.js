@@ -6,7 +6,7 @@ const saveCourse = Author => (req, res, next) => {
   let data = {}
 
   if (course.image === '') {
-    course.image = '../images/banner_inicial.png'
+    course.image = '../images/defaultImage.png'
   }
   if (course._id === '') {
     const idAuthor = course.idAuthor
