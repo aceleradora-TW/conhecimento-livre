@@ -19,7 +19,7 @@
 }
 
 .playlist-container a:hover, .playlist-container a:focus{
-  background-color: rgba(211, 211, 211, 0.3);
+  background-color: rgba(178, 178, 178, 0.2);
   opacity: 0.7;
 }
 
@@ -56,7 +56,6 @@ display: flex;
 font-size: 0.9em;
 }
 
-
 .notification {
   padding: 1.25rem 1.0rem 1.25rem 1.8rem;
 }
@@ -65,16 +64,15 @@ font-size: 0.9em;
   text-decoration: none;
 }
 
-.fullhight{
+.fullhight {
   min-height: 96.5vh;
 }
 
-.card .card-body{
+.card .card-body {
   background: #e5e5e5;
   overflow: hidden;
   min-height: 13.5vh;
   max-height: 13.5vh;
-
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -117,23 +115,6 @@ font-size: 0.9em;
   border-radius: 10px;
 }
 
-.max-height {
-  max-height: 40vh;
-}
-
-.border-radius {
-  border-radius: 50%
-}
-
-.padding-top {
-  padding-top: 10vh;
-}
-
-.lateral-padding {
-  padding-left: 15vw;
-  padding-right: 15vw;
-}
-
 .container .subtitle {
   margin: 3vh 1vh;
 }
@@ -147,23 +128,4 @@ font-size: 0.9em;
 
 .vertical-align {
   align-items: center;
-}
-
-.next-video-preview {
-  display: flex;
-  height: 100%;
-  color: white;
-  font-size: 0.9em;
-}
-
-.next-video-preview img{
-  height: 100%;
-  width: 100%;
-}
-
-.next-video-preview span {
-  font-size: 0.9em;
-  width: 90%;
-  overflow: hidden;
-  margin-left: 3%;
 }
