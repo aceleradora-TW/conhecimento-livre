@@ -5,6 +5,10 @@ const saveCourse = Author => (req, res, next) => {
   const course = req.body
   let data = {}
 
+  if (course.image === '') {
+    course.image = '../images/banner_inicial.png'
+  }
+
   if (course._id === '') {
     const idAuthor = course.idAuthor
     delete course.idAuthor
