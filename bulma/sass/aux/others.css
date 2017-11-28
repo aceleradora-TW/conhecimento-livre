@@ -35,6 +35,13 @@
   overflow: hidden;
 }
 
+.link-card img {
+  max-height: 11vh;
+  min-height: 11vh;
+  max-width: 19vh;
+  min-width: 19vh;
+}
+
 .content ul{
   margin: 0;
 }
