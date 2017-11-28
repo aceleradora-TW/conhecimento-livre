@@ -8,7 +8,6 @@ const saveCourse = Author => (req, res, next) => {
   if (course.image === '') {
     course.image = '../images/banner_inicial.png'
   }
-
   if (course._id === '') {
     const idAuthor = course.idAuthor
     delete course.idAuthor

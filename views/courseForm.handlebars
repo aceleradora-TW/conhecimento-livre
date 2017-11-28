@@ -8,7 +8,6 @@
       <div class="control">
         <div class="select">
           <select id="idAuthor" name="idAuthor" >
-            <option>Escolha uma pessoa autora</option>
             {{/showAuthor}}
             {{#allAuthors}}
             <option value="{{_id}}" selected="selected">
@@ -73,7 +72,7 @@
       </form>
     </div>
     <div class="control">
-      <a class="button" href="/admin/list">Cancelar</a>
+      <a class="button is-danger is-medium is-fullwidth" href="/admin/list">Cancelar</a>
     </div>
   </div>
   {{/courses}}
