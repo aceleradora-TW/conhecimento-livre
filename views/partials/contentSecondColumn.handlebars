@@ -20,12 +20,11 @@
         <div class="playlist-container">
           <ul>
             {{#allContents}}
-            <li class="thumbnail-align">
-              <a href="/content/{{ id }}">
-                  <div class="preview-video"> </div><p class=""></p>
+            <li>
+              <a class="link-card" href="/content/{{ id }}">
                 <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="Link para a aula {{ title }}">
+                <span class="has-text-black"> {{ title }}</span>
               </a>
-              <span class="has-text-black"> {{ title }}</span>
             </li>
             {{/allContents}}
           </ul>
