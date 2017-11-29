@@ -23,6 +23,7 @@ const courseSchema = new Schema({
   lessons: Number,
   language: String,
   image: String,
+  flag: Number,
   contents: [contentSchema],
 })
 

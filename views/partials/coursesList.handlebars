@@ -17,7 +17,9 @@
         <a class="button is-info" href="/admin/course/{{_id}}">Editar</a>
         <a class="button is-danger" onclick="deleteItem('{{_id}}', 'courses')">Deletar</a>
       </td>
-      <td><input id="checkBox" type="checkbox"> Mostrar em produção</td>
+      <td>
+        <a href="/admin/insertData/{{ _id }}">Mostrar em produção</a>
+      </td>
     </tr>
     {{/courses}}
     {{/allAuthors}}
