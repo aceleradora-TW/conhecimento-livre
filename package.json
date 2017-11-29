@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "yarn compile && nodemon app.js",
-    "coverage": "nyc mocha",
+    "coverage": "nyc mocha src/**/*.js models/**/*.js",
     "test": "mocha --recursive",
     "e2e": "nightwatch ./test/e2e/*.js",
     "lint": "eslint src/**/*.js models/**/*.js",

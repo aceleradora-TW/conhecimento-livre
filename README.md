@@ -77,13 +77,13 @@ https://conhecimento-livre.herokuapp.com/
 Para acessar em staging:
 
 
-https://conhecimento-livre-staging.herokuapp.com/
+staging.conhecimentolivre.com.br
 
 
 Para acessar em produção:
 
 
-http://conhecimento-livre.herokuapp.com
+www.conhecimentolivre.com.br
 
 
 Para acessar localmente na URL:

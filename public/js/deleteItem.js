@@ -24,4 +24,5 @@ function deleteItem(itemId, collection) {
         console.log('error')
       })
   }
+  window.location.reload()
 }

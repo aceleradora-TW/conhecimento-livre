@@ -6,15 +6,18 @@ const course = require('./course')
 const admin = require('./admin')
 const list = require('./list')
 const deleteItem = require('./deleteItem')
+const contentList = require('./contentList')
 const authorData = require('./authorData')
 const newAuthor = require('./newAuthor')
 const newContent = require('./newContent')
-const contentList = require('./contentList')
 const saveAuthor = require('./saveAuthor')
 const authenticate = require('./authenticate')
 const saveContent = require('./saveContent')
 const saveNewContent = require('./saveNewContent')
 const contentData = require('./contentData')
+const courseData = require('./courseData')
+const newCourse = require('./newCourse')
+const saveCourse = require('./saveCourse')
 
 const allRoutes = {
   index: index(Author),
@@ -33,5 +36,8 @@ const allRoutes = {
   authenticate: authenticate(),
   contentData: contentData(Author),
   saveNewContent: saveNewContent(Author),
+  courseData: courseData(Author),
+  newCourse: newCourse(Author),
+  saveCourse: saveCourse(Author),
 }
 module.exports = allRoutes

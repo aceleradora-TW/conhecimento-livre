@@ -5,6 +5,7 @@
       <th>Email</th>
       <th>Id</th>
       <th><a class="button is-primary" href="/admin/newAuthor">+</a></th>
+      <th>Banco de dados</th>
     </tr>
     {{#allAuthors}}
     <tr>
@@ -13,8 +14,9 @@
       <td id="id-{{_id}}">{{_id}}</td>
       <td>
         <a class="button is-info" href="/admin/author/{{_id}}">Editar</a>
-        <a class="button is-danger" onclick="deleteItem('{{_id}}', 'author')">Delete</a>
+        <a class="button is-danger" onclick="deleteItem('{{_id}}', 'author')">Deletar</a>
       </td>
+      <td><input id="checkBox" type="checkbox"> Mostrar em produção</td>
     </tr>
     {{/allAuthors}}
   </table>
