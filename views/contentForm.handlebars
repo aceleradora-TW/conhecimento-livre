@@ -1,6 +1,8 @@
 <fieldset class="no-border">
   <div class="hero-body">
-    <form action="/admin/saveContent/" method="post">
+    {{#course}}
+    <form action="/admin/saveContent/course/{{_id}}" method="post">
+    {{/course}}
       <legend class="subtitle is-3">Inserir nova aula</legend>
 
       <div class="field">
