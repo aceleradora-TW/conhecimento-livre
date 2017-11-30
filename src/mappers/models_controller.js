@@ -58,6 +58,15 @@ class ModelsController {
   updateCourse(courseData) {
     return this.model.update({ 'courses._id': courseData.id }, { $set: { 'courses.$': courseData } }).exec()
   }
+
+  insertContent(courseId, contentData){
+    contentData._id = new mongoose.Types.ObjectId()
+    return this.model.findOneAndUpdate({ 'courses._id': courseId }, { $push: { 'courses.$.contents': contentData } })
+  }
+
+  updateContent(contentId, contentsData) {
+    return this.model.update({'courses.contents._id': contentId }, {$set: {'courses.$.contents': contentsData}})
+  }
 }
 
 module.exports = ModelsController
