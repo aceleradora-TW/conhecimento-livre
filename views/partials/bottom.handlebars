@@ -1,6 +1,7 @@
 <div class="container">
   {{#allAuthors}}
   {{#courses}}
+  {{#if courseApproval}}
   <a href="/course/{{ _id }}">
     <div class="card">
       <div class="card-image">
@@ -18,6 +19,7 @@
       </div>
     </div>
   </a>
+  {{/if}}
   {{/courses}}
   {{/allAuthors}}
 </div>

@@ -23,6 +23,7 @@ const courseSchema = new Schema({
   lessons: Number,
   language: String,
   image: String,
+  courseApproval: Boolean,
   contents: [contentSchema],
 })
 

@@ -17,10 +17,19 @@
         <a class="button is-info" href="/admin/course/{{_id}}">Editar</a>
         <a class="button is-danger" onclick="deleteItem('{{_id}}', 'courses')">Deletar</a>
       </td>
-      <td><input id="checkBox" type="checkbox"> Mostrar em produção</td>
+      <td>
+        {{#if courseApproval}}
+        <input id="checkBox" type="checkbox" onclick="insertCourse('{{ _id }}')" checked> Mostrar em produção
+      </td>
+      <td>
+        {{else}}
+        <input id="checkBox" type="checkbox" onclick="insertCourse('{{ _id }}')"> Mostrar em produção
+        {{/if}}
+      </td>
     </tr>
     {{/courses}}
     {{/allAuthors}}
   </table>
 </div>
+<script src="/js/insertCourse.js"></script>
 <script src="/js/deleteItem.js"></script>
