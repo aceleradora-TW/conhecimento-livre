@@ -60,6 +60,7 @@ class ModelsController {
   }
 
   insertContent(courseId, contentData){
+    contentData._id = new mongoose.Types.ObjectId()
     return this.model.findOneAndUpdate({ 'courses._id': courseId }, { $push: { 'courses.$.contents': contentData } })
   }
 }
