@@ -3,11 +3,13 @@ const Controller = require('../mappers/models_controller')
 const contentData = Author => (req, res, next) => {
   const id = req.params.id
   const authorController = new Controller(Author)
-  const responseData = {}
-  responseData.allContents = []
+
   authorController
     .findCourseByContentId(id)
-    .then(contentItem => res.render('contentForm', { contentItem }))
+    .then((authorItem) => {
+      item = authorItem.courses[0].contents.id(id)
+      res.render('contentForm', { item })
+    })
     .catch((error) => {
       console.log(error)
       next()

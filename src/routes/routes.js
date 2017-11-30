@@ -13,6 +13,7 @@ const newContent = require('./newContent')
 const saveAuthor = require('./saveAuthor')
 const authenticate = require('./authenticate')
 const saveContent = require('./saveContent')
+const editContent = require('./editContent')
 const contentData = require('./contentData')
 const courseData = require('./courseData')
 const newCourse = require('./newCourse')
@@ -37,5 +38,6 @@ const allRoutes = {
   newContent: newContent(Author),
   contentData: contentData(Author),
   saveContent: saveContent(Author),
+  editContent: editContent(Author),
 }
 module.exports = allRoutes
