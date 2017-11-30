@@ -23,7 +23,7 @@ const courseSchema = new Schema({
   lessons: Number,
   language: String,
   image: String,
-  courseApproval: Number,
+  courseApproval: Boolean,
   contents: [contentSchema],
 })
 
@@ -32,7 +32,6 @@ const authorSchema = new Schema({
   bio: String,
   email: String,
   photourl: String,
-  authorApproval: Number,
   courses: [courseSchema],
 })
 

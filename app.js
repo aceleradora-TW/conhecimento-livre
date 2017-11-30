@@ -68,9 +68,7 @@ app.get('/admin/newCourse', routes.authenticate, routes.newCourse)
 
 app.post('/admin/saveCourse', routes.authenticate, routes.saveCourse)
 
-app.get('/insertCourse/:id', routes.insertCourse)
-
-app.get('/insertAuthor/:id', routes.insertAuthor)
+app.get('/insertCourse/:id', routes.authenticate, routes.insertCourse)
 
 app.get('/content/:id', routes.content)
 

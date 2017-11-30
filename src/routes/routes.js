@@ -15,7 +15,6 @@ const courseData = require('./courseData')
 const newCourse = require('./newCourse')
 const saveCourse = require('./saveCourse')
 const insertCourse = require('./insertCourse')
-const insertAuthor = require('./insertAuthor')
 
 const allRoutes = {
   index: index(Author),
@@ -34,6 +33,5 @@ const allRoutes = {
   newCourse: newCourse(Author),
   saveCourse: saveCourse(Author),
   insertCourse: insertCourse(Author),
-  insertAuthor: insertAuthor(Author),
 }
 module.exports = allRoutes
