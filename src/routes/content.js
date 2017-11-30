@@ -16,7 +16,11 @@ const content = Author => (req, res, next) => {
       responseData.previous = responseData.allContents[currentContentIndex - 1]
     })
     .then(() => authorController.updateViews(id, responseData.authorItem))
-    .then(() => res.render('content', responseData))
+    .then(() => {
+      responseData.allContents.splice(responseData.allContents.indexOf(responseData.contentItem), 1)
+      responseData.allContents.splice(responseData.allContents.indexOf(responseData.next), 1)
+      res.render('content', responseData)
+    })
     .catch((error) => {
       console.log(error)
       next()
