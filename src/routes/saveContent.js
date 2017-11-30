@@ -1,5 +1,3 @@
-<<<<<<< 3b777a64c15c04e0660612805ba4b40949320bc5
-=======
 const Controller = require('../mappers/models_controller')
 
 const saveContent = Author => (req, res, next) => {
@@ -17,4 +15,3 @@ const saveContent = Author => (req, res, next) => {
 }
 
 module.exports = saveContent
->>>>>>> <@AndreiRupertti, @JessicaFranke> Adiciona edição de aulas

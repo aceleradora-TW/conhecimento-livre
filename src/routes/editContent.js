@@ -1,5 +1,3 @@
-<<<<<<< c3664f403ee62380b909bdf98be86435a851319c
-=======
 const Controller = require('../mappers/models_controller')
 
 const editContent = Author => (req, res, next) => {
@@ -32,4 +30,3 @@ const editContent = Author => (req, res, next) => {
 }
 
 module.exports = editContent
->>>>>>> <@JessicaFranke, @AndreiRupertti> deleta getURL
