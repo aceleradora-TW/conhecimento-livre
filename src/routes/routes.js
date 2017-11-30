@@ -13,7 +13,6 @@ const newContent = require('./newContent')
 const saveAuthor = require('./saveAuthor')
 const authenticate = require('./authenticate')
 const saveContent = require('./saveContent')
-const saveNewContent = require('./saveNewContent')
 const contentData = require('./contentData')
 const courseData = require('./courseData')
 const newCourse = require('./newCourse')
@@ -25,19 +24,18 @@ const allRoutes = {
   author: author(Author),
   course: course(Author),
   admin: admin(),
+  authenticate: authenticate(),
   list: list(Author),
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
-  newContent: newContent(Author),
-  saveContent: saveContent(Author),
-  contentList: contentList(Author),
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
-  authenticate: authenticate(),
-  contentData: contentData(Author),
-  saveNewContent: saveNewContent(Author),
-  courseData: courseData(Author),
   newCourse: newCourse(Author),
+  courseData: courseData(Author),
   saveCourse: saveCourse(Author),
+  contentList: contentList(Author),
+  newContent: newContent(Author),
+  contentData: contentData(Author),
+  saveContent: saveContent(Author),
 }
 module.exports = allRoutes

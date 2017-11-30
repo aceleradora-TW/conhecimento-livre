@@ -58,6 +58,10 @@ class ModelsController {
   updateCourse(courseData) {
     return this.model.update({ 'courses._id': courseData.id }, { $set: { 'courses.$': courseData } }).exec()
   }
+
+  insertContent(courseId, contentData){
+    return this.model.findOneAndUpdate({ 'courses._id': courseId }, { $push: { 'courses.$.contents': contentData } })
+  }
 }
 
 module.exports = ModelsController
