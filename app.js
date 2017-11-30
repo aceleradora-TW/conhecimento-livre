@@ -33,7 +33,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.post('/admin/list',
-  passport.authenticate('local', { failureRedirect: '/admin' }),
+  passport.authenticate('local', { failureRedirect: '/error' }),
   routes.authenticate, routes.list)
 
 passport.serializeUser((user, done) => done(null, user))
@@ -49,6 +49,8 @@ app.use(express.static(path.join(`${__dirname}/public`)))
 app.get('/', routes.index)
 
 app.get('/admin', routes.admin)
+
+app.get('/error', routes.error)
 
 app.get('/admin/contentList/:id', routes.authenticate, routes.contentList)
 

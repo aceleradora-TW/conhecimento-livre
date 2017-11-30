@@ -4,6 +4,7 @@ const content = require('./content')
 const author = require('./author')
 const course = require('./course')
 const admin = require('./admin')
+const error = require('./error')
 const list = require('./list')
 const deleteItem = require('./deleteItem')
 const contentList = require('./contentList')
@@ -22,6 +23,7 @@ const allRoutes = {
   author: author(Author),
   course: course(Author),
   admin: admin(),
+  error: error(),
   list: list(Author),
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
