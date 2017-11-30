@@ -1,6 +1,6 @@
 const Controller = require('../mappers/models_controller')
 
-const insertData = Author => (req, res, next) => {
+const insertCourse = Author => (req, res, next) => {
   const authorController = new Controller(Author)
   const id = req.params.id
   let data = {}
@@ -8,7 +8,9 @@ const insertData = Author => (req, res, next) => {
   authorController
     .findCourseById(id)
     .then((authorItem) => {
-      authorItem.courses[0].flag = 1
+      (authorItem.courses[0].flag === 0)
+        ? authorItem.courses[0].flag = 1
+        : authorItem.courses[0].flag = 0
       data = Object.assign(authorItem.courses[0], id)
     })
     .then(() => {
@@ -21,4 +23,4 @@ const insertData = Author => (req, res, next) => {
     })
 }
 
-module.exports = insertData
+module.exports = insertCourse

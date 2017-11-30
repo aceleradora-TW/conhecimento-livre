@@ -18,11 +18,18 @@
         <a class="button is-danger" onclick="deleteItem('{{_id}}', 'courses')">Deletar</a>
       </td>
       <td>
-        <a href="/admin/insertData/{{ _id }}">Mostrar em produção</a>
+        {{#if flag}}
+        <input id="checkBox" type="checkbox" onclick="insertCourse('{{ _id }}')" checked> Mostrar em produção
+      </td>
+      <td>
+        {{else}}
+        <input id="checkBox" type="checkbox" onclick="insertCourse('{{ _id }}')"> Mostrar em produção
+        {{/if}}
       </td>
     </tr>
     {{/courses}}
     {{/allAuthors}}
   </table>
 </div>
+<script src="/js/insertCourse.js"></script>
 <script src="/js/deleteItem.js"></script>
