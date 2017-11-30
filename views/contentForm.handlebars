@@ -25,7 +25,7 @@
         <div class="field">
           <label class="label">Descrição</label>
           <div class="control">
-            <textarea id="description" name="description" class="textarea" placeholder="Insira aqui a descrição da aula" value="{{description}}"></textarea>
+            <textarea id="preview" name="preview" class="textarea" placeholder="Insira aqui a descrição da aula" value="{{preview}}"></textarea>
           </div>
         </div>
 
@@ -35,10 +35,9 @@
           </div>
         </form>
         <div class="control">
-          <button class="button is-text">Cancelar</button>
+          <a class="button is-danger is-medium is-fullwidth" href="javascript:history.back()">Cancelar</a>
         </div>
       </div>
+      {{/item}}
     </div>
-    {{/item}}
   </fieldset>
-  <script src="/js/getURL.js"></script>
