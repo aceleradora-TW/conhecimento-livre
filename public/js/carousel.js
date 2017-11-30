@@ -32,7 +32,7 @@ function prevPage() {
   if (count === numberClasses) { document.getElementById('prev').style.display = 'none' }
 }
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
   nextPage()
   document.getElementById('prev').style.display = 'none'
 });
