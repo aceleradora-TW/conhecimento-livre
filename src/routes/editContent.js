@@ -9,39 +9,16 @@ const editContent = Author => (req, res, next) => {
   let courseId = {}
   let contentsData = {}
 
-<<<<<<< 590f16656d77032a48bb75deaeb8d4f7ecf558bf
-<<<<<<< bbd7c1d32ec0519da4dce49f0504dd069bf52b78
   content.views = 0
 
-=======
->>>>>>> <@AndreiRupertti, @JessicaFranke> Adiciona edição de aulas
-=======
-  content.views = 0
-
->>>>>>> <@JessicaFranke, @AndreiRupertti> deleta getURL
   authorController
   .findCourseByContentId(contentId)
   .then((authorItem) => {
     courseId = authorItem.courses[0]._id
-<<<<<<< 590f16656d77032a48bb75deaeb8d4f7ecf558bf
-<<<<<<< bbd7c1d32ec0519da4dce49f0504dd069bf52b78
     content.author = authorItem.name
     contentsData =  authorItem.courses[0].contents.map((item) => {
       if (item._id == contentId){
         item = Object.assign(item, content)
-        console.log(item)
-=======
-    contentsData =  authorItem.courses[0].contents.map((item) => {
-      if (item._id == contentId){
-        item = content
->>>>>>> <@AndreiRupertti, @JessicaFranke> Adiciona edição de aulas
-=======
-    content.author = authorItem.name
-    contentsData =  authorItem.courses[0].contents.map((item) => {
-      if (item._id == contentId){
-        item = Object.assign(item, content)
-        console.log(item)
->>>>>>> <@JessicaFranke, @AndreiRupertti> deleta getURL
       }
       return item
     })
