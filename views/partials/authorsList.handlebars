@@ -16,9 +16,18 @@
         <a class="button is-info" href="/admin/author/{{_id}}">Editar</a>
         <a class="button is-danger" onclick="deleteItem('{{_id}}', 'author')">Deletar</a>
       </td>
-      <td><input id="checkBox" type="checkbox"> Mostrar em produção</td>
+      <td>
+        {{#if authorApproval}}
+        <input id="checkBox" type="checkbox" onclick="insertAuthor('{{ _id }}')" checked> Mostrar em produção
+      </td>
+      <td>
+        {{else}}
+        <input id="checkBox" type="checkbox" onclick="insertAuthor('{{ _id }}')"> Mostrar em produção
+        {{/if}}
+      </td>
     </tr>
     {{/allAuthors}}
   </table>
 </div>
+<script src="/js/insertAuthor.js"></script>
 <script src="/js/deleteItem.js"></script>

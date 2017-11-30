@@ -9,12 +9,14 @@
               <div class="column">
                 {{#authorItem}}
                 {{#courses}}
+                {{#if courseApproval}}
                 {{ title }}
               </div>
             </h1>
             <h2 class="subtitle is-4 has-text-left has-text-grey-darker is-hidden-mobile">
               <div class="column">
                 {{ description }}
+                {{/if}}
                 {{/courses}}
                 {{/authorItem}}
               </div>
@@ -27,7 +29,9 @@
           <figure class="image is-16by9">
             {{#authorItem}}
             {{#courses}}
+            {{#if courseApproval}}
             <img src="{{ image }}" alt="imagem do curso">
+            {{/if}}
             {{/courses}}
             {{/authorItem}}
           </figure>

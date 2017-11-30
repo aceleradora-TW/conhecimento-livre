@@ -18,7 +18,7 @@
         <a class="button is-danger" onclick="deleteItem('{{_id}}', 'courses')">Deletar</a>
       </td>
       <td>
-        {{#if flag}}
+        {{#if courseApproval}}
         <input id="checkBox" type="checkbox" onclick="insertCourse('{{ _id }}')" checked> Mostrar em produção
       </td>
       <td>

@@ -8,9 +8,9 @@ const insertCourse = Author => (req, res, next) => {
   authorController
     .findCourseById(id)
     .then((authorItem) => {
-      (authorItem.courses[0].flag === 0)
-        ? authorItem.courses[0].flag = 1
-        : authorItem.courses[0].flag = 0
+      (authorItem.courses[0].courseApproval === 0)
+        ? authorItem.courses[0].courseApproval = 1
+        : authorItem.courses[0].courseApproval = 0
       data = Object.assign(authorItem.courses[0], id)
     })
     .then(() => {

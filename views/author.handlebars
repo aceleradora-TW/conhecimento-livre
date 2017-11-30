@@ -5,6 +5,7 @@
     <div class="max-height hero-body columns is-mobile is-tablet is-widescreen">
       <div class="column is-one-quarter">
         <figure class="image is-mobile is-tablet is-widescreen">
+          {{#if authorApproval}}
           <img class="border-radius" src="{{ photourl }}" alt="foto do autor" >
         </figure>
       </div>
@@ -22,6 +23,7 @@
         <div class=" notification is-light lateral-padding">
           <p class="subtitle is-2">Biografia</p>
           <p class="subtitle">{{ bio }}</p>
+          {{/if}}
         </div>
       </div>
     </div>
