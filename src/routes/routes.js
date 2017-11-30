@@ -15,9 +15,11 @@ const courseData = require('./courseData')
 const newCourse = require('./newCourse')
 const saveCourse = require('./saveCourse')
 const insertCourse = require('./insertCourse')
+const Controller = require('../mappers/models_controller')
+const authorController = new Controller(Author)
 
 const allRoutes = {
-  index: index(Author),
+  index: index(authorController),
   content: content(Author),
   author: author(Author),
   course: course(Author),
