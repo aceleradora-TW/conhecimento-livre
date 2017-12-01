@@ -34,7 +34,7 @@ const db = [{
   }]
 },
 {
-  nome : "Andrei",
+  nome : "Leco2",
   courses: [{
     title : "titulo2",
     description : "description2"
@@ -51,5 +51,28 @@ describe('Index', function(){
     index(authorController)(req, res)
 
     expect(authorController.findAll).to.have.been.calledOnce
+
+
+  })
+
+  it('Deve retornar todos os cursos', () => {
+    const authorController = new Controller(db)
+     let alo = sinon.stub(authorController, 'findAll').resolves(db)
+    index(authorController)(req, res)
+
+    console.log(alo);
+    expect(alo.returned()).to.have.been.calledWith(db)
+
+    //
+    // let result =0
+    // authorController
+    // .findAll()
+    // .then((response) => {
+    //   expect(JSON.stringify(response)).to.equal(`dsadas`)
+    // })
+    // .then(() => done())
+    // .catch(err => done(err))
+
+
   })
 })
