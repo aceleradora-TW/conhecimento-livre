@@ -1,6 +1,6 @@
+const charLimiter = require('../utility/char_limiter')
 
 const index = authorController => (req, res, next) => {
-  const charLimiter = require('../utility/char_limiter')
   authorController
     .findAll()
     .then((allAuthors) => {
