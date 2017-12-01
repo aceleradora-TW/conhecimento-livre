@@ -17,10 +17,14 @@
         <h5 class="subtitle has-text-dark">Outras aulas:</h5>
         <div class="playlist-container">
           <ul>
-            <div class="content">
-              <button id="prev" class="button" onclick="prevPage()">&#10094;</button>
-              <button id="next" class="button" onclick="nextPage()">&#10095;</button>
-            </div>
+            <nav class="level is-mobile is-tablet is-widescreen">
+              <div class="level-left">
+                <button id="prev" class="button is-primary" onclick="prevPage()">&#10094;</button>
+              </div>
+              <div class="level-right">
+                <button id="next" class="button is-primary" onclick="nextPage()">&#10095;</button>
+              </div>
+            </nav>
             {{#allContents}}
             <li class="nextContents">
               <a class="link-card" href="/content/{{ id }}">
