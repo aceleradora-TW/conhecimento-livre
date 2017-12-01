@@ -2,7 +2,6 @@ const index = authorController => (req, res, next) => {
   authorController
     .findAll()
     .then((allAuthors) => {
-      console.log(allAuthors);
       allAuthors.forEach(author => author.courses.forEach((item) => {
         if (item.title.length > 25) {
           item.title = item.title.substring(0, 22)+"..."
