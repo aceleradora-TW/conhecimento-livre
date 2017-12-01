@@ -6,12 +6,12 @@ const index = Author => (req, res, next) => {
     .findAll()
     .then((allAuthors) => {
       allAuthors.forEach(author => author.courses.forEach((item) => {
-        // if (item.title.length > 25) {
-        //   item.title = item.title.substring(0, 22)+"..."
-        // }
-        // if (item.description.length > 155) {
-        //   item.description = item.description.substring(0, 152)+"..."
-        // }
+        if (item.title.length > 40) {
+          item.title = item.title.substring(0, 38) + "..."
+        }
+        if (item.description.length > 155) {
+          item.description = item.description.substring(0, 152) + "..."
+        }
       }))
       res.render('index', { allAuthors })
     })

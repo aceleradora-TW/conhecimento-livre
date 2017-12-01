@@ -59,13 +59,27 @@ class ModelsController {
     return this.model.update({ 'courses._id': courseData.id }, { $set: { 'courses.$': courseData } }).exec()
   }
 
-  insertContent(courseId, contentData){
+  insertContent(courseId, contentData) {
     contentData._id = new mongoose.Types.ObjectId()
+    if (contentData.url.search('&') === -1) {
+      contentData.url = contentData.url.slice(contentData.url.search('=') + 1)
+    } else {
+      contentData.url = contentData.url.slice(contentData.url.search('=') + 1, contentData.url.search('&'))
+    }
     return this.model.findOneAndUpdate({ 'courses._id': courseId }, { $push: { 'courses.$.contents': contentData } })
   }
 
   updateContent(contentId, contentsData) {
-    return this.model.update({'courses.contents._id': contentId }, {$set: {'courses.$.contents': contentsData}})
+    contentsData.forEach(function (content) {
+      if (content._id == contentId) {
+        if (content.url.search('&') === -1) {
+          content.url = content.url.slice(content.url.search('=') + 1)
+        } else {
+          content.url = content.url.slice(content.url.search('=') + 1, content.url.search('&'))
+        }
+      }
+    })
+    return this.model.update({ 'courses.contents._id': contentId }, { $set: { 'courses.$.contents': contentsData } })
   }
 }
 

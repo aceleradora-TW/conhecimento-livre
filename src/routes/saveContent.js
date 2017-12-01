@@ -6,12 +6,12 @@ const saveContent = Author => (req, res, next) => {
 
   let courseId = req.params.courseId
   authorController
-  .insertContent(courseId, content)
-  .then(() => res.redirect('/admin/contentList/'+courseId))
-  .catch((error) => {
-    console.log(error)
-    next()
-  })
+    .insertContent(courseId, content)
+    .then(() => res.redirect('/admin/contentList/'+courseId))
+    .catch((error) => {
+      console.log(error)
+      next()
+    })
 }
 
 module.exports = saveContent
