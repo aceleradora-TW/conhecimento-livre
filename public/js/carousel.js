@@ -1,38 +1,38 @@
 let count = 0
-const numberClasses = 5
-const classes = document.getElementsByClassName('nextContents');
+const numberLessons = 5
+const lessons = document.getElementsByClassName('nextContents');
 let i;
 
 function nextPage() {
-  document.getElementById('prev').style.display = 'inline'
-  for (let k = 0; k < classes.length; k += 1) {
-    classes[k].style.display = 'none';
+  document.getElementById('prev').disabled = false
+  for (i = 0; i < lessons.length; i += 1) {
+    lessons[i].style.display = 'none';
   }
-  for (i = count; i < count + numberClasses; i += 1) {
-    if (classes[i] !== undefined) {
-      classes[i].style.display = 'flex';
+  for (i = count; i < count + numberLessons; i += 1) {
+    if (lessons[i] !== undefined) {
+      lessons[i].style.display = 'flex';
     }
   }
   count = i;
-  if (count >= classes.length) { document.getElementById('next').style.display = 'none' }
+  if (count >= lessons.length) { document.getElementById('next').disabled = true}
 }
 
 function prevPage() {
-  document.getElementById('next').style.display = 'inline'
-  count = count - ( numberClasses * 2 );
-  for (let k = 0; k < classes.length; k += 1) {
-    classes[k].style.display = 'none';
+  document.getElementById('next').disabled = false
+  count = count - ( numberLessons * 2 );
+  for (i = 0; i < lessons.length; i += 1) {
+    lessons[i].style.display = 'none';
   }
-  for (i = count; i < count + numberClasses; i += 1) {
-    if (classes[i] !== undefined) {
-      classes[i].style.display = 'flex';
+  for (i = count; i < count + numberLessons; i += 1) {
+    if (lessons[i] !== undefined) {
+      lessons[i].style.display = 'flex';
     }
   }
   count = i;
-  if (count === numberClasses) { document.getElementById('prev').style.display = 'none' }
+  if (count === numberLessons) { document.getElementById('prev').disabled = true}
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   nextPage()
-  document.getElementById('prev').style.display = 'none'
+  document.getElementById('prev').disabled = true
 });
