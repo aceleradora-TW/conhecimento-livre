@@ -42,6 +42,7 @@ const db = [{
 }]
 
 
+
 describe('Index', function(){
   it('Deve chamar a função #findAll', function() {
     const authorController = new Controller(db)
@@ -83,4 +84,6 @@ describe('Index', function(){
     .then(() => done())
     .catch(err => done(err))
   })
+
+  it
 })

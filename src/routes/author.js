@@ -1,4 +1,5 @@
 const Controller = require('../mappers/models_controller')
+const charLimiter = require('../utility/char_limiter')
 
 const author = Author => (req, res, next) => {
   const id = req.params.id
@@ -7,12 +8,8 @@ const author = Author => (req, res, next) => {
     .findAuthorById(id)
     .then((authorItem) => {
       authorItem.courses.forEach((item) => {
-        if (item.title.length > 25) {
-          item.title = item.title.substring(0, 22)+"..."
-        }
-        if (item.description.length > 155) {
-          item.description = item.description.substring(0, 152)+"..."
-        }
+        item.title = charLimiter(item.title, 25)
+        item.description = charLimiter(item.description, 155)
       })
       res.render('author', {authorItem})
     })
