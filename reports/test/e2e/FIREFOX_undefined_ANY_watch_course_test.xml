@@ -5,6 +5,7 @@
 
   <testsuite name="test.e2e.watch_course_test"
     errors="0" failures="0" hostname="" id="" package="e2e" skipped="0"
+<<<<<<< e41429768b4e376e52ee6c21950d8589791d0b2e
     tests="5" time="20.37" timestamp="Tue, 05 Dec 2017 13:32:52 GMT">
   
     <testcase name="Step one: Acessar o site e clicar em algum curso" classname="test.e2e.watch_course_test" time="8.299" assertions="0">
@@ -20,6 +21,23 @@
     </testcase>
   
     <testcase name="Step Four: Clicar no botão anterior para acessar a aula anterior" classname="test.e2e.watch_course_test" time="3.527" assertions="0">
+=======
+    tests="5" time="19.91" timestamp="Fri, 01 Dec 2017 16:53:07 GMT">
+  
+    <testcase name="Step one: Acessar o site e clicar em algum curso" classname="test.e2e.watch_course_test" time="7.661" assertions="0">
+    </testcase>
+  
+    <testcase name="Step two: Clicar no botão de começar" classname="test.e2e.watch_course_test" time="3.205" assertions="0">
+    </testcase>
+  
+    <testcase name="Step three: Clicar no vídeo para que a aula começe" classname="test.e2e.watch_course_test" time="2.271" assertions="0">
+    </testcase>
+  
+    <testcase name="Step Four: Clicar no botão de proximo para acessar a próxima aula" classname="test.e2e.watch_course_test" time="3.279" assertions="0">
+    </testcase>
+  
+    <testcase name="Step Four: Clicar no botão anterior para acessar a aula anterior" classname="test.e2e.watch_course_test" time="3.498" assertions="0">
+>>>>>>> <RenanSchmitt> Refatora Branch
     </testcase>
   
 
