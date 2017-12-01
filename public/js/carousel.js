@@ -1,7 +1,7 @@
-let count = 0
-const numberLessons = 5
-const lessons = document.getElementsByClassName('nextContents');
-let i;
+var count = 0
+var numberLessons = 5
+var lessons = document.getElementsByClassName('nextContents');
+var i;
 
 function nextPage() {
   document.getElementById('prev').disabled = false
