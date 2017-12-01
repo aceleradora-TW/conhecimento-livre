@@ -9,7 +9,6 @@
 body {
   margin: 0;
   padding: 0;
-  //overflow: hidden;
 }
 
 .author-section {
@@ -54,13 +53,10 @@ body {
   }
 }
 
-
-
 .container {
   @include heigth-width(90%, 100%);
   display: $display-default;
   justify-content: space-between;
-
 
   .author-container{
     @include heigth-width(100%, 70%);
@@ -68,7 +64,6 @@ body {
     display: $display-default;
     justify-content: space-between;
     flex-direction: column;
-
 
     .info-author {
       @include heigth-width(35%, 100%);

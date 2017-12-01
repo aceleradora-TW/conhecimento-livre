@@ -50,13 +50,6 @@
   height: 100%;
   width: 90%;
 }
-/*
-.playlist-container ul li p {
-opacity: 0;
-position: absolute;
-width: 100%;
-height: 100%;
-}*/
 
 .link-card {
 display: flex;
