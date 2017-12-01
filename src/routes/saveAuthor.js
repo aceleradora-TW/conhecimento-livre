@@ -4,6 +4,9 @@ const saveAuthor = Author => (req, res, next) => {
   const authorController = new Controller(Author)
   const authorEdit = req.body
 
+  if (authorEdit.photourl === '') {
+    authorEdit.photourl = '../images/defaultImagePerson.png'
+  }
   if (authorEdit.id === '') {
     authorController
       .insertAuthor(authorEdit)
