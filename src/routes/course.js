@@ -13,5 +13,4 @@ const course = authorController => (req, res, next) => {
     })
 }
 
-
 module.exports = course
