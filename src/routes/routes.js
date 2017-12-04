@@ -7,6 +7,8 @@ const admin = require('./admin')
 const error = require('./error')
 const list = require('./list')
 const deleteItem = require('./deleteItem')
+const authorCourses = require('./authorCourses')
+const contentList = require('./contentList')
 const authorData = require('./authorData')
 const newAuthor = require('./newAuthor')
 const newContent = require('./newContent')
@@ -35,6 +37,8 @@ const allRoutes = {
   list: list(authorController),
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
+  authorCourses: authorCourses(Author),
+  contentList: contentList(Author),
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
   newCourse: newCourse(Author),

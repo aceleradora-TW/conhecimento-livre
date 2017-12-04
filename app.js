@@ -33,8 +33,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.post('/admin/list',
-  passport.authenticate('local', { failureRedirect: '/error' }),
-  routes.authenticate, routes.list)
+passport.authenticate('local', { failureRedirect: '/error' }),
+routes.authenticate, routes.list)
 
 passport.serializeUser((user, done) => done(null, user))
 passport.deserializeUser((user, done) => done(null, user))
@@ -52,13 +52,13 @@ app.get('/admin', routes.admin)
 
 app.get('/error', routes.error)
 
+app.get('/admin/authorCourses/:id', routes.authenticate, routes.authorCourses)
+
 app.get('/admin/contentList/:id', routes.authenticate, routes.contentList)
 
 app.get('/admin/author/:id', routes.authenticate, routes.authorData)
 
 app.get('/admin/newAuthor', routes.authenticate, routes.newAuthor)
-
-app.get('/admin/contentList/:id', routes.authenticate, routes.contentList)
 
 app.get('/admin/list', routes.authenticate, routes.list)
 
@@ -93,4 +93,4 @@ app.get('/logout', routes.logoutSession)
 app.use((req, res) => res.status(404).render('404'))
 
 app.listen(app.get('port'), () =>
-  console.log(`Node app is running on port ${app.get('port')}`))
+console.log(`Node app is running on port ${app.get('port')}`))
