@@ -1,4 +1,4 @@
-const index = require('../../src/routes/index')
+const list = require('../../src/routes/list')
 const chai = require('chai')
 const sinon = require('sinon')
 const sinonChai = require('sinon-chai')
@@ -14,7 +14,7 @@ class Controller {
   constructor(db) {
     this.db = db
   }
-  findAll(){
+  findAll() {
     let spy = sinon.spy()
     return spy
   }
@@ -27,15 +27,15 @@ beforeEach(() => {
   sinon.stub(authorController, 'findAll').resolves(db)
 })
 
-describe('Index', () => {
+describe('List', () => {
   it('Deve chamar a função #findAll', () => {
-    index(authorController)(req, res)
+    list(authorController)(req, res)
     expect(authorController.findAll).to.have.been.calledOnce
   })
 
-  it('Deve chamar res.render com todos os cursos', () => {
-    index(authorController)(req, res)
+  it('Deve chamar res.render com todos os autores e cursos', () => {
+    list(authorController)(req,res)
     expect(res.render).to.have.been.calledOnce
-    expect(res.render).to.have.been.calledWith('index', {allAuthors: db})
+    expect(res.render).to.have.been.calledWith('list', {allAuthors: db})
   })
 })

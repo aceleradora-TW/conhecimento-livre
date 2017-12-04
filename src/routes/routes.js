@@ -31,7 +31,7 @@ const allRoutes = {
   admin: admin(),
   error: error(),
   authenticate: authenticate(),
-  list: list(Author),
+  list: list(authorController),
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
   authorData: authorData(Author),
