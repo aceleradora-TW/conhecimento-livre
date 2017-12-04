@@ -76,6 +76,14 @@ app.get('/course/:id', routes.course)
 
 app.get('/author/:id', routes.author)
 
+app.get('/admin/newContent/:id', routes.authenticate, routes.newContent)
+
+app.post('/admin/saveContent/:courseId', routes.authenticate, routes.saveContent)
+
+app.post('/admin/saveContent/edit/:contentId', routes.authenticate, routes.editContent)
+
+app.get('/admin/content/:id', routes.authenticate, routes.contentData)
+
 app.delete('/deleteItem/:id', routes.deleteItem)
 
 app.use((req, res) => res.status(404).render('404'))

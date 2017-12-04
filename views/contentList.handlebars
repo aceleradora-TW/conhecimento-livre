@@ -7,17 +7,23 @@
   </div>
   <tr>
     <th>Aula</th>
-    <th><button type="button" name="include">Incluir Aula</button></th>
+    {{#authorItem}}
+    {{#courses}}
+      <th> <a href="/admin/newContent/{{_id}}"><div class="button is-primary">+</div></a></th>
+    {{/courses}}
+    {{/authorItem}}
   </tr>
+
   {{#contents}}
   <tr>
     <td>{{title}}</td>
     <td>
-      <button onclick="deleteItem('{{_id}}', 'contents')" type="button" name="delete">Delete</button>
-      <button type="button" name="edit">Edit</button>
+      <button onclick="deleteItem('{{_id}}', 'contents')" type="button" name="delete" class="button is-danger">Delete</button>
+      <a class="button is-info" href="/admin/content/{{_id}}">Editar</a>
     </td>
   </tr>
   {{/contents}}
+
 </table>
 
 <script src="/js/deleteItem.js"></script>
