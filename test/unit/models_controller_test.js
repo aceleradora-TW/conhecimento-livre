@@ -26,9 +26,15 @@ describe('Models Controller', function () {
     expect(model.findOne).to.have.been.calledWith({ _id: 42 })
   })
 
-  it('findCourseById chama o findOne passando o id', function () {
+  it('findCourseById chama findOne passando o id', function () {
     modelsController.findCourseById(43)
 
     expect(model.findOne).to.have.been.calledWith({ 'courses._id': 43 })
+  })
+
+  it('findCourseByContentId chama findOne passando o id', function () {
+    modelsController.findCourseByContentId(44)
+
+    expect(model.findOne).to.have.been.calledWith({ 'courses.contents._id': 44 })
   })
 })
