@@ -23,6 +23,7 @@ const saveContent = require('./saveContent')
 const contentData = require('./contentData')
 const logoutSession = require('./logoutSession')
 const Controller = require('../mappers/models_controller')
+
 const authorController = new Controller(Author)
 
 const allRoutes = {
@@ -36,7 +37,7 @@ const allRoutes = {
   list: list(authorController),
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
-  authorCourses: authorCourses(Author),
+  authorCourses: authorCourses(authorController),
   contentList: contentList(Author),
   authorData: authorData(Author),
   saveAuthor: saveAuthor(Author),
