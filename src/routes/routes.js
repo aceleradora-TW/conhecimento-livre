@@ -21,16 +21,18 @@ const insertCourse = require('./insertCourse')
 const saveContent = require('./saveContent')
 const contentData = require('./contentData')
 const logoutSession = require('./logoutSession')
+const Controller = require('../mappers/models_controller')
+const authorController = new Controller(Author)
 
 const allRoutes = {
-  index: index(Author),
+  index: index(authorController),
   content: content(Author),
   author: author(Author),
   course: course(Author),
   admin: admin(),
   error: error(),
   authenticate: authenticate(),
-  list: list(Author),
+  list: list(authorController),
   deleteItem: deleteItem(Author),
   newAuthor: newAuthor(),
   authorData: authorData(Author),

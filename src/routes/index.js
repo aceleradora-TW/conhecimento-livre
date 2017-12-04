@@ -1,17 +1,12 @@
-const Controller = require('../mappers/models_controller')
+const charLimiter = require('../utility/char_limiter')
 
-const index = Author => (req, res, next) => {
-  const authorController = new Controller(Author)
+const index = authorController => (req, res, next) => {
   authorController
     .findAll()
     .then((allAuthors) => {
       allAuthors.forEach(author => author.courses.forEach((item) => {
-        if (item.title.length > 40) {
-          item.title = item.title.substring(0, 38) + "..."
-        }
-        if (item.description.length > 155) {
-          item.description = item.description.substring(0, 152) + "..."
-        }
+        item.title = charLimiter(item.title, 25)
+        item.description = charLimiter(item.description, 155)
       }))
       res.render('index', { allAuthors })
     })
