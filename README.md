@@ -87,6 +87,17 @@ Apertar ESC e digitar ```:x``` para sair e salvar
 Fazer logout e logar novamente para atualizar a variavel de ambiente do linux
 
 
+##Populando o banco local
+Iniciar o MongoDB com o comando:
+```
+sudo service mongod start
+```
+Dentro do diretório conhecimento-livre digite:
+```
+mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
+```
+
+
 ## Iniciando o servidor
 Para iniciar o servidor, execute o seguinte comando, dentro do diretório conhecimento livre:
 
