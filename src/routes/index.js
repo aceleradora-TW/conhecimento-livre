@@ -1,4 +1,3 @@
-
 const index = authorController => (req, res, next) => {
   const charLimiter = require('../utility/char_limiter')
   authorController
