@@ -1,8 +1,5 @@
-const Controller = require('../mappers/models_controller')
-
-const contentList = Author => (req, res, next) => {
+const authorCourses = authorController => (req, res, next) => {
   const id = req.params.id
-  const authorController = new Controller(Author)
 
   authorController
     .findAuthorById(id)
@@ -16,4 +13,4 @@ const contentList = Author => (req, res, next) => {
     })
 }
 
-module.exports = contentList
+module.exports = authorCourses
