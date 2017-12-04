@@ -4,10 +4,20 @@ const sinon = require('sinon')
 chai.use(sinonChai)
 const expect = chai.expect
 
-const author = require('../../src/routes/author')
+const authorRoute = require('../../src/routes/author')
 
 describe('Author route', function () {
-  it('faz algo', function () {
-    expect(true).to.equal(false)
+  it('chama findAuthorById com id do request', function () {
+    const authorItem = {
+      courses: [{ title: 'Goodfellas', description: 'funny how?' }]
+    }
+    const authorController = { findAuthorById: sinon.stub().resolves(authorItem) }
+    const req = { params: { id: 42 } }
+    const res = { render: () => {}}
+    const next = () => {}
+
+    authorRoute(authorController)(req, res, next)
+
+    expect(authorController.findAuthorById).to.have.been.calledWith(req.params.id)
   })
 })
