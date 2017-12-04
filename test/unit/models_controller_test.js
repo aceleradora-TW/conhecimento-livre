@@ -7,13 +7,22 @@ const expect = chai.expect
 const ModelsController = require('../../src/mappers/models_controller')
 
 describe('Models Controller', function () {
-  it('findAll chama find na model', function () {
-    const exec = { exec: () => {} }
-    const model = { find: sinon.stub().returns(exec) }
-    const modelsController = new ModelsController(model)
+  const exec = { exec: () => {} }
+  const model = {
+    find: sinon.stub().returns(exec),
+    findOne: sinon.stub().returns(exec)
+  }
+  const modelsController = new ModelsController(model)
 
+  it('findAll chama find na model', function () {
     modelsController.findAll()
 
     expect(model.find).to.have.been.called
+  })
+
+  it('findAuthorById chama findOne passando id', function () {
+    modelsController.findAuthorById(42)
+
+    expect(model.findOne).to.have.been.calledWith({ _id: 42 })
   })
 })
