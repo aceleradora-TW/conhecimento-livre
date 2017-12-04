@@ -68,3 +68,6 @@ bulma.css
 .sass-cache
 .retire-cache
 *.swp
+
+#Reports e2e tests
+reports/

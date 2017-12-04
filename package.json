@@ -33,7 +33,9 @@
     "node-sass": "^4.7.2",
     "passport": "^0.4.0",
     "passport-http": "*",
-    "passport-local": "*"
+    "passport-local": "*",
+    "sinon": "^4.1.2",
+    "sinon-chai": "^2.14.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
