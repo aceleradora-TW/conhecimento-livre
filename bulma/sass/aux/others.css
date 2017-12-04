@@ -33,6 +33,7 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 12px;
 }
 
 .link-card img {
