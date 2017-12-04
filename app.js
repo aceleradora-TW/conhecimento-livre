@@ -88,6 +88,8 @@ app.get('/admin/content/:id', routes.authenticate, routes.contentData)
 
 app.delete('/deleteItem/:id', routes.deleteItem)
 
+app.get('/logout', routes.logoutSession)
+
 app.use((req, res) => res.status(404).render('404'))
 
 app.listen(app.get('port'), () =>

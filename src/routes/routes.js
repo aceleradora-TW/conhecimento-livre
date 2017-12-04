@@ -20,6 +20,7 @@ const saveCourse = require('./saveCourse')
 const insertCourse = require('./insertCourse')
 const saveContent = require('./saveContent')
 const contentData = require('./contentData')
+const logoutSession = require('./logoutSession')
 const Controller = require('../mappers/models_controller')
 const authorController = new Controller(Author)
 
@@ -45,6 +46,7 @@ const allRoutes = {
   contentData: contentData(Author),
   saveContent: saveContent(Author),
   editContent: editContent(Author),
+  logoutSession: logoutSession(),
 }
 
 module.exports = allRoutes
