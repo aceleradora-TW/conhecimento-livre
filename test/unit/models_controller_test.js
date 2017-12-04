@@ -10,7 +10,8 @@ describe('Models Controller', function () {
   const exec = { exec: () => {} }
   const model = {
     find: sinon.stub().returns(exec),
-    findOne: sinon.stub().returns(exec)
+    findOne: sinon.stub().returns(exec),
+    update : sinon.stub().returns(exec)
   }
   const modelsController = new ModelsController(model)
 
@@ -36,5 +37,11 @@ describe('Models Controller', function () {
     modelsController.findCourseByContentId(44)
 
     expect(model.findOne).to.have.been.calledWith({ 'courses.contents._id': 44 })
+  })
+
+  it('deleteCourse chama update passando id', function () {
+    modelsController.deleteCourse(45)
+
+    expect(model.update).to.have.been.calledWith({ 'courses._id': 45})
   })
 })
