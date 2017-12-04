@@ -1,8 +1,5 @@
-const Controller = require('../mappers/models_controller')
-
-const course = Author => (req, res, next) => {
+const course = authorController => (req, res, next) => {
   const id = req.params.id
-  const authorController = new Controller(Author)
 
   authorController
     .findCourseById(id)

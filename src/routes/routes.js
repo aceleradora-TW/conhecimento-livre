@@ -30,7 +30,7 @@ const allRoutes = {
   index: index(authorController),
   content: content(Author),
   author: author(authorController),
-  course: course(Author),
+  course: course(authorController),
   admin: admin(),
   error: error(),
   authenticate: authenticate(),
