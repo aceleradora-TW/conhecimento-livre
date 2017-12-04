@@ -2,30 +2,26 @@
   {{> header}}
   <div class="hero-body max-height is-mobile is-tablet is-widescreen">
     <div class="columns">
-      <div class="column is-half margin-hero">
-        <div class="content full-hight">
-          <p>
-            <h1 class="title is-2 has-text-white">
-              <div class="column">
-                {{#authorItem}}
-                {{#courses}}
-                {{#if courseApproval}}
-                {{ title }}
-              </div>
-            </h1>
-            <h2 class="subtitle is-4 has-text-left has-text-grey-darker is-hidden-mobile">
-              <div class="column">
-                {{ description }}
-                {{/if}}
-                {{/courses}}
-                {{/authorItem}}
-              </div>
-            </h2>
-          </p>
-        </div>
+      <div class="column">
+          <h1 class="title is-2 has-text-white">
+            <div class="column margin-title">
+              {{#authorItem}}
+              {{#courses}}
+              {{#if courseApproval}}
+              {{ title }}
+            </div>
+          </h1>
+          <h2 class="subtitle is-4 has-text-left has-text-grey-darker is-hidden-mobile">
+            <div class="column margin-description">
+              {{ description }}
+              {{/if}}
+              {{/courses}}
+              {{/authorItem}}
+            </div>
+          </h2>
       </div>
-      <div class="column is-half" style="margin-top: -2%;">
-        <div class="box-radius">
+      <div class="column is-half">
+        <div class="box box-shadow">
           <figure class="image is-16by9">
             {{#authorItem}}
             {{#courses}}
