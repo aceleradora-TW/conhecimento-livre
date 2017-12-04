@@ -12,7 +12,6 @@ const contentList = require('./contentList')
 const authorData = require('./authorData')
 const newAuthor = require('./newAuthor')
 const newContent = require('./newContent')
-const contentList = require('./contentList')
 const saveAuthor = require('./saveAuthor')
 const authenticate = require('./authenticate')
 const editContent = require('./editContent')
@@ -45,7 +44,6 @@ const allRoutes = {
   courseData: courseData(Author),
   saveCourse: saveCourse(Author),
   insertCourse: insertCourse(Author),
-  contentList: contentList(Author),
   newContent: newContent(Author),
   contentData: contentData(Author),
   saveContent: saveContent(Author),
