@@ -11,7 +11,8 @@ describe('Models Controller', function () {
   const model = {
     find: sinon.stub().returns(exec),
     findOne: sinon.stub().returns(exec),
-    update : sinon.stub().returns(exec)
+    update: sinon.stub().returns(exec),
+    remove: sinon.stub().returns(exec)
   }
   const modelsController = new ModelsController(model)
 
@@ -46,5 +47,11 @@ describe('Models Controller', function () {
 
     expect(model.update).to.have.been.calledWith({ 'courses._id': 4},
                                                  { $pull: { 'courses': { '_id': 4 } } })
+  })
+
+  it('deleteAuthor chama o remove passando id', function () {
+    modelsController.deleteAuthor(5)
+
+    expect(model.remove).to.have.been.calledWith({ '_id': 5 })
   })
 })
