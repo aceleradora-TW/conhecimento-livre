@@ -61,11 +61,12 @@ class ModelsController {
 
   insertContent(courseId, contentData) {
     contentData._id = new mongoose.Types.ObjectId()
-    if (contentData.url.search('&') === -1) {
-      contentData.url = contentData.url.slice(contentData.url.search('=') + 1)
-    } else {
-      contentData.url = contentData.url.slice(contentData.url.search('=') + 1, contentData.url.search('&'))
-    }
+    const isUrlFromPlaylist = contentData.url.search('&') !== -1
+    const videoIdOnYoutube = contentData.url.slice(contentData.url.search('=') + 1)
+    const videoIdOnYoutubeFromPlaylist = contentData.url.slice(contentData.url.search('=') + 1, contentData.url.search('&'))
+
+    contentData.url = isUrlFromPlaylist ? videoIdOnYoutubeFromPlaylist : videoIdOnYoutube
+
     return this.model.findOneAndUpdate({ 'courses._id': courseId }, { $push: { 'courses.$.contents': contentData } })
   }
 
