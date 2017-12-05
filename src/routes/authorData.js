@@ -1,9 +1,5 @@
-const Controller = require('../mappers/models_controller')
-
-const authorData = Author => (req, res, next) => {
-  const authorController = new Controller(Author)
+const authorData = authorController => (req, res, next) => {
   const id = req.params.id
-
   authorController
     .findAuthorById(id)
     .then(authorItem => res.render('authorForm', { authorItem }))
