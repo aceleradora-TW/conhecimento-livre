@@ -6,12 +6,12 @@ const sinonChai = require('sinon-chai')
 chai.use(sinonChai)
 const expect = chai.expect
 
-let req = {}
-let res = {render : sinon.spy()}
+const req = {}
+const res = {render : sinon.spy()}
 
 describe('Admin', () => {
   it('Deve chamar res.render com a tela do admin', () => {
     admin()(req, res)
-    expect(res.render).to.have.been.calledOnce
+    expect(res.render).to.have.been.calledWith('admin')
   })
 })
