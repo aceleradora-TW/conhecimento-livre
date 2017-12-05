@@ -29,10 +29,9 @@
   max-height: 10.5vh;
   min-width: 15vh;
   max-width: 15vh;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+  display: flex;
   overflow: hidden;
+  font-size: 0.82em;
 }
 
 .link-card img {
