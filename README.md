@@ -6,9 +6,20 @@ O Conhecimento Livre é uma plataforma de distribuição de conteúdo didático 
 gratuita. A ferramenta visa disponibilizar materiais para estudo, tanto na forma de texto quanto de vídeo, a pessoas que não teriam recursos financeiros para adquirí-los de outra maneira.
 
 ## Requisitos e recomendações para contribuir:
+Ubuntu 12.04 ou superior
+Node.js 4 ou superior (https://nodejs.org/en/download/)
+
+## Instalando o Node.js:
+```
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+```
+sudo apt-get install -y build-essential
+```
 
 ## Clonando o projeto
-Será necessário que o projeto seja clonado, para clonar o projeto:
+Para clonar o projeto:
 Abra o terminal e cole o seguinte comando para obter uma cópia do repositório:
 ```
 git clone https://github.com/aceleradora-TW/conhecimento-livre.git
@@ -17,14 +28,14 @@ git clone https://github.com/aceleradora-TW/conhecimento-livre.git
 ## Instalando o Yarn e as dependências
 Para configurar o repositório:  
 ```
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 ```  
 Para obter a última atualização e instalar:  
 ```
 sudo apt-get update
 sudo apt-get install yarn
-``` 
+```
 Para instalar as dependências do projeto:
 ```
 cd conhecimento-livre/
@@ -61,9 +72,31 @@ Para incializar o MongoDB execute o seguinte comando:
 sudo service mongod start
 ```
 
-## Levantando o servidor
-Para levantar o servidor execute o seguinte comando, dentro do diretório conhecimento livre:
+## Alterando o caminho MONGO_URL
+No terminal, digitar
+```
+sudo vi /etc/environment
+```
+Apertar INSERT no teclado e adicionar no documento uma linha escrito:
+```
+DATABASELOGIN="localhost:27017/conhecimento-livre-dev"
+```
+Apertar ESC e digitar ```:x``` para sair e salvar
 
+Fazer logout e logar novamente para atualizar a variavel de ambiente do linux
+
+## Populando o banco local
+Iniciar o MongoDB com o comando:
+```
+sudo service mongod start
+```
+Dentro do diretório conhecimento-livre digite:
+```
+mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
+```
+
+## Iniciando o servidor
+Para iniciar o servidor, execute o seguinte comando, dentro do diretório conhecimento livre:
 ```
 yarn start
 ```
@@ -71,20 +104,15 @@ yarn start
 ## Acessar a pagina
 Para acessar a página acesse a URL:
 
-
-https://conhecimento-livre.herokuapp.com/
+http://www.conhecimentolivre.com.br
 
 Para acessar em staging:
 
-
-staging.conhecimentolivre.com.br
-
+http://staging.conhecimentolivre.com.br
 
 Para acessar em produção:
 
-
-www.conhecimentolivre.com.br
-
+https://conhecimento-livre.herokuapp.com/
 
 Para acessar localmente na URL:
 ```
