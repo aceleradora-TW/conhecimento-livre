@@ -132,4 +132,13 @@ describe('Models Controller', function () {
 
     expect(contentData.url).to.eq('l4glc0XNVbM')
   })
+
+  it('insertContent chama findOneAndUpdate passando id e dados', function () {
+    const contentData = { url: 'https://www.youtube.com/watch?v=l4glc0XNVbM' }
+
+    modelsController.insertContent(11, contentData)
+
+    expect(model.findOneAndUpdate).to.have.been.calledWith({ 'courses._id': 11 },
+                                                           { $push: { 'courses.$.contents': contentData } })
+  })
 })
