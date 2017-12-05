@@ -12,7 +12,8 @@ describe('Models Controller', function () {
     find: sinon.stub().returns(exec),
     findOne: sinon.stub().returns(exec),
     update: sinon.stub().returns(exec),
-    remove: sinon.stub().returns(exec)
+    remove: sinon.stub().returns(exec),
+    create: sinon.stub()
   }
   const modelsController = new ModelsController(model)
 
@@ -60,5 +61,14 @@ describe('Models Controller', function () {
 
     expect(model.update).to.have.been.calledWith({ 'courses.contents._id': 6 },
                                                  { $pull: { 'courses.$.contents': { '_id': 6 } } })
+  })
+
+  it('insertAuthor chama create passando dados', function () {
+    const data = { name: 'leco', email: 'leco@leco.br', bio: 'olar', photourl: 'lalala.com' }
+
+    modelsController.insertAuthor(data)
+
+    expect(model.create).to.have.been.calledWith({ name: data.name, email: data.email,
+                                                   bio: data.bio, photourl: data.photourl })
   })
 })
