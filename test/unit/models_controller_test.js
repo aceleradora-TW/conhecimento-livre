@@ -54,4 +54,11 @@ describe('Models Controller', function () {
 
     expect(model.remove).to.have.been.calledWith({ '_id': 5 })
   })
+
+  it('deleteContent chama update passando id', function () {
+    modelsController.deleteContent(6)
+
+    expect(model.update).to.have.been.calledWith({ 'courses.contents._id': 6 },
+                                                 { $pull: { 'courses.$.contents': { '_id': 6 } } })
+  })
 })
