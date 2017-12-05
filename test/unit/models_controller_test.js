@@ -163,4 +163,13 @@ describe('Models Controller', function () {
       expect(content.url).to.eq('l4glc0XNVbM')
     })
   })
+
+  it('updateContent chama update passando id e dados', function () {
+    const contentsData = []
+
+    modelsController.updateContent(42, contentsData)
+
+    expect(model.update).to.have.been.calledWith({ 'courses.contents._id': 42 },
+                                                 { $set: { 'courses.$.contents': contentsData } })
+  })
 })
