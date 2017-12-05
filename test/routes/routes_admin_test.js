@@ -7,7 +7,7 @@ chai.use(sinonChai)
 const expect = chai.expect
 
 const req = {}
-const res = {render : sinon.spy()}
+const res = { render : sinon.spy() }
 
 describe('Admin', () => {
   it('Deve chamar res.render com a tela do admin', () => {
