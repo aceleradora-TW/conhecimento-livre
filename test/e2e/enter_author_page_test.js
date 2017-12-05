@@ -18,7 +18,7 @@ module.exports = {
 
   'Step four: Clicar no vídeo para que a aula começe' : function(client){
      client
-      .click('#playerVideo')
+      .click('#videoPlayer')
       .pause(2000)
   },
 
