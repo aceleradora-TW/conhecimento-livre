@@ -31,7 +31,7 @@
   max-width: 15vh;
   display: flex;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 0.82em;
 }
 
 .link-card img {
