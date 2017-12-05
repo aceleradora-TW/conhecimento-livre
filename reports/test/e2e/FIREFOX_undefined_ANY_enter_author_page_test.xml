@@ -5,6 +5,7 @@
 
   <testsuite name="test.e2e.enter_author_page_test"
     errors="0" failures="0" hostname="" id="" package="e2e" skipped="0"
+<<<<<<< 571102644700277f182c0ea246a3478698e71e51
 <<<<<<< e41429768b4e376e52ee6c21950d8589791d0b2e
     tests="6" time="20.44" timestamp="Tue, 05 Dec 2017 13:32:32 GMT">
   
@@ -26,24 +27,31 @@
     <testcase name="Step six: Acessar um novo curso a partir da página do autor" classname="test.e2e.enter_author_page_test" time="2.901" assertions="0">
 =======
     tests="6" time="18.65" timestamp="Fri, 01 Dec 2017 16:52:49 GMT">
+=======
+    tests="6" time="18.75" timestamp="Tue, 05 Dec 2017 12:07:22 GMT">
+>>>>>>> <@RenanSchmitt, @LuizFeTrindade> Refatora os testes criticos
   
-    <testcase name="Step one: Acessar o site" classname="test.e2e.enter_author_page_test" time="7.292" assertions="0">
+    <testcase name="Step one: Acessar o site" classname="test.e2e.enter_author_page_test" time="7.853" assertions="0">
     </testcase>
   
-    <testcase name="Step two: Clicar em algum curso" classname="test.e2e.enter_author_page_test" time="1.497" assertions="0">
+    <testcase name="Step two: Clicar em algum curso" classname="test.e2e.enter_author_page_test" time="1.512" assertions="0">
     </testcase>
   
-    <testcase name="Step three: Clicar no botão de começar" classname="test.e2e.enter_author_page_test" time="2.606" assertions="0">
+    <testcase name="Step three: Clicar no botão de começar" classname="test.e2e.enter_author_page_test" time="2.680" assertions="0">
     </testcase>
   
-    <testcase name="Step four: Clicar no vídeo para que a aula começe" classname="test.e2e.enter_author_page_test" time="2.288" assertions="0">
+    <testcase name="Step four: Clicar no vídeo para que a aula começe" classname="test.e2e.enter_author_page_test" time="2.282" assertions="0">
     </testcase>
   
-    <testcase name="Step five: Clica no link do autor e acessa a página de autor" classname="test.e2e.enter_author_page_test" time="2.131" assertions="0">
+    <testcase name="Step five: Clica no link do autor e acessa a página de autor" classname="test.e2e.enter_author_page_test" time="1.680" assertions="0">
     </testcase>
   
+<<<<<<< 571102644700277f182c0ea246a3478698e71e51
     <testcase name="Step six: Acessar um novo curso a partir da página do autor" classname="test.e2e.enter_author_page_test" time="2.832" assertions="0">
 >>>>>>> <RenanSchmitt> Refatora Branch
+=======
+    <testcase name="Step six: Acessar um novo curso a partir da página do autor" classname="test.e2e.enter_author_page_test" time="2.743" assertions="0">
+>>>>>>> <@RenanSchmitt, @LuizFeTrindade> Refatora os testes criticos
     </testcase>
   
 
