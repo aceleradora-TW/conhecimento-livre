@@ -39,7 +39,7 @@ const allRoutes = {
   newAuthor: newAuthor(),
   authorCourses: authorCourses(authorController),
   contentList: contentList(Author),
-  authorData: authorData(Author),
+  authorData: authorData(authorController),
   saveAuthor: saveAuthor(Author),
   newCourse: newCourse(Author),
   courseData: courseData(Author),
