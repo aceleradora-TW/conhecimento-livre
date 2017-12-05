@@ -81,4 +81,18 @@ describe('Models Controller', function () {
     expect(model.findOneAndUpdate).to.have.been.calledWith({ _id: 7 },
                                                            { $push: { 'courses': data } })
   })
+
+  it('updateViews chama update passando id e dados de autor', function () {
+    const authorData = {
+      courses: [{
+        contents: {
+          id: (contentId) => { return { views: 42 } }
+        }
+      }]
+    }
+
+    modelsController.updateViews(8, authorData)
+
+    expect(model.update).to.have.been.calledWith({ 'courses.contents._id': 8 }, authorData)
+  })
 })
