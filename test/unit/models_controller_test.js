@@ -103,4 +103,13 @@ describe('Models Controller', function () {
 
     expect(model.update).to.have.been.calledWith({ '_id': authorData.id }, authorData)
   })
+
+  it('updateCourse chama update passando dados do curso', function () {
+    const courseData = { id: 10 }
+
+    modelsController.updateCourse(courseData)
+
+    expect(model.update).to.have.been.calledWith({ 'courses._id': courseData.id },
+                                                 { $set: { 'courses.$': courseData } })
+  })
 })
