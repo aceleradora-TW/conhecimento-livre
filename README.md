@@ -75,9 +75,8 @@ sudo service mongod start
 ## Alterando o caminho MONGO_URL
 No terminal, digitar
 ```
-	sudo vi /etc/environment
+sudo vi /etc/environment
 ```
-
 Apertar INSERT no teclado e adicionar no documento uma linha escrito:
 ```
 DATABASELOGIN="localhost:27017/conhecimento-livre-dev"
@@ -86,8 +85,7 @@ Apertar ESC e digitar ```:x``` para sair e salvar
 
 Fazer logout e logar novamente para atualizar a variavel de ambiente do linux
 
-
-##Populando o banco local
+## Populando o banco local
 Iniciar o MongoDB com o comando:
 ```
 sudo service mongod start
@@ -97,10 +95,8 @@ Dentro do diretório conhecimento-livre digite:
 mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
 ```
 
-
 ## Iniciando o servidor
 Para iniciar o servidor, execute o seguinte comando, dentro do diretório conhecimento livre:
-
 ```
 yarn start
 ```
@@ -108,18 +104,15 @@ yarn start
 ## Acessar a pagina
 Para acessar a página acesse a URL:
 
-https://www.conhecimentolivre.com.br
-
+http://www.conhecimentolivre.com.br
 
 Para acessar em staging:
 
-https://staging.conhecimentolivre.com.br
-
+http://staging.conhecimentolivre.com.br
 
 Para acessar em produção:
 
 https://conhecimento-livre.herokuapp.com/
-
 
 Para acessar localmente na URL:
 ```
