@@ -28,20 +28,23 @@ describe('Models Controller', function () {
   })
 
   it('findCourseById chama findOne passando o id', function () {
-    modelsController.findCourseById(43)
+    modelsController.findCourseById(2)
 
-    expect(model.findOne).to.have.been.calledWith({ 'courses._id': 43 })
+    expect(model.findOne).to.have.been.calledWith({ 'courses._id': 2 },
+                                                  { 'courses.$': 1, name: 1 })
   })
 
   it('findCourseByContentId chama findOne passando o id', function () {
-    modelsController.findCourseByContentId(44)
+    modelsController.findCourseByContentId(3)
 
-    expect(model.findOne).to.have.been.calledWith({ 'courses.contents._id': 44 })
+    expect(model.findOne).to.have.been.calledWith({ 'courses.contents._id': 3 },
+                                                  { 'courses.$': 1, name: 1 })
   })
 
   it('deleteCourse chama update passando id', function () {
-    modelsController.deleteCourse(45)
+    modelsController.deleteCourse(4)
 
-    expect(model.update).to.have.been.calledWith({ 'courses._id': 45})
+    expect(model.update).to.have.been.calledWith({ 'courses._id': 4},
+                                                 { $pull: { 'courses': { '_id': 4 } } })
   })
 })
