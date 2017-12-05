@@ -28,7 +28,7 @@ const authorController = new Controller(Author)
 const allRoutes = {
   index: index(authorController),
   content: content(Author),
-  author: author(Author),
+  author: author(authorController),
   course: course(Author),
   admin: admin(),
   error: error(),

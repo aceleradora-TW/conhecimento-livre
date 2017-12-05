@@ -1,9 +1,7 @@
-const Controller = require('../mappers/models_controller')
 const charLimiter = require('../utility/char_limiter')
 
-const author = Author => (req, res, next) => {
+const author = authorController => (req, res, next) => {
   const id = req.params.id
-  const authorController = new Controller(Author)
   authorController
     .findAuthorById(id)
     .then((authorItem) => {
