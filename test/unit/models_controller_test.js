@@ -13,7 +13,8 @@ describe('Models Controller', function () {
     findOne: sinon.stub().returns(exec),
     update: sinon.stub().returns(exec),
     remove: sinon.stub().returns(exec),
-    create: sinon.stub()
+    create: sinon.stub(),
+    findOneAndUpdate: sinon.stub()
   }
   const modelsController = new ModelsController(model)
 
@@ -70,5 +71,14 @@ describe('Models Controller', function () {
 
     expect(model.create).to.have.been.calledWith({ name: data.name, email: data.email,
                                                    bio: data.bio, photourl: data.photourl })
+  })
+
+  it('insertCourse chama findOneAndUpdate com id e data', function () {
+    const data = {}
+
+    modelsController.insertCourse(7, data)
+
+    expect(model.findOneAndUpdate).to.have.been.calledWith({ _id: 7 },
+                                                           { $push: { 'courses': data } })
   })
 })
