@@ -122,4 +122,14 @@ describe('Models Controller', function () {
 
     expect(contentData.url).to.eq('l4glc0XNVbM')
   })
+
+  it('insertContent pega id do video no YouTube de url com playlist', function () {
+    const contentData = {
+      url: 'https://www.youtube.com/watch?v=l4glc0XNVbM&list=PLz_YTBuxtxt74aOA2W8ArqZpsPlxP-JC9'
+    }
+
+    modelsController.insertContent(42, contentData)
+
+    expect(contentData.url).to.eq('l4glc0XNVbM')
+  })
 })
