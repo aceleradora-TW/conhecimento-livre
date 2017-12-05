@@ -16,6 +16,7 @@
   flex-direction: row;
   font-size: 0.9em;
   margin-bottom: 3%;
+  width: 100%;
 }
 
 .playlist-container a:hover, .playlist-container a:focus{
