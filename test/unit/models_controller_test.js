@@ -95,4 +95,12 @@ describe('Models Controller', function () {
 
     expect(model.update).to.have.been.calledWith({ 'courses.contents._id': 8 }, authorData)
   })
+
+  it('updateAuthor chama update passando dados de autor', function () {
+    const authorData = { id: 9 }
+
+    modelsController.updateAuthor(authorData)
+
+    expect(model.update).to.have.been.calledWith({ '_id': authorData.id }, authorData)
+  })
 })
