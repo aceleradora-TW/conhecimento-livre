@@ -151,3 +151,8 @@ font-size: 0.9em;
 .no-border {
   border: none;
 }
+
+.course-title {
+  height: 19vh;
+  margin-top: 3%;
+}
