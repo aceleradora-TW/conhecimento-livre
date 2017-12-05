@@ -7,9 +7,11 @@
   <tr>
     <th>Cursos</th>
   </tr>
+
+
   {{#courses}}
   <tr>
-    <td>{{title}}</td>
+    <td><a href="../../admin/contentList/{{ _id}}"> {{ title }}</a></td>
   </tr>
   {{/courses}}
 </table>
