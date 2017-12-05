@@ -141,4 +141,26 @@ describe('Models Controller', function () {
     expect(model.findOneAndUpdate).to.have.been.calledWith({ 'courses._id': 11 },
                                                            { $push: { 'courses.$.contents': contentData } })
   })
+
+  context('content com id a ser alterado', function () {
+    const content = { _id: 42 }
+
+    it('updateContent pega id do video no YouTube de url sem playlist', function () {
+      content.url = 'https://www.youtube.com/watch?v=l4glc0XNVbM'
+      const contentsData = [content]
+
+      modelsController.updateContent(42, contentsData)
+
+      expect(content.url).to.eq('l4glc0XNVbM')
+    })
+
+    it('updateContent pega id do video no YouTube de url com playlist', function () {
+      content.url = 'https://www.youtube.com/watch?v=l4glc0XNVbM&list=PLz_YTBuxtxt74aOA2W8ArqZpsPlxP-JC9'
+      const contentsData = [content]
+
+      modelsController.updateContent(42, contentsData)
+
+      expect(content.url).to.eq('l4glc0XNVbM')
+    })
+  })
 })
