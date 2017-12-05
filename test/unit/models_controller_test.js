@@ -112,4 +112,14 @@ describe('Models Controller', function () {
     expect(model.update).to.have.been.calledWith({ 'courses._id': courseData.id },
                                                  { $set: { 'courses.$': courseData } })
   })
+
+  it('insertContent pega id do video no YouTube de url sem playlist', function () {
+    const contentData = {
+      url: 'https://www.youtube.com/watch?v=l4glc0XNVbM'
+    }
+
+    modelsController.insertContent(42, contentData)
+
+    expect(contentData.url).to.eq('l4glc0XNVbM')
+  })
 })
