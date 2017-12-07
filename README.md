@@ -102,6 +102,8 @@ Para logar no banco, é necessario que insira a URL como variável de ambiente:
 echo 'export DATABASELOGIN="localhost:27017/conhecimento-livre-dev"' >> ~/.bashrc
 ```
 
+*Ao exportar a variável de ambiente, lembre-se de fazer logoff, para que o sistema atualize as variáveis.*
+
 
 ## Populando o banco local
 É necessario que adicione a seu primeiro curso ao projeto, no diretório ```/conhecimento-livre``` digite:
