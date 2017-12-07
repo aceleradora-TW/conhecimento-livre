@@ -11,7 +11,7 @@ gratuita. A ferramenta visa disponibilizar materiais para estudo, tanto na forma
 * MongoDB 3;
 * Yarn ou npm.
 
-Certifique se você possui o Git instalando no seu Ubuntu, caso não tenha, insira os comandos a seguir no terminal:
+Certifique se você possui o Git instalando no seu Ubuntu, caso não possua, insira os comandos a seguir no terminal:
 ```
 sudo apt-get update
 sudo apt-get install git
@@ -101,7 +101,7 @@ echo 'export DATABASELOGIN="localhost:27017/conhecimento-livre-dev"' >> ~/.bashr
 
 
 ## Populando o banco local
-É necessario que adicione a seu primeiro curso ao projeto,no diretório conhecimento-livre digite:
+É necessario que adicione a seu primeiro curso ao projeto,no diretório ```/conhecimento-livre``` digite:
 ```
 mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
 ```
@@ -111,7 +111,7 @@ mongoimport --db conhecimento-livre-dev --collection admins --drop --file admins
 Você pode gerenciar seus cursos no painel de admin, login padrão: ```Usuario:admin Senha:password```
 
 ## Iniciando o servidor
-Para iniciar o servidor, execute o seguinte comando, dentro do diretório conhecimento-livre:
+Para iniciar o servidor, execute o seguinte comando, dentro do diretório ```/conhecimento-livre```:
 ```
 yarn start
 ```
