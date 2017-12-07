@@ -105,7 +105,10 @@ echo 'export DATABASELOGIN="localhost:27017/conhecimento-livre-dev"' >> ~/.bashr
 ```
 mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
 ```
-
+```
+mongoimport --db conhecimento-livre-dev --collection admins --drop --file admins.json
+```
+Você pode gerenciar seus cursos no painel de admin, login padrão: ```Usuario:admin Senha:password```
 
 ## Iniciando o servidor
 Para iniciar o servidor, execute o seguinte comando, dentro do diretório conhecimento-livre:
@@ -119,6 +122,11 @@ yarn start
 * Para acessar localmente o seu projeto:
 
   http://localhost:3000
+
+
+* Acessar o painel do administrador:
+
+  http://localhost:3000/admin
 
 
 * Nossa URL:
