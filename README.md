@@ -80,17 +80,20 @@ sudo apt-get update
 sudo apt-get install yarn
 ```
 
-## Clonando o projeto
+## Fork do projeto
+
+No GitHub, na página do [Conhecimento Livre](https://github.com/aceleradora-TW/conhecimento-livre) clique em **Fork** para adicionar o projeto em seu repositório.
+
 Abra o terminal e cole o seguinte comando para obter uma cópia do repositório:
 ```
-git clone https://github.com/aceleradora-TW/conhecimento-livre.git
+git clone https://github.com/SEU-USUARIO/conhecimento-livre.git
 ```
 Instalando as dependências:
 ```
 cd conhecimento-livre/
 yarn install
 ```
-
+**
 
 ## Inserindo URL nas variáveis de ambiente
 
@@ -101,7 +104,7 @@ echo 'export DATABASELOGIN="localhost:27017/conhecimento-livre-dev"' >> ~/.bashr
 
 
 ## Populando o banco local
-É necessario que adicione a seu primeiro curso ao projeto,no diretório ```/conhecimento-livre``` digite:
+É necessario que adicione a seu primeiro curso ao projeto, no diretório ```/conhecimento-livre``` digite:
 ```
 mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
 ```
