@@ -45,11 +45,6 @@
   margin: 0;
 }
 
-.playlist-container ul {
-  height: 100%;
-  width: 90%;
-}
-
 .link-card {
 display: flex;
 font-size: 0.9em;
