@@ -14,11 +14,9 @@ describe('AuthorData', function() {
   const req = { params: { id: 1 }}
   const res = { render: sinon.spy() }
   const next = sinon.spy()
+
   const authorController = {
     findAuthorById: sinon.stub().resolves(authorItem)
-  }
-  const authorControllerErro = {
-    findAuthorById : sinon.stub().rejects({erro:'ERRO'})
   }
 
   context('com promise resolvida', function() {
@@ -26,6 +24,7 @@ describe('AuthorData', function() {
       authorData(authorController)(req, res, next)
       expect(authorController.findAuthorById).to.have.been.calledWith(req.params.id)
     })
+
     it('renderiza template dos cursos do #authorData', function() {
       authorData(authorController)(req, res, next)
       expect(res.render).to.have.been.calledWith('authorForm', { authorItem })
