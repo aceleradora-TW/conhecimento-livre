@@ -21,6 +21,9 @@ sudo apt-get install git
 ## Instalando o Node.js:
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+```
+```
+sudo apt-get update
 sudo apt-get install -y nodejs
 ```
 ```
@@ -39,15 +42,15 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A1
 **Verifique a versão do seu Ubuntu e insera apenas um dos comandos abaixo de acordo com a sua versão.**
 
 
-* Para Ubuntu na versao 12.04:
+* Ubuntu 12.04:
 ```
 echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 ```
-* Para Ubuntu na versao 14.04:
+* Ubuntu 14.04:
 ```
 echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 ```
-* Para Ubuntu na versao 16.04:
+* Ubuntu 16.04:
 ```
 echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 ```
@@ -55,6 +58,7 @@ echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb
 
 Instalando o MongoDB:
 ```
+sudo apt-get update
 sudo apt-get install -y mongodb-org
 ```
 Para inicializar o MongoDB execute o seguinte comando:
@@ -65,12 +69,12 @@ sudo service mongod start
 
 
 ## Instalando o Yarn
-Para configurar o repositório:  
+Primeiramente configure o repositório:  
 ```
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 ```  
-Para obter a última atualização e instalar:  
+Obter a última atualização e instalar:  
 ```
 sudo apt-get update
 sudo apt-get install yarn
@@ -97,14 +101,14 @@ echo 'export DATABASELOGIN="localhost:27017/conhecimento-livre-dev"' >> ~/.bashr
 
 
 ## Populando o banco local
-Para adicionar a seu primeiro curso ao projeto,no diretório conhecimento-livre digite:
+É necessario que adicione a seu primeiro curso ao projeto,no diretório conhecimento-livre digite:
 ```
 mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
 ```
 
 
 ## Iniciando o servidor
-Para iniciar o servidor, execute o seguinte comando, dentro do diretório conhecimento livre:
+Para iniciar o servidor, execute o seguinte comando, dentro do diretório conhecimento-livre:
 ```
 yarn start
 ```
