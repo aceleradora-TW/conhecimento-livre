@@ -5,7 +5,7 @@
     <div class="field">
       <label class="label">Nome</label>
       <div class="control">
-        <input id="name" name="name" class="input" type="text" placeholder="insira aqui nome completo" value="{{name}}">
+        <input id="name" name="name" class="input" maxlength="40" type="text" placeholder="insira aqui nome completo" value="{{name}}" required>
         <input id="id" name="id" class="input" type="hidden" value="{{_id}}">
       </div>
     </div>
@@ -13,14 +13,14 @@
     <div class="field">
       <label class="label">E-mail</label>
       <div class="control">
-        <input id="email" name="email" class="input" type="email" placeholder="insira aqui o e-mail do autor" value="{{email}}">
+        <input id="email" name="email" class="input" type="email" placeholder="insira aqui o e-mail do autor" value="{{email}}" >
       </div>
     </div>
 
     <div class="field">
       <label class="label">Biografia</label>
       <div class="control">
-        <textarea id='bio' name="bio" class="textarea" placeholder="insira aqui a biografia do autor">{{bio}}</textarea>
+        <textarea id='bio' name="bio" class="textarea" maxlength="400" placeholder="insira aqui a biografia do autor">{{bio}}</textarea>
       </div>
     </div>
 

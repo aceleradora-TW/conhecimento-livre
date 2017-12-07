@@ -26,7 +26,7 @@
     <div class="field">
       <label class="label">Título</label>
       <div class="control">
-        <input id="title" name="title" class="input" type="text" placeholder="insira aqui o título do curso" value="{{title}}" required>
+        <input id="title" name="title" class="input" maxlength="75" type="text" placeholder="insira aqui o título do curso" value="{{title}}" required>
         <input id="_id" name="_id" class="input" type="hidden" value="{{_id}}">
       </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="field">
       <label class="label">Descrição</label>
       <div class="control">
-        <textarea id='description' name="description" class="textarea" placeholder="insira aqui a descrição do curso">{{description}}</textarea>
+        <textarea id='description' name="description" maxlength="400" class="textarea" placeholder="insira aqui a descrição do curso">{{description}}</textarea>
       </div>
     </div>
 
@@ -55,14 +55,14 @@
     <div class="field">
       <label class="label">Duração</label>
       <div class="control">
-        <input id="duration" name="duration" class="input" type="text" placeholder="insira aqui a duração" value="{{duration}}" required>
+        <input id="duration" name="duration" class="input" maxlength="20" type="text" placeholder="insira aqui a duração" value="{{duration}}" required>
       </div>
     </div>
 
     <div class="field">
       <label class="label">Linguagem</label>
       <div class="control">
-        <input id="language" name="language" class="input" type="text" placeholder="insira aqui a linguagem" value="{{language}}" required>
+        <input id="language" name="language" class="input" maxlength="20" type="text" placeholder="insira aqui a linguagem" value="{{language}}" required>
       </div>
     </div>
 

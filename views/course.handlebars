@@ -3,18 +3,21 @@
   <div class="hero-body max-height is-mobile is-tablet is-widescreen">
     <div class="columns">
       <div class="column">
-          <h1 class="title is-2 has-text-white">
+          <h1 class="title is-2 has-text-white is-hidden-mobile">
             <div class="course-title">
               {{#authorItem}}
               {{#courses}}
-              {{#if courseApproval}}
+              {{ title }}
+            </div>
+          </h1>
+          <h1 class="title is-3 has-text-white is-hidden-desktop">
+            <div class="course-title">
               {{ title }}
             </div>
           </h1>
           <h2 class="subtitle is-4 has-text-left has-text-grey-darker is-hidden-mobile">
             <div class="column margin-description">
               {{ description }}
-              {{/if}}
               {{/courses}}
               {{/authorItem}}
             </div>
@@ -25,9 +28,7 @@
           <figure class="image is-16by9">
             {{#authorItem}}
             {{#courses}}
-            {{#if courseApproval}}
             <img src="{{ image }}" alt="imagem do curso">
-            {{/if}}
             {{/courses}}
             {{/authorItem}}
           </figure>
