@@ -8,10 +8,11 @@
     </tr>
     {{#allAuthors}}
     <tr>
-      <td><a href="/admin/authorCourses/{{ _id }}">{{name}}</a></td>
+      <td>{{name}}</td>
       <td>{{email}}</td>
       <td id="id-{{_id}}">{{_id}}</td>
       <td>
+        <a class="button is-success" href="/admin/authorCourses/{{ _id }}">Ver cursos</a>
         <a class="button is-info" href="/admin/author/{{_id}}">Editar</a>
         <a class="button is-danger" onclick="deleteItem('{{_id}}', 'author')">Deletar</a>
       </td>
