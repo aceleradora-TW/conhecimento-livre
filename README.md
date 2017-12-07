@@ -11,6 +11,13 @@ gratuita. A ferramenta visa disponibilizar materiais para estudo, tanto na forma
 * MongoDB 3;
 * Yarn ou npm.
 
+Certifique se você possui o Git instalando no seu Ubuntu, caso não tenha, insira os comandos a seguir no terminal:
+```
+sudo apt-get update
+sudo apt-get install git
+```
+
+
 ## Instalando o Node.js:
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -19,6 +26,8 @@ sudo apt-get install -y nodejs
 ```
 sudo apt-get install -y build-essential
 ```
+
+
 ## Instalando e iniciando o MongoDB
 
 Inicialmente, insira o seguinte comando:
@@ -26,7 +35,9 @@ Inicialmente, insira o seguinte comando:
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 ```
 
+
 **Verifique a versão do seu Ubuntu e insera apenas um dos comandos abaixo de acordo com a sua versão.**
+
 
 * Para Ubuntu na versao 12.04:
 ```
@@ -40,6 +51,8 @@ echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3
 ```
 echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 ```
+
+
 Instalando o MongoDB:
 ```
 sudo apt-get install -y mongodb-org
@@ -49,6 +62,7 @@ Para inicializar o MongoDB execute o seguinte comando:
 sudo service mongod start
 ```
 **Por padrão, sempre que ligar o seu computador, terá que inicializar o MongoDB, antes de rodar a sua aplicação.**
+
 
 ## Instalando o Yarn
 Para configurar o repositório:  
@@ -61,6 +75,7 @@ Para obter a última atualização e instalar:
 sudo apt-get update
 sudo apt-get install yarn
 ```
+
 ## Clonando o projeto
 Abra o terminal e cole o seguinte comando para obter uma cópia do repositório:
 ```
@@ -72,6 +87,7 @@ cd conhecimento-livre/
 yarn install
 ```
 
+
 ## Inserindo URL nas variáveis de ambiente
 
 Para logar no banco, é necessario que insira a URL como variável de ambiente:
@@ -79,11 +95,13 @@ Para logar no banco, é necessario que insira a URL como variável de ambiente:
 echo 'export DATABASELOGIN="localhost:27017/conhecimento-livre-dev"' >> ~/.bashrc
 ```
 
+
 ## Populando o banco local
 Para adicionar a seu primeiro curso ao projeto,no diretório conhecimento-livre digite:
 ```
 mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
 ```
+
 
 ## Iniciando o servidor
 Para iniciar o servidor, execute o seguinte comando, dentro do diretório conhecimento livre:
