@@ -11,7 +11,7 @@ gratuita. A ferramenta visa disponibilizar materiais para estudo, tanto na forma
 * MongoDB 3;
 * Yarn ou npm.
 
-Certifique se você possui o Git instalando no seu Ubuntu, caso não possua, insira os comandos a seguir no terminal:
+Certifique-se de possuir o Git instalado no seu Ubuntu. Caso não possua, insira os comandos a seguir no terminal:
 ```
 sudo apt-get update
 sudo apt-get install git
@@ -65,16 +65,16 @@ Para inicializar o MongoDB execute o seguinte comando:
 ```
 sudo service mongod start
 ```
-**Por padrão, sempre que ligar o seu computador, terá que inicializar o MongoDB, antes de rodar a sua aplicação.**
+**Por padrão, sempre que ligar o seu computador, terá que inicializar o MongoDB antes de rodar a sua aplicação.**
 
 
 ## Instalando o Yarn
-Primeiramente configure o repositório:  
+Primeiramente, configure o repositório:  
 ```
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 ```  
-Obter a última atualização e instalar:  
+Para obter a última atualização e instalar:  
 ```
 sudo apt-get update
 sudo apt-get install yarn
@@ -82,11 +82,11 @@ sudo apt-get install yarn
 
 ## Fork do projeto
 
-No GitHub, na página do [Conhecimento Livre](https://github.com/aceleradora-TW/conhecimento-livre) clique em **Fork** para adicionar o projeto em seu repositório.
+No GitHub, na página do [Conhecimento Livre](https://github.com/aceleradora-TW/conhecimento-livre), clique em **Fork** para adicionar o projeto em seu repositório.
 
 Abra o terminal e cole o seguinte comando para obter uma cópia do repositório:
 ```
-git clone https://github.com/SEU-USUARIO/conhecimento-livre.git
+git clone https://github.com/<SEU-USUARIO>/conhecimento-livre.git
 ```
 Instalando as dependências:
 ```
@@ -97,23 +97,23 @@ yarn install
 
 ## Inserindo URL nas variáveis de ambiente
 
-Para logar no banco, é necessario que insira a URL como variável de ambiente:
+Para logar no banco, é necessário que insira a URL como variável de ambiente:
 ```
 echo 'export DATABASELOGIN="localhost:27017/conhecimento-livre-dev"' >> ~/.bashrc
 ```
 
-*Ao exportar a variável de ambiente, lembre-se de fazer logoff, para que o sistema atualize as variáveis.*
+*Após exportar a variável de ambiente, faça logoff para que o sistema atualize as variáveis.*
 
 
 ## Populando o banco local
-É necessario que adicione a seu primeiro curso ao projeto, no diretório ```/conhecimento-livre``` digite:
+É necessário adicionar o primeiro curso ao projeto. No diretório ```/conhecimento-livre``` digite:
 ```
 mongoimport --db conhecimento-livre-dev --collection authors --drop --file authors.json
 ```
 ```
 mongoimport --db conhecimento-livre-dev --collection admins --drop --file admins.json
 ```
-Você pode gerenciar seus cursos no painel de admin, login padrão: ```Usuario:admin Senha:password```
+Você pode gerenciar seus cursos no painel de admin. Login padrão: ```Usuario:admin Senha:password```
 
 ## Iniciando o servidor
 Para iniciar o servidor, execute o seguinte comando, dentro do diretório ```/conhecimento-livre```:
@@ -124,7 +124,7 @@ yarn start
 
 ## Acessando a pagina
 
-* Para acessar localmente o seu projeto:
+* Acessar localmente o projeto:
 
   http://localhost:3000
 
