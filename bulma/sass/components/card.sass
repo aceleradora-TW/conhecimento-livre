@@ -17,53 +17,57 @@ $card-footer-border-top: 1px solid $border !default
   position: relative
   display: inline-block
   width: 30%
+  &.is-mobile
+    width: 45%
 
-.card-header
-  align-items: stretch
-  display: flex
-  min-height: 5vh
-  max-height: 5vh
 
-.card-header-title
-  align-items: center
-  color: $card-header-color
-  flex-grow: 1
-  font-weight: 500
-  &.is-centered
-    justify-content: center
 
-.card-header-icon
-  align-items: center
-  cursor: pointer
-  display: flex
-  justify-content: center
-  padding: 0.75rem
+  .card-header
+    align-items: stretch
+    display: flex
+    min-height: 5vh
+    max-height: 5vh
 
-.card-image
-  display: block
-  position: relative
+    .card-header-title
+      align-items: center
+      color: $card-header-color
+      flex-grow: 1
+      font-weight: 500
+      &.is-centered
+        justify-content: center
 
-.card-content
-  padding: 0.7rem
+        .card-header-icon
+          align-items: center
+          cursor: pointer
+          display: flex
+          justify-content: center
+          padding: 0.75rem
 
-.card-footer
-  border-top: $card-footer-border-top
-  align-items: stretch
-  display: flex
+          .card-image
+            display: block
+            position: relative
 
-.card-footer-item
-  align-items: center
-  display: flex
-  flex-basis: 0
-  flex-grow: 1
-  flex-shrink: 0
-  justify-content: center
-  padding: 0.75rem
-  &:not(:last-child)
-    border-right: $card-footer-border-top
+            .card-content
+              padding: 0.7rem
 
-// Combinations
+              .card-footer
+                border-top: $card-footer-border-top
+                align-items: stretch
+                display: flex
 
-.card
-  .media:not(:last-child)
-    margin-bottom: 0.75rem
+                .card-footer-item
+                  align-items: center
+                  display: flex
+                  flex-basis: 0
+                  flex-grow: 1
+                  flex-shrink: 0
+                  justify-content: center
+                  padding: 0.75rem
+                  &:not(:last-child)
+                    border-right: $card-footer-border-top
+
+                    // Combinations
+
+                    .card
+                      .media:not(:last-child)
+                      margin-bottom: 0.75rem
