@@ -1,9 +1,9 @@
-<div class="container is-hidden-mobile">
+<div class="container ">
   {{#allAuthors}}
   {{#courses}}
   {{#if courseApproval}}
   <a href="/course/{{ _id }}">
-    <div class="card">
+    <div class="card is-hidden-mobile">
       <div class="card-image">
         <figure class="image is-16by9">
           <img src="{{ image }}" alt="Placeholder image">
@@ -18,33 +18,13 @@
         {{ description }}
       </div>
     </div>
-  </a>
-  {{/if}}
-  {{/courses}}
-  {{/allAuthors}}
-</div>
-
-
-<div class="container is-hidden-desktop">
-  {{#allAuthors}}
-  {{#courses}}
-  {{#if courseApproval}}
-  <a href="/course/{{ _id }}">
-    <div class="card is-mobile">
-      <div class="card-image">
-        <figure class="image is-16by9">
-          <img src="{{ image }}" alt="Placeholder image">
-        </figure>
-      </div>
-      <header class="card-header has-text-centered is-hidden-mobile">
-        <p class="card-header-title">
-          {{ title }}
-        </p>
-      </header>
-      <div class="card-content card-body is-hidden-mobile">
-        {{ description }}
-      </div>
+    <div class="card is-mobile is-hidden-desktop">
+    <div class="card-image">
+      <figure class="image is-16by9">
+        <img src="{{ image }}" alt="Placeholder image">
+      </figure>
     </div>
+  </div>
   </a>
   {{/if}}
   {{/courses}}
