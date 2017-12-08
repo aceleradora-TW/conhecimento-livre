@@ -2,8 +2,14 @@
 <section>
   <div class="tabs">
     <ul>
-      <li class="tablink is-active" onclick="openList(event, 'Author')"><a>Autor</a></li>
-      <li class="tablink" onclick="openList(event, 'Courses')"><a >Curso</a></li>
+      {{#flag}}
+        <li class="tablink" onclick="openList(event, 'Author')"><a>yyyyyyyyyy</a></li>
+        <li class="tablink is-active" onclick="openList(event, 'Courses')"><a>yyyyyyyy</a></li>
+      {{/flag}}
+      {{^flag}}
+        <li class="tablink is-active" onclick="openList(event, 'Author')"><a>pppppp</a></li>
+        <li class="tablink" onclick="openList(event, 'Courses')"><a>ppppppppppppppp</a></li>
+      {{/flag}}
     </ul>
   </div>
   {{>authorsList}}
