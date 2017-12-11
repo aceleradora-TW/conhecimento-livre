@@ -1,6 +1,10 @@
 <div class="level">
-  <div class="level-left" style="margin-left: 1%">
-    <span>Lista de aulas</span>
+  <div class="level-left">
+    {{#authorItem}}
+    {{#courses}}
+    <span>Lista de aulas de {{title}}</span>
+    {{/courses}}
+    {{/authorItem}}
   </div>
   {{>logoutButton}}
 </div>
