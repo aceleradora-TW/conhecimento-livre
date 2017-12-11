@@ -8,7 +8,7 @@
           <div class="playlist-container">
             <a class="link-card" href="/content/{{ id }}">
               <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="Link para a aula {{ title }}">
-              {{ title }}
+              <span> {{ title }} </span>
             </a>
           </div>
           <hr>
@@ -26,10 +26,10 @@
               </div>
             </nav>
             {{#allContents}}
-            <li class="nextContents">
+            <li class="nextContents playlist-container">
               <a class="link-card" href="/content/{{ id }}">
                 <img src="http://i1.ytimg.com/vi/{{ url }}/mqdefault.jpg" alt="Link para a aula {{ title }}">
-                {{ title }}
+                <span> {{ title }} </span>
               </a>
             </li>
             {{/allContents}}
