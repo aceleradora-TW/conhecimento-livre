@@ -27,30 +27,14 @@
   position: relative;
 }
 
-.playlist-container ul li a {
-  display: flex;
-  flex-direction: row;
-  font-size: 0.9em;
-  margin-bottom: 3%;
-}
-
 .playlist-container a:hover, .playlist-container a:focus{
   background-color: rgba(178, 178, 178, 0.2);
   opacity: 0.7;
-}
-
-.link-card span {
-  margin-left: 5%;
-  min-height: 10.5vh;
-  max-height: 10.5vh;
-  min-width: 15vh;
-  max-width: 15vh;
-  display: flex;
-  overflow: hidden;
-  font-size: 0.82em;
+	width: 100%;
 }
 
 .link-card img {
+	margin-right: 0.5vw;
   max-height: 11vh;
   min-height: 11vh;
   max-width: 19vh;
