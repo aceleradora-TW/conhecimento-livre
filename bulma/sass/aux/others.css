@@ -93,10 +93,10 @@
 	padding-right: 15vw;
 }
 
-.inicial-page {
-	background-image: url('../images/banner_inicial.png');
-	background-size: cover;
-	background-position: top;
+.inicial-page{
+  background-image: url('../images/banner_inicial.jpg');
+  background-size: cover;
+  background-position: top;
 }
 
 .box-radius {
