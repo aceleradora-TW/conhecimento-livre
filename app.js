@@ -52,7 +52,7 @@ app.get('/admin', routes.admin)
 
 app.get('/error', routes.error)
 
-app.get('/admin/authorCourses/:id', routes.authenticate, routes.authorCourses)
+app.get('/authorCourses/:id', routes.authenticate, routes.authorCourses)
 
 app.get('/admin/contentList/:id', routes.authenticate, routes.contentList)
 
