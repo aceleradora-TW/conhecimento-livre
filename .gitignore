@@ -59,6 +59,9 @@ typings/
 
 # nightwatch reports
 test/e2e/reports/
+reports/
+reports/test/e2e
+selenium-debug.log/
 
 # css files
 public/css/

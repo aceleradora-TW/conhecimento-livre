@@ -58,6 +58,31 @@ class ModelsController {
   updateCourse(courseData) {
     return this.model.update({ 'courses._id': courseData.id }, { $set: { 'courses.$': courseData } }).exec()
   }
+
+  insertContent(courseId, contentData) {
+    contentData._id = new mongoose.Types.ObjectId()
+    contentData.url = this._extractIdFromYoutube(contentData)
+
+    return this.model.findOneAndUpdate({ 'courses._id': courseId }, { $push: { 'courses.$.contents': contentData } })
+  }
+
+  updateContent(contentId, contentsData) {
+    const that = this
+    contentsData.forEach(function (content) {
+      if (content._id == contentId) {
+        content.url = that._extractIdFromYoutube(content)
+      }
+    })
+    return this.model.update({ 'courses.contents._id': contentId }, { $set: { 'courses.$.contents': contentsData } })
+  }
+
+  _extractIdFromYoutube(content) {
+    const isUrlFromPlaylist = content.url.search('&') !== -1
+    const videoIdOnYoutube = content.url.slice(content.url.search('=') + 1)
+    const videoIdOnYoutubeFromPlaylist = content.url.slice(content.url.search('=') + 1, content.url.search('&'))
+
+    return isUrlFromPlaylist ? videoIdOnYoutubeFromPlaylist : videoIdOnYoutube
+  }
 }
 
 module.exports = ModelsController

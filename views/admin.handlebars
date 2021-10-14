@@ -4,6 +4,9 @@
       <div class="columns is-centered">
         <article class="card is-rounded">
           <div class="card-content">
+            {{#if failure}}
+              <p class="has-text-danger">*{{failure}}<p>
+            {{/if}}
             <p class="control has-icon">
               <form action="/admin/list" method="post">
                 <input type="text" name="username" class="input" placeholder="Usuário">
@@ -13,6 +16,9 @@
             </p>
           </div>
         </article>
+      </div>
+      <div class="columns is-centered">
+        <a class="button is-info" href="/">Retornar para a página inicial</a>
       </div>
     </div>
   </div>

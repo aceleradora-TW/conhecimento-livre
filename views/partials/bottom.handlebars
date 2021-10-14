@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container ">
   {{#allAuthors}}
   {{#courses}}
   {{#if courseApproval}}
   <a href="/course/{{ _id }}">
-    <div class="card">
+    <div class="card is-hidden-mobile is-hidden-tablet-only">
       <div class="card-image">
         <figure class="image is-16by9">
           <img src="{{ image }}" alt="Placeholder image">
@@ -18,6 +18,13 @@
         {{ description }}
       </div>
     </div>
+    <div class="card is-mobile is-hidden-desktop">
+    <div class="card-image">
+      <figure class="image is-16by9">
+        <img src="{{ image }}" alt="Placeholder image">
+      </figure>
+    </div>
+  </div>
   </a>
   {{/if}}
   {{/courses}}

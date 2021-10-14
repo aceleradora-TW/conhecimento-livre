@@ -1,4 +1,5 @@
 const Controller = require('../mappers/models_controller')
+const charLimiter = require('../utility/char_limiter')
 
 const content = Author => (req, res, next) => {
   const id = req.params.id
@@ -17,8 +18,9 @@ const content = Author => (req, res, next) => {
     })
     .then(() => authorController.updateViews(id, responseData.authorItem))
     .then(() => {
-      responseData.allContents.splice(responseData.allContents.indexOf(responseData.contentItem), 1)
-      responseData.allContents.splice(responseData.allContents.indexOf(responseData.next), 1)
+      responseData.allContents.forEach( item => item.title = charLimiter(item.title,90))
+      responseData.allContents = responseData.allContents.filter(item => item !== responseData.contentItem)
+        .filter(item => item !== responseData.next)
       res.render('content', responseData)
     })
     .catch((error) => {

@@ -1,0 +1,43 @@
+<fieldset class="no-border">
+  <div class="hero-body">
+    <legend class="subtitle is-3">Inserir nova aula</legend>
+    {{#item}}
+    {{#if courseId}}
+    <form action="/admin/saveContent/{{courseId}}" method="post">
+      {{else}}
+      <form action="/admin/saveContent/edit/{{_id}}" method="post">
+        {{/if}}
+        <div class="field">
+          <label class="label">Título</label>
+          <div class="control">
+            <input id="title" name="title" class="input" maxlength="75" type="text" placeholder="Insira o título da aula aqui" value="{{title}}" required>
+            <input id="_id" name="_id" class="input" type="hidden" value="{{_id}}">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">URL</label>
+          <div class="control has-icons-left has-icons-right">
+            <input id="url" name="url" class="input" type="text" placeholder="Insira o URL da aula aqui" value="{{url}}" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Descrição</label>
+          <div class="control">
+            <textarea id="preview" name="preview" class="textarea" maxlength="400" placeholder="Insira aqui a descrição da aula">{{preview}}</textarea>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <input type="submit" value="Salvar" class="button is-primary is-medium is-fullwidth">
+          </div>
+        </form>
+        <div class="control">
+          <a class="button is-danger is-medium is-fullwidth" href="javascript:history.back()">Cancelar</a>
+        </div>
+      </div>
+      {{/item}}
+    </div>
+  </fieldset>

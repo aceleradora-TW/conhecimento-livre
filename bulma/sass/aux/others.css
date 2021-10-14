@@ -1,138 +1,157 @@
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
 .scroll {
-  overflow-y: scroll;
-  max-height: 80vh;
+	overflow-y: scroll;
+	max-height: 80vh;
 }
 
 .playlist-container {
-  height: 20%;
-  width: 100%;
-  list-style: none;
-  margin-bottom: 2vh;
-  position: relative;
+	height: 20%;
+	width: 100%;
+	list-style: none;
+	margin-bottom: 2vh;
+	position: relative;
 }
 
-.playlist-container ul li a {
-  display: flex;
-  flex-direction: row;
-  font-size: 0.9em;
-  margin-bottom: 3%;
+.playlist-container a:hover, .playlist-container a:focus {
+	background-color: rgba(178, 178, 178, 0.2);
+	opacity: 0.7;
+	width: 100%;
 }
 
-.playlist-container a:hover, .playlist-container a:focus{
-  background-color: rgba(178, 178, 178, 0.2);
-  opacity: 0.7;
-}
-
-.link-card span {
-  margin-left: 5%;
-  min-height: 10.5vh;
-  max-height: 10.5vh;
-  min-width: 15vh;
-  max-width: 15vh;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.link-card {
+	display: flex;
+	font-size: 0.82em;
 }
 
 .link-card img {
-  max-height: 11vh;
-  min-height: 11vh;
-  max-width: 19vh;
-  min-width: 19vh;
+	margin-right: 0.5vw;
+	max-height: 11vh;
+	min-height: 11vh;
+	max-width: 19vh;
+	min-width: 19vh;
 }
 
-.content ul{
-  margin: 0;
-}
-
-.playlist-container ul {
-  height: 100%;
-  width: 90%;
-}
-/*
-.playlist-container ul li p {
-opacity: 0;
-position: absolute;
-width: 100%;
-height: 100%;
-}*/
-
-.link-card {
-display: flex;
-font-size: 0.9em;
+.content ul {
+	margin: 0;
 }
 
 .notification {
-  padding: 1.25rem 1.0rem 1.25rem 1.8rem;
+	padding: 1.25rem 1.0rem 1.25rem 1.8rem;
 }
 
 .notification a:not(.button) {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .fullhight {
-  min-height: 96.5vh;
+	min-height: 96.5vh;
 }
 
 .card .card-body {
-  background: #e5e5e5;
-  overflow: hidden;
-  min-height: 13.5vh;
-  max-height: 13.5vh;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+	background: #e5e5e5;
+	overflow: hidden;
+	min-height: 13.5vh;
+	max-height: 13.5vh;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
 }
 
 .card-header-title {
-  line-height: 4.8vh;
+	line-height: 4.8vh;
 }
 
 .max-height {
-  max-height: 40vh;
+	max-height: 40vh;
 }
 
 .border-radius {
-  border-radius: 50%
+	border-radius: 50%
 }
 
 .padding-top {
-  padding-top: 10vh;
+	padding-top: 10vh;
 }
 
 .lateral-padding {
-  padding-left: 15vw;
-  padding-right: 15vw;
+	padding-left: 15vw;
+	padding-right: 15vw;
 }
 
 .inicial-page{
-  background-image: url('../images/banner_inicial.png');
+  background-image: url('../images/banner_inicial.jpg');
   background-size: cover;
   background-position: top;
 }
 
 .box-radius {
-  margin: 0% 10% 20% -4%;
-  width: 100%;
-  height: 100%;
-  padding: 2% 2% 2% 2%;
-  background-color: white;
-  box-shadow: 3px 3px 2px #888888;
-  border-radius: 10px;
+	margin: 0% 10% 20% -4%;
+	width: 100%;
+	height: 100%;
+	padding: 2% 2% 2% 2%;
+	background-color: white;
+	box-shadow: 3px 3px 2px #888888;
+	border-radius: 10px;
 }
 
 .container .subtitle {
-  margin: 3vh 1vh;
+	margin: 3vh 1vh;
 }
 
 .tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
 }
 
 .vertical-align {
-  align-items: center;
+	align-items: center;
+}
+
+.next-video-preview {
+	display: flex;
+	height: 100%;
+	color: white;
+	font-size: 0.9em;
+}
+
+.next-video-preview img {
+	height: 100%;
+	width: 100%;
+}
+
+.next-video-preview span {
+	font-size: 0.9em;
+	width: 90%;
+	overflow: hidden;
+	margin-left: 3%;
+}
+
+.no-border {
+	border: none;
+}
+
+.course-title {
+	height: 19vh;
+	margin-top: 3%;
+}
+
+.level-left {
+	margin-left: 1%
 }
