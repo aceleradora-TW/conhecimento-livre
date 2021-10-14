@@ -1,4 +1,13 @@
-{{>logoutButton}}
+<div class="level">
+  <div class="level-left">
+    {{#authorItem}}
+    {{#courses}}
+    <span>Lista de aulas de {{title}}</span>
+    {{/courses}}
+    {{/authorItem}}
+  </div>
+  {{>logoutButton}}
+</div>
 <table class="table">
   <div class="tabs">
     <ul>
